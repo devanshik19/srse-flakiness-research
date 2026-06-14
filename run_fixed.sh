@@ -18,6 +18,10 @@ REPO=$(echo "$INFO" | cut -d'|' -f1)
 COMMIT=$(echo "$INFO" | cut -d'|' -f2)
 TEST_FILE=$(echo "$INFO" | cut -d'|' -f3)
 TEST_NAME=$(echo "$INFO" | cut -d'|' -f4)
+if [ -z "$TEST_NAME" ]; then
+    echo "$INSTANCE_ID,$REPO,$TEST_FILE,,,,NO_TEST_NAME" >> "$RESULTS"
+    exit 0
+fi
 REPO_NAME=$(echo "$REPO" | cut -d'/' -f2)
 REPO_DIR="$BASE_DIR/$REPO_NAME"
 
@@ -71,8 +75,8 @@ for CFG in pytest.ini setup.cfg tox.ini; do
         cp "$CFG" "$CFG.bak"
         sed -i "s|^testpaths.*|testpaths = $TEST_FILE|" "$CFG"
         source ~/xarray/ipflakies-env/bin/activate
-        pip install -e . > /dev/null 2>&1
-        pip install Cython "numpy<2.0" > /dev/null 2>&1
+        pip install -e . --break-system-packages > /dev/null 2>&1
+        pip install Cython "numpy<2.0" --break-system-packages > /dev/null 2>&1
         IPF_OUT=$(timeout 300 env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m ipflakies -i 10 2>&1)
         FLAKY_LINE=$(echo "$IPF_OUT" | grep -oE '^[0-9]+ flaky')
         IPFLAKIES_RESULT=$(echo "$FLAKY_LINE" | grep -oE '^[0-9]+')
