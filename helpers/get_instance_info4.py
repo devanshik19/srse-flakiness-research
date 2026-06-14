@@ -1,5 +1,4 @@
 import sys, json, re
-from datasets import load_dataset
 
 instance_id = sys.argv[1]
 
@@ -19,8 +18,10 @@ test_file = file_match.group(1) if file_match else ""
 func_match = re.search(r'\+def (test_\w+)', agent_patch)
 test_name = func_match.group(1) if func_match else ""
 
-ds = load_dataset("princeton-nlp/SWE-bench_Verified", split="test")
-row = next((r for r in ds if r["instance_id"] == instance_id), None)
+with open("/home/dev4nshik/swebench_lookup.json") as f:
+    lookup = json.load(f)
+
+row = lookup.get(instance_id)
 if row is None:
     print("NOTFOUND"); sys.exit(0)
 
@@ -28,3 +29,4 @@ with open(f"/home/dev4nshik/patches/{instance_id}_golden.patch", "w") as out:
     out.write(row["patch"])
 
 print(f"{row['repo']}|{row['base_commit']}|{test_file}|{test_name}")
+

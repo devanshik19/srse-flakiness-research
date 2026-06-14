@@ -52,7 +52,7 @@ PASS_COUNT=0
 FAIL_COUNT=0
 
 for i in $(seq 1 100); do
-    if PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 timeout 60 python3 -m pytest "${TEST_FILE}::${TEST_NAME}" --assert=plain -q > "$LOG_DIR/${INSTANCE_ID}_run${i}.log" 2>&1; then
+    if PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 timeout 60 ~/xarray/ipflakies-env/bin/python3 -m pytest "${TEST_FILE}::${TEST_NAME}" --assert=plain -q > "$LOG_DIR/${INSTANCE_ID}_run${i}.log" 2>&1; then
         echo "$i,PASSED" >> "$RUN_LOG"
         PASS_COUNT=$((PASS_COUNT+1))
     else
@@ -77,10 +77,14 @@ for CFG in pytest.ini setup.cfg tox.ini; do
         source ~/xarray/ipflakies-env/bin/activate
         pip install -e . --break-system-packages > /dev/null 2>&1
         pip install Cython "numpy<2.0" --break-system-packages > /dev/null 2>&1
-        IPF_OUT=$(timeout 300 env PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -m ipflakies -i 10 2>&1)
-        FLAKY_LINE=$(echo "$IPF_OUT" | grep -oE '^[0-9]+ flaky')
-        IPFLAKIES_RESULT=$(echo "$FLAKY_LINE" | grep -oE '^[0-9]+')
-        [ -z "$IPFLAKIES_RESULT" ] && IPFLAKIES_RESULT="ERROR"
+        IPF_LOG="$LOG_DIR/${INSTANCE_ID}_ipflakies.log"
+	COLUMNS=80 PYTHONUNBUFFERED=1 timeout 900 python3 -m ipflakies -i 10 > "$IPF_LOG" 2>&1
+	if [ -f "ipflakies_result/flakies.json" ]; then
+    		IPFLAKIES_RESULT=$(python3 -c "import json; data=json.load(open('ipflakies_result/flakies.json')); print(len([k for k in data if k != 'time']))")
+    		[ -z "$IPFLAKIES_RESULT" ] && IPFLAKIES_RESULT="ERROR"
+	else
+    		IPFLAKIES_RESULT="NO_RESULT_FILE"
+	fi
         deactivate
         mv "$CFG.bak" "$CFG"
         break
