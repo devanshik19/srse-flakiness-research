@@ -1,0 +1,17 @@
+=== 100-INSTANCE FLAKINESS RUN SUMMARY ===
+
+100x loop (non-deterministic flakiness):
+  ALWAYS_PASS: 38
+  ALWAYS_FAIL: 54
+  FLAKY (both pass+fail in 100 runs): 0
+  NO_TEST_NAME (couldn't extract test): 8
+
+iPFlakies (order-dependent flakiness):
+  Completed, 0 flaky: 25
+  Completed, FLAGGED flaky: 2
+  NO_RESULT_FILE (couldn't complete): 40
+  SKIPPED (no pytest config found): 25
+
+=== FLAGGED FLAKY (under investigation) ===
+sympy__sympy-24213,sympy/sympy,sympy/physics/units/tests/test_quantities.py,test_collect_factor_and_dimension_with_equivalent_dims_addition,100/100,ALWAYS_PASS,IPF:4
+sympy__sympy-24066,sympy/sympy,sympy/physics/units/tests/test_quantities.py,test_dimensionless_exp_of_derived_units,100/100,ALWAYS_PASS,IPF:3

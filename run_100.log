@@ -1,0 +1,415 @@
+=== pydata__xarray-4075 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-4075 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sympy__sympy-16792 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-16792 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-9698 ===
+=== sympy__sympy-20590 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-20590 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sphinx-doc__sphinx-7454 ===
+Removing ipflakies_result/
+Removing tests/roots/test-ext-autodoc/target/napoleon_google.py
+sphinx-doc__sphinx-7454 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-10449 ===
+=== pydata__xarray-4094 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-4094 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== pydata__xarray-7393 ===
+Removing cache/
+Removing ipflakies_result/
+Removing xarray/tests/test_to_unstacked_single_dim.py
+pydata__xarray-7393 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== sympy__sympy-18763 ===
+Removing cache/
+Removing ipflakies_result/
+Removing sympy/core/tests/test_slots.py
+sympy__sympy-18763 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== pydata__xarray-3151 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-3151 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== scikit-learn__scikit-learn-25931 ===
+Removing sklearn/_loss/_loss.pyx
+Removing sklearn/linear_model/_sag_fast.pyx
+Removing sklearn/linear_model/_sgd_fast.pyx
+Removing sklearn/metrics/_dist_metrics.pxd
+Removing sklearn/metrics/_dist_metrics.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin_classmode.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pyx
+Removing sklearn/utils/_seq_dataset.pxd
+Removing sklearn/utils/_seq_dataset.pyx
+Removing sklearn/utils/_weight_vector.pxd
+Removing sklearn/utils/_weight_vector.pyx
+scikit-learn__scikit-learn-25931 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sphinx-doc__sphinx-9711 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-9711 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sphinx-doc__sphinx-7910 ===
+Removing cache/
+Removing ipflakies_result/
+Removing tests/test_extension_needs_extensions.py
+sphinx-doc__sphinx-7910 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pydata__xarray-6599 ===
+Removing cache/
+Removing ipflakies_result/
+Removing xarray/tests/test_combine_by_coords_nonmonotonic_bystander.py
+pydata__xarray-6599 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sympy__sympy-18189 ===
+=== astropy__astropy-14508 ===
+Removing astropy/io/fits/tests/test_card_float_format.py
+Removing ipflakies_result/
+astropy__astropy-14508 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-21379 ===
+Removing cache/
+Removing ipflakies_result/
+Removing sympy/printing/tests/test_latex_subs_parenthesize.py
+sympy__sympy-21379 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== scikit-learn__scikit-learn-14983 ===
+Removing cache/
+Removing ipflakies_result/
+scikit-learn__scikit-learn-14983 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-19637 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-19637 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sphinx-doc__sphinx-9673 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-9673 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== sphinx-doc__sphinx-8475 ===
+Removing cache/
+Removing ipflakies_result/
+Removing tests/roots/test-ext-autodoc/target/napoleon_google.py
+sphinx-doc__sphinx-8475 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pytest-dev__pytest-7982 ===
+Cloning into '/home/dev4nshik/swt_runs/pytest'...
+pytest-dev__pytest-7982 -> 100x:ALWAYS_PASS (100/100), iPFlakies:SKIPPED
+=== pytest-dev__pytest-7432 ===
+pytest-dev__pytest-7432 -> 100x:ALWAYS_PASS (100/100), iPFlakies:SKIPPED
+=== sphinx-doc__sphinx-8621 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8621 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pydata__xarray-7233 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-7233 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sympy__sympy-24213 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-24213 -> 100x:ALWAYS_PASS (100/100), iPFlakies:4
+=== astropy__astropy-7336 ===
+Removing astropy/io/fits/tests/test_card_float_format.py
+Removing ipflakies_result/
+astropy__astropy-7336 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-10673 ===
+Removing ipflakies_result/
+Removing tests/test_kbd_transform.py
+sphinx-doc__sphinx-10673 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sympy__sympy-22714 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-22714 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== astropy__astropy-13977 ===
+Removing ipflakies_result/
+astropy__astropy-13977 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pytest-dev__pytest-10081 ===
+pytest-dev__pytest-10081 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-19040 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-19040 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sphinx-doc__sphinx-8721 ===
+Removing cache/
+Removing ipflakies_result/
+Removing tests/roots/test-toctree-special/
+Removing tests/test_toctree_special.py
+sphinx-doc__sphinx-8721 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pydata__xarray-3305 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-3305 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== pylint-dev__pylint-6528 ===
+Cloning into '/home/dev4nshik/swt_runs/pylint'...
+pylint-dev__pylint-6528 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== sympy__sympy-20438 ===
+Removing cache/
+Removing ipflakies_result/
+Removing sympy/polys/tests/test_issue_18895.py
+sympy__sympy-20438 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== sympy__sympy-18698 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-18698 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== mwaskom__seaborn-3069 ===
+Cloning into '/home/dev4nshik/swt_runs/seaborn'...
+mwaskom__seaborn-3069 -> 100x:ALWAYS_PASS (100/100), iPFlakies:SKIPPED
+=== sympy__sympy-15976 ===
+=== pydata__xarray-3677 ===
+Removing cache/
+Removing ipflakies_result/
+pydata__xarray-3677 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== astropy__astropy-13398 ===
+Removing astropy/units/tests/test_quantity_array_ufunc_notimplemented.py
+Removing ipflakies_result/
+astropy__astropy-13398 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-25232 ===
+Removing sklearn/_loss/_loss.pyx
+Removing sklearn/linear_model/_sag_fast.pyx
+Removing sklearn/linear_model/_sgd_fast.pyx
+Removing sklearn/metrics/_dist_metrics.pxd
+Removing sklearn/metrics/_dist_metrics.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin_classmode.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pyx
+Removing sklearn/utils/_seq_dataset.pxd
+Removing sklearn/utils/_seq_dataset.pyx
+Removing sklearn/utils/_weight_vector.pxd
+Removing sklearn/utils/_weight_vector.pyx
+scikit-learn__scikit-learn-25232 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== sympy__sympy-14711 ===
+Removing cache/
+Removing ipflakies_result/
+Removing sympy/polys/tests/test_sqf_consistency.py
+sympy__sympy-14711 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-15875 ===
+sympy__sympy-15875 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== pylint-dev__pylint-4970 ===
+Removing cache/
+Removing ipflakies_result/
+Removing tests/lint/test_expand_modules_recursive_ignores.py
+pylint-dev__pylint-4970 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:0
+=== pallets__flask-5014 ===
+Cloning into '/home/dev4nshik/swt_runs/flask'...
+pallets__flask-5014 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-15345 ===
+Removing cache/
+Removing ipflakies_result/
+Removing sympy/core/tests/test_issue_15872_is_zero_add.py
+sympy__sympy-15345 -> 100x:ALWAYS_PASS (100/100), iPFlakies:SKIPPED
+=== sphinx-doc__sphinx-8269 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8269 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-24066 ===
+sympy__sympy-24066 -> 100x:ALWAYS_PASS (100/100), iPFlakies:3
+=== sympy__sympy-15599 ===
+=== sympy__sympy-12489 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-12489 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-24562 ===
+Removing sympy/combinatorics/tests/test_permutation_subclass.py
+sympy__sympy-24562 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== pytest-dev__pytest-5840 ===
+Removing testing/test_unittest_pdb_skip_class.py
+pytest-dev__pytest-5840 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-8035 ===
+Removing ipflakies_result/
+Removing tests/roots/test-linkcheck-anchors-http-error/
+sphinx-doc__sphinx-8035 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-20801 ===
+Removing cache/
+Removing ipflakies_result/
+sympy__sympy-20801 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-24539 ===
+Removing ipflakies_result/
+sympy__sympy-24539 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== astropy__astropy-14182 ===
+Removing astropy/coordinates/builtin_frames/itrs_observed_transforms.py
+Removing astropy/coordinates/tests/test_itrs_observed_transforms_direct.py
+Removing ipflakies_result/
+astropy__astropy-14182 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-9461 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-9461 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-22456 ===
+Removing ipflakies_result/
+sympy__sympy-22456 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-7889 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-7889 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pytest-dev__pytest-10356 ===
+Removing ipflakies_result/
+Removing testing/test_unique_path_casing.py
+pytest-dev__pytest-10356 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pytest-dev__pytest-5631 ===
+Removing testing/test_mark_mro_inheritance.py
+pytest-dev__pytest-5631 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-8548 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8548 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-23950 ===
+Removing ipflakies_result/
+sympy__sympy-23950 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-13124 ===
+Removing cache/
+Removing ipflakies_result/
+scikit-learn__scikit-learn-13124 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sphinx-doc__sphinx-9320 ===
+Removing ipflakies_result/
+Removing tests/roots/test-ext-autodoc/target/inherited_attrs.py
+Removing tests/test_ext_autodoc_inherited_attributes.py
+sphinx-doc__sphinx-9320 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-26323 ===
+Removing sklearn/_loss/_loss.pyx
+Removing sklearn/linear_model/_sag_fast.pyx
+Removing sklearn/metrics/_dist_metrics.pxd
+Removing sklearn/metrics/_dist_metrics.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pyx
+Removing sklearn/utils/_seq_dataset.pxd
+Removing sklearn/utils/_seq_dataset.pyx
+Removing sklearn/utils/_weight_vector.pxd
+Removing sklearn/utils/_weight_vector.pyx
+scikit-learn__scikit-learn-26323 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-17655 ===
+Removing ipflakies_result/
+sympy__sympy-17655 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-16886 ===
+=== scikit-learn__scikit-learn-14894 ===
+Removing ipflakies_result/
+scikit-learn__scikit-learn-14894 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== scikit-learn__scikit-learn-13439 ===
+Removing sklearn/_loss/_loss.pyx
+Removing sklearn/linear_model/_sag_fast.pyx
+Removing sklearn/linear_model/_sgd_fast.pyx
+Removing sklearn/metrics/_dist_metrics.pxd
+Removing sklearn/metrics/_dist_metrics.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_argkmin_classmode.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_base.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_datasets_pair.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_middle_term_computer.pyx
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pxd
+Removing sklearn/metrics/_pairwise_distances_reduction/_radius_neighbors.pyx
+Removing sklearn/utils/_seq_dataset.pxd
+Removing sklearn/utils/_seq_dataset.pyx
+Removing sklearn/utils/_weight_vector.pxd
+Removing sklearn/utils/_weight_vector.pyx
+scikit-learn__scikit-learn-13439 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pylint-dev__pylint-6903 ===
+Removing cache/
+Removing ipflakies_result/
+pylint-dev__pylint-6903 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-8551 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8551 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-13877 ===
+Removing ipflakies_result/
+sympy__sympy-13877 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pydata__xarray-4687 ===
+Removing cache/
+Removing ipflakies_result/
+Removing xarray/tests/test_merge_dataset_dataarray.py
+pydata__xarray-4687 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-9281 ===
+Removing ipflakies_result/
+Removing tests/roots/test-domain-py-typed-xref/
+Removing tests/test_domain_py_typed_xref.py
+sphinx-doc__sphinx-9281 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pytest-dev__pytest-7571 ===
+Removing ipflakies_result/
+pytest-dev__pytest-7571 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-20916 ===
+Removing sympy/matrices/tests/test_determinant_bareiss_nan.py
+sympy__sympy-20916 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== pydata__xarray-4356 ===
+Removing ipflakies_result/
+Removing xarray/tests/test_where_attrs.py
+pydata__xarray-4356 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-21847 ===
+Removing ipflakies_result/
+sympy__sympy-21847 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-11310 ===
+Removing sklearn/tests/test_pipeline_len.py
+scikit-learn__scikit-learn-11310 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pylint-dev__pylint-8898 ===
+Removing ipflakies_result/
+Removing tests/test_cpu_count_cgroup.py
+pylint-dev__pylint-8898 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-14976 ===
+Removing ipflakies_result/
+sympy__sympy-14976 -> 100x:ALWAYS_PASS (100/100), iPFlakies:SKIPPED
+=== astropy__astropy-14309 ===
+Removing ipflakies_result/
+astropy__astropy-14309 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pydata__xarray-6461 ===
+Removing ipflakies_result/
+Removing xarray/tests/test_min_count_multi_axes.py
+pydata__xarray-6461 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-8459 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8459 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== astropy__astropy-7166 ===
+Removing astropy/io/registry/tests/test_identify_format_fits_args.py
+Removing ipflakies_result/
+M	astropy_helpers
+astropy__astropy-7166 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-14710 ===
+Removing sklearn/model_selection/tests/test_search_refit_time.py
+scikit-learn__scikit-learn-14710 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== psf__requests-1921 ===
+Cloning into '/home/dev4nshik/swt_runs/requests'...
+psf__requests-1921 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pytest-dev__pytest-7490 ===
+Removing testing/test_logging_caplog_restore.py
+pytest-dev__pytest-7490 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pydata__xarray-2905 ===
+Removing ipflakies_result/
+Removing xarray/tests/test_where_keep_attrs_scalar.py
+pydata__xarray-2905 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-14496 ===
+Removing sklearn/ensemble/_hist_gradient_boosting/tests/test_string_target_early_stopping.py
+scikit-learn__scikit-learn-14496 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pytest-dev__pytest-7236 ===
+Removing testing/test_dynamic_xfail.py
+pytest-dev__pytest-7236 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-11445 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-11445 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-12419 ===
+sympy__sympy-12419 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-21596 ===
+=== astropy__astropy-14096 ===
+Removing astropy/utils/tests/test_inheritdocstrings_property.py
+Removing ipflakies_result/
+astropy__astropy-14096 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-10323 ===
+Removing tests/test_prepend_prolog_role_heading.py
+sphinx-doc__sphinx-10323 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-20154 ===
+=== scikit-learn__scikit-learn-15100 ===
+scikit-learn__scikit-learn-15100 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
