@@ -1,0 +1,38 @@
+=== sympy-24213 POLLUTER FINDING ===
+Agent test: test_collect_factor_and_dimension_with_equivalent_dims_addition
+Baseline (no agent test): 3 flaky [test_convert_to, test_Quantity_definition, test_mul_div]
+With agent test: 4 flaky [+ test_dimensional_expr_of_derivative]
+test_dimensional_expr_of_derivative is pre-existing (line 390), stable in baseline.
+=> Agent's test introduces order-dependent flakiness in a previously-stable test.
+
+=== sympy-24066 CONTRAST (pre-existing, agent innocent) ===
+Agent test: test_dimensionless_exp_of_derived_units
+Baseline: 3 flaky / With agent: 3 flaky (same) => agent had no effect.
+
+=== DEVELOPER TEST COMPARISON (sympy-24213) ===
+Developer test: test_issue_24211 (from test_patch, same bug as agent test)
+With developer test: 3 flaky [test_convert_to, test_Quantity_definition, test_mul_div]
+=> test_dimensional_expr_of_derivative is NOT flaky with developer test.
+KEY RESULT: Agent test pollutes (4 flaky), developer test does NOT (3 flaky).
+Both tests verify the same bug (issue 24211 / _collect_factor_and_dimension),
+but the agent test introduces order-dependence the human-written test does not.
+
+=== DEVELOPER TEST COMPARISON (sympy-24213) ===
+Developer test: test_issue_24211 (from test_patch, same bug as agent test)
+With developer test: 3 flaky [test_convert_to, test_Quantity_definition, test_mul_div]
+=> test_dimensional_expr_of_derivative is NOT flaky with developer test.
+KEY RESULT: Agent test pollutes (4 flaky), developer test does NOT (3 flaky).
+
+=== MECHANISM CONFIRMED (sympy-24213) ===
+Root cause: GLOBAL NAME COLLISION on Quantity('t1').
+- Victim test_dimensional_expr_of_derivative (line 393) creates Quantity('t1').
+- Agent test (line 609) ALSO creates Quantity('t1') -> collides in global SI registry.
+- Quantity() mutates global SI registry permanently; execution order decides which
+  test's settings win -> victim becomes order-dependent flaky.
+Controlled proof:
+  - Agent test as-is (t1):        4 flaky (victim polluted)
+  - Agent test renamed (t1_agent): 3 flaky (pollution GONE)
+  - Commenting equivalent_dims line: still 4 (ruled out as cause)
+Developer test for SAME bug used 'T1' (uppercase) -> no collision -> 3 flaky (clean).
+CONCLUSION: Agent introduced order-dependent flakiness via a colliding global
+quantity name; the human-written test for the identical bug avoided it by naming.
