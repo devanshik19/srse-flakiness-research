@@ -36,3 +36,4 @@ Controlled proof:
 Developer test for SAME bug used 'T1' (uppercase) -> no collision -> 3 flaky (clean).
 CONCLUSION: Agent introduced order-dependent flakiness via a colliding global
 quantity name; the human-written test for the identical bug avoided it by naming.
+CANDIDATE POLLUTER: sphinx-doc__sphinx-9673 - IPF:1, agent test ALWAYS_PASS. Needs with/without experiment to confirm if agent test is the polluter or pre-existing flakiness.
