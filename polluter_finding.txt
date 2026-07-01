@@ -37,3 +37,27 @@ Developer test for SAME bug used 'T1' (uppercase) -> no collision -> 3 flaky (cl
 CONCLUSION: Agent introduced order-dependent flakiness via a colliding global
 quantity name; the human-written test for the identical bug avoided it by naming.
 CANDIDATE POLLUTER: sphinx-doc__sphinx-9673 - IPF:1, agent test ALWAYS_PASS. Needs with/without experiment to confirm if agent test is the polluter or pre-existing flakiness.
+sphinx-9673: NOT a polluter. Baseline (no agent)=1 flaky, with agent=1 flaky. Pre-existing flakiness in test_autodoc_typehints_description. Agent innocent (like sympy-24066).
+sphinx-9281: CONFIRMED POLLUTER. Baseline (golden only)=0 flaky, with agent test=1 flaky. Agent test introduces order-dependent flakiness (0->1). Test: test_TypeAliasNamespace in test_util_inspect.py. SECOND confirmed polluter (after sympy-24213), different repo.
+sphinx-7757: CONFIRMED POLLUTER. Baseline (golden only)=0, with agent=1. Test: test_signature_from_str_positional_only_defaults in test_util_inspect.py. THIRD confirmed polluter.
+sphinx-8721: CONFIRMED POLLUTER. Baseline (golden only)=0 flaky, with agent=1. Test: test_viewcode_does_not_create_epub_pages_by_default in test_ext_viewcode.py. FOURTH confirmed polluter.
+sphinx-8595: NOT a polluter. Baseline=1, with agent=1. Pre-existing flakiness in test_autodoc_typed_instance_variables. Agent innocent. (Agent test itself was ALWAYS_FAIL anyway.)
+sphinx-8475: NOT a polluter (investigated WITH network). Baseline=4, with agent=4. The 4 victims are linkcheck network tests (test_defaults, test_anchors_ignored, test_connect_to_selfsigned_fails) - flakiness is network-timing, not order/pollution. Wrong kind of flakiness. Agent innocent.
+VERIFIED sphinx-8721: REAL POLLUTER (properly tested). Fresh containers, -i 30 both sides. Baseline (golden only, agent test confirmed ABSENT) = 0 flaky. With agent (test present) = 1 flaky, victim = test_viewcode. Clean 0->1. Agent test test_viewcode_does_not_create_epub_pages_by_default pollutes test_viewcode. This one SURVIVED the rigorous recheck (unlike 9281, 7757 which were innocent).
+sphinx-8721 AGENT vs DEV (all -i 30, clean containers): Baseline=0. Agent test=1 flaky (victim=test_viewcode, a PRE-EXISTING test -> classic pollution). Developer tests=2 flaky (victims=test_viewcode_epub_default + test_viewcode_epub_enabled, which are the DEV's OWN new tests). So BOTH introduce order-dependence, but differently: agent breaks an existing test; dev's own new tests are flaky. NOT a clean 'agent bad/human good' contrast like sympy. Polluter->victim mechanism for each still TBD.
+
+=== sphinx-8721 MECHANISM PROVEN ===
+Agent test: test_viewcode_does_not_create_epub_pages_by_default (uses testroot ext-viewcode)
+Confirmed via controlled experiments (all -i 30, verified test actually RUNS each time):
+1. Agent test on testroot 'ext-viewcode' -> victim = test_viewcode (which uses ext-viewcode)
+2. Agent test moved to testroot 'ext-viewcode-find' (test still passes) -> victim MOVES to
+   test_local_source_files (which uses ext-viewcode-find)
+=> The agent test pollutes whichever pre-existing test SHARES its testroot directory.
+Mechanism: shared testroot = shared build dir / cached sphinx env (env._viewcode_modules).
+The agent test's build leaves state in the shared testroot; a stable test built from the
+same source dir becomes order-dependent flaky depending on run order.
+Ruled out: srcdir-reuse line (removing it didn't fix it); epub build (html build alone
+pollutes). The cause is the SHARED TESTROOT build state.
+NOTE ON METHOD: batch used -i 10 which gave false positives (test_isproperty cases 9281/7757
+were actually pre-existing flakiness caught at -i 30 baseline). Correct protocol: fresh
+containers + verify agent test present/absent + -i 30 both sides.
