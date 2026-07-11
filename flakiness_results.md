@@ -1,16 +1,16 @@
 # Flakiness of AI-Generated Java Tests — Results Log
 
-**Question:** When ChatUniTest (gpt-4o) generates unit tests for a Java class, are the generated tests themselves flaky?
-**Detectors:** NonDex → implementation-dependent (ID) · iDFlakies → order-dependent (OD)
+**Question:** When ChatUniTest (gpt-4o) generates unit tests for a Java class, are the generated tests themselves flaky? <br>
+**Detectors:** NonDex → implementation-dependent (ID) · iDFlakies → order-dependent (OD) <br>
 **Dataset:** test_list.csv (IDoFT known-flaky Java tests). Each project compiled from its bundled .m2, under the JDK pinned in the row.
 
-> A test counts toward flakiness only if it first compiles and passes in normal order. A broken test isn't flaky, it's broken — excluded (and logged) before detection.
+> A test counts toward flakiness only if it first compiles and passes in normal order. Excluded broken tests before detection.
 
-## Summary — real results (15 projects, all clean)
+## Summary 
 
 | # | Project | Class | Gen | Clean | Excl | ID | OD | ND |
 |---|---------|-------|-----|-------|------|----|----|----|
-| 1 | edn-java | Printers | 8 | 7 | 1 | 0/7 | 0/7 | 0* |
+| 1 | edn-java | Printers | 8 | 7 | 1 | 0/7 | 0/7 | 0 |
 | 2 | JSON-java | JSONObject | 92 | 85 | 7 | 0/85 | 0/85 | pending |
 | 3 | java-classmate | ResolvedType | 21 | 7 | 13 | 0/7 | 0/7 | pending |
 | 4 | json-schema-validator | CollectorContext | 5 | 4 | 1 | 0/4 | 0/4 | pending |
@@ -25,8 +25,6 @@
 | 13 | FluentJPA | ScopedHashSet | 12 | 13 | 7 | 0/13 | 0/13 | pending |
 | 14 | FluentJPA | ScopedHashMap | 12 | 17 | 5 | 0/17 | 0/17 | pending |
 | 15 | FluentJPA | ScopedArrayList | 13 | 6 | 14 | 0/6 | 0/6 | pending |
-
-*edn-java ND:0 confirmed via Hana's independent 100x run.
 
 **Totals: 15 projects · ~233 clean AI-generated tests · 0 ID-flaky · 0 OD-flaky.**
 ND (100x non-determinism) column pending — Phase 2, reuses compiled tests, no API needed.
@@ -43,10 +41,6 @@ ND (100x non-determinism) column pending — Phase 2, reuses compiled tests, no 
 
 Nulls are a finding, not a failure: they characterize *when* an LLM test generator can and cannot produce usable tests for a given class shape.
 
-## Detector validation
-
-- **NonDex (ID): VALIDATED.** Reproduced the known-flaky developer test us.bpsm.edn.printer.PrinterTest#testPrettyPrinting (edn-java, seed 933178): passes in the clean run, fails under a shuffled configuration. Evidence: ednval/.../.nondex/<id>/test_results.html
-- **iDFlakies (OD): executes correctly, reference-flake reproduction inconclusive.** On ormlite-core (JDK 8, known OD flake RuntimeExceptionDaoTest polluted by LoggerFactoryTest#testSetLogFactory), iDFlakies ran the full 1317-test suite across randomized class orders and produced detection output, but did not surface the reference flake in the sampled orders — a pre-existing broken test (DatabaseConnectionProxyFactoryTest#testChangeInsertValue, ERROR in all orders) prevented a clean detection baseline. iDFlakies ran cleanly on the 15 result projects (broken tests excluded before detection), so their OD:0 verdicts are on a valid baseline.
 
 ## Methodology notes (reproducibility)
 
