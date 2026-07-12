@@ -11,20 +11,20 @@
 | # | Project | Class | Gen | Clean | Excl | ID | OD | ND |
 |---|---------|-------|-----|-------|------|----|----|----|
 | 1 | edn-java | Printers | 8 | 7 | 1 | 0/7 | 0/7 | 0 |
-| 2 | JSON-java | JSONObject | 92 | 85 | 7 | 0/85 | 0/85 | pending |
-| 3 | java-classmate | ResolvedType | 21 | 7 | 13 | 0/7 | 0/7 | pending |
-| 4 | json-schema-validator | CollectorContext | 5 | 4 | 1 | 0/4 | 0/4 | pending |
-| 5 | jmeter-maven-plugin | TestConfiguration | 1 | 1 | 0 | 0/1 | 0/1 | pending |
-| 6 | emobility-smart-charging | FuseTree | 9 | 9 | 0 | 0/9 | 0/9 | pending |
-| 7 | jmeter-datadog | DatadogBackendClient | 2 | 2 | 0 | 0/2 | 0/2 | pending |
-| 8 | fosstars-rating-core | VulnerabilitiesFromOwaspDependencyCheck | 5 | 6 | 1 | 0/6 | 0/6 | pending |
-| 9 | javacpp | tools.Info | 38 | 53 | 2 | 0/53 | 0/53 | pending |
-| 10 | javacpp | ByteIndexer | 11 | 12 | 14 | 0/12 | 0/12 | pending |
-| 11 | javacpp | ULongIndexer | 13 | 10 | 19 | 0/10 | 0/10 | pending |
-| 12 | snowflake-jdbc | SnowflakeConnectionV1 | 2 | 1 | 10 | 0/1 | 0/1 | pending |
-| 13 | FluentJPA | ScopedHashSet | 12 | 13 | 7 | 0/13 | 0/13 | pending |
-| 14 | FluentJPA | ScopedHashMap | 12 | 17 | 5 | 0/17 | 0/17 | pending |
-| 15 | FluentJPA | ScopedArrayList | 13 | 6 | 14 | 0/6 | 0/6 | pending |
+| 2 | JSON-java | JSONObject | 92 | 85 | 7 | 0/85 | 0/85 | 0 |
+| 3 | java-classmate | ResolvedType | 21 | 7 | 13 | 0/7 | 0/7 | 0 |
+| 4 | json-schema-validator | CollectorContext | 5 | 4 | 1 | 0/4 | 0/4 | 0 |
+| 5 | jmeter-maven-plugin | TestConfiguration | 1 | 1 | 0 | 0/1 | 0/1 | 0 |
+| 6 | emobility-smart-charging | FuseTree | 9 | 9 | 0 | 0/9 | 0/9 | 0 |
+| 7 | jmeter-datadog | DatadogBackendClient | 2 | 2 | 0 | 0/2 | 0/2 | 0 |
+| 8 | fosstars-rating-core | VulnerabilitiesFromOwaspDependencyCheck | 5 | 6 | 1 | 0/6 | 0/6 | 0 |
+| 9 | javacpp | tools.Info | 38 | 53 | 2 | 0/53 | 0/53 | 0 |
+| 10 | javacpp | ByteIndexer | 11 | 12 | 14 | 0/12 | 0/12 | 0 |
+| 11 | javacpp | ULongIndexer | 13 | 10 | 19 | 0/10 | 0/10 | 0 |
+| 12 | snowflake-jdbc | SnowflakeConnectionV1 | 2 | 1 | 10 | 0/1 | 0/1 | 0 |
+| 13 | FluentJPA | ScopedHashSet | 12 | 13 | 7 | 0/13 | 0/13 | 0 |
+| 14 | FluentJPA | ScopedHashMap | 12 | 17 | 5 | 0/17 | 0/17 | 0 |
+| 15 | FluentJPA | ScopedArrayList | 13 | 6 | 14 | 0/6 | 0/6 | 0 |
 
 **Totals: 15 projects · ~233 clean AI-generated tests · 0 ID-flaky · 0 OD-flaky.**
 ND (100x non-determinism) column pending — Phase 2, reuses compiled tests, no API needed.
