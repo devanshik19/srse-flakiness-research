@@ -4,7 +4,6 @@
 **Dataset:** test_list.csv (IDoFT known-flaky Java tests). Each project compiled from its bundled .m2, under the JDK pinned in the row.
 > A test counts toward flakiness only if it first compiles and passes in normal order. Broken tests are excluded (and logged) before detection.
 
-## Headline
 Generated tests for **36 classes across ~20 projects**. **35 came back completely clean (0 ID, 0 OD, 0 ND). 1 class produced a flaky test** — marine-api `Time` (details below).
 
 ## Summary
@@ -67,14 +66,9 @@ The LLM wrote a test that asserts on a value depending on what time it is when t
 | Stateful void methods — nothing to assert | commons-lang StopWatch |
 | Project build requires a plugin that fails on bundled sources | mybatis-3 (maven-pdf-plugin) |
 
-Nulls are a finding, not a failure: they characterize *when* an LLM test generator can and cannot produce usable tests for a given class shape.
-
 ## Detector validation
 - **NonDex (ID):** ran against a known-flaky developer test (edn-java `PrinterTest#testPrettyPrinting`, dataset seed 933178) — failed it under a shuffled configuration, passed it clean. Detects real ID flakiness.
 - **iDFlakies (OD):** caught the marine-api `Time` flake live on generated tests and reproduced it. A live positive detection is stronger validation than a reference test.
-
-## Note: build plugins can hide good tests
-Several classes first looked like nulls ("won't compile" / "jar not built") but were actually fine — project build plugins were rejecting the generated tests before they could run: Apache RAT (checks every file for a license header), animal-sniffer (API signature check), maven-pdf-plugin. After skipping those, **8 classes that looked like nulls produced clean results** (commons-lang, commons-collections, maven-dependency-plugin). Worth knowing: LLM-generated tests have no license header, and some project builds fail the whole build over that.
 
 ## Methodology notes (reproducibility)
 1. Pin JDK per row for compile + generate + detect.
