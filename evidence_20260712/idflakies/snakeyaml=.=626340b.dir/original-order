@@ -1,0 +1,3 @@
+org.yaml.snakeyaml.representer.SafeRepresenter_addClassTag_1_0_Test#testAddClassTagReplacesExistingTag()
+org.yaml.snakeyaml.representer.SafeRepresenter_addClassTag_1_0_Test#testAddClassTagSuccessfullyAddsTag()
+org.yaml.snakeyaml.representer.SafeRepresenter_addClassTag_1_0_Test#testAddClassTagWithNullTagThrowsException()

@@ -1,0 +1,211 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mco.streamx.fluent:fluent-jpa[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Java Fluent JPA 1.2.2-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mfluent-jpa[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] Copying 3 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.8.1:compile[m [1m(default-compile)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 28 source files to /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/target/classes
+[[1;34mINFO[m] /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/src/main/java/co/streamx/fluent/JPA/FluentQueryImpl.java: Some input files use or override a deprecated API.
+[[1;34mINFO[m] /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/src/main/java/co/streamx/fluent/JPA/FluentQueryImpl.java: Recompile with -Xlint:deprecation for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:testResources[m [1m(default-testResources)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] Copying 12 resources from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.8.1:testCompile[m [1m(default-testCompile)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/target/test-classes
+[[1;34mINFO[m] /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/src/test/java/co/streamx/fluent/JPA/util/ScopedHashMap_getOrDefault_5_0_Test.java: Some input files use unchecked or unsafe operations.
+[[1;34mINFO[m] /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/src/test/java/co/streamx/fluent/JPA/util/ScopedHashMap_getOrDefault_5_0_Test.java: Recompile with -Xlint:unchecked for details.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mfluent-jpa[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[m @ [36mfluent-jpa[0;1m ---[m
+INFO: The original argline is: 
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_nRAZPKrR6zKHHpMRvepTeU79UqEpLzjDssWC2pCBNA=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 17, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexExecid=l+xLhDu66eWQnMgIA3FPkczWZuiWzTN1HAv8Rfe2Fxk=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 17, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexExecid=PCzPxH3qMI1AO4NoXJoULAZ+FG0pxBYfaIOXJ4vOX0=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 17, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex
+nondexExecid=Mquu5dszASXsCy02AyPNo+kOBHrDUtwk90j3GGOiXEU=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_size_2_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsValue_1_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_remove_6_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_values_11_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_containsKey_0_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_getOrDefault_5_0_Test[m
+[[1;34mINFO[m] Running co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in co.streamx.fluent.JPA.util.[1mScopedHashMap_get_4_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 17, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] NonDex SUMMARY:
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexExecid=l+xLhDu66eWQnMgIA3FPkczWZuiWzTN1HAv8Rfe2Fxk= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexExecid=PCzPxH3qMI1AO4NoXJoULAZ+FG0pxBYfaIOXJ4vOX0= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex" -DnondexExecid=Mquu5dszASXsCy02AyPNo+kOBHrDUtwk90j3GGOiXEU= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] All tests pass without NonDex shuffling
+[[1;34mINFO[m] ####################
+[[1;34mINFO[m] Across all seeds:
+[[1;34mINFO[m] Test results can be found at: 
+[[1;34mINFO[m] file:///home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/.nondex/l+xLhDu66eWQnMgIA3FPkczWZuiWzTN1HAv8Rfe2Fxk=/test_results.html
+[[1;34mINFO[m] [NonDex] The id of this run is: l+xLhDu66eWQnMgIA3FPkczWZuiWzTN1HAv8Rfe2Fxk=
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11.376 s
+[[1;34mINFO[m] Finished at: 2026-07-11T00:43:21Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

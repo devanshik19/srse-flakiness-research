@@ -1,0 +1,8 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.astropy__astropy-7166
+Digest: sha256:93b10f4911a42061dc319ebc757fe48a969173fafe37633ba9377e2475c55389
+Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-7166:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-7166:latest
+39f0a5b03fa791a817bbccd50d8ab5ba0e660c17ec857587a429328a3dd3ee4d
+run_astropy__astropy_7166
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-7166:latest
+Deleted: sha256:93b10f4911a42061dc319ebc757fe48a969173fafe37633ba9377e2475c55389

@@ -1,0 +1,73 @@
+=== [1] com.alibaba.fastjson.serializer.SerializeWriter 03:53 ===
+| ? | SerializeWriter | com.alibaba.fastjson.serializer.SerializeWriter | files:19 | clean:24 | excl:17 | ID:0 | OD:0 | ND:pending | none |
+=== [2] com.alibaba.fastjson.parser.JSONScanner 04:04 ===
+| ? | JSONScanner | com.alibaba.fastjson.parser.JSONScanner | files:3 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [3] com.alibaba.fastjson.util.AntiCollisionHashMap 04:16 ===
+| ? | AntiCollisionHashMap | com.alibaba.fastjson.util.AntiCollisionHashMap | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: all 4 generated test classes broken |
+=== [4] dev.miku.r2dbc.mysql.MySqlConnectionConfiguration 04:23 ===
+| ? | MySqlConnectionConfiguration | dev.miku.r2dbc.mysql.MySqlConnectionConfiguration | files:4 | clean:8 | excl:2 | ID:0 | OD:0 | ND:pending | none |
+=== [5] dev.miku.r2dbc.mysql.ParameterWriter 04:30 ===
+| ? | ParameterWriter | dev.miku.r2dbc.mysql.ParameterWriter | files:9 | clean:10 | excl:0 | ID:0 | OD:0 | ND:pending | none |
+=== [6] dev.miku.r2dbc.mysql.util.InternalArrays 04:42 ===
+| ? | InternalArrays | dev.miku.r2dbc.mysql.util.InternalArrays | files:2 | clean:8 | excl:0 | ID:0 | OD:0 | ND:pending | none |
+=== [7] org.json.JSONArray 04:47 ===
+| ? | JSONArray | org.json.JSONArray | files:28 | clean:68 | excl:8 | ID:0 | OD:0 | ND:pending | none |
+=== [8] org.json.JSONTokener 04:53 ===
+| ? | JSONTokener | org.json.JSONTokener | files:16 | clean:25 | excl:8 | ID:0 | OD:0 | ND:pending | none |
+=== [9] org.json.XML 04:56 ===
+| ? | XML | org.json.XML | files:17 | clean:40 | excl:7 | ID:0 | OD:0 | ND:pending | none |
+=== [10] com.fasterxml.jackson.databind.node.ObjectNode 05:00 ===
+| ? | ObjectNode | com.fasterxml.jackson.databind.node.ObjectNode | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: no tests generated |
+=== [11] com.fasterxml.jackson.databind.util.internal.PrivateMaxEntriesMap 05:11 ===
+| ? | PrivateMaxEntriesMap | com.fasterxml.jackson.databind.util.internal.PrivateMaxEntriesMap | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: no tests generated |
+=== [12] com.fasterxml.jackson.databind.node.ContainerNode 05:23 ===
+| ? | ContainerNode | com.fasterxml.jackson.databind.node.ContainerNode | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: no tests generated |
+=== [13] org.apache.commons.collections4.map.Flat3Map 05:34 ===
+| ? | org.apache.commons.collections4.map.Flat3Map | - | - | - | - | - | - | TIMEOUT/CRASH |
+=== [14] org.apache.commons.collections4.bidimap.AbstractDualBidiMap 05:59 ===
+| ? | org.apache.commons.collections4.bidimap.AbstractDualBidiMap | - | - | - | - | - | - | TIMEOUT/CRASH |
+=== [15] org.apache.commons.collections4.map.SingletonMap 06:24 ===
+| ? | org.apache.commons.collections4.map.SingletonMap | - | - | - | - | - | - | TIMEOUT/CRASH |
+=== [16] org.apache.commons.lang3.time.StopWatch 06:49 ===
+| ? | StopWatch | org.apache.commons.lang3.time.StopWatch | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [17] org.apache.commons.lang3.mutable.MutableShort 06:54 ===
+| ? | MutableShort | org.apache.commons.lang3.mutable.MutableShort | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [18] org.apache.commons.lang3.mutable.MutableByte 06:58 ===
+| ? | MutableByte | org.apache.commons.lang3.mutable.MutableByte | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [19] io.github.classgraph.Resource 06:59 ===
+| ? | Resource | io.github.classgraph.Resource | files:3 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [20] io.github.classgraph.PotentiallyUnmodifiableList 07:11 ===
+| ? | PotentiallyUnmodifiableList | io.github.classgraph.PotentiallyUnmodifiableList | files:12 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [21] nonapi.io.github.classgraph.fastzipfilereader.FastZipEntry 07:15 ===
+| ? | FastZipEntry | nonapi.io.github.classgraph.fastzipfilereader.FastZipEntry | files:1 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [22] com.j256.ormlite.dao.EagerForeignCollection 07:20 ===
+| ? | EagerForeignCollection | com.j256.ormlite.dao.EagerForeignCollection | files:8 | clean:17 | excl:21 | ID:0 | OD:0 | ND:pending | none |
+=== [23] com.j256.ormlite.stmt.Where 07:33 ===
+| ? | Where | com.j256.ormlite.stmt.Where | files:3 | clean:2 | excl:7 | ID:0 | OD:0 | ND:pending | none |
+=== [24] com.j256.ormlite.dao.LazyForeignCollection 07:42 ===
+| ? | LazyForeignCollection | com.j256.ormlite.dao.LazyForeignCollection | files:15 | clean:20 | excl:12 | ID:0 | OD:0 | ND:pending | none |
+=== [25] org.apache.maven.plugins.dependency.utils.DependencySilentLog 07:54 ===
+| ? | DependencySilentLog | org.apache.maven.plugins.dependency.utils.DependencySilentLog | files:13 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: generated tests won't compile |
+=== [26] org.apache.maven.plugins.dependency.exclusion.Coordinates 07:57 ===
+| ? | Coordinates | org.apache.maven.plugins.dependency.exclusion.Coordinates | files:7 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: generated tests won't compile |
+=== [27] org.apache.maven.plugins.dependency.fromConfiguration.ProcessArtifactItemsRequest 08:01 ===
+| ? | ProcessArtifactItemsRequest | org.apache.maven.plugins.dependency.fromConfiguration.ProcessArtifactItemsRequest | files:4 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: generated tests won't compile |
+=== [28] org.apache.ibatis.jdbc.AbstractSQL 08:05 ===
+| ? | AbstractSQL | org.apache.ibatis.jdbc.AbstractSQL | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [29] org.apache.ibatis.session.SqlSessionManager 08:10 ===
+| ? | SqlSessionManager | org.apache.ibatis.session.SqlSessionManager | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [30] org.apache.ibatis.session.defaults.DefaultSqlSession 08:12 ===
+| ? | DefaultSqlSession | org.apache.ibatis.session.defaults.DefaultSqlSession | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: jar not built (pristine pom) |
+=== [31] net.sf.marineapi.example.SentenceListenerExamples 08:13 ===
+| ? | SentenceListenerExamples | net.sf.marineapi.example.SentenceListenerExamples | files:1 | clean:1 | excl:0 | ID:0 | OD:0 | ND:pending | none |
+=== [32] net.sf.marineapi.nmea.parser.SentenceParser 08:17 ===
+| ? | SentenceParser | net.sf.marineapi.nmea.parser.SentenceParser | files:6 | clean:9 | excl:2 | ID:0 | OD:0 | ND:pending | none |
+=== [33] net.sf.marineapi.nmea.util.Time 08:22 ===
+| ? | Time | net.sf.marineapi.nmea.util.Time | files:5 | clean:15 | excl:1 | ID:0 | OD:1 | ND:pending | FLAKY - verify |
+=== [34] jnr.posix.JavaLibCHelper 08:26 ===
+| ? | JavaLibCHelper | jnr.posix.JavaLibCHelper | files:17 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [35] jnr.posix.SolarisFileStat64 08:38 ===
+| ? | SolarisFileStat64 | jnr.posix.SolarisFileStat64 | files:1 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+=== [36] jnr.posix.SolarisFileStat32 08:51 ===
+| ? | SolarisFileStat32 | jnr.posix.SolarisFileStat32 | files:1 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: harness ran 0 tests |
+DONE -> /home/dev4nshik/srse-research/results.md

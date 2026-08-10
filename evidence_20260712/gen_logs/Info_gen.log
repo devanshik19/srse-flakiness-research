@@ -1,0 +1,1034 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36morg.bytedeco:javacpp[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding JavaCPP 1.5.11-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/javacpp
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;34mINFO[m] 
+Parsed classes: 148
+Parsed methods: 2367
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < org.bytedeco.javacpp.tools.Info > ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < pointerTypes > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < cppNames > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < define > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < cast > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < valueTypes > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < javaNames > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < cppTypes > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < linePatterns > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < annotations > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < cast > number 0...
+
+[[1;34mINFO[m] Generating test for method < cast > round 0 ...
+[[1;34mINFO[m] Generating test for method < define > round 0 ...
+[[1;34mINFO[m] Generating test for method < cast > round 0 ...
+[[1;34mINFO[m] Generating test for method < linePatterns > round 0 ...
+[[1;34mINFO[m] Generating test for method < javaNames > round 0 ...
+[[1;34mINFO[m] Generating test for method < valueTypes > round 0 ...
+[[1;34mINFO[m] Generating test for method < annotations > round 0 ...
+[[1;34mINFO[m] Generating test for method < cppTypes > round 0 ...
+[[1;34mINFO[m] Generating test for method < pointerTypes > round 0 ...
+[[1;34mINFO[m] Generating test for method < cppNames > round 0 ...
+[[1;34mINFO[m] Test for method < valueTypes > compilation failed round 0
+[[1;34mINFO[m] Test for method < define > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < define > round 1 ...
+[[1;34mINFO[m] Test for method < linePatterns > compilation failed round 0
+[[1;34mINFO[m] Test for method < annotations > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < annotations > round 1 ...
+[[1;34mINFO[m] Fixing test for method < valueTypes > round 1 ...
+[[1;34mINFO[m] Fixing test for method < linePatterns > round 1 ...
+[[1;34mINFO[m] Test for method < cppNames > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < cppNames > round 1 ...
+
+Test run finished after 722 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+
+Test run finished after 721 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+
+Test run finished after 722 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < cast > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < cast > round 1 ...
+[[1;34mINFO[m] Test for method < cast > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < cast > round 1 ...
+[[1;34mINFO[m] Test for method < javaNames > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < cppTypes > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < pointerTypes > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < enumerate > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < enumerate > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < define > number 0...
+
+[[1;34mINFO[m] Generating test for method < enumerate > round 0 ...
+[[1;34mINFO[m] Generating test for method < define > round 0 ...
+[[1;34mINFO[m] Generating test for method < enumerate > round 0 ...
+
+Test run finished after 68 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < enumerate > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < flatten > number 0...
+
+[[1;34mINFO[m] Generating test for method < flatten > round 0 ...
+
+Test run finished after 19 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < enumerate > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 5 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < flatten > number 0...
+
+[[1;34mINFO[m] Generating test for method < flatten > round 0 ...
+
+Test run finished after 18 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < define > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 6 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < friendly > number 0...
+
+[[1;34mINFO[m] Generating test for method < friendly > round 0 ...
+[[1;34mINFO[m] Test for method < linePatterns > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < linePatterns > round 2 ...
+
+Test run finished after 19 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < annotations > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 7 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < friendly > number 0...
+
+[[1;34mINFO[m] Generating test for method < friendly > round 0 ...
+[[1;34mINFO[m] Test for method < define > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < define > round 2 ...
+
+Test run finished after 5 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < valueTypes > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 8 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < immutable > number 0...
+
+[[1;34mINFO[m] Generating test for method < immutable > round 0 ...
+[[1;34mINFO[m] Test for method < cast > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < cast > round 2 ...
+[[1;34mINFO[m] Test for method < cast > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < cast > round 2 ...
+[[1;34mINFO[m] Processed test for method < cppNames > generated successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 9 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < immutable > number 0...
+
+[[1;34mINFO[m] Generating test for method < immutable > round 0 ...
+Processed cppNames(String[])
+Processed javaNames(String[])
+Processed annotations(String[])
+Processed cppTypes(String[])
+Processed valueTypes(String[])
+Processed pointerTypes(String[])
+
+Test run finished after 8 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < flatten > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 10 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < beanify > number 0...
+
+[[1;34mINFO[m] Generating test for method < beanify > round 0 ...
+
+Test run finished after 170 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < flatten > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 11 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < beanify > number 0...
+
+[[1;34mINFO[m] Generating test for method < beanify > round 0 ...
+
+Test run finished after 8 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < friendly > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 12 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < objectify > number 0...
+
+[[1;34mINFO[m] Generating test for method < objectify > round 0 ...
+
+Test run finished after 9 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < friendly > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 13 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < objectify > number 0...
+
+[[1;34mINFO[m] Generating test for method < objectify > round 0 ...
+
+Test run finished after 12 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < immutable > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 14 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < translate > number 0...
+
+[[1;34mINFO[m] Generating test for method < translate > round 0 ...
+
+Test run finished after 43 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < immutable > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 15 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < translate > number 0...
+
+[[1;34mINFO[m] Generating test for method < translate > round 0 ...
+
+Test run finished after 11 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < beanify > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 16 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < skip > number 0...
+
+[[1;34mINFO[m] Generating test for method < skip > round 0 ...
+
+Test run finished after 27 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < beanify > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 17 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < skip > number 0...
+
+[[1;34mINFO[m] Generating test for method < skip > round 0 ...
+
+Test run finished after 5 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < objectify > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 18 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < skipDefaults > number 0...
+
+[[1;34mINFO[m] Generating test for method < skipDefaults > round 0 ...
+
+Test run finished after 47 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < linePatterns > compile and execute successfully round 2
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 19 /  0]
+Processed linePatterns(String[])
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < skipDefaults > number 0...
+
+[[1;34mINFO[m] Generating test for method < skipDefaults > round 0 ...
+
+Test run finished after 8 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < define > compile and execute successfully round 2
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 20 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < purify > number 0...
+
+[[1;34mINFO[m] Generating test for method < purify > round 0 ...
+
+Test run finished after 12 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < cast > compile and execute successfully round 2
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 21 /  0]
+Processed cast()
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < purify > number 0...
+
+[[1;34mINFO[m] Generating test for method < purify > round 0 ...
+
+Test run finished after 15 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < objectify > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 22 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < upcast > number 0...
+
+[[1;34mINFO[m] Generating test for method < upcast > round 0 ...
+
+Test run finished after 13 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < translate > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 23 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < upcast > number 0...
+
+[[1;34mINFO[m] Generating test for method < upcast > round 0 ...
+
+Test run finished after 2 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < cast > compile and execute successfully round 2
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 24 /  0]
+Processed cast(boolean)
+Processed define()
+Processed define(boolean)
+Processed enumerate()
+Processed enumerate(boolean)
+Processed flatten()
+Processed flatten(boolean)
+Processed friendly()
+Processed friendly(boolean)
+Processed immutable()
+Processed immutable(boolean)
+Processed beanify()
+Processed beanify(boolean)
+Processed objectify()
+Processed objectify(boolean)
+Processed translate()
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < virtualize > number 0...
+
+[[1;34mINFO[m] Generating test for method < virtualize > round 0 ...
+
+Test run finished after 16 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < translate > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 25 /  0]
+Processed translate(boolean)
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < virtualize > number 0...
+
+[[1;34mINFO[m] Generating test for method < virtualize > round 0 ...
+
+Test run finished after 8 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < skip > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 26 /  0]
+Processed skip()
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < base > number 0...
+
+[[1;34mINFO[m] Generating test for method < base > round 0 ...
+[[1;34mINFO[m] Test for method < skip > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < skip > round 1 ...
+
+Test run finished after 29 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < skipDefaults > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 27 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < cppText > number 0...
+
+[[1;34mINFO[m] Generating test for method < cppText > round 0 ...
+
+Test run finished after 4 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < skipDefaults > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 28 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < javaText > number 0...
+
+[[1;34mINFO[m] Generating test for method < javaText > round 0 ...
+[[1;34mINFO[m] Test for method < purify > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < purify > round 1 ...
+
+Test run finished after 10 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < upcast > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 29 /  0]
+
+Test run finished after 2 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < purify > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 30 /  0]
+[[1;34mINFO[m] Test for method < upcast > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < upcast > round 1 ...
+
+Test run finished after 7 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < virtualize > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 31 /  0]
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < virtualize > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 32 /  0]
+
+Test run finished after 9 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < base > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 33 /  0]
+
+Test run finished after 7 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < cppText > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 34 /  0]
+
+Test run finished after 4 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < javaText > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 35 /  0]
+
+Test run finished after 5 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < skip > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 36 /  0]
+Processed skip(boolean)
+Processed skipDefaults()
+Processed skipDefaults(boolean)
+
+Test run finished after 2 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < purify > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 37 /  0]
+Processed purify()
+Processed purify(boolean)
+Processed upcast()
+
+Test run finished after 1 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < upcast > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 38 /  0]
+Processed upcast(boolean)
+Processed virtualize()
+Processed virtualize(boolean)
+Processed base(String)
+Processed cppText(String)
+Processed javaText(String)
+Skip method: Info() in class: org.bytedeco.javacpp.tools.Info
+Skip method: Info(String[]) in class: org.bytedeco.javacpp.tools.Info
+Skip method: Info(Info) in class: org.bytedeco.javacpp.tools.Info
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generation finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Test processed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  06:04 min
+[[1;34mINFO[m] Finished at: 2026-07-10T21:56:24Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

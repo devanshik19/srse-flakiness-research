@@ -1,0 +1,451 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36morg.bytedeco:javacpp[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding JavaCPP 1.5.11-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mjavacpp[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Copying 40 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.12.1:compile[m [1m(default-compile)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mplugin:3.9.0:descriptor[m [1m(default-descriptor)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-annotations mojo extractor found 4 mojo descriptors.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] ant mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] bsh mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbnd:6.4.0:bnd-process[m [1m(default)[m @ [36mjavacpp[0;1m ---[m
+[[1;33mWARNING[m] Cannot consider developer in line '31' of file '/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/pom.xml' for bundle header 'Bundle-Developers' as it does not contain the mandatory id.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:testResources[m [1m(default-testResources)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Copying 4 resources from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mjavacpp[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[m @ [36mjavacpp[0;1m ---[m
+INFO: The original argline is: 
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_PcQ5s7kCDRBl8UcNHEhTg2AhMC1NhOrVElqGoGHEbY=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 53, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=AaXk0rACPjUbW4W7b7Gb6jyAtn4H1bBmdQALGsJJs=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 53, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=BsrL3dUivK9PcZaWQOZkBsyQBN5HC+hP0TfTpoUHY0=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 53, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=YEjQ2IOL+fUq1PU9od+32rXeMIjsGcSS5756HIlo=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_19_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaNames_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_23_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_base_35_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_valueTypes_4_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_22_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_33_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppText_36_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_virtualize_34_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.bytedeco.javacpp.tools.[1mInfo_annotations_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_15_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_javaText_37_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_32_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_25_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_immutable_17_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.bytedeco.javacpp.tools.[1mInfo_skip_26_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_7_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_pointerTypes_5_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_cast_8_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppTypes_3_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_friendly_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_upcast_31_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_11_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_29_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in org.bytedeco.javacpp.tools.[1mInfo_beanify_20_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_enumerate_12_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.bytedeco.javacpp.tools.[1mInfo_cppNames_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.tools.[1mInfo_define_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.tools.[1mInfo_objectify_21_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.bytedeco.javacpp.tools.[1mInfo_translate_24_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.tools.[1mInfo_purify_30_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.bytedeco.javacpp.tools.[1mInfo_linePatterns_6_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.tools.[1mInfo_skipDefaults_27_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.bytedeco.javacpp.tools.[1mInfo_flatten_14_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 53, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] NonDex SUMMARY:
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=AaXk0rACPjUbW4W7b7Gb6jyAtn4H1bBmdQALGsJJs= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=BsrL3dUivK9PcZaWQOZkBsyQBN5HC+hP0TfTpoUHY0= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=YEjQ2IOL+fUq1PU9od+32rXeMIjsGcSS5756HIlo= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] All tests pass without NonDex shuffling
+[[1;34mINFO[m] ####################
+[[1;34mINFO[m] Across all seeds:
+[[1;34mINFO[m] Test results can be found at: 
+[[1;34mINFO[m] file:///home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex/AaXk0rACPjUbW4W7b7Gb6jyAtn4H1bBmdQALGsJJs=/test_results.html
+[[1;34mINFO[m] [NonDex] The id of this run is: AaXk0rACPjUbW4W7b7Gb6jyAtn4H1bBmdQALGsJJs=
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  17.302 s
+[[1;34mINFO[m] Finished at: 2026-07-10T21:57:41Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

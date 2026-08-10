@@ -1,0 +1,29 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8035
+e81c68559cd9: Pulling fs layer
+120afb1bfcee: Pulling fs layer
+92a723a3a820: Pulling fs layer
+dfca0cd99b2d: Pulling fs layer
+9f49fa2b6533: Pulling fs layer
+d663825f1ed0: Pulling fs layer
+a4355678e260: Pulling fs layer
+92a723a3a820: Download complete
+e81c68559cd9: Download complete
+a4355678e260: Download complete
+120afb1bfcee: Download complete
+d663825f1ed0: Download complete
+dfca0cd99b2d: Download complete
+dfca0cd99b2d: Pull complete
+a4355678e260: Pull complete
+e81c68559cd9: Pull complete
+9f49fa2b6533: Download complete
+9f49fa2b6533: Pull complete
+92a723a3a820: Pull complete
+120afb1bfcee: Pull complete
+d663825f1ed0: Pull complete
+Digest: sha256:7b1d256a32894419f0701347a4e9b744da45332c34ed332c97b2258993291d19
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8035:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8035:latest
+11c1f59c0ad5e3c52bc6cd75de7d7360cf6045960905f9ebabec29f1bbbb4d69
+run_sphinx_doc__sphinx_8035
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-8035:latest
+Deleted: sha256:7b1d256a32894419f0701347a4e9b744da45332c34ed332c97b2258993291d19

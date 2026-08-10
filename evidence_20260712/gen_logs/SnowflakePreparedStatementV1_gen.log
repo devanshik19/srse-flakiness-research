@@ -1,0 +1,1228 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] Some problems were encountered while building the effective model for net.snowflake:snowflake-jdbc:jar:3.13.24
+[[1;33mWARNING[m] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: commons-codec:commons-codec:jar -> duplicate declaration of version 1.14 @ line 194, column 17
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] It is highly recommended to fix these problems because they threaten the stability of your build.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] For this reason, future Maven versions might no longer support building such malformed projects.
+[[1;33mWARNING[m] 
+[[1;33mWARNING[m] The project net.snowflake:snowflake-jdbc:jar:3.13.24 uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mnet.snowflake:snowflake-jdbc[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding snowflake-jdbc 3.13.24[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36msnowflake-jdbc[0;1m ---[m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/snowflake-jdbc=.=6356171.dir/snowflake-jdbc=.=6356171/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/snowflake-jdbc
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/snowflake-jdbc=.=6356171.dir/snowflake-jdbc=.=6356171/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/snowflake-jdbc=.=6356171.dir/snowflake-jdbc=.=6356171/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;31mERROR[m] In ClassParser.extractClass Exception: when parse class TimeBombTask :
+java.util.NoSuchElementException: Fully qualified name not present
+[[1;31mERROR[m] In ClassParser.extractClass Exception: when parse class HeartbeatTask :
+java.util.NoSuchElementException: Fully qualified name not present
+[[1;34mINFO[m] 
+Parsed classes: 244
+Parsed methods: 3311
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < net.snowflake.client.jdbc.SnowflakePreparedStatementV1 > ...
+Skip method: describeSqlIfNotTried() in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < addBatch > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < addBatch > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeQuery > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clearParameters > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeLargeUpdate > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeAsyncQuery > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 0...
+
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+[[1;34mINFO[m] Generating test for method < executeQuery > round 0 ...
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+[[1;34mINFO[m] Generating test for method < executeLargeUpdate > round 0 ...
+[[1;34mINFO[m] Generating test for method < addBatch > round 0 ...
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+[[1;34mINFO[m] Generating test for method < executeAsyncQuery > round 0 ...
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+[[1;34mINFO[m] Generating test for method < clearParameters > round 0 ...
+[[1;34mINFO[m] Generating test for method < addBatch > round 0 ...
+[[1;34mINFO[m] Test for method < executeLargeUpdate > compilation failed round 0
+[[1;34mINFO[m] Test for method < executeQuery > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < executeQuery > round 1 ...
+[[1;34mINFO[m] Fixing test for method < executeLargeUpdate > round 1 ...
+[[1;34mINFO[m] Test for method < executeUpdate > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 1 ...
+[[1;34mINFO[m] Test for method < executeUpdate > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 1 ...
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: net.snowflake.client.jdbc.SnowflakePreparedStatementV1_execute_60_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: net.snowflake.client.jdbc.SnowflakePreparedStatementV1_execute_60_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < execute > execution timeout round 
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clearBatch > number 0...
+
+[[1;34mINFO[m] Generating test for method < clearBatch > round 0 ...
+[[1;34mINFO[m] Test for method < clearParameters > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < clearParameters > round 1 ...
+
+Test run finished after 493 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < addBatch > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeBatch > number 0...
+
+[[1;34mINFO[m] Generating test for method < executeBatch > round 0 ...
+[[1;34mINFO[m] Test for method < addBatch > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < addBatch > round 1 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeAsyncQuery > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < executeAsyncQuery > round 1 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < execute > round 1 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeLargeBatch > number 0...
+
+[[1;34mINFO[m] Generating test for method < executeLargeBatch > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 0...
+
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 0...
+
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 0...
+
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 0...
+
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] Test for method < executeLargeUpdate > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < executeLargeUpdate > round 2 ...
+[[1;34mINFO[m] Test for method < executeUpdate > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 2 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] Test for method < executeUpdate > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 2 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 0...
+
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 0...
+
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < clearParameters > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < clearParameters > round 2 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < execute > round 2 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: net.snowflake.client.jdbc.SnowflakePreparedStatementV1_executeUpdate_68_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: net.snowflake.client.jdbc.SnowflakePreparedStatementV1_executeUpdate_68_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < executeUpdate > execution timeout round 
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeUpdate > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 1 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < execute > round 1 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeLargeUpdate > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < executeLargeUpdate > round 3 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeUpdate > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 3 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < execute > round 3 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < execute > round 2 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeUpdate > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < executeUpdate > round 4 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeLargeUpdate > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < executeLargeUpdate > round 4 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < execute > round 4 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < execute > round 3 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeUpdate > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeUpdate > number 1...
+
+[[1;34mINFO[m] Generating test for method < executeUpdate > round 0 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < executeLargeUpdate > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < executeLargeUpdate > number 1...
+
+[[1;34mINFO[m] Generating test for method < executeLargeUpdate > round 0 ...
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 1...
+
+[[1;31mERROR[m] In AskGPT.askChatGPT: java.io.IOException: Unexpected code Response{protocol=h2, code=429, message=, url=https://api.openai.com/v1/chat/completions}
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Skip method: setNull(int, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBoolean(int, boolean) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setByte(int, byte) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setShort(int, short) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setInt(int, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setLong(int, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setFloat(int, float) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setDouble(int, double) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBigDecimal(int, BigDecimal) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setString(int, String) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBytes(int, byte[]) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setDate(int, Date) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setTime(int, Time) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setTimestamp(int, Timestamp) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setTimestampWithType(int, Timestamp, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setAsciiStream(int, InputStream, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setUnicodeStream(int, InputStream, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBinaryStream(int, InputStream, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Skip method: setObject(int, Object, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setObject(int, Object) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < execute > round 4 ...
+[[1;34mINFO[m] Test for method < execute > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < execute > round 1 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 1...
+
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+[[1;34mINFO[m] Test for method < execute > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < execute > round 2 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < execute > round 1 ...
+[[1;34mINFO[m] Test for method < execute > compilation failed round 2
+[[1;34mINFO[m] Fixing test for method < execute > round 3 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < execute > round 2 ...
+
+Test run finished after 956 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         2 tests failed          ]
+
+[[1;34mINFO[m] Test for method < execute > compile and execute successfully round 3
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+Processed execute()
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Skip method: setCharacterStream(int, Reader, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setRef(int, Ref) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBlob(int, Blob) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setClob(int, Clob) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setArray(int, Array) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: getMetaData() in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setDate(int, Date, Calendar) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setTime(int, Time, Calendar) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setTimestamp(int, Timestamp, Calendar) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNull(int, int, String) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setURL(int, URL) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: getParameterMetaData() in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setRowId(int, RowId) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNString(int, String) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNCharacterStream(int, Reader, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNClob(int, NClob) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setClob(int, Reader, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBlob(int, InputStream, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNClob(int, Reader, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setSQLXML(int, SQLXML) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setObject(int, Object, int, int) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setAsciiStream(int, InputStream, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBinaryStream(int, InputStream, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setCharacterStream(int, Reader, long) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setAsciiStream(int, InputStream) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBinaryStream(int, InputStream) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setCharacterStream(int, Reader) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNCharacterStream(int, Reader) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setClob(int, Reader) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setBlob(int, InputStream) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+Skip method: setNClob(int, Reader) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Processed execute(String)
+Processed addBatch(String)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Skip method: executeBatchInternalWithArrayBind(boolean) in class: net.snowflake.client.jdbc.SnowflakePreparedStatementV1
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.step.Repair.execute(Repair.java:14)
+	at zju.cst.aces.api.phase.PhaseImpl.repairTest(PhaseImpl.java:48)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:87)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Processed executeUpdate(String, String[])
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: Response is null, failed to get response.
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at zju.cst.aces.runner.ClassRunner.methodJob(ClassRunner.java:92)
+	at zju.cst.aces.runner.ClassRunner.start(ClassRunner.java:40)
+	at zju.cst.aces.api.impl.RunnerImpl.runClass(RunnerImpl.java:23)
+	at zju.cst.aces.api.Task.startClassTask(Task.java:231)
+	at zju.cst.aces.ClassTestMojo.execute(ClassTestMojo.java:77)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:919)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:285)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:207)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:283)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:226)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:407)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:348)
+Caused by: java.lang.RuntimeException: Response is null, failed to get response.
+	at zju.cst.aces.api.impl.ChatGenerator.chat(ChatGenerator.java:29)
+	at zju.cst.aces.api.phase.step.TestGeneration.generateTest(TestGeneration.java:92)
+	at zju.cst.aces.api.phase.step.TestGeneration.execute(TestGeneration.java:65)
+	at zju.cst.aces.api.phase.PhaseImpl.generateTest(PhaseImpl.java:39)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:72)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < execute > round 3 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < execute > round 4 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < execute > number 2...
+
+[[1;34mINFO[m] Generating test for method < execute > round 0 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < execute > round 1 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < execute > round 2 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < execute > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < execute > round 3 ...

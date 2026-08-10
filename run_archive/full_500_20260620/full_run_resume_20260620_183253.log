@@ -1,0 +1,2 @@
+=== pylint-dev__pylint-6386 ===
+Removing tests/config/test_short_verbose_option.py

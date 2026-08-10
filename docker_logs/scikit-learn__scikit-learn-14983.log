@@ -1,0 +1,8 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-14983
+Digest: sha256:113b6f8d562b2430907d48ad64b905f5215a1a609899e1cfa2c50aedb5c8d89f
+Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-14983:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-14983:latest
+f64a3846073ad31cbc9f87c5dcf1849cb96eef9ca4f825f8001b4399ebb99469
+run_scikit_learn__scikit_learn_14983
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-14983:latest
+Deleted: sha256:113b6f8d562b2430907d48ad64b905f5215a1a609899e1cfa2c50aedb5c8d89f

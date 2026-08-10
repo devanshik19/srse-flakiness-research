@@ -1,0 +1,6 @@
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_cache_1_0_Test#testCache()
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_interactive_0_0_Test#testInteractive()
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_supportedFeatures_6_0_Test#testSupportedFeatures()
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_update_5_0_Test#testUpdateWithNoDependencies()
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_update_5_0_Test#testUpdateWithNoVersion()
+com.sap.oss.phosphor.fosstars.data.artifact.VulnerabilitiesFromOwaspDependencyCheck_update_5_0_Test#testUpdateWithNullValues()

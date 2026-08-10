@@ -1,0 +1,15 @@
+=== [1] org.bytedeco.javacpp.indexer.ByteIndexer 21:34 ===
+| ? | ByteIndexer | org.bytedeco.javacpp.indexer.ByteIndexer | files:11 | clean:12 | excl:14 | ID:0 | OD:0 | ND:pending | none |
+=== [2] org.bytedeco.javacpp.tools.Info 21:48 ===
+| ? | Info | org.bytedeco.javacpp.tools.Info | files:38 | clean:53 | excl:2 | ID:0 | OD:0 | ND:pending | none |
+=== [3] org.bytedeco.javacpp.indexer.ULongIndexer 21:58 ===
+| ? | ULongIndexer | org.bytedeco.javacpp.indexer.ULongIndexer | files:13 | clean:10 | excl:19 | ID:0 | OD:0 | ND:pending | none |
+=== [4] com.google.cloud.tools.appengine.operations.cloudsdk.process.LegacyProcessHandler 22:13 ===
+| ? | LegacyProcessHandler | com.google.cloud.tools.appengine.operations.cloudsdk.process.LegacyProcessHandler | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: all 0 generated test classes broken |
+=== [5] com.google.cloud.tools.appengine.operations.cloudsdk.serialization.CloudSdkVersionPreRelease 22:16 ===
+| ? | com.google.cloud.tools.appengine.operations.cloudsdk.serialization.CloudSdkVersionPreRelease | - | - | - | - | - | - | TIMEOUT/CRASH |
+=== [6] com.google.cloud.tools.appengine.operations.CloudSdk 22:42 ===
+| ? | CloudSdk | com.google.cloud.tools.appengine.operations.CloudSdk | files:0 | clean:0 | excl:0 | ID:n/a | OD:n/a | ND:pending | NULL: all 5 generated test classes broken |
+=== [7] net.snowflake.client.jdbc.SnowflakeConnectionV1 22:53 ===
+| ? | SnowflakeConnectionV1 | net.snowflake.client.jdbc.SnowflakeConnectionV1 | files:2 | clean:1 | excl:10 | ID:0 | OD:0 | ND:pending | none |
+DONE -> /home/dev4nshik/srse-research/results.md

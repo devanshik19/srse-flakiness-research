@@ -1,0 +1,8 @@
+com.fasterxml.classmate.ResolvedType_appendErasedSignature_29_1_Test#testAppendErasedSignature()
+com.fasterxml.classmate.ResolvedType_appendSignature_28_3_Test#testAppendSignature()
+com.fasterxml.classmate.ResolvedType_canCreateSubtypes_0_0_Test#testCanCreateSubtypes()
+com.fasterxml.classmate.ResolvedType_findSupertype_10_1_Test#testFindSupertype_InterfaceType()
+com.fasterxml.classmate.ResolvedType_findSupertype_10_1_Test#testFindSupertype_NotFound()
+com.fasterxml.classmate.ResolvedType_findSupertype_10_1_Test#testFindSupertype_ParentClassType()
+com.fasterxml.classmate.ResolvedType_findSupertype_10_1_Test#testFindSupertype_SameType()
+com.fasterxml.classmate.ResolvedType_isInstanceOf_16_1_Test#testIsInstanceOf()

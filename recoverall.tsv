@@ -1,0 +1,11 @@
+https://zenodo.org/records/18474558/files/commons-lang=.=9f67b81.zip	org.apache.commons.lang3.mutable.MutableShort
+https://zenodo.org/records/18474558/files/commons-lang=.=9f67b81.zip	org.apache.commons.lang3.mutable.MutableByte
+https://zenodo.org/records/18605131/files/mybatis-3=.=ea8182c.zip	org.apache.ibatis.jdbc.AbstractSQL
+https://zenodo.org/records/18605131/files/mybatis-3=.=ea8182c.zip	org.apache.ibatis.session.SqlSessionManager
+https://zenodo.org/records/18605131/files/mybatis-3=.=ea8182c.zip	org.apache.ibatis.session.defaults.DefaultSqlSession
+https://zenodo.org/records/18605131/files/maven-dependency-plugin=.=7ae0aba.zip	org.apache.maven.plugins.dependency.utils.DependencySilentLog
+https://zenodo.org/records/18605131/files/maven-dependency-plugin=.=7ae0aba.zip	org.apache.maven.plugins.dependency.exclusion.Coordinates
+https://zenodo.org/records/18605131/files/maven-dependency-plugin=.=7ae0aba.zip	org.apache.maven.plugins.dependency.fromConfiguration.ProcessArtifactItemsRequest
+https://zenodo.org/records/18474558/files/commons-collections=.=917cdf1.zip	org.apache.commons.collections4.map.SingletonMap
+https://zenodo.org/records/18474558/files/commons-collections=.=917cdf1.zip	org.apache.commons.collections4.map.Flat3Map
+https://zenodo.org/records/18474558/files/commons-collections=.=917cdf1.zip	org.apache.commons.collections4.bidimap.AbstractDualBidiMap
