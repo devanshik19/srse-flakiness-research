@@ -1,0 +1,28 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Not installing Nexus Staging features:
+[[1;34mINFO[m]  * Preexisting staging related goal bindings found in 1 modules.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mcom.datadoghq:jmeter-datadog-backend-listener[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding jmeter-datadog-backend-listener 0.3.0[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32msurefire:2.22.1:test[m [1m(default-cli)[m @ [36mjmeter-datadog-backend-listener[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.datadog.jmeter.plugins.[1mDatadogBackendClient_run_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.052 s - in org.datadog.jmeter.plugins.[1mDatadogBackendClient_run_0_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 1, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  4.537 s
+[[1;34mINFO[m] Finished at: 2026-07-11T23:21:25Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

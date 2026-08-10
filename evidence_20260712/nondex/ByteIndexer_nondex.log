@@ -1,0 +1,243 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------< [0;36morg.bytedeco:javacpp[0;1m >------------------------[m
+[[1;34mINFO[m] [1mBuilding JavaCPP 1.5.11-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m>>> [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m > [0;1mtest-compile[m @ [36mjavacpp[0;1m >>>[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Copying 40 resources from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.12.1:compile[m [1m(default-compile)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mplugin:3.9.0:descriptor[m [1m(default-descriptor)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to read mojo source files.
+[[1;34mINFO[m] java-annotations mojo extractor found 4 mojo descriptors.
+[[1;34mINFO[m] java-javadoc mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] ant mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] bsh mojo extractor found 0 mojo descriptor.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbnd:6.4.0:bnd-process[m [1m(default)[m @ [36mjavacpp[0;1m ---[m
+[[1;33mWARNING[m] Cannot consider developer in line '31' of file '/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/pom.xml' for bundle header 'Bundle-Developers' as it does not contain the mandatory id.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:testResources[m [1m(default-testResources)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Copying 4 resources from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.12.1:testCompile[m [1m(default-testCompile)[m @ [36mjavacpp[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m<<< [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[0;1m < [0;1mtest-compile[m @ [36mjavacpp[0;1m <<<[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mnondex:2.1.1:nondex[m [1m(default-cli)[m @ [36mjavacpp[0;1m ---[m
+INFO: The original argline is: 
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=.nondex
+nondexExecid=clean_AXqNRzrzWj+Ctplg1dVcSuHR0p+pGhCcE8vk0G0Uw=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.865 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.185 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=933178
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=8Ej5LinjTaH+2MCpcADsC4W5u6p275y5ZFh38lsHoYg=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.610 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.203 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=974622
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=eZa+aakoaF68MrXdFVmcR+l0iVM5dVHwKtW+x7PU=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.585 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.208 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+INFO: Adding excluded groups to newly created one
+INFO: Creating new argline for Surefire
+CONFIG: nondexFilter=.*
+nondexMode=FULL
+nondexSeed=1016066
+nondexStart=0
+nondexEnd=9223372036854775807
+nondexPrintstack=false
+nondexDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexJarDir=/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex
+nondexExecid=TP1mVyKAQvYr94Cq92duGnM5F6wRqc9zwVM33UvEsxU=
+nondexLogging=CONFIG
+test=
+[[1;33mWARNING[m]  Parameter 'disableXmlReport' (user property 'disableXmlReport') is deprecated: No reason given
+[[1;33mWARNING[m]  Parameter 'systemProperties' is deprecated: Use systemPropertyVariables instead.
+[[1;34mINFO[m] Using configured provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_1_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.587 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_get_16_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_11_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.200 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_2_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_9_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_10_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_0_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_13_0_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_4_1_Test[m
+[[1;34mINFO[m] Running org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in org.bytedeco.javacpp.indexer.[1mByteIndexer_create_6_0_Test[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1;32mTests run: 12, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] NonDex SUMMARY:
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=933178 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=8Ej5LinjTaH+2MCpcADsC4W5u6p275y5ZFh38lsHoYg= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=974622 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=eZa+aakoaF68MrXdFVmcR+l0iVM5dVHwKtW+x7PU= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] mvn nondex:nondex  -DnondexFilter='.*' -DnondexMode=FULL -DnondexSeed=1016066 -DnondexStart=0 -DnondexEnd=9223372036854775807 -DnondexPrintstack=false -DnondexDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexJarDir="/home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex" -DnondexExecid=TP1mVyKAQvYr94Cq92duGnM5F6wRqc9zwVM33UvEsxU= -DnondexLogging=CONFIG
+[[1;34mINFO[m] No Test Failed with this configuration.
+[[1;34mINFO[m] *********
+[[1;34mINFO[m] All tests pass without NonDex shuffling
+[[1;34mINFO[m] ####################
+[[1;34mINFO[m] Across all seeds:
+[[1;34mINFO[m] Test results can be found at: 
+[[1;34mINFO[m] file:///home/dev4nshik/srse-java/javacpp=.=2fd35c6.dir/javacpp=.=2fd35c6/Flaky/.nondex/8Ej5LinjTaH+2MCpcADsC4W5u6p275y5ZFh38lsHoYg=/test_results.html
+[[1;34mINFO[m] [NonDex] The id of this run is: 8Ej5LinjTaH+2MCpcADsC4W5u6p275y5ZFh38lsHoYg=
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  18.627 s
+[[1;34mINFO[m] Finished at: 2026-07-10T21:47:21Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

@@ -1,0 +1,533 @@
+=== django__django-13315 ===
+django__django-13315 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14053 ===
+django__django-14053 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-25311 ===
+Removing cache/
+Removing ipflakies_result/
+matplotlib__matplotlib-25311 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-11149 ===
+django__django-11149 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15525 ===
+django__django-15525 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13820 ===
+django__django-13820 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16612 ===
+django__django-16612 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-9296 ===
+django__django-9296 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14315 ===
+django__django-14315 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11179 ===
+django__django-11179 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16901 ===
+django__django-16901 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11299 ===
+django__django-11299 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14493 ===
+django__django-14493 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14534 ===
+django__django-14534 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-24570 ===
+matplotlib__matplotlib-24570 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-24970 ===
+Removing lib/matplotlib/tests/test_offsetbox_hpacker_align_top_bottom.py
+matplotlib__matplotlib-24970 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-13821 ===
+=== django__django-11292 ===
+django__django-11292 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16255 ===
+django__django-16255 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14915 ===
+django__django-14915 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13794 ===
+django__django-13794 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13158 ===
+django__django-13158 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15315 ===
+django__django-15315 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14007 ===
+django__django-14007 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-25479 ===
+Removing lib/matplotlib/tests/test_colors_numpy124.py
+matplotlib__matplotlib-25479 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-11133 ===
+django__django-11133 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13512 ===
+django__django-13512 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13109 ===
+django__django-13109 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-7530 ===
+django__django-7530 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-22865 ===
+Removing lib/matplotlib/tests/test_cmap_name_handling.py
+matplotlib__matplotlib-22865 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-23412 ===
+matplotlib__matplotlib-23412 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-25122 ===
+Removing lib/matplotlib/tests/test_patch_dash_offset.py
+matplotlib__matplotlib-25122 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-13568 ===
+django__django-13568 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13363 ===
+django__django-13363 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16145 ===
+django__django-16145 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11163 ===
+django__django-11163 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-10880 ===
+django__django-10880 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11400 ===
+django__django-11400 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11951 ===
+django__django-11951 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-24149 ===
+matplotlib__matplotlib-24149 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-14580 ===
+django__django-14580 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12209 ===
+django__django-12209 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15499 ===
+django__django-15499 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12276 ===
+django__django-12276 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14351 ===
+django__django-14351 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16100 ===
+django__django-16100 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13112 ===
+django__django-13112 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12125 ===
+django__django-12125 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11239 ===
+django__django-11239 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13279 ===
+django__django-13279 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-23314 ===
+matplotlib__matplotlib-23314 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-11848 ===
+django__django-11848 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11749 ===
+django__django-11749 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14855 ===
+django__django-14855 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-24870 ===
+Removing lib/mpl_toolkits/tests/test_axes3d_visibility.py
+matplotlib__matplotlib-24870 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-15814 ===
+django__django-15814 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13089 ===
+django__django-13089 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12774 ===
+django__django-12774 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-25287 ===
+matplotlib__matplotlib-25287 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-20826 ===
+Removing lib/matplotlib/tests/test_offsettext_labelcolor.py
+matplotlib__matplotlib-20826 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-16116 ===
+django__django-16116 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16819 ===
+django__django-16819 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-23476 ===
+matplotlib__matplotlib-23476 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-13807 ===
+django__django-13807 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11276 ===
+=== django__django-13810 ===
+=== django__django-15278 ===
+django__django-15278 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15380 ===
+django__django-15380 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-26466 ===
+matplotlib__matplotlib-26466 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-13658 ===
+django__django-13658 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11885 ===
+django__django-11885 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11999 ===
+django__django-11999 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-10554 ===
+django__django-10554 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13670 ===
+django__django-13670 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14404 ===
+django__django-14404 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-24637 ===
+Removing lib/matplotlib/tests/test_annotation_xy_mutation.py
+matplotlib__matplotlib-24637 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-15731 ===
+django__django-15731 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15987 ===
+django__django-15987 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13786 ===
+django__django-13786 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13449 ===
+django__django-13449 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15268 ===
+django__django-15268 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12143 ===
+django__django-12143 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16662 ===
+django__django-16662 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12273 ===
+django__django-12273 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11141 ===
+django__django-11141 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-14623 ===
+matplotlib__matplotlib-14623 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-14500 ===
+django__django-14500 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15103 ===
+django__django-15103 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11740 ===
+django__django-11740 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13012 ===
+django__django-13012 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16642 ===
+=== django__django-12050 ===
+django__django-12050 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13837 ===
+django__django-13837 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11790 ===
+django__django-11790 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15695 ===
+=== matplotlib__matplotlib-22719 ===
+Removing LICENSE/LICENSE_QHULL
+Removing lib/matplotlib/tests/test_limits_inversion.py
+matplotlib__matplotlib-22719 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-15563 ===
+django__django-15563 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14999 ===
+django__django-14999 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12754 ===
+django__django-12754 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13028 ===
+django__django-13028 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13344 ===
+=== matplotlib__matplotlib-26342 ===
+Removing lib/matplotlib/tests/test_category_empty.py
+matplotlib__matplotlib-26342 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-13212 ===
+django__django-13212 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12193 ===
+django__django-12193 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13551 ===
+django__django-13551 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16661 ===
+django__django-16661 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14787 ===
+django__django-14787 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13741 ===
+django__django-13741 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16429 ===
+django__django-16429 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12304 ===
+django__django-12304 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-10466 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-10466 -> 100x:ALWAYS_PASS (100/100), iPFlakies:0
+=== scikit-learn__scikit-learn-14087 ===
+Removing sklearn/feature_extraction/tests/test_strip_accents_nfkd.py
+scikit-learn__scikit-learn-14087 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-16667 ===
+django__django-16667 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-13798 ===
+sympy__sympy-13798 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-15863 ===
+django__django-15863 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== psf__requests-6028 ===
+psf__requests-6028 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== matplotlib__matplotlib-13989 ===
+Removing lib/matplotlib/tests/test_contour_set_paths.py
+matplotlib__matplotlib-13989 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-15851 ===
+=== scikit-learn__scikit-learn-13135 ===
+scikit-learn__scikit-learn-13135 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-12481 ===
+sympy__sympy-12481 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-13023 ===
+django__django-13023 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== pydata__xarray-3095 ===
+Removing ipflakies_result/
+Removing xarray/tests/test_object_values_assignment.py
+pydata__xarray-3095 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-10908 ===
+scikit-learn__scikit-learn-10908 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-13590 ===
+django__django-13590 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16569 ===
+django__django-16569 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-23824 ===
+Removing sympy/combinatorics/tests/test_permutations_nondisjoint.py
+sympy__sympy-23824 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-12713 ===
+django__django-12713 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13401 ===
+django__django-13401 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15572 ===
+django__django-15572 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14539 ===
+django__django-14539 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15741 ===
+django__django-15741 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12663 ===
+django__django-12663 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-14531 ===
+Removing ipflakies_result/
+Removing sympy/physics/hep/tests/test_kahane_leading_gamma_order.py
+sympy__sympy-14531 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-23534 ===
+sympy__sympy-23534 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-17029 ===
+django__django-17029 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-13974 ===
+Removing ipflakies_result/
+sympy__sympy-13974 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-11603 ===
+django__django-11603 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11433 ===
+django__django-11433 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-16597 ===
+sympy__sympy-16597 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sphinx-doc__sphinx-9258 ===
+Removing cache/
+Removing ipflakies_result/
+Removing tests/test_gettext_locations.py
+sphinx-doc__sphinx-9258 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16950 ===
+django__django-16950 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16801 ===
+django__django-16801 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15957 ===
+django__django-15957 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-8120 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8120 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== scikit-learn__scikit-learn-13328 ===
+scikit-learn__scikit-learn-13328 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-24661 ===
+Removing ipflakies_result/
+sympy__sympy-24661 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-13033 ===
+django__django-13033 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-24443 ===
+Removing ipflakies_result/
+sympy__sympy-24443 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-14011 ===
+django__django-14011 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15503 ===
+django__django-15503 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13195 ===
+django__django-13195 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16877 ===
+django__django-16877 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== scikit-learn__scikit-learn-14141 ===
+=== django__django-13569 ===
+django__django-13569 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== scikit-learn__scikit-learn-13496 ===
+scikit-learn__scikit-learn-13496 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== pydata__xarray-3993 ===
+Removing xarray/tests/test_copy_unicode_index_dtype.py
+pydata__xarray-3993 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-18211 ===
+Removing ipflakies_result/
+sympy__sympy-18211 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-23262 ===
+Removing ipflakies_result/
+sympy__sympy-23262 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-19954 ===
+Removing ipflakies_result/
+sympy__sympy-19954 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-15161 ===
+django__django-15161 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-21930 ===
+Removing ipflakies_result/
+sympy__sympy-21930 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16032 ===
+django__django-16032 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-9229 ===
+Removing ipflakies_result/
+Removing tests/test_locale_override.py
+sphinx-doc__sphinx-9229 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pytest-dev__pytest-5809 ===
+Removing ipflakies_result/
+Removing testing/test_unittest_pdb_skip_method.py
+pytest-dev__pytest-5809 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-14672 ===
+django__django-14672 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14559 ===
+django__django-14559 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11265 ===
+django__django-11265 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15561 ===
+django__django-15561 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15037 ===
+django__django-15037 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-22871 ===
+Removing lib/matplotlib/tests/test_hist_range_density.py
+matplotlib__matplotlib-22871 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== pydata__xarray-6744 ===
+Removing xarray/tests/test_integrate_api.py
+pydata__xarray-6744 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-14155 ===
+django__django-14155 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-17630 ===
+Removing ipflakies_result/
+sympy__sympy-17630 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-13878 ===
+Removing ipflakies_result/
+sympy__sympy-13878 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-15104 ===
+django__django-15104 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-14373 ===
+django__django-14373 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13933 ===
+=== django__django-12406 ===
+django__django-12406 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16136 ===
+=== pytest-dev__pytest-7521 ===
+Removing ipflakies_result/
+pytest-dev__pytest-7521 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== matplotlib__matplotlib-25775 ===
+Removing lib/matplotlib/tests/test_concise_formatter_offset.py
+matplotlib__matplotlib-25775 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-12325 ===
+django__django-12325 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11551 ===
+django__django-11551 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-13647 ===
+Removing sympy/stats/tests/test_precomputed_cdf_issue.py
+sympy__sympy-13647 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sphinx-doc__sphinx-7757 ===
+Removing ipflakies_result/
+Removing tests/roots/test-ext-autodoc/target/alias_docstrings.py
+Removing tests/test_ext_type_alias_docstrings.py
+sphinx-doc__sphinx-7757 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-10973 ===
+=== sphinx-doc__sphinx-8056 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8056 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-15629 ===
+django__django-15629 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== matplotlib__matplotlib-20488 ===
+Removing lib/matplotlib/tests/test_text_antialiased_per_artist.py
+matplotlib__matplotlib-20488 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== django__django-11477 ===
+django__django-11477 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== pylint-dev__pylint-7080 ===
+Removing tests/config/test_regexp_csv_parsing.py
+pylint-dev__pylint-7080 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-13925 ===
+django__django-13925 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== pydata__xarray-6938 ===
+Removing ipflakies_result/
+pydata__xarray-6938 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16454 ===
+django__django-16454 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16139 ===
+django__django-16139 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== scikit-learn__scikit-learn-26194 ===
+scikit-learn__scikit-learn-26194 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== psf__requests-1142 ===
+Removing tests/test_proxy_auth.py
+psf__requests-1142 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== sympy__sympy-19495 ===
+sympy__sympy-19495 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16502 ===
+django__django-16502 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-13372 ===
+Removing ipflakies_result/
+sympy__sympy-13372 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-10914 ===
+django__django-10914 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== astropy__astropy-13236 ===
+Removing astropy/coordinates/tests/test_subclass_attr_message.py
+Removing ipflakies_result/
+astropy__astropy-13236 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16560 ===
+django__django-16560 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16595 ===
+django__django-16595 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-9230 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-9230 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-13297 ===
+django__django-13297 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== astropy__astropy-12907 ===
+Removing astropy/table/tests/test_structured_ndarray_warning.py
+Removing ipflakies_result/
+astropy__astropy-12907 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-11211 ===
+django__django-11211 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-7462 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-7462 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-22080 ===
+sympy__sympy-22080 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== django__django-14238 ===
+django__django-14238 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-13410 ===
+django__django-13410 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-15277 ===
+django__django-15277 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-11820 ===
+django__django-11820 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-12419 ===
+django__django-12419 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sympy__sympy-16450 ===
+Removing ipflakies_result/
+sympy__sympy-16450 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== sympy__sympy-19346 ===
+Removing ipflakies_result/
+sympy__sympy-19346 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== django__django-16527 ===
+django__django-16527 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== pydata__xarray-4629 ===
+Removing ipflakies_result/
+Removing xarray/tests/test_swap_dims_regression.py
+pydata__xarray-4629 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-12262 ===
+=== scikit-learn__scikit-learn-25973 ===
+Removing ipflakies_result/
+scikit-learn__scikit-learn-25973 -> 100x:ALWAYS_PASS (100/100), iPFlakies:NO_RESULT_FILE
+=== matplotlib__matplotlib-24177 ===
+Removing lib/matplotlib/tests/test_lognorm_huge_range.py
+matplotlib__matplotlib-24177 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-26208 ===
+Removing lib/matplotlib/tests/test_hist_autoscale.py
+matplotlib__matplotlib-26208 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== matplotlib__matplotlib-26113 ===
+Removing lib/matplotlib/tests/test_twinx_stackplot_datalim.py
+matplotlib__matplotlib-26113 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NOT_COMPATIBLE
+=== psf__requests-5414 ===
+Removing test_content_length_header.py
+psf__requests-5414 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-17084 ===
+django__django-17084 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== django__django-16263 ===
+django__django-16263 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== psf__requests-2317 ===
+Removing tests/test_invalid_url_labels.py
+psf__requests-2317 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:SKIPPED
+=== django__django-15467 ===
+django__django-15467 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-7440 ===
+Removing ipflakies_result/
+Removing tests/test_domain_py_annotation_empty_tuple.py
+sphinx-doc__sphinx-7440 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-11880 ===
+django__django-11880 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-9591 ===
+=== astropy__astropy-8872 ===
+Removing astropy/modeling/tests/test_separable_nested.py
+Removing ipflakies_result/
+M	astropy_helpers
+astropy__astropy-8872 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== django__django-11333 ===
+django__django-11333 -> NOT_COMPATIBLE (plain pytest unsupported for django)
+=== sphinx-doc__sphinx-8638 ===
+Removing ipflakies_result/
+sphinx-doc__sphinx-8638 -> 100x:ALWAYS_FAIL (0/100), iPFlakies:NO_RESULT_FILE
+=== pylint-dev__pylint-6386 ===
+Removing ipflakies_result/

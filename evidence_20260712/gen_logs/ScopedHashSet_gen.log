@@ -1,0 +1,404 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mco.streamx.fluent:fluent-jpa[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Java Fluent JPA 1.2.2-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36mfluent-jpa[0;1m ---[m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.pom
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.pom
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.pom
+Progress (1): 1.1 kBProgress (1): 3.0 kBProgress (1): 6.5 kBProgress (1): 10 kB Progress (1): 13 kBProgress (1): 16 kBProgress (1): 17 kB                   Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.pom[90m (17 kB at 49 kB/s)[0m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.pom
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.pom
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.pom
+Progress (1): 1.2 kBProgress (1): 2.4 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.pom[90m (2.4 kB at 4.8 kB/s)[0m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.pom
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.pom
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.pom
+Progress (1): 1.2 kBProgress (1): 2.2 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.pom[90m (2.2 kB at 110 kB/s)[0m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.pom
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.pom
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.pom
+Progress (1): 1.2 kBProgress (1): 2.6 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.pom[90m (2.6 kB at 83 kB/s)[0m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.pom
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.pom
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.pom
+Progress (1): 1.2 kBProgress (1): 2.2 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.pom[90m (2.2 kB at 48 kB/s)[0m
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.jar
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.jar
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.jar
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.jar
+[90mDownloading from [0mkostat-ex-tree[90m: https://packagecloud.io/kostat/ex-tree/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.jar
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.jar
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.jar
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.jar
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.jar
+[90mDownloading from [0mkostat-jpa-notations[90m: https://packagecloud.io/kostat/jpa-notations/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.jar
+Progress (1): 0.9/4.7 kBProgress (1): 2.3/4.7 kBProgress (1): 3.6/4.7 kBProgress (1): 4.7 kB                        Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/mockito/mockito-junit-jupiter/2.23.4/mockito-junit-jupiter-2.23.4.jar[90m (4.7 kB at 212 kB/s)[0m
+Progress (1): 0.9/62 kBProgress (1): 2.3/62 kBProgress (1): 3.6/62 kBProgress (1): 4.1/62 kBProgress (1): 5.5/62 kBProgress (1): 6.8/62 kBProgress (1): 8.2/62 kBProgress (1): 9.6/62 kBProgress (1): 11/62 kB Progress (1): 12/62 kBProgress (1): 14/62 kBProgress (1): 15/62 kBProgress (1): 16/62 kBProgress (1): 18/62 kBProgress (1): 19/62 kBProgress (1): 21/62 kBProgress (1): 22/62 kBProgress (1): 23/62 kBProgress (1): 25/62 kBProgress (1): 26/62 kBProgress (1): 27/62 kBProgress (1): 29/62 kBProgress (1): 30/62 kBProgress (1): 31/62 kBProgress (1): 33/62 kBProgress (1): 34/62 kBProgress (1): 36/62 kBProgress (1): 37/62 kBProgress (1): 38/62 kBProgress (1): 40/62 kBProgress (1): 41/62 kBProgress (1): 42/62 kBProgress (1): 44/62 kBProgress (1): 45/62 kBProgress (1): 46/62 kBProgress (1): 48/62 kBProgress (1): 49/62 kBProgress (1): 51/62 kBProgress (1): 52/62 kBProgress (1): 53/62 kBProgress (1): 55/62 kBProgress (1): 59/62 kBProgress (1): 62 kB                      Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.3.2/junit-vintage-engine-5.3.2.jar[90m (62 kB at 876 kB/s)[0m
+Progress (1): 0.9/501 kBProgress (1): 2.3/501 kBProgress (1): 3.6/501 kBProgress (1): 5.0/501 kBProgress (2): 5.0/501 kB | 0.9/13 kBProgress (2): 6.4/501 kB | 0.9/13 kBProgress (2): 7.7/501 kB | 0.9/13 kBProgress (2): 7.7/501 kB | 2.3/13 kBProgress (2): 7.7/501 kB | 3.6/13 kBProgress (2): 9.1/501 kB | 3.6/13 kBProgress (2): 10/501 kB | 3.6/13 kB Progress (2): 10/501 kB | 5.0/13 kBProgress (2): 12/501 kB | 5.0/13 kBProgress (2): 12/501 kB | 6.4/13 kBProgress (2): 12/501 kB | 7.7/13 kBProgress (2): 13/501 kB | 7.7/13 kBProgress (2): 13/501 kB | 8.2/13 kBProgress (2): 15/501 kB | 8.2/13 kBProgress (2): 15/501 kB | 9.6/13 kBProgress (2): 16/501 kB | 9.6/13 kBProgress (2): 16/501 kB | 11/13 kB Progress (2): 17/501 kB | 11/13 kBProgress (2): 19/501 kB | 11/13 kBProgress (2): 19/501 kB | 12/13 kBProgress (2): 20/501 kB | 12/13 kBProgress (2): 20/501 kB | 13 kB   Progress (2): 21/501 kB | 13 kBProgress (2): 23/501 kB | 13 kBProgress (2): 24/501 kB | 13 kBProgress (2): 26/501 kB | 13 kBProgress (2): 27/501 kB | 13 kBProgress (2): 28/501 kB | 13 kBProgress (2): 29/501 kB | 13 kBProgress (2): 30/501 kB | 13 kBProgress (2): 31/501 kB | 13 kBProgress (2): 33/501 kB | 13 kBProgress (2): 34/501 kB | 13 kBProgress (2): 36/501 kB | 13 kBProgress (2): 37/501 kB | 13 kBProgress (2): 38/501 kB | 13 kBProgress (2): 40/501 kB | 13 kBProgress (2): 41/501 kB | 13 kBProgress (2): 42/501 kB | 13 kBProgress (2): 44/501 kB | 13 kBProgress (2): 45/501 kB | 13 kBProgress (2): 46/501 kB | 13 kBProgress (2): 48/501 kB | 13 kBProgress (2): 49/501 kB | 13 kBProgress (2): 51/501 kB | 13 kBProgress (2): 52/501 kB | 13 kBProgress (2): 53/501 kB | 13 kBProgress (2): 55/501 kB | 13 kBProgress (2): 59/501 kB | 13 kBProgress (2): 63/501 kB | 13 kBProgress (2): 67/501 kB | 13 kBProgress (2): 72/501 kB | 13 kBProgress (2): 76/501 kB | 13 kBProgress (2): 80/501 kB | 13 kBProgress (2): 84/501 kB | 13 kBProgress (2): 89/501 kB | 13 kBProgress (2): 93/501 kB | 13 kBProgress (2): 97/501 kB | 13 kBProgress (2): 101/501 kB | 13 kBProgress (2): 105/501 kB | 13 kBProgress (2): 110/501 kB | 13 kBProgress (2): 114/501 kB | 13 kBProgress (2): 118/501 kB | 13 kBProgress (2): 122/501 kB | 13 kBProgress (2): 127/501 kB | 13 kBProgress (2): 131/501 kB | 13 kBProgress (2): 135/501 kB | 13 kBProgress (2): 139/501 kB | 13 kBProgress (2): 143/501 kB | 13 kBProgress (2): 148/501 kB | 13 kBProgress (2): 152/501 kB | 13 kBProgress (2): 156/501 kB | 13 kBProgress (2): 160/501 kB | 13 kBProgress (2): 164/501 kB | 13 kBProgress (2): 168/501 kB | 13 kBProgress (2): 172/501 kB | 13 kBProgress (2): 177/501 kB | 13 kBProgress (2): 181/501 kB | 13 kBProgress (2): 185/501 kB | 13 kBProgress (2): 189/501 kB | 13 kBProgress (2): 194/501 kB | 13 kBProgress (2): 198/501 kB | 13 kBProgress (2): 202/501 kB | 13 kBProgress (2): 206/501 kB | 13 kBProgress (2): 210/501 kB | 13 kBProgress (2): 215/501 kB | 13 kBProgress (2): 219/501 kB | 13 kBProgress (2): 223/501 kB | 13 kBProgress (2): 240/501 kB | 13 kBProgress (2): 256/501 kB | 13 kBProgress (2): 272/501 kB | 13 kBProgress (2): 289/501 kB | 13 kBProgress (2): 291/501 kB | 13 kBProgress (2): 307/501 kB | 13 kBProgress (2): 324/501 kB | 13 kB                                Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.3.2/junit-platform-suite-api-1.3.2.jar[90m (13 kB at 52 kB/s)[0m
+Progress (1): 340/501 kBProgress (1): 356/501 kBProgress (1): 360/501 kBProgress (2): 360/501 kB | 0.9/18 kBProgress (2): 360/501 kB | 2.3/18 kBProgress (2): 360/501 kB | 3.6/18 kBProgress (2): 360/501 kB | 5.0/18 kBProgress (2): 360/501 kB | 6.4/18 kBProgress (2): 360/501 kB | 7.7/18 kBProgress (2): 360/501 kB | 9.1/18 kBProgress (2): 360/501 kB | 10/18 kB Progress (2): 360/501 kB | 12/18 kBProgress (2): 360/501 kB | 13/18 kBProgress (2): 360/501 kB | 15/18 kBProgress (2): 360/501 kB | 15/18 kBProgress (2): 360/501 kB | 17/18 kBProgress (2): 360/501 kB | 18 kB                                   Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.3.2/junit-platform-runner-1.3.2.jar[90m (18 kB at 49 kB/s)[0m
+Progress (1): 377/501 kBProgress (1): 393/501 kBProgress (1): 410/501 kBProgress (1): 426/501 kBProgress (1): 442/501 kBProgress (1): 459/501 kBProgress (1): 475/501 kBProgress (1): 492/501 kBProgress (1): 501 kB                        Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/jupiter/junit-jupiter-params/5.3.2/junit-jupiter-params-5.3.2.jar[90m (501 kB at 932 kB/s)[0m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/fluent-jpa
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;34mINFO[m] 
+Parsed classes: 51
+Parsed methods: 365
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < co.streamx.fluent.JPA.util.ScopedHashSet > ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < removeAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < toArray > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < size > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clear > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < retainAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < iterator > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < toArray > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 0...
+
+[[1;34mINFO[m] Generating test for method < containsAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < iterator > round 0 ...
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] Generating test for method < toArray > round 0 ...
+[[1;34mINFO[m] Generating test for method < toArray > round 0 ...
+[[1;34mINFO[m] Generating test for method < removeAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < retainAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < clear > round 0 ...
+[[1;34mINFO[m] Generating test for method < size > round 0 ...
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < removeAll > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < removeAll > round 1 ...
+[[1;34mINFO[m] Test for method < toArray > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < toArray > round 1 ...
+[[1;34mINFO[m] Test for method < iterator > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < iterator > round 1 ...
+[[1;34mINFO[m] Test for method < toArray > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < toArray > round 1 ...
+[[1;34mINFO[m] Test for method < clear > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < clear > round 1 ...
+
+Test run finished after 776 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < retainAll > compile and execute successfully round 0
+
+Test run finished after 766 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < equals > number 0...
+
+[[1;34mINFO[m] Generating test for method < equals > round 0 ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < hashCode > number 0...
+
+[[1;34mINFO[m] Generating test for method < hashCode > round 0 ...
+
+Test run finished after 27 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < contains > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+Processed contains(Object)
+
+Test run finished after 31 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < containsAll > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+Processed containsAll(Collection)
+[[1;34mINFO[m] Processed test for method < size > generated successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 5 /  0]
+Processed size()
+Skip method: isEmpty() in class: co.streamx.fluent.JPA.util.ScopedHashSet
+
+Test run finished after 7 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < hashCode > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 6 /  0]
+
+Test run finished after 66 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < equals > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 7 /  0]
+
+Test run finished after 5 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < removeAll > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 8 /  0]
+
+Test run finished after 2 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < clear > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 9 /  0]
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < toArray > compile and execute successfully round 1
+
+Test run finished after 1 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < iterator > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 10 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 11 /  0]
+Processed iterator()
+Processed toArray()
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < toArray > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 12 /  0]
+Processed toArray(T[])
+Processed remove(Object)
+Processed removeAll(Collection)
+Processed retainAll(Collection)
+Processed clear()
+Processed equals(Object)
+Processed hashCode()
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generation finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Test processed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  01:22 min
+[[1;34mINFO[m] Finished at: 2026-07-11T00:38:47Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

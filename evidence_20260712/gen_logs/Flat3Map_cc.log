@@ -1,0 +1,52 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.apache.commons:commons-collections4[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding Apache Commons Collections 4.5-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32menforcer:3.3.0:enforce[m [1m(enforce-maven-version)[m @ [36mcommons-collections4[0;1m ---[m
+[[1;34mINFO[m] Skipping Rule Enforcement.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32menforcer:3.3.0:enforce[m [1m(enforce-java-version)[m @ [36mcommons-collections4[0;1m ---[m
+[[1;34mINFO[m] Skipping Rule Enforcement.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mapache-rat:0.15:check[m [1m(rat-check)[m @ [36mcommons-collections4[0;1m ---[m
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Parsing exclusions from /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/.gitignore
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 72 implicit excludes.
+[[1;34mINFO[m] 15 explicit excludes.
+[[1;34mINFO[m] 666 resources included
+[[1;34mINFO[m] Rat check: Summary over all files. Unapproved: 9, unknown: 9, generated: 0, approved: 652 licenses.
+[[1;34mINFO[m] Enabled default license matchers.
+[[1;34mINFO[m] Will parse SCM ignores for exclusions...
+[[1;34mINFO[m] Parsing exclusions from /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/.gitignore
+[[1;34mINFO[m] Finished adding exclusions from SCM ignore files.
+[[1;34mINFO[m] 72 implicit excludes.
+[[1;34mINFO[m] 15 explicit excludes.
+[[1;34mINFO[m] 666 resources included
+[[1;33mWARNING[m] Files with unapproved licenses:
+  pom.xml
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_clone_17_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_values_14_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_hashCode_19_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_keySet_13_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_get_0_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_equals_18_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_remove_9_0_Test.java
+  chatunitest-tests/org/apache/commons/collections4/map/Flat3Map_containsKey_3_0_Test.java
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.027 s
+[[1;34mINFO[m] Finished at: 2026-07-11T11:11:26Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.rat:apache-rat-plugin:0.15:check[m [1m(rat-check)[m on project [36mcommons-collections4[m: [1;31mToo many files with unapproved license: 9 See RAT report in: /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/target/rat.txt[m -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

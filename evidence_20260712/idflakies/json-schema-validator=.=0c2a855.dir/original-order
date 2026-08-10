@@ -1,0 +1,4 @@
+com.networknt.schema.CollectorContext_add_1_0_Test#testAdd()
+com.networknt.schema.CollectorContext_add_2_0_Test#testAdd()
+com.networknt.schema.CollectorContext_combineWithCollector_5_0_Test#testCombineWithCollector_CollectorDoesNotExist()
+com.networknt.schema.CollectorContext_reset_6_0_Test#testReset()

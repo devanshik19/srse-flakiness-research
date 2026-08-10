@@ -1,0 +1,55 @@
+### ND: XML
+  XML_toString_21_0_Test: 92 pass / 8 fail (of 100)
+  XML_toJSONObject_15_0_Test: 89 pass / 11 fail (of 100)
+  XML_toString_22_0_Test: 100 pass / 0 fail (of 100)
+  XML_toJSONObject_14_0_Test: 100 pass / 0 fail (of 100)
+  XML_toJSONObject_11_0_Test: 100 pass / 0 fail (of 100)
+  XML_unescape_3_0_Test: 100 pass / 0 fail (of 100)
+  XML_toJSONObject_10_0_Test: 100 pass / 0 fail (of 100)
+  XML_toString_17_0_Test: 100 pass / 0 fail (of 100)
+  XML_toJSONObject_13_0_Test: 96 pass / 4 fail (of 100)
+  XML_noSpace_4_0_Test: 91 pass / 9 fail (of 100)
+ND-ROW: XML  ND:4  detail:[ XML_toString_21_0_Test(8/100) XML_toJSONObject_15_0_Test(11/100) XML_toJSONObject_13_0_Test(4/100) XML_noSpace_4_0_Test(9/100)]
+### ND: InternalArrays
+  InternalArrays_asImmutableList_0_0_Test: 100 pass / 0 fail (of 100)
+  InternalArrays_toImmutableList_1_0_Test: 100 pass / 0 fail (of 100)
+ND-ROW: InternalArrays  ND:0  detail:[]
+### ND: LazyForeignCollection
+  LazyForeignCollection_iteratorThrow_4_1_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_iterator_1_1_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_closeableIterator_2_1_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_toArray_17_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_refreshCollection_21_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_removeAll_15_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_closeableIterator_3_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_containsAll_13_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_updateAll_19_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_size_10_3_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_closeLastIterator_8_0_Test: 100 pass / 0 fail (of 100)
+  LazyForeignCollection_refreshAll_20_0_Test: 100 pass / 0 fail (of 100)
+ND-ROW: LazyForeignCollection  ND:0  detail:[]
+### ND: MutableByte
+  MutableByte_getAndAdd_12_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_decrement_6_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_hashCode_16_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_byteValue_4_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_intValue_19_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_add_1_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_increment_17_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_subtract_24_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_doubleValue_8_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_subtract_23_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_floatValue_10_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_toByte_25_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_toString_26_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_incrementAndGet_18_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_add_0_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_longValue_20_0_Test: 100 pass / 0 fail (of 100)
+  MutableByte_equals_9_0_Test: 100 pass / 0 fail (of 100)
+ND-ROW: MutableByte  ND:0  detail:[]
+### ND: ProcessArtifactItemsRequest
+  ProcessArtifactItemsRequest_useBaseVersion_10_0_Test: 100 pass / 0 fail (of 100)
+  ProcessArtifactItemsRequest_removeVersion_4_0_Test: 100 pass / 0 fail (of 100)
+  ProcessArtifactItemsRequest_prependGroupId_7_0_Test: 100 pass / 0 fail (of 100)
+ND-ROW: ProcessArtifactItemsRequest  ND:0  detail:[]
+ND DONE — /home/dev4nshik/srse-research/nd_results.md

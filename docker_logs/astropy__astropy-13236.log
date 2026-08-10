@@ -1,0 +1,14 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.astropy__astropy-13236
+84ba1878c1f6: Pulling fs layer
+d1232bf0949c: Pulling fs layer
+d1232bf0949c: Download complete
+d1232bf0949c: Pull complete
+84ba1878c1f6: Download complete
+84ba1878c1f6: Pull complete
+Digest: sha256:98ecd819c7c599075f8b267aea8b9a4a2df9a558e73e4fb42fd60eb742fe3a7c
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-13236:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-13236:latest
+65eabf18a5a3ed30d96cc02ee04995ce10c6e380903c5ce9b205968781f2b257
+run_astropy__astropy_13236
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.astropy__astropy-13236:latest
+Deleted: sha256:98ecd819c7c599075f8b267aea8b9a4a2df9a558e73e4fb42fd60eb742fe3a7c

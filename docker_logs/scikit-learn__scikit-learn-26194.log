@@ -1,0 +1,29 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-26194
+f93009d70e27: Pulling fs layer
+a5d33d85f717: Pulling fs layer
+e11f28e03bd1: Pulling fs layer
+2abe853894ad: Pulling fs layer
+33a66b05d6af: Pulling fs layer
+bbaa409e0685: Pulling fs layer
+f716f222fd4f: Pulling fs layer
+2abe853894ad: Download complete
+33a66b05d6af: Download complete
+bbaa409e0685: Download complete
+e11f28e03bd1: Download complete
+f716f222fd4f: Download complete
+f93009d70e27: Download complete
+f93009d70e27: Pull complete
+33a66b05d6af: Pull complete
+e11f28e03bd1: Pull complete
+a5d33d85f717: Download complete
+a5d33d85f717: Pull complete
+2abe853894ad: Pull complete
+bbaa409e0685: Pull complete
+f716f222fd4f: Pull complete
+Digest: sha256:a7b6b23e4c0be8811fe752aa8abb6b8c9ea43e05ddbab058e1c1e7d0afa653a2
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-26194:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-26194:latest
+e061f7ba524ae60b6255c501e9cb572ddaaf1cba4cdabf451073651deaef5941
+run_scikit_learn__scikit_learn_26194
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.scikit-learn__scikit-learn-26194:latest
+Deleted: sha256:a7b6b23e4c0be8811fe752aa8abb6b8c9ea43e05ddbab058e1c1e7d0afa653a2

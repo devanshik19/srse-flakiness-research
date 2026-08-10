@@ -1,0 +1,465 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mco.streamx.fluent:fluent-jpa[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Java Fluent JPA 1.2.2-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/fluent-jpa
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;34mINFO[m] 
+Parsed classes: 51
+Parsed methods: 365
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < co.streamx.fluent.JPA.util.ScopedArrayList > ...
+Skip method: getUpper() in class: co.streamx.fluent.JPA.util.ScopedArrayList
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < size > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < addAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < addAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clear > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < get > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < retainAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < removeAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsAll > number 0...
+
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] Generating test for method < retainAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < size > round 0 ...
+[[1;34mINFO[m] Generating test for method < containsAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < removeAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < addAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < addAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < clear > round 0 ...
+[[1;34mINFO[m] Generating test for method < get > round 0 ...
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < addAll > compilation failed round 0
+[[1;34mINFO[m] Test for method < remove > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < addAll > round 1 ...
+[[1;34mINFO[m] Fixing test for method < remove > round 1 ...
+[[1;34mINFO[m] Test for method < clear > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < clear > round 1 ...
+
+Test run finished after 434 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+
+Test run finished after 432 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+
+Test run finished after 437 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+
+Test run finished after 432 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+
+Test run finished after 432 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+
+Test run finished after 434 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < containsAll > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < retainAll > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < addAll > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < get > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < size > compile and execute successfully round 0
+[[1;34mINFO[m] Test for method < removeAll > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < add > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < lastIndexOf > number 0...
+
+[[1;34mINFO[m] Generating test for method < lastIndexOf > round 0 ...
+Processed size()
+Skip method: isEmpty() in class: co.streamx.fluent.JPA.util.ScopedArrayList
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 6 /  0]
+[[1;34mINFO[m] Generating test for method < add > round 0 ...
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 5 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < indexOf > number 0...
+
+[[1;34mINFO[m] Generating test for method < indexOf > round 0 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < contains > round 1 ...
+
+Test run finished after 51 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 7 /  0]
+
+Test run finished after 12 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < add > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 8 /  0]
+
+Test run finished after 11 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < indexOf > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 9 /  0]
+[[1;34mINFO[m] Processed test for method < lastIndexOf > generated successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 10 /  0]
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 11 /  0]
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < addAll > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 12 /  0]
+
+Test run finished after 1 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < clear > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 13 /  0]
+[[1;34mINFO[m] Test for method < contains > compilation failed round 1
+[[1;34mINFO[m] Fixing test for method < contains > round 2 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < contains > round 3 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < contains > round 4 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 1...
+
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < contains > round 1 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < contains > round 2 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < contains > round 3 ...
+[[1;34mINFO[m] Test for method < contains > compilation failed round 3
+[[1;34mINFO[m] Fixing test for method < contains > round 4 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 2...
+
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < contains > round 1 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < contains > round 2 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < contains > round 3 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < contains > round 4 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 3...
+
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < contains > round 1 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < contains > round 2 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < contains > round 3 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < contains > round 4 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < contains > number 4...
+
+[[1;34mINFO[m] Generating test for method < contains > round 0 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < contains > round 1 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 1
+[[1;34mINFO[m] Fixing test for method < contains > round 2 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < contains > execution failed round 2
+[[1;34mINFO[m] Fixing test for method < contains > round 3 ...
+In TestProcessor.removeCorrectTest: No test case left
+In TestProcessor.removeCorrectTest: No test case left
+[[1;34mINFO[m] Test for method < contains > execution failed round 3
+[[1;34mINFO[m] Fixing test for method < contains > round 4 ...
+[[1;34mINFO[m] Test for method < contains > execution failed round 4
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 14 /  0]
+Processed contains(Object)
+Processed remove(Object)
+Processed containsAll(Collection)
+Processed addAll(Collection)
+Processed addAll(int, Collection)
+Processed removeAll(Collection)
+Processed retainAll(Collection)
+Processed clear()
+Processed get(int)
+Skip method: set(int, E) in class: co.streamx.fluent.JPA.util.ScopedArrayList
+Processed add(int, E)
+Processed remove(int)
+Processed indexOf(Object)
+Processed lastIndexOf(Object)
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generation finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Test processed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  04:57 min
+[[1;34mINFO[m] Finished at: 2026-07-11T00:50:01Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

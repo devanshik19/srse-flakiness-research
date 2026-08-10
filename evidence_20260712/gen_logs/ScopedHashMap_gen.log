@@ -1,0 +1,346 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] Inspecting build with total of 1 modules...
+[[1;34mINFO[m] Installing Nexus Staging features:
+[[1;34mINFO[m]   ... total of 1 executions of maven-deploy-plugin replaced with nexus-staging-maven-plugin
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------------< [0;36mco.streamx.fluent:fluent-jpa[0;1m >--------------------[m
+[[1;34mINFO[m] [1mBuilding Java Fluent JPA 1.2.2-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36mfluent-jpa[0;1m ---[m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/fluent-jpa
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/FluentJPA=.=4faabd6.dir/FluentJPA=.=4faabd6/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;34mINFO[m] 
+Parsed classes: 51
+Parsed methods: 365
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < co.streamx.fluent.JPA.util.ScopedHashMap > ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < keySet > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsKey > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsValue > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < getOrDefault > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clear > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < get > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < size > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < values > number 0...
+
+[[1;34mINFO[m] Generating test for method < containsKey > round 0 ...
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] Generating test for method < containsValue > round 0 ...
+[[1;34mINFO[m] Generating test for method < clear > round 0 ...
+[[1;34mINFO[m] Generating test for method < size > round 0 ...
+[[1;34mINFO[m] Generating test for method < getOrDefault > round 0 ...
+[[1;34mINFO[m] Generating test for method < get > round 0 ...
+[[1;34mINFO[m] Generating test for method < keySet > round 0 ...
+[[1;34mINFO[m] Generating test for method < values > round 0 ...
+[[1;34mINFO[m] Test for method < keySet > compilation failed round 0
+[[1;34mINFO[m] Test for method < remove > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < keySet > round 1 ...
+[[1;34mINFO[m] Fixing test for method < remove > round 1 ...
+
+Test run finished after 282 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < values > compile and execute successfully round 0
+
+Test run finished after 279 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < clear > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < entrySet > number 0...
+
+[[1;34mINFO[m] Generating test for method < entrySet > round 0 ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < equals > number 0...
+
+[[1;34mINFO[m] Generating test for method < equals > round 0 ...
+
+Test run finished after 28 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < get > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+
+Test run finished after 21 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < containsKey > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+Processed containsKey(Object)
+
+Test run finished after 90 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < getOrDefault > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 5 /  0]
+
+Test run finished after 25 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         3 tests found           ]
+[         0 tests skipped         ]
+[         3 tests started         ]
+[         0 tests aborted         ]
+[         3 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 6 /  0]
+[[1;34mINFO[m] Test for method < containsValue > execution failed round 0
+[[1;34mINFO[m] Fixing test for method < containsValue > round 1 ...
+[[1;34mINFO[m] Processed test for method < size > generated successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 7 /  0]
+
+Test run finished after 4 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < entrySet > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 8 /  0]
+
+Test run finished after 36 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < equals > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 9 /  0]
+
+Test run finished after 3 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 10 /  0]
+
+Test run finished after 2 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < keySet > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 11 /  0]
+[[1;34mINFO[m] Processed test for method < containsValue > generated successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 12 /  0]
+Processed containsValue(Object)
+Processed size()
+Skip method: isEmpty() in class: co.streamx.fluent.JPA.util.ScopedHashMap
+Processed get(Object)
+Processed getOrDefault(Object, V)
+Processed remove(Object)
+Skip method: keysIterator() in class: co.streamx.fluent.JPA.util.ScopedHashMap
+Processed remove(Object, Object)
+Processed clear()
+Processed keySet()
+Processed values()
+Processed entrySet()
+Processed equals(Object)
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generation finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Test processed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  01:02 min
+[[1;34mINFO[m] Finished at: 2026-07-11T00:42:33Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

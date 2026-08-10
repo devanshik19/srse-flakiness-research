@@ -1,0 +1,37 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------< [0;36mcom.google.cloud.tools:appengine-plugins-core[0;1m >------------[m
+[[1;34mINFO[m] [1mBuilding App Engine Plugins Core Library 0.9.10-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32menforcer:3.0.0-M3:enforce[m [1m(convergence)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] Skipping Rule Enforcement.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mfmt:2.4.0:check[m [1m(default)[m @ [36mappengine-plugins-core[0;1m ---[m
+[debug] Using Google style
+[[1;34mINFO[m] Processed 100 files (0 non-complying).
+[[1;34mINFO[m] Processed 109 files (0 non-complying).
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mjacoco:0.8.7:prepare-agent[m [1m(initialize)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] argLine set to -javaagent:/home/dev4nshik/.m2/repository/org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7-runtime.jar=destfile=/home/dev4nshik/srse-java/appengine-plugins-core=.=ca26908.dir/appengine-plugins-core=.=ca26908/Flaky/target/jacoco.exec
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:resources[m [1m(default-resources)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] Copying 1 resource from src/main/resources to target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.10.1:compile[m [1m(default-compile)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mbundle:3.5.0:manifest[m [1m(bundle-manifest)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mresources:3.3.1:testResources[m [1m(default-testResources)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] Copying 15 resources from src/test/resources to target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mcompiler:3.10.1:testCompile[m [1m(default-testCompile)[m @ [36mappengine-plugins-core[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  6.197 s
+[[1;34mINFO[m] Finished at: 2026-07-10T22:16:43Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m

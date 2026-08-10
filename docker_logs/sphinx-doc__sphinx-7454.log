@@ -1,0 +1,25 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454
+Digest: sha256:e98fa9aa61bdadb16989eca993fa93da2ec4a6415f8a58fb5013bce59fb2d396
+Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+8b659b3cb926ec6f8c5d475c31d268d7cba0da12edce578f5c7f98a625c0e339
+lstat /home/dev4nshik/srse-research/in_container.sh: no such file or directory
+bash: /in_container.sh: No such file or directory
+run_sphinx_doc__sphinx_7454
+Error response from daemon: conflict: unable to delete ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest (must be forced) - container 6e0bf6517dbf is using its referenced image e98fa9aa61bd
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454
+Digest: sha256:e98fa9aa61bdadb16989eca993fa93da2ec4a6415f8a58fb5013bce59fb2d396
+Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+1f53cbfbc805af0984be53bf84a2a133f6565bd9dc0763c521d1759cf392c43f
+run_sphinx_doc__sphinx_7454
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+Deleted: sha256:e98fa9aa61bdadb16989eca993fa93da2ec4a6415f8a58fb5013bce59fb2d396
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454
+Digest: sha256:e98fa9aa61bdadb16989eca993fa93da2ec4a6415f8a58fb5013bce59fb2d396
+Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+7a2f7d762c3599249252d10bd5b2c4c30f210175d7b70de46b326ba21b55b5c5
+run_sphinx_doc__sphinx_7454
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.sphinx-doc__sphinx-7454:latest
+Deleted: sha256:e98fa9aa61bdadb16989eca993fa93da2ec4a6415f8a58fb5013bce59fb2d396

@@ -1,0 +1,6 @@
+co.streamx.fluent.JPA.util.ScopedArrayList_addAll_6_0_Test#testAddAll_UnsupportedOperationException()
+co.streamx.fluent.JPA.util.ScopedArrayList_containsAll_5_0_Test#testContainsAll_emptyCollection()
+co.streamx.fluent.JPA.util.ScopedArrayList_containsAll_5_0_Test#testContainsAll_nonEmptyCollection()
+co.streamx.fluent.JPA.util.ScopedArrayList_containsAll_5_0_Test#testGetUpper()
+co.streamx.fluent.JPA.util.ScopedArrayList_lastIndexOf_16_0_Test#testGetUpper()
+co.streamx.fluent.JPA.util.ScopedArrayList_size_1_0_Test#testSize()

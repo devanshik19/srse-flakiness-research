@@ -1,0 +1,29 @@
+latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-21930
+b08895a5c216: Pulling fs layer
+5c809fd8a9af: Pulling fs layer
+1e7882d8e98c: Pulling fs layer
+2f341c31f3b7: Pulling fs layer
+ed3dada71338: Pulling fs layer
+3075e58bea59: Pulling fs layer
+0b326ada86d1: Pulling fs layer
+5c809fd8a9af: Download complete
+3075e58bea59: Download complete
+ed3dada71338: Download complete
+2f341c31f3b7: Download complete
+1e7882d8e98c: Download complete
+0b326ada86d1: Download complete
+b08895a5c216: Download complete
+b08895a5c216: Pull complete
+ed3dada71338: Pull complete
+2f341c31f3b7: Pull complete
+0b326ada86d1: Pull complete
+5c809fd8a9af: Pull complete
+3075e58bea59: Pull complete
+1e7882d8e98c: Pull complete
+Digest: sha256:ae959d69640618e766dce99bda56879937e4b44ea773c41ebd78e360042ff627
+Status: Downloaded newer image for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-21930:latest
+ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-21930:latest
+5bc384e93572a56b4f47f64f2dba8eb24b4e5fdd19bb2955401eec83f4657bbd
+run_sympy__sympy_21930
+Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-21930:latest
+Deleted: sha256:ae959d69640618e766dce99bda56879937e4b44ea773c41ebd78e360042ff627

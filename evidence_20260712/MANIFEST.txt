@@ -1,0 +1,42 @@
+Evidence collected Sun Jul 12 02:18:14 UTC 2026
+JDK: openjdk version "11.0.31" 2026-04-21
+
+=== result files ===
+total 36
+drwxr-xr-x 2 dev4nshik dev4nshik 4096 Jul 12 02:18 .
+drwxr-xr-x 8 dev4nshik dev4nshik 4096 Jul 12 02:18 ..
+-rw-r--r-- 1 dev4nshik dev4nshik 4896 Jul 12 02:18 flakiness_results.md
+-rw-r--r-- 1 dev4nshik dev4nshik 4823 Jul 12 02:18 nd_results.md
+-rw-r--r-- 1 dev4nshik dev4nshik 4567 Jul 12 02:18 nd_run.out
+-rw-r--r-- 1 dev4nshik dev4nshik 2412 Jul 12 02:18 results.md
+=== nondex proofs ===
+evidence_20260712/nondex/Info_nondex.log
+evidence_20260712/nondex/ScopedArrayList_nondex.log
+evidence_20260712/nondex/home/dev4nshik/srse-java/ednval/edn-java=.=2d37e22/Flaky/.nondex/p0KRuPaqcIYCINmVFhHkoJZ4G+vOrUqSmKo9kmW6Dk=/test_results.html
+evidence_20260712/nondex/home/dev4nshik/srse-java/ednval/edn-java=.=2d37e22/Flaky/.nondex/LGgZYsvrWkDqeT5ZkGNLSBpdEs2YyOPqu7bL72mRVY=/test_results.html
+evidence_20260712/nondex/home/dev4nshik/srse-java/ednval/edn-java=.=2d37e22/Flaky/.nondex/vgwFR8jTORfK1OSiYz1SrqDgY5XigCg04IvPs6Pzs=/test_results.html
+evidence_20260712/nondex/ULongIndexer_nondex.log
+evidence_20260712/nondex/ByteIndexer_nondex.log
+evidence_20260712/nondex/SnowflakeConnectionV1_nondex.log
+evidence_20260712/nondex/ScopedHashSet_nondex.log
+evidence_20260712/nondex/ScopedHashMap_nondex.log
+=== idflakies dirs ===
+FluentJPA=.=4faabd6.dir
+JSON-java=.=f346203.dir
+detection-results
+emobility-smart-charging=.=423542c.dir
+fosstars-rating-core=.=d2e7cdd.dir
+java-classmate=.=912adde.dir
+javacpp=.=2fd35c6.dir
+jmeter-datadog-backend-listener=.=b9fdff5.dir
+jmeter-maven-plugin=.=cd921de.dir
+json-schema-validator=.=0c2a855.dir
+original-order
+ormlite_validation
+snakeyaml=.=626340b.dir
+=== nd loop logs ===
+9
+log files
+=== gen/cc/base logs ===
+41
+log files

@@ -1,0 +1,563 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36morg.apache.commons:commons-collections4[0;1m >---------------[m
+[[1;34mINFO[m] [1mBuilding Apache Commons Collections 4.5-SNAPSHOT[m
+[[1;34mINFO[m]   from pom.xml
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mchatunitest:2.1.1:class[m [1m(default-cli)[m @ [36mcommons-collections4[0;1m ---[m
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.10.0/junit-vintage-engine-5.10.0.pom
+Progress (1): 959 BProgress (1): 2.5 kBProgress (1): 3.2 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.10.0/junit-vintage-engine-5.10.0.pom[90m (3.2 kB at 5.0 kB/s)[0m
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.10.0/junit-platform-runner-1.10.0.pom
+Progress (1): 961 BProgress (1): 2.5 kBProgress (1): 3.6 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.10.0/junit-platform-runner-1.10.0.pom[90m (3.6 kB at 16 kB/s)[0m
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.pom
+Progress (1): 965 BProgress (1): 2.5 kBProgress (1): 3.0 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.pom[90m (3.0 kB at 82 kB/s)[0m
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.pom
+Progress (1): 969 BProgress (1): 2.5 kBProgress (1): 3.4 kB                    Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.pom[90m (3.4 kB at 32 kB/s)[0m
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.10.0/junit-vintage-engine-5.10.0.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.10.0/junit-platform-runner-1.10.0.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar
+[90mDownloading from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar
+Progress (1): 0.9/67 kBProgress (1): 2.3/67 kBProgress (1): 3.6/67 kBProgress (1): 4.1/67 kBProgress (1): 5.5/67 kBProgress (1): 6.8/67 kBProgress (1): 8.2/67 kBProgress (1): 9.6/67 kBProgress (1): 11/67 kB Progress (1): 12/67 kBProgress (1): 14/67 kBProgress (1): 15/67 kBProgress (1): 16/67 kBProgress (1): 18/67 kBProgress (1): 19/67 kBProgress (1): 21/67 kBProgress (1): 22/67 kBProgress (1): 23/67 kBProgress (1): 25/67 kBProgress (1): 26/67 kBProgress (1): 27/67 kBProgress (1): 29/67 kBProgress (1): 30/67 kBProgress (1): 31/67 kBProgress (1): 33/67 kBProgress (1): 34/67 kBProgress (1): 36/67 kBProgress (1): 37/67 kBProgress (1): 38/67 kBProgress (1): 43/67 kBProgress (1): 47/67 kBProgress (1): 51/67 kBProgress (1): 55/67 kBProgress (1): 59/67 kBProgress (1): 64/67 kBProgress (1): 67 kB                      Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/vintage/junit-vintage-engine/5.10.0/junit-vintage-engine-5.10.0.jar[90m (67 kB at 847 kB/s)[0m
+Progress (1): 0.9/23 kBProgress (1): 2.3/23 kBProgress (1): 3.6/23 kBProgress (1): 5.0/23 kBProgress (1): 6.4/23 kBProgress (1): 7.7/23 kBProgress (1): 9.1/23 kBProgress (1): 10/23 kB Progress (1): 12/23 kBProgress (1): 13/23 kBProgress (1): 15/23 kBProgress (1): 16/23 kBProgress (2): 16/23 kB | 0.9/17 kBProgress (2): 17/23 kB | 0.9/17 kBProgress (2): 17/23 kB | 2.3/17 kBProgress (2): 19/23 kB | 2.3/17 kBProgress (2): 19/23 kB | 3.6/17 kBProgress (2): 20/23 kB | 3.6/17 kBProgress (2): 20/23 kB | 5.0/17 kBProgress (2): 21/23 kB | 5.0/17 kBProgress (2): 23 kB | 5.0/17 kB   Progress (2): 23 kB | 6.4/17 kBProgress (2): 23 kB | 7.7/17 kBProgress (2): 23 kB | 9.1/17 kBProgress (2): 23 kB | 10/17 kB Progress (2): 23 kB | 11/17 kB                              Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar[90m (23 kB at 152 kB/s)[0m
+Progress (1): 13/17 kBProgress (1): 14/17 kBProgress (1): 15/17 kBProgress (1): 17/17 kBProgress (1): 17 kB                      Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar[90m (17 kB at 105 kB/s)[0m
+Progress (1): 0.9/17 kBProgress (1): 2.3/17 kBProgress (1): 3.6/17 kBProgress (1): 5.0/17 kBProgress (1): 6.4/17 kBProgress (1): 7.7/17 kBProgress (1): 9.1/17 kBProgress (1): 10/17 kB Progress (1): 11/17 kBProgress (1): 13/17 kBProgress (1): 14/17 kBProgress (1): 15/17 kBProgress (1): 17 kB                      Downloaded[90m from [0mcentral[90m: https://repo.maven.apache.org/maven2/[0morg/junit/platform/junit-platform-runner/1.10.0/junit-platform-runner-1.10.0.jar[90m (17 kB at 70 kB/s)[0m
+[[1;34mINFO[m] 
+========================== Configuration ==========================
+
+[[1;34mINFO[m] PluginSign >>>>CHATUNITEST
+[[1;34mINFO[m]  Multithreading >>>> true
+[[1;34mINFO[m]  - Class threads: 4, Method threads: 10
+[[1;34mINFO[m]  Stop when success >>>> true
+[[1;34mINFO[m]  No execution >>>> false
+[[1;34mINFO[m]  Enable Merge >>>> true
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  TestOutput Path >>> /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/chatunitest-tests
+[[1;34mINFO[m]  TmpOutput Path >>> /tmp/chatunitest-info/commons-collections4
+[[1;34mINFO[m]  CounterExample Path >>> /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/smartut-tests
+[[1;34mINFO[m]  Prompt path >>> null
+[[1;34mINFO[m]  Example path >>> /home/dev4nshik/srse-java/COLLECTIONS-850.dir/COLLECTIONS-850/Flaky/exampleUsage.json
+[[1;34mINFO[m]  --- 
+[[1;34mINFO[m]  Model >>> GPT_4O
+[[1;34mINFO[m]  Url >>> https://api.openai.com/v1/chat/completions
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  MaxResponseTokens >>> 1024
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxThreads >>> 40
+[[1;34mINFO[m]  TestNumber >>> 5
+[[1;34mINFO[m]  MaxRounds >>> 5
+[[1;34mINFO[m]  MinErrorTokens >>> 500
+[[1;34mINFO[m]  MaxPromptTokens >>> 81920
+[[1;34mINFO[m]  SleepTime >>> 0
+[[1;34mINFO[m]  DependencyDepth >>> 1
+[[1;34mINFO[m]  SampleSize >>> 10
+[[1;34mINFO[m]  PhaseType >>> CHATUNITEST
+[[1;34mINFO[m] 
+===================================================================
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parsing class info ...
+[[1;31mERROR[m] In ClassParser.extractClass Exception: when parse class Indices :
+java.util.NoSuchElementException: Fully qualified name not present
+[[1;31mERROR[m] In ClassParser.extractClass Exception: when parse class Bits :
+java.util.NoSuchElementException: Fully qualified name not present
+[[1;34mINFO[m] 
+Parsed classes: 498
+Parsed methods: 3788
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Parse finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating tests for class < org.apache.commons.collections4.map.Flat3Map > ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < get > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < size > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < putAll > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < remove > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clear > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsKey > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < containsValue > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < put > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < entrySet > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < mapIterator > number 0...
+
+[[1;34mINFO[m] Generating test for method < remove > round 0 ...
+[[1;34mINFO[m] Generating test for method < mapIterator > round 0 ...
+[[1;34mINFO[m] Generating test for method < containsKey > round 0 ...
+[[1;34mINFO[m] Generating test for method < containsValue > round 0 ...
+[[1;34mINFO[m] Generating test for method < clear > round 0 ...
+[[1;34mINFO[m] Generating test for method < get > round 0 ...
+[[1;34mINFO[m] Generating test for method < size > round 0 ...
+[[1;34mINFO[m] Generating test for method < putAll > round 0 ...
+[[1;34mINFO[m] Generating test for method < put > round 0 ...
+[[1;34mINFO[m] Generating test for method < entrySet > round 0 ...
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_entrySet_12_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_entrySet_12_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < entrySet > execution timeout round 
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_clear_10_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_clear_10_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_size_1_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[[1;33mWARNING[m] Test for method < clear > execution timeout round 
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_size_1_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_put_5_0_Test
+[[1;33mWARNING[m] Test for method < size > execution timeout round 
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_put_5_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_putAll_6_0_Test
+[[1;33mWARNING[m] Test for method < put > execution timeout round 	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_putAll_6_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < putAll > execution timeout round 
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_mapIterator_11_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 1 /  0]Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_mapIterator_11_0_Test
+
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < mapIterator > execution timeout round 
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 2 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 3 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 4 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < values > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < keySet > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < clone > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 5 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < hashCode > number 0...
+
+[[1;34mINFO[m] Generating test for method < values > round 0 ...
+[[1;34mINFO[m] Generating test for method < keySet > round 0 ...
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 6 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < equals > number 0...
+
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generating test for method < toString > number 0...
+
+[[1;34mINFO[m] Generating test for method < clone > round 0 ...
+[[1;34mINFO[m] Generating test for method < hashCode > round 0 ...
+[[1;34mINFO[m] Generating test for method < equals > round 0 ...
+[[1;34mINFO[m] Generating test for method < toString > round 0 ...
+[[1;34mINFO[m] Test for method < remove > compilation failed round 0
+[[1;34mINFO[m] Fixing test for method < remove > round 1 ...
+java.util.concurrent.ExecutionException: java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+	at org.apache.commons.collections4.map.AbstractHashedMap.ensureCapacity(AbstractHashedMap.java:622)
+	at org.apache.commons.collections4.map.AbstractHashedMap._putAll(AbstractHashedMap.java:322)
+	at org.apache.commons.collections4.map.AbstractHashedMap.putAll(AbstractHashedMap.java:301)
+	at org.apache.commons.collections4.map.Flat3Map_containsValue_4_0_Test.testContainsValueWithDelegateMap(Flat3Map_containsValue_4_0_Test.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda$1434/0x000000084070cc40.apply(Unknown Source)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall$$Lambda$1435/0x000000084070c040.apply(Unknown Source)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$$Lambda$1630/0x0000000840677840.apply(Unknown Source)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor$$Lambda$1653/0x0000000840639840.execute(Unknown Source)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+[[1;33mWARNING[m] Test for method < containsValue > execution timeout round 
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 7 /  0]
+
+Test run finished after 1029 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         6 tests found           ]
+[         0 tests skipped         ]
+[         6 tests started         ]
+[         0 tests aborted         ]
+[         6 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < get > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 8 /  0]
+Processed get(Object)
+Processed size()
+Skip method: isEmpty() in class: org.apache.commons.collections4.map.Flat3Map
+
+Test run finished after 9675 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         4 tests found           ]
+[         0 tests skipped         ]
+[         4 tests started         ]
+[         0 tests aborted         ]
+[         4 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < containsKey > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 9 /  0]
+Processed containsKey(Object)
+Processed containsValue(Object)
+Processed put(K, V)
+Processed putAll(Map)
+Skip method: convertToMap() in class: org.apache.commons.collections4.map.Flat3Map
+Skip method: createDelegateMap() in class: org.apache.commons.collections4.map.Flat3Map
+
+Test run finished after 11 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         2 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < values > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 10 /  0]
+
+Test run finished after 283 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         2 tests found           ]
+[         0 tests skipped         ]
+[         2 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         1 tests failed          ]
+
+[[1;34mINFO[m] Test for method < keySet > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 11 /  0]
+java.util.concurrent.ExecutionException: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_toString_20_0_Test
+	at java.base/java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.base/java.util.concurrent.FutureTask.get(FutureTask.java:205)
+	at zju.cst.aces.api.impl.ValidatorImpl.execute(ValidatorImpl.java:65)
+	at zju.cst.aces.runner.AbstractRunner.runTest(AbstractRunner.java:542)
+	at zju.cst.aces.api.phase.step.Validation.execute(Validation.java:23)
+	at zju.cst.aces.api.phase.PhaseImpl.validateTest(PhaseImpl.java:44)
+	at zju.cst.aces.runner.MethodRunner.startRounds(MethodRunner.java:75)
+	at zju.cst.aces.runner.MethodRunner.start(MethodRunner.java:54)
+	at zju.cst.aces.runner.ClassRunner.selectRunner(ClassRunner.java:116)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:74)
+	at zju.cst.aces.runner.ClassRunner$1.call(ClassRunner.java:63)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: In TestCompiler.executeTest: java.lang.ClassNotFoundException: org.apache.commons.collections4.map.Flat3Map_toString_20_0_Test
+	at zju.cst.aces.util.TestCompiler.executeTest(TestCompiler.java:100)
+	at zju.cst.aces.api.impl.ValidatorImpl.lambda$execute$0(ValidatorImpl.java:61)
+	... 4 more
+[[1;33mWARNING[m] Test for method < toString > execution timeout round 
+
+Test run finished after 8 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         1 tests found           ]
+[         0 tests skipped         ]
+[         1 tests started         ]
+[         0 tests aborted         ]
+[         1 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < clone > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 12 /  0]
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 13 /  0]
+
+Test run finished after 19 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         7 tests found           ]
+[         0 tests skipped         ]
+[         7 tests started         ]
+[         0 tests aborted         ]
+[         7 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < equals > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 14 /  0]
+
+Test run finished after 16 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         6 tests found           ]
+[         0 tests skipped         ]
+[         6 tests started         ]
+[         0 tests aborted         ]
+[         6 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < hashCode > compile and execute successfully round 0
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 15 /  0]
+
+Test run finished after 12 ms
+[         3 containers found      ]
+[         0 containers skipped    ]
+[         3 containers started    ]
+[         0 containers aborted    ]
+[         3 containers successful ]
+[         0 containers failed     ]
+[         7 tests found           ]
+[         0 tests skipped         ]
+[         7 tests started         ]
+[         0 tests aborted         ]
+[         7 tests successful      ]
+[         0 tests failed          ]
+
+[[1;34mINFO[m] Test for method < remove > compile and execute successfully round 1
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Completed Method Jobs:   [ 16 /  0]
+Processed remove(Object)
+Processed clear()
+Processed mapIterator()
+Processed entrySet()
+Processed keySet()
+Processed values()
+Skip method: writeObject(ObjectOutputStream) in class: org.apache.commons.collections4.map.Flat3Map
+Skip method: readObject(ObjectInputStream) in class: org.apache.commons.collections4.map.Flat3Map
+Processed clone()
+Processed equals(Object)
+Processed hashCode()
+Processed toString()
+Skip method: Flat3Map() in class: org.apache.commons.collections4.map.Flat3Map
+Skip method: Flat3Map(Map) in class: org.apache.commons.collections4.map.Flat3Map
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Generation finished
+[[1;34mINFO[m] 
+==========================
+[CHATUNITEST] Test processed
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  09:25 min
+[[1;34mINFO[m] Finished at: 2026-07-11T11:11:05Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
