@@ -32,11 +32,11 @@ The pipeline for each target is:
 | mercury | ID | getJournaledRoutes | yes | FLAKY | - | - | reproduces flakiness |
 | TestParameterInjector | ID | parseYamlStringToJavaType | yes | clean | clean | clean | |
 | feign | ID | resolve | no | - | - | - | package-private, tool cannot target it |
-| dubbo | OD | telnet | no | - | - | - | not completed |
+| dubbo | OD | telnet | no | - | - | - | in progress|
 | wildfly | OD | fireEvent | no | - | - | - | blocked on missing JBoss deps |
 | wildfly | OD | lookup | no | - | - | - | blocked on missing JBoss deps |
 | shardingsphere-elasticjob | OD | dataChanged | no | - | - | - | focal method on inner class, tool cannot target |
-| shardingsphere | ID | execute | no | - | - | - | not completed |
+| shardingsphere | ID | execute | no | - | - | - | in progress |
 | undertow | ID | (none) | no | - | - | - | no focal-method candidate found |
 | Struts | ID | (none) | no | - | - | - | JUnit 3, no annotation to detect |
 | activemq | ID | (none) | no | - | - | - | JUnit 3, no annotation to detect |
