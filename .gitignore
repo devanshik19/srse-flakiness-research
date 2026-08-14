@@ -1,0 +1,6 @@
+*.out
+*.log
+.dtfixingtools/
+target/
+chatunitest-tests/
+__pycache__/
