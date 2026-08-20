@@ -55,7 +55,7 @@ mvn io.github.zju-aces-ise:chatunitest-maven-plugin:2.1.1:method \
   -Dcheckstyle.skip=true 2>&1 | tee gen_logs/gen_<project>_<method>.log
 ```
 
-Output lands in `<module>/chatunitest-tests/`. It doesn't reliably stop after the first passing candidate, so watch the log for `compile and execute successfully` or `generated successfully`, grab that candidate, and Ctrl-C if it keeps looping.
+Output lands in `<module>/chatunitest-tests/`. It doesn't reliably stop after the first passing candidate, so watch the log for `compile and execute successfully` or `generated successfully`, take that candidate, and Ctrl-C if it keeps looping.
 
 ## Stage the generated test and confirm it actually passes
 
@@ -64,5 +64,3 @@ mkdir -p src/test/java/path/to/package
 cp chatunitest-tests/path/to/package/ClassName_method_N_N_Test.java src/test/java/path/to/package/
 mvn test -Dtest="ClassName_method_N_N_Test" -Dcheckstyle.skip=true -Denforcer.skip=true -DfailIfNoTests=false
 ```
-
-`compile and execute successfully` in the generation log does not mean the test passes — always verify with the command above before trusting the result.
