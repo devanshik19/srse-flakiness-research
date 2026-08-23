@@ -1,8 +1,0 @@
-latest: Pulling from epoch-research/swe-bench.eval.x86_64.sympy__sympy-13798
-Digest: sha256:83f95af962c352e1b78e2e0f384e9f30df806de5777b606c973e992643e997f4
-Status: Image is up to date for ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13798:latest
-ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13798:latest
-996e24c394f708a4bab3c63f43bd5f154642f7d8a218e38a93fdf648c857ef4f
-run_sympy__sympy_13798
-Untagged: ghcr.io/epoch-research/swe-bench.eval.x86_64.sympy__sympy-13798:latest
-Deleted: sha256:83f95af962c352e1b78e2e0f384e9f30df806de5777b606c973e992643e997f4
