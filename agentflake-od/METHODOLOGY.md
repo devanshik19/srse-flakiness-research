@@ -1,4 +1,4 @@
-# AgentFlake OD detection - methodology & environment (read once)
+# AgentFlake OD detection - methodology & environment
 
 Pipeline per row: pick OD row from test_config.csv -> ReproFlake OD container -> ChatUniTest generates
 a test for the named flaky test's focal method -> run generated test with the module's tests under
