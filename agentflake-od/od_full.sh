@@ -110,6 +110,7 @@ inC "python3 add_mockito.py '$MODULE/pom.xml'" | tee "$RAW/pom.log"
 log "[3] clean staged/generated + build + generate for $FOCAL_FQ (mvn 3.9.x, explicit plugin goal)"
 inC "rm -rf '$MODULE/chatunitest-tests' 2>/dev/null; find '$MODULE/src/test/java' -regextype posix-extended -regex '.*_[0-9]+_[0-9]+_Test\.java' -delete 2>/dev/null; true" >/dev/null
 inC "$M39 clean install -DskipTests -pl '$MODULE' -am $MVNOPTS" > "$RAW/build.log" 2>&1 || { tail -30 "$RAW/build.log"; record_fail BUILD_ERROR "mvn 3.9 clean install failed for $FOCAL_FQ (see raw/$CONTAINER/build.log)"; }
+inC "ls $MODULE/target/*.jar >/dev/null 2>&1 || $M39 install -DskipTests -pl '$MODULE' $MVNOPTS" >> "$RAW/build.log" 2>&1 || true
 inC "ulimit -c 0 2>/dev/null; rm -f $MODULE/core* $MODULE/hs_err_pid*.log 2>/dev/null; $M39 -pl '$MODULE' io.github.zju-aces-ise:chatunitest-maven-plugin:2.1.1:method -DselectMethod='$FOCAL_FQ' -DapiKeys='${OPENAI_API_KEY:-}' -Durl=https://api.openai.com/v1/chat/completions -Dmodel=$MODEL -DtestNumber=1 -DstopWhenSuccess=true -Dcheckstyle.skip=true $MVNOPTS" > "$RAW/generate.log" 2>&1 || true
   if ! inC "find '$MODULE/chatunitest-tests' -name '*_Test.java' 2>/dev/null | grep -q ." ; then tail -30 "$RAW/generate.log"; record_fail GEN_ERROR "chatunitest produced no usable test for $FOCAL_FQ (native crash/no output; see raw/$CONTAINER/generate.log)"; fi
 
