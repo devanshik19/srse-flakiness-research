@@ -4,3 +4,6 @@
 target/
 chatunitest-tests/
 __pycache__/
+agentflake-od/results.csv.bak*
+agentflake-od/results.manual.csv
+agentflake-od/*.sh.bak
