@@ -1,0 +1,93 @@
+{
+  "gpt-4o|0.0|getgrnam|6945354121088433351": {
+    "candidates": {
+      "posix.getgrnam": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|nonExistantGroupReturnsNull|-6902713538000757180": {
+    "candidates": {
+      "posix.getgrnam": 0.9
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|getgrent|-9028947740968479492": {
+    "candidates": {
+      "posix.getgrent": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|getgroups|-2833655104548316557": {
+    "candidates": {
+      "posix.getgroups": 0.9
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test00|6701630896004403476": {
+    "candidates": {
+      "namingEventCoordinator0.fireEvent": 0.9
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test01|-4240176258043438654": {
+    "candidates": {
+      "namingEventCoordinator0.fireEvent": 0.9
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test02|4863784055304692108": {
+    "candidates": {
+      "addListener": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test03|7577185758604880807": {
+    "candidates": {
+      "addListener": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test04|180084372496873297": {
+    "candidates": {
+      "addListener": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test05|-227202737073937972": {
+    "candidates": {
+      "fireEvent": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test06|7990581464497878819": {
+    "candidates": {
+      "fireEvent": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test07|5294768143351333850": {
+    "candidates": {
+      "bind": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test08|4934471637227791678": {
+    "candidates": {
+      "removeListener": 1.0
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test09|2862685125614484187": {
+    "candidates": {
+      "addListener": 0.6,
+      "removeListener": 0.4
+    },
+    "error": null
+  },
+  "gpt-4o|0.0|test10|6601585171008171800": {
+    "candidates": {
+      "addListener": 1.0
+    },
+    "error": null
+  }
+}
