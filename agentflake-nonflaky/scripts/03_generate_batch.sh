@@ -64,6 +64,29 @@ while IFS= read -r VICTIM; do
   FSTATUS=$(echo "$FOCLINE" | sed -n 's/.*STATUS=\([^ ]*\).*/\1/p')
   log "    $FOCLINE"
   if [ "$FSTATUS" != "agreed" ] || [ -z "$FOCAL" ]; then
+    # constructor-shortcut fallback: tests named like testConstructor/testCopyConstructor
+    # NEVER produce Jaccard candidates at all -- focal_extract.py's Jaccard side only walks
+    # MethodInvocation AST nodes, never `new Foo()` ClassCreator nodes, so "disagreed"/
+    # "neither" is guaranteed for these regardless of what the LLM says. Confirmed via a
+    # manual spike that ChatUniTest DOES accept a constructor as -DselectMethod, referenced
+    # by the class's own simple name (ChatUniTest ran its normal 5-round generate/repair
+    # loop against it, just like any other method). Skip Jaccard/LLM for this naming
+    # pattern and target the stripped-name class's own constructor directly -- unambiguous
+    # by convention, no heuristic needed.
+    if echo "$VMETHOD" | grep -qiE 'constructor'; then
+      VSIMPLE_CTOR="${VCLASS##*.}"
+      VPKGDIR_CTOR="$(echo "${VCLASS%.*}" | tr . /)"
+      for cs in "${VSIMPLE_CTOR%TestCase}" "${VSIMPLE_CTOR%Tests}" "${VSIMPLE_CTOR%Test}" \
+                "${VSIMPLE_CTOR%ITCase}" "${VSIMPLE_CTOR%IT}" "${VSIMPLE_CTOR%ITest}"; do
+        if [ -n "$cs" ] && [ -f "$SRCMAIN/$VPKGDIR_CTOR/$cs.java" ]; then
+          FOCAL="$cs"; FSTATUS="constructor-shortcut"
+          log "    (constructor-shortcut) $VMETHOD -> targeting ${VCLASS%.*}.$cs#$cs directly (no Jaccard/LLM needed, unambiguous by naming convention)"
+          break
+        fi
+      done
+    fi
+  fi
+  if { [ "$FSTATUS" != "agreed" ] && [ "$FSTATUS" != "constructor-shortcut" ]; } || [ -z "$FOCAL" ]; then
     echo "$VICTIM,${FSTATUS:-error},,,,,see focal-$i.log" >> "$RESULTS"
     continue
   fi
@@ -111,7 +134,7 @@ while IFS= read -r VICTIM; do
     2>&1 | tee "$REPODIR/generate-$i.log" | grep -E '^\[CHATUNITEST\]|Generating test for method|round [0-9]|ERROR' || true
 
   if ! find "$CUTESTS" -name '*_Test.java' 2>/dev/null | grep -q .; then
-    echo "$VICTIM,agreed,$CUT,$FOCAL,NONE,na,GEN_FAILED see generate-$i.log" >> "$RESULTS"
+    echo "$VICTIM,$FSTATUS,$CUT,$FOCAL,NONE,na,GEN_FAILED see generate-$i.log" >> "$RESULTS"
     continue
   fi
 
@@ -150,15 +173,15 @@ while IFS= read -r VICTIM; do
   if [ -z "$GEN" ]; then
     ngen=$(find "$CUTESTS" -name '*_Test.java' 2>/dev/null | wc -l)
     if [ "$ngen" = "0" ]; then
-      echo "$VICTIM,agreed,$CUT,$FOCAL,NONE,na,GEN_FAILED (no compiling test)" >> "$RESULTS"
+      echo "$VICTIM,$FSTATUS,$CUT,$FOCAL,NONE,na,GEN_FAILED (no compiling test)" >> "$RESULTS"
     else
-      echo "$VICTIM,agreed,$CUT,$FOCAL,GENERATED,fail,CANDIDATE_FAILED (did not pass alone)" >> "$RESULTS"
+      echo "$VICTIM,$FSTATUS,$CUT,$FOCAL,GENERATED,fail,CANDIDATE_FAILED (did not pass alone)" >> "$RESULTS"
     fi
     continue
   fi
 
   log "    generated: $GEN"
-  echo "$VICTIM,agreed,$CUT,$FOCAL,$GEN,pass," >> "$RESULTS"
+  echo "$VICTIM,$FSTATUS,$CUT,$FOCAL,$GEN,pass," >> "$RESULTS"
 done < "$TESTLIST"
 
 log "DONE. results -> $RESULTS"

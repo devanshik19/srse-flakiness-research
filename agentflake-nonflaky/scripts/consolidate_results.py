@@ -76,7 +76,7 @@ def main():
             focal_method = f"{cut}#{focal}" if cut and focal else ""
 
             if alone != "pass":
-                if focal_status != "agreed":
+                if focal_status not in ("agreed", "constructor-shortcut"):
                     notes_out = f"SKIPPED_FOCAL: status={focal_status}"; gen_out = "FOCAL_UNCONFIRMED"
                 elif gen == "NONE":
                     notes_out = notes or "GEN_FAILED"; gen_out = "NONE"
