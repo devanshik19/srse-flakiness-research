@@ -1,0 +1,100 @@
+# AgentFlake non-flaky-focal-method -- results
+
+**90 rows** -- 32 fully checked (ND/ID/OD, all clean: 0 flaky), 3 INCONCLUSIVE_OVERWRITE (file-overwrite artifact, not real flakiness -- see notes), 13 CANDIDATE_FAILED, 4 GEN_FAILED, 38 SKIPPED_FOCAL
+
+Java-WebSocket is now **complete: 90/90 non-flaky tests processed** (subject: `TooTallNate/Java-WebSocket`, commit `fa3909c391195178ccf5a92d4ac342a30ae247c8`, module `.`).
+
+| source_test | focal_method | generated_test | ND (pass/total) | ID (runs, verdict) | OD (pass/total) | notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| client.AttachmentTest#testDefaultValue | WebSocketClient#getAttachment | WebSocketClient_getAttachment_13_0_Test#testGetAttachment_NoAttachment | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| client.AttachmentTest#testSetter | WebSocketClient#setAttachment | WebSocketClient_setAttachment_14_0_Test#testSetAttachment | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#acceptHandshakeAsClient | Draft_6455#acceptHandshakeAsClient | Draft_6455_acceptHandshakeAsClient_1_0_Test#testAcceptHandshakeAsClient_Matched | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; an earlier generation attempt for this same focal method produced a candidate with a wrong assertion (CANDIDATE_FAILED) -- generation is nondeterministic run to run, this attempt succeeded |
+| drafts.Draft_6455Test#acceptHandshakeAsServer | Draft_6455#acceptHandshakeAsServer | Draft_6455_acceptHandshakeAsServer_0_0_Test#testAcceptHandshakeAsServer_NoMatchingProtocol | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#createFramesBinary | Draft_6455#createFrames | GENERATED | NA | NA | NA | CANDIDATE_FAILED: generated candidate did not pass alone this run. An earlier run for the same focal method DID pass ND/ID/OD clean -- generation is nondeterministic, worth retrying |
+| drafts.Draft_6455Test#createFramesText | Draft_6455#createFrames | GENERATED | NA | NA | NA | CANDIDATE_FAILED (batch2): both candidates tried (Draft_6455_createFrames_13_0_Test, _14_0_Test) failed alone, Tests run: 3 Failures: 1 both times -- third CANDIDATE_FAILED seen for this same focal method across attempts |
+| drafts.Draft_6455Test#testToString | Draft_6455#toString | GENERATED | NA | NA | NA | CANDIDATE_FAILED: Tests run: 4 Failures: 4 -- candidate badly wrong, worth inspecting generated-failed/round-14 for what the model got wrong |
+| drafts.Draft_6455Test#testGetExtension | Draft_6455#getExtension | NONE | NA | NA | NA | GEN_FAILED: compilation failed on all 5 rounds (round 0 + 4 self-repair attempts), never produced a compiling candidate |
+| drafts.Draft_6455Test#testHashCode | Draft_6455#hashCode | NONE | NA | NA | NA | GEN_FAILED: compilation failed on all 5 rounds (round 0 + 4 self-repair attempts), never produced a compiling candidate |
+| drafts.Draft_6455Test#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed (jaccard and llm picked different methods) |
+| extensions.DefaultExtensionTest#testEquals | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither found a method |
+| drafts.Draft_6455Test#postProcessHandshakeRequestAsClient | Draft_6455#postProcessHandshakeRequestAsClient | Draft_6455_postProcessHandshakeRequestAsClient_6_0_Test#testPostProcessHandshakeRequestAsClient | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#postProcessHandshakeResponseAsServer | Draft_6455#postProcessHandshakeResponseAsServer | Draft_6455_postProcessHandshakeResponseAsServer_7_0_Test#testPostProcessHandshakeResponseAsServer | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#testCopyInstance | Draft_6455#copyInstance | Draft_6455_copyInstance_8_0_Test#testCopyInstance | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; SAME generated test as the testEquals row below (both resolved to focal copyInstance) -- checked once, result duplicated across both source-test rows on request |
+| drafts.Draft_6455Test#testEquals | Draft_6455#copyInstance | Draft_6455_copyInstance_8_0_Test#testCopyInstance | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; SAME generated test as the testCopyInstance row above (both resolved to focal copyInstance) -- checked once, result duplicated across both source-test rows on request |
+| drafts.Draft_6455Test#testGetCloseHandshakeType | Draft_6455#getCloseHandshakeType | Draft_6455_getCloseHandshakeType_22_0_Test#testGetCloseHandshakeType | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#testGetKnownExtensions | Draft_6455#getKnownExtensions | Draft_6455_getKnownExtensions_3_0_Test#testGetKnownExtensions | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#testGetKnownProtocols | Draft_6455#getKnownProtocols | Draft_6455_getKnownProtocols_5_0_Test#testGetKnownProtocols | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#testGetProtocol | Draft_6455#getProtocol | Draft_6455_getProtocol_4_0_Test#testGetProtocol_NoProtocolSet | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| drafts.Draft_6455Test#testReset | Draft_6455#reset | Draft_6455_reset_15_0_Test#testReset | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testAcceptProvidedExtensionAsClient | DefaultExtension#acceptProvidedExtensionAsClient | DefaultExtension_acceptProvidedExtensionAsClient_3_0_Test#testAcceptProvidedExtensionAsClient | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testAcceptProvidedExtensionAsServer | DefaultExtension#acceptProvidedExtensionAsServer | DefaultExtension_acceptProvidedExtensionAsServer_2_0_Test#testAcceptProvidedExtensionAsServer | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testCopyInstance | DefaultExtension#copyInstance | DefaultExtension_copyInstance_7_0_Test#testCopyInstance | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testDecodeFrame | DefaultExtension#decodeFrame | DefaultExtension_decodeFrame_0_0_Test#testDecodeFrame | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testEncodeFrame | DefaultExtension#encodeFrame | DefaultExtension_encodeFrame_1_0_Test#testEncodeFrame | 100/100 NOT_FLAKY | 31 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testGetProvidedExtensionAsClient | extensions.DefaultExtension#getProvidedExtensionAsClient | extensions.DefaultExtension_getProvidedExtensionAsClient_5_0_Test#testGetProvidedExtensionAsClient | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testGetProvidedExtensionAsServer | extensions.DefaultExtension#getProvidedExtensionAsServer | extensions.DefaultExtension_getProvidedExtensionAsServer_6_0_Test#testGetProvidedExtensionAsServer | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testHashCode | extensions.DefaultExtension#hashCode | extensions.DefaultExtension_hashCode_10_0_Test#testHashCode | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testIsFrameValid | extensions.DefaultExtension#isFrameValid | extensions.DefaultExtension_isFrameValid_4_0_Test#testIsFrameValid_ValidFrame | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| extensions.DefaultExtensionTest#testToString | extensions.DefaultExtension#toString | extensions.DefaultExtension_toString_9_0_Test#testToString | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| framing.BinaryFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.BinaryFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.BinaryFrameTest#testIsValid | framing.TextFrame#isValid | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| framing.CloseFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.CloseFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.CloseFrameTest#testIsValid | framing.CloseFrame#isValid | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| framing.ContinuousFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.ContinuousFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.ContinuousFrameTest#testIsValid | framing.TextFrame#isValid | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| framing.FramedataImpl1Test#testAppend | framing.FramedataImpl1#append | NONE | NA | NA | NA | GEN_FAILED see generate-15.log |
+| framing.FramedataImpl1Test#testDefaultValues | framing.FramedataImpl1#get | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| framing.FramedataImpl1Test#testGet | framing.FramedataImpl1#get | framing.FramedataImpl1_get_16_0_Test#testGetWithContinuousOpcode | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| framing.FramedataImpl1Test#testSetters | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.PingFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.PingFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.PingFrameTest#testIsValid | framing.TextFrame#isValid | framing.TextFrame_isValid_0_0_Test#testIsValid_withValidUTF8 | 0/100 INCONCLUSIVE_OVERWRITE | 30 NO_TESTS_RUN | 20/20 NOT_OD | SUSPECTED FILE OVERWRITE: another generation round for a different focal method reused this class name and overwrote the physical .java file after this candidate was confirmed passing alone. ND=100% missing, ID=NO_TESTS_RUN confirm the method no longer exists on disk -- not a real flaky finding. OD's pass verdict here is unreliable (looser class-level match). |
+| framing.PongFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.PongFrameTest#testCopyConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.PongFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.PongFrameTest#testIsValid | framing.TextFrame#isValid | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| framing.TextFrameTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| framing.TextFrameTest#testExtends | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=neither |
+| framing.TextFrameTest#testIsValid | framing.TextFrame#isValid | framing.TextFrame_isValid_0_0_Test#testIsValid_InvalidUTF8 | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| issues.Issue580Test#runCloseBlockingTestScenario0 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario1 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario2 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario3 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario4 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario5 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario6 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario7 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario8 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runCloseBlockingTestScenario9 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runNoCloseBlockingTestScenario1 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runNoCloseBlockingTestScenario7 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue580Test#runNoCloseBlockingTestScenario9 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| issues.Issue609Test#testIssue | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| issues.Issue666Test#testClient | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=disagreed |
+| issues.Issue666Test#testServer | server.WebSocketServer#start | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| issues.Issue732Test#testIssue | client.WebSocketClient#reconnect | NONE | NA | NA | NA | GEN_FAILED see generate-45.log |
+| protocols.ProtoclHandshakeRejectionTest#testHandshakeRejectionTestCase12 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtoclHandshakeRejectionTest#testHandshakeRejectionTestCase15 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtoclHandshakeRejectionTest#testHandshakeRejectionTestCase5 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtoclHandshakeRejectionTest#testHandshakeRejectionTestCase7 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtoclHandshakeRejectionTest#testProtocolRejectionTestCase0 | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtocolTest#testAcceptProvidedProtocol | protocols.Protocol#acceptProvidedProtocol | protocols.Protocol_acceptProvidedProtocol_0_0_Test#testAcceptProvidedProtocol_EmptyInput | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| protocols.ProtocolTest#testConstructor | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtocolTest#testCopyInstance | protocols.Protocol#copyInstance | protocols.Protocol_copyInstance_2_0_Test#testCopyInstance | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| protocols.ProtocolTest#testEquals | protocols.Protocol#equals | protocols.Protocol_equals_4_0_Test#testEqualsSameProtocol | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| protocols.ProtocolTest#testGetProvidedProtocol | protocols.Protocol#getProvidedProtocol | protocols.Protocol_getProvidedProtocol_1_0_Test#testGetProvidedProtocol | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| protocols.ProtocolTest#testHashCode | -- | FOCAL_UNCONFIRMED | NA | NA | NA | SKIPPED_FOCAL: status=llm |
+| protocols.ProtocolTest#testToString | protocols.Protocol#getProvidedProtocol | protocols.Protocol_getProvidedProtocol_1_0_Test#testGetProvidedProtocol | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| util.ByteBufferUtilsTest#testEmptyByteBufferCapacity | util.ByteBufferUtils#getEmptyByteBuffer | util.ByteBufferUtils_getEmptyByteBuffer_1_0_Test#testGetEmptyByteBuffer | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| util.ByteBufferUtilsTest#testEmptyByteBufferNewObject | util.ByteBufferUtils#getEmptyByteBuffer | util.ByteBufferUtils_getEmptyByteBuffer_1_0_Test#testGetEmptyByteBuffer | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+| util.ByteBufferUtilsTest#testTransferByteBufferBigToSmall | util.ByteBufferUtils#transferByteBuffer | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| util.ByteBufferUtilsTest#testTransferByteBufferCheckNullBoth | util.ByteBufferUtils#transferByteBuffer | util.ByteBufferUtils_transferByteBuffer_0_0_Test#testTransferByteBuffer_DestHasMoreSpaceThanSource | 0/100 INCONCLUSIVE_OVERWRITE | 30 NO_TESTS_RUN | 20/20 NOT_OD | SUSPECTED FILE OVERWRITE: another generation round for a different focal method reused this class name and overwrote the physical .java file after this candidate was confirmed passing alone. ND=100% missing, ID=NO_TESTS_RUN confirm the method no longer exists on disk -- not a real flaky finding. OD's pass verdict here is unreliable (looser class-level match). |
+| util.ByteBufferUtilsTest#testTransferByteBufferCheckNullDest | util.ByteBufferUtils#transferByteBuffer | util.ByteBufferUtils_transferByteBuffer_0_0_Test#testTransferByteBufferWhenSourceExceedsDest | 0/100 INCONCLUSIVE_OVERWRITE | 30 NO_TESTS_RUN | 20/20 NOT_OD | SUSPECTED FILE OVERWRITE: another generation round for a different focal method reused this class name and overwrote the physical .java file after this candidate was confirmed passing alone. ND=100% missing, ID=NO_TESTS_RUN confirm the method no longer exists on disk -- not a real flaky finding. OD's pass verdict here is unreliable (looser class-level match). |
+| util.ByteBufferUtilsTest#testTransferByteBufferCheckNullSource | util.ByteBufferUtils#transferByteBuffer | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| util.ByteBufferUtilsTest#testTransferByteBufferSmallToBig | util.ByteBufferUtils#transferByteBuffer | GENERATED (candidate failed) | NA | NA | NA | CANDIDATE_FAILED (did not pass alone) |
+| util.ByteBufferUtilsTest#testTransferByteBufferSmallToEmpty | util.ByteBufferUtils#transferByteBuffer | util.ByteBufferUtils_transferByteBuffer_0_0_Test#testGetEmptyByteBuffer | 100/100 NOT_FLAKY | 30 NOT_FLAKY_ID | 20/20 NOT_OD | focal jaccard+llm agreed; clean on all three checks |
+
+All `source_test` entries are under `org.java_websocket.*` -- package prefix dropped here for readability, full package is in `results.csv`.
