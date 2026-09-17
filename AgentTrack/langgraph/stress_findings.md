@@ -15,15 +15,18 @@ Goal: find tests that pass at rest but fail under **resource stress** — run th
 
 ## Results
 
-| stress config | runs with ≥1 failure / 15 | total test-failures |
-|---|---|---|
-| io | 2 | 2 |
-| device | 2 | 2 |
-| **cpu** | **12** | **19** |
-| memory (bounded) | 2 | 2 |
+| stress config | runs with ≥1 failure / 15 | total test-failures | distinct tests failed |
+|---|---|---|---|
+| io | 2 | 2 | 1 |
+| device | 2 | 2 | 2 |
+| **cpu** | **12** | **19** | **7** |
+| memory (bounded) | 2 | 2 | 1 |
 
-**CPU contention is by far the strongest trigger (~80% of runs).** Light io/device/memory pressure
-only occasionally nicks the same tests. All failing tests are **idle-clean** — they only fail under load.
+Union across all configs: **8 distinct tests**. **CPU contention is by far the strongest trigger**
+(~80% of runs, 7 distinct tests). io and memory only ever break the **same single test** — the
+concurrency race `test_error_handler_resumes_after_crash_multiple_nodes` — which even light stress
+triggers; cpu additionally trips the 6 streaming/ordering tests. All failing tests are **idle-clean**
+— they only fail under load.
 
 ## Failing tests (all in the Pregel engine) — three buckets
 
