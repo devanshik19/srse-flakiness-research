@@ -1,4 +1,4 @@
-# LangGraph stress-test findings (Shaker-style)
+# LangGraph stress-test findings 
 
 Goal: find tests that pass at rest but fail under **resource stress** — run the suite while
 `stress-ng` loads CPU / memory / IO / device, and see what breaks.
