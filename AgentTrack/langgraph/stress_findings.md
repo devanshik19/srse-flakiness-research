@@ -15,12 +15,12 @@ Goal: find tests that pass at rest but fail under **resource stress** — run th
 
 ## Results
 
-| stress config | runs with ≥1 failure / 15 | total test-failures | distinct tests failed |
-|---|---|---|---|
-| io | 2 | 2 | 1 |
-| device | 2 | 2 | 2 |
-| **cpu** | **12** | **19** | **7** |
-| memory (bounded) | 2 | 2 | 1 |
+| stress config | runs with ≥1 failure / 15 | distinct tests failed |
+|---|---|---|
+| io | 2 | 1 |
+| device | 2 | 2 |
+| **cpu** | **12** | **7** |
+| memory (bounded) | 2 | 1 |
 
 Union across all configs: **8 distinct tests**. **CPU contention is by far the strongest trigger**
 (~80% of runs, 7 distinct tests). io and memory only ever break the **same single test** — the
