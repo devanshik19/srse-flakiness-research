@@ -7,3 +7,6 @@ __pycache__/
 agentflake-od/results.csv.bak*
 agentflake-od/results.manual.csv
 agentflake-od/*.sh.bak
+*.xml
+*-run-*.log
+agent-flaky-test/
