@@ -13,28 +13,34 @@ tests. Each test that passes at rest but fails under load is a load-sensitive fl
   (`--vm 2 --vm-bytes 256M`) so it cannot OOM the box.
 - Baseline (no stress): 1 failure in 15 runs — `test_error_handler_resumes...`, flaky even at rest.
 
-## Two regimes
+## Two kinds of failure
 
-The results fall into two groups that must be read differently:
+Failures are either **assertion failures** (genuine flakiness — a test's own check fails) or
+**timeouts** (`TimeoutError`/`NodeTimeoutError` — the test didn't finish in time under load).
+Counting error types in the run logs (full breakdown at the end):
 
-1. **Clean regime** — `--all 1/2/4` (and cpu at 6): genuine flakiness. A moderate load perturbs
-   timing/ordering enough to expose real races, but the suite still runs normally.
-2. **Starvation regime** — `pipe` and `interrupt` at `--all 6`: the box is so oversubscribed that
-   timing tests **time out en masse**. The failure counts are inflated by load-induced timeouts, not
-   genuine flakiness, and should be read with caution.
+- **`--all 1/2/4` are pure assertion failures** (cpu `--all 1`: 21 assertions, 0 timeouts) — genuine
+  flakiness.
+- **`pipe --all 6` is mostly genuine** — 191 assertions vs 104 timeouts — so its high count is real
+  flaky tests exposed by heavy load, not noise.
+- **`interrupt --all 6` is timeout-dominated** — 167 timeouts vs 71 assertions — so much of its 44 is
+  load-induced and should be read with caution.
+
+Heavier load exposes *more* genuine flaky tests, but past a point also adds timeout noise; the
+per-config error-type split at the end separates the two.
 
 ## Per-configuration results
 
 | config | runs failed / 15 | distinct tests |
 |---|---|---|
-| pipe `--all 6` | 15/15 | 31 (starvation) |
+| pipe `--all 6` | 15/15 | 31 † |
 | cpu `--all 1` | 13/15 * | 12 |
 | interrupt `--all 1` | 12/15 | 9 |
 | os `--all 1` | 11/15 | 8 |
 | pipe `--all 1` | 9/15 | 3 |
 | io `--all 1` | 7/15 | 3 |
 | device `--all 1` | 6/15 | 2 |
-| interrupt `--all 6` | 4/15 | 44 (starvation) |
+| interrupt `--all 6` | 4/15 | 44 † |
 | cpu-cache `--all 4` | 4/15 | 1 |
 | cpu-cache `--all 1` | 3/15 | 4 |
 | scheduler `--all 1` | 3/15 | 1 |
@@ -46,6 +52,8 @@ The results fall into two groups that must be read differently:
 | memory (bounded) | 0/15 | 0 |
 
 \* cpu `--all 1` was run twice (22/30 combined); the 13/15 above is the first run.
+† `--all 6` counts mix genuine assertion failures with load-induced timeouts — see "Failure types
+per configuration" at the end (pipe-6 is ~65% genuine; interrupt-6 is ~70% timeout).
 
 ## Flaky tests by cause (clean regime — 21 tests)
 
@@ -79,17 +87,18 @@ All in the Pregel engine.
 
 ## Full union across all configs: 59 distinct tests
 
-The jump from 21 to 59 comes almost entirely from the two `--all 6` starvation configs
-(`interrupt-6` = 44, `pipe-6` = 31). The extra ~38 tests are load-induced timeouts —
-`parent_command_goto[...]`, `node_timeout`, `idle_timeout`, `entrypoint_timeout`, and similar — not
-genuine flakiness. The clean-regime figure of 21 is the reportable count.
+The clean `--all 1/2/4` regime accounts for 21 distinct tests, all genuine assertion failures. The
+`--all 6` configs add the rest: `pipe --all 6` (31) is mostly genuine assertion failures under heavy
+pipe load, while `interrupt --all 6` (44) is largely load-induced timeouts. So the real count is
+**at least 21, and higher once pipe-6's genuine failures are folded in** — the per-config error-type
+breakdown at the end shows which failures are real vs timeout.
 
 ## Observations
 
 - **CPU contention at `--all 1` is the strongest clean trigger** (13/15 runs, 12 distinct tests).
 - **Dose-response is non-monotonic:** cpu `--all 1` (12 distinct) is far flakier than cpu `--all 6`
   (4 distinct). Mild contention adds timing jitter that trips tight thresholds; heavy load slows
-  everything roughly uniformly and, past a point, only causes starvation timeouts.
+  everything roughly uniformly and, past a point, adds timeout noise on top of genuine failures.
 - **OS/syscall, interrupt, and pipe stress at `--all 1` are also strong triggers** (8–9 distinct),
   not just CPU.
 - **Memory (bounded) and security cause essentially no flakiness.**
@@ -101,3 +110,28 @@ genuine flakiness. The clean-regime figure of 21 is the reportable count.
 - **`--all 0` and `--all 8`** — one instance per core / eight per stressor saturate all 8 cores; the
   suite is starved (cpu-8 took 10 h to reach 28 % of one run). Failures there are timeouts, not
   flakiness.
+
+## Failure types per configuration
+
+Error types counted across all run logs per config. `AssertionError` = genuine flakiness;
+`TimeoutError`/`NodeTimeoutError` = load-induced. Counts are traceback mentions (indicative).
+
+| config | assertions | timeouts |
+|---|---|---|
+| baseline | 1 | 0 |
+| cpu-1 | 21 | 0 |
+| cpu-6 | 1 | 0 |
+| cpu-cache-1 | 8 | 0 |
+| cpu-cache-2 | 13 | 0 |
+| cpu-cache-4 | 4 | 0 |
+| device-1 | 7 | 0 |
+| interrupt-1 | 26 | 4 |
+| interrupt-6 | 71 | 167 |
+| io-1 | 10 | 0 |
+| memory-bounded | 0 | 0 |
+| os-1 | 21 | 8 |
+| pipe-1 | 10 | 4 |
+| pipe-6 | 191 | 104 |
+| scheduler-1 | 3 | 0 |
+| security-1 | 1 | 0 |
+| security-2 | 0 | 0 |
