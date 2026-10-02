@@ -20,3 +20,4 @@ agent-flaky-test/
 docker_archive/
 # generated tests output (keep the manifest, not 40k files, unless you want them)
 gen_out/
+evidence/
