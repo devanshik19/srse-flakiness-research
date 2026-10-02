@@ -1,12 +1,22 @@
-*.out
+# run logs & test outputs (bulky, regenerable)
 *.log
-.dtfixingtools/
-target/
-chatunitest-tests/
-__pycache__/
-agentflake-od/results.csv.bak*
-agentflake-od/results.manual.csv
-agentflake-od/*.sh.bak
 *.xml
-*-run-*.log
+# backups & caches
+*.bak
+*.bak[0-9]*
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+llm_cache.json
+# nested repo — it's a separate project, push it in its own repo
 agent-flaky-test/
+# heavy tool-output trees
+**/random-class-method/
+**/detection-results/
+**/test-runs/
+docker_archive/
+# generated tests output (keep the manifest, not 40k files, unless you want them)
+gen_out/

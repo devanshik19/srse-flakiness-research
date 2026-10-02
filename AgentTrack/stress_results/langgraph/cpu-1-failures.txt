@@ -1,0 +1,19 @@
+FAILED tests/test_pregel.py::test_sync_streaming_with_functional_api - assert...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel.py::test_stream_subgraphs_during_execution[memory]
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel.py::test_in_one_fan_out_state_graph_waiting_edge[sqlite_aes]
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel_async.py::test_imp_nested[memory-async] - AssertionE...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel.py::test_stream_buffering_single_node[sqlite] - Asse...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel_async.py::test_imp_nested[memory-async] - AssertionE...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel.py::test_stream_buffering_single_node[sqlite_aes] - ...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
+FAILED tests/test_pregel.py::test_stream_buffering_single_node[sqlite] - Asse...
+FAILED tests/test_retry.py::test_error_handler_resumes_after_crash_multiple_nodes
