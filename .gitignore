@@ -18,6 +18,9 @@ agent-flaky-test/
 **/detection-results/
 **/test-runs/
 docker_archive/
-# generated tests output (keep the manifest, not 40k files, unless you want them)
-gen_out/
+# generated test bodies stay local (bulky) — track only scripts + results
+# (swebench_focal.csv, gen_out/docker_results.csv, findings.md)
+gen_out/*/
+gen_out2/
+*_manifest.csv
 evidence/
