@@ -7,7 +7,7 @@ runs of the same suite.
 ## How they were found
 
 Each instance's generated tests were run as a **suite** (`pytest` over the whole instance folder,
-sharing one migrated in-memory Django test DB) 10x in each of six regimes:
+sharing one migrated in-memory Django test DB) 10x in each of five regimes:
 
 - `baseline` — fixed test order, no stress
 - `cpu` / `io` / `memory` — fixed order, under stress-ng load

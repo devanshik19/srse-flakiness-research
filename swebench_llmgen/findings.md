@@ -60,10 +60,10 @@ and per-instance images are deleted after use to bound disk.
 To run Django's ORM-coupled focal methods, generation gets a Django-aware prompt (use real ORM/models,
 no mocks) and validation adds a `conftest.py` that configures Django + a migrated in-memory test DB via
 pytest-django (DB access auto-enabled for every test). Model: **gpt-4o-mini** (ChatUniTest's model class).
-A sixth regime, **shuffle**, was added: random test order + random `PYTHONHASHSEED` each run.
+A **shuffle** regime was added: random test order + random `PYTHONHASHSEED` each run.
 
-Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10x in six regimes
-(baseline, cpu, io, memory, shuffle).
+Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10x in five regimes
+(baseline, cpu, io, memory, shuffle). (An interrupt-stress regime was dropped — it segfaults on WSL.)
 
 **Result: 75 flaky functions / 895 (~8.4%); 30 flaky files / 273 (~11%).**
 
