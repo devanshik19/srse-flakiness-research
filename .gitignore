@@ -22,5 +22,7 @@ docker_archive/
 # (swebench_focal.csv, gen_out/docker_results.csv, findings.md)
 gen_out/*/
 gen_out2/
+gen_django/*/
+gen_django2/
 *_manifest.csv
 evidence/

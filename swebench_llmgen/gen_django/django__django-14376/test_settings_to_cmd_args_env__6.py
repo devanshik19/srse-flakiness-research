@@ -1,0 +1,114 @@
+import pytest
+from django.db.backends.base.client import BaseDatabaseClient
+from django.contrib.auth.models import User
+
+class DatabaseClient(BaseDatabaseClient):
+    executable_name = 'mysql'
+
+    @classmethod
+    def settings_to_cmd_args_env(cls, settings_dict, parameters):
+        args = [cls.executable_name]
+        env = None
+        db = settings_dict['OPTIONS'].get('db', settings_dict['NAME'])
+        user = settings_dict['OPTIONS'].get('user', settings_dict['USER'])
+        password = settings_dict['OPTIONS'].get(
+            'password',
+            settings_dict['OPTIONS'].get('passwd', settings_dict['PASSWORD'])
+        )
+        host = settings_dict['OPTIONS'].get('host', settings_dict['HOST'])
+        port = settings_dict['OPTIONS'].get('port', settings_dict['PORT'])
+        server_ca = settings_dict['OPTIONS'].get('ssl', {}).get('ca')
+        client_cert = settings_dict['OPTIONS'].get('ssl', {}).get('cert')
+        client_key = settings_dict['OPTIONS'].get('ssl', {}).get('key')
+        defaults_file = settings_dict['OPTIONS'].get('read_default_file')
+        charset = settings_dict['OPTIONS'].get('charset')
+
+        if defaults_file:
+            args += ["--defaults-file=%s" % defaults_file]
+        if user:
+            args += ["--user=%s" % user]
+        if password:
+            env = {'MYSQL_PWD': password}
+        if host:
+            if '/' in host:
+                args += ["--socket=%s" % host]
+            else:
+                args += ["--host=%s" % host]
+        if port:
+            args += ["--port=%s" % port]
+        if server_ca:
+            args += ["--ssl-ca=%s" % server_ca]
+        if client_cert:
+            args += ["--ssl-cert=%s" % client_cert]
+        if client_key:
+            args += ["--ssl-key=%s" % client_key]
+        if charset:
+            args += ['--default-character-set=%s' % charset]
+        if db:
+            args += [db]
+        args.extend(parameters)
+        return args, env
+
+def test_settings_to_cmd_args_env():
+    settings_dict = {
+        'NAME': 'test_db',
+        'USER': 'test_user',
+        'PASSWORD': 'test_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'db': 'test_db_options',
+            'user': 'test_user_options',
+            'password': 'test_password_options',
+            'host': 'localhost_options',
+            'port': '3307',
+            'ssl': {
+                'ca': 'ca_cert',
+                'cert': 'client_cert',
+                'key': 'client_key',
+            },
+            'read_default_file': '/path/to/default/file',
+            'charset': 'utf8',
+        }
+    }
+    parameters = ['--verbose']
+
+    expected_args = [
+        'mysql',
+        '--defaults-file=/path/to/default/file',
+        '--user=test_user_options',
+        '--host=localhost_options',
+        '--port=3307',
+        '--ssl-ca=ca_cert',
+        '--ssl-cert=client_cert',
+        '--ssl-key=client_key',
+        '--default-character-set=utf8',
+        'test_db_options',
+        '--verbose'
+    ]
+    expected_env = {'MYSQL_PWD': 'test_password_options'}
+
+    client = DatabaseClient()
+    args, env = client.settings_to_cmd_args_env(settings_dict, parameters)
+
+    assert args == expected_args
+    assert env == expected_env
+
+    # Test with missing optional fields
+    settings_dict_no_ssl = settings_dict.copy()
+    settings_dict_no_ssl['OPTIONS']['ssl'] = {}
+    args_no_ssl, env_no_ssl = client.settings_to_cmd_args_env(settings_dict_no_ssl, parameters)
+
+    expected_args_no_ssl = [
+        'mysql',
+        '--defaults-file=/path/to/default/file',
+        '--user=test_user_options',
+        '--host=localhost_options',
+        '--port=3307',
+        'test_db_options',
+        '--verbose'
+    ]
+    expected_env_no_ssl = {'MYSQL_PWD': 'test_password_options'}
+
+    assert args_no_ssl == expected_args_no_ssl
+    assert env_no_ssl == expected_env_no_ssl

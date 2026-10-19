@@ -27,6 +27,16 @@ REPAIR_SYSTEM = (
     "error output. Fix it so it imports and runs. Return only the corrected code in one ```python block."
 )
 
+# Appended only for Django targets: the tests run under pytest-django with a migrated test DB.
+DJANGO_NOTE = (
+    "This is Django. The test runs under pytest-django with settings already configured and a "
+    "migrated test database available (no setup needed). Use REAL Django ORM/model APIs. If you need "
+    "a model instance, use django.contrib.auth.models.User (already installed) rather than defining "
+    "a new model. Do NOT create mock or stub classes that reimplement Django internals, and do NOT "
+    "call private constructors like Query(model=None). Database access is already enabled for every "
+    "test, so no @pytest.mark.django_db is needed."
+)
+
 
 def _call(messages, model):
     kw = dict(model=model, messages=messages)
@@ -69,7 +79,7 @@ def find_focal(repo, file, name):
     return None
 
 
-def build_prompt(fc):
+def build_prompt(fc, extra=""):
     return "\n".join([
         f"Module path: {fc['module']}", "",
         "1. Required dependencies to import:", ("\n".join(fc["imports"]) or "(none)"), "",
@@ -83,6 +93,7 @@ def build_prompt(fc):
         "and imports shown above (plus the Python standard library). Do NOT assume any newer API "
         "exists. Prefer a focused, minimal test over using many helpers.",
         "",
+        extra,
         f"Write the pytest test for `{fc['name']}`. Return only the test code in one ```python block.",
     ])
 
@@ -115,6 +126,7 @@ def main():
     a = ap.parse_args()
 
     pin, pout = PRICES.get(a.model, (0.0, 0.0))
+    note = DJANGO_NOTE if "django" in a.repo else ""
     spent = 0.0
     rows = [r for r in csv.DictReader(open(a.focal_csv, newline=""))
             if r["repo"] == a.repo and r["focal_function"]]
@@ -145,7 +157,7 @@ def main():
             for k in range(a.count):
                 try:
                     code, it, ot = _call([{"role": "system", "content": SYSTEM},
-                                          {"role": "user", "content": build_prompt(fc)}], a.model)
+                                          {"role": "user", "content": build_prompt(fc, note)}], a.model)
                 except Exception as e:
                     print(f"  SKIP {func} ({e})", flush=True); continue
                 spent += it / 1e6 * pin + ot / 1e6 * pout

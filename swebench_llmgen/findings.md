@@ -56,13 +56,36 @@ files (bad import / nonexistent API against the old commit) are exactly what the
 Other hardening: generated tests are mounted **read-only** in Docker (so runs can't corrupt them),
 and per-instance images are deleted after use to bound disk.
 
+## Django — first flaky tests found
+
+To run Django's ORM-coupled focal methods, generation gets a Django-aware prompt (use real ORM/models,
+no mocks) and validation adds a `conftest.py` that configures Django + a migrated in-memory test DB via
+pytest-django (DB access auto-enabled for every test). Model: **gpt-4o-mini** (ChatUniTest's model class).
+A sixth regime, **shuffle**, was added: random test order + random `PYTHONHASHSEED` each run.
+
+Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10x in six regimes
+(baseline, cpu, io, memory, shuffle).
+
+**Result: 75 flaky functions / 895 (~8.4%); 30 flaky files / 273 (~11%).**
+
+- **All flakiness is in the `shuffle` regime.** baseline/cpu/io/memory verdicts are stable; tests flip
+  only when order + hash seed are randomized. So Django flakiness here is **order-dependence /
+  nondeterminism, not resource stress** — consistent with sympy (cpu/io/mem = 0 flaky everywhere).
+- **Mechanism (verified in the test source):** the generated tests are **not isolated** — they reuse
+  fixture identities (`User.objects.create(username='testuser')`, `'testuser1'`, … across independent
+  samples) and omit `@pytest.mark.django_db`. Run together, duplicate rows collide (`UNIQUE constraint`)
+  depending on order, so a test passes or fails based on what ran before it — the classic **victim/
+  polluter order-dependent flakiness** (the category iPFlakies targets).
+- **Confirmed by isolation:** running a flaky file alone, 5x with shuffled order, gives the *same*
+  verdicts every time (stable). It is only flaky *in a suite* → the flakiness is order-dependent, not
+  intrinsic.
+
 ## Takeaways / next steps
 
-- **CPU stress on deterministic code yields no flakiness.** sympy is confirmed a poor hunting ground.
-- Flakiness in LLM-generated tests is expected to come from (a) **nondeterminism in the test itself**
-  — set/dict/str ordering, unseeded `random`, time/date, hash order (common in LLM-written tests), and
-  (b) **timing/ordering/I/O races** — which live in django / requests / matplotlib. (Consistent with
-  the "Large Language Monkeys" paper, whose flaky SWE-bench set was 25/34 django.)
-- Next: add a **nondeterminism lever** (randomize `PYTHONHASHSEED` + test order per run) and point the
-  pipeline at **requests / django / matplotlib**; scale generation to full gpt-5 once the funded key
-  is available.
+- **Resource stress (cpu/io/memory) causes ~0 flakiness** in generated unit tests, across both sympy
+  (1,200 fns) and Django (895 fns). Deterministic code does not flake under load.
+- **Order/hash randomization (`shuffle`) is the lever that finds flakiness** — ~8.4% of Django generated
+  tests flake, almost entirely **order-dependent** (shared-state / test-isolation failures).
+- Next: run all 211 Django instances for the dataset-wide rate; add an **isolation mode** to separate
+  intrinsic vs order-dependent flakiness as two numbers; scale generation to full gpt-5 once the funded
+  key is available.

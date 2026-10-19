@@ -22,10 +22,12 @@ for (inst, func), runs in sorted(funcs.items()):
 all_files = {(inst, func.split("::")[0]) for (inst, func) in funcs}
 
 for inst, func, runs in flaky_funcs:
-    base = sorted({v for p, v in runs if p == "baseline"})
-    cpu  = sorted({v for p, v in runs if p == "cpu"})
+    byphase = {}
+    for p, v in runs:
+        byphase.setdefault(p, set()).add(v)
+    detail = "  ".join(f"{p}={sorted(vs)}" for p, vs in sorted(byphase.items()))
     print(f"FLAKY  {inst}  {func}")
-    print(f"       baseline={base}  cpu={cpu}")
+    print(f"       {detail}")
 
 print(f"\nfunctions: {len(flaky_funcs)} flaky / {len(funcs)} total")
 print(f"files:     {len(flaky_files)} flaky / {len(all_files)} total")
