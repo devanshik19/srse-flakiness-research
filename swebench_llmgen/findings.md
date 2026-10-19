@@ -1,9 +1,8 @@
 # LLM-Generated Test Flakiness on SWE-bench — Findings So Far
 
-Goal: measure how flaky **LLM-generated tests** are. We generate pytest tests with GPT for real
+Measure how flaky **LLM-generated tests** are. Generate pytest tests with GPT for
 Python codebases (SWE-bench), then run each many times — at rest and under `stress-ng` load — and
-count which ones flip verdict. A test that passes at rest but fails under load (or flips run-to-run)
-is flaky.
+count which ones flip verdict.
 
 ## Pipeline
 
