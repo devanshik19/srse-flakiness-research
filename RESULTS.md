@@ -40,8 +40,16 @@ detected as verdict changes across runs.
 
 ## Validated so far
 
-Each instance's files were run as a **suite** 10× in **5 regimes** (baseline; cpu/io/memory stress;
-shuffle = random test order + random `PYTHONHASHSEED`).
+Each instance's files were run as a **suite** 10× in **6 regimes**. The earlier combined `shuffle`
+regime was split into two one-variable regimes — **hashseed** (random seed, fixed order) and **order**
+(random order) — so order-dependence and hash-ordering can be reported separately:
+
+| regime | test order | `PYTHONHASHSEED` | stress | isolates |
+|---|---|---|---|---|
+| baseline | fixed | fixed | none | intrinsic non-determinism |
+| cpu / io / memory | fixed | fixed | stress-ng | timing / race under load |
+| hashseed | fixed | random | none | hash-ordering dependence |
+| order | random | fixed | none | order-dependence / isolation |
 
 | project | validated instances | test files in those instances | files that ran | test functions | flaky functions | flaky files |
 |---|---|---|---|---|---|---|
@@ -55,10 +63,13 @@ shuffle = random test order + random `PYTHONHASHSEED`).
 ## Django flakiness by regime
 
 Counts overlap (a function can flip in more than one regime), so columns sum to more than the unique total.
+The earlier combined `shuffle` row is split here into **order** and **hashseed**; all other counts are
+unchanged from the original run.
 
 | regime | flaky functions | flaky files |
 |---|---|---|
-| **shuffle** (random order + hash seed) | **69** | **27** |
+| **order** (random order) | **69** | **27** |
+| **hashseed** (random `PYTHONHASHSEED`) | **2** | **1** |
 | baseline (fixed order, no stress) | 8 | 4 |
 | cpu stress | 2 | 1 |
 | io stress | 2 | 1 |
@@ -70,16 +81,18 @@ Full per-test list, each linked to its test body:
 
 ## What the numbers mean
 
-- **Resource stress (cpu/io/memory) ≈ 0 flakiness** — on both sympy (1,200 fns) and django (895 fns).
-  Deterministic code doesn't flake under load.
-- **Flakiness is order/nondeterminism, found by `shuffle`** — ~92% of django's flaky functions (69/75)
-  flip only when test order + hash seed are randomized: **order-dependent flakiness** from inadequate
-  test isolation (generated tests reuse DB identities like `username='testuser'` and collide by order).
-  Confirmed: a flaky file run **in isolation** is stable → order-dependent, not intrinsic.
-- **A smaller intrinsic-ND tail** — the 8 baseline flaky functions flip in *fixed* order, so they are not
-  order-caused; they come from Python's random `PYTHONHASHSEED`. Confirmed: fixing the seed
-  (`PYTHONHASHSEED=0`) makes them deterministic. (Caveat: some of these flip ERROR↔FAILED — a
-  nondeterministic *failure type* of a broken test, not a pass↔fail flake.)
+- **Flakiness is overwhelmingly order-dependent.** 69/75 flaky functions (27/30 files) flip when test
+  *order* is randomized: **victim/polluter isolation failures** — the generated tests reuse DB
+  identities like `username='testuser'` and omit `@pytest.mark.django_db`, so rows collide depending on
+  what ran before. Confirmed: a flaky file run **in isolation** is stable.
+- **Hash-ordering (`hashseed`) is a thin slice** — only 2 functions / 1 file flip under a random
+  `PYTHONHASHSEED`, and they also flip under `order`. Splitting the old `shuffle` regime shows almost
+  all of its signal was order, not hash seed.
+- **Small stress / baseline tails** — a handful of functions flip under cpu/io or in baseline; the
+  baseline ones include the `django-11141 test_load_disk` cases that toggle ERROR↔FAILED (a broken
+  test's nondeterministic failure *type* rather than a pass↔fail flake).
+- **Resource stress is not a major driver** — consistent with sympy (1,200 fns, 0 flaky under any
+  stress). Deterministic code does not flake under load.
 
 ## Proof / artifacts
 

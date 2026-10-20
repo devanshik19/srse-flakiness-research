@@ -60,16 +60,18 @@ and per-instance images are deleted after use to bound disk.
 To run Django's ORM-coupled focal methods, generation gets a Django-aware prompt (use real ORM/models,
 no mocks) and validation adds a `conftest.py` that configures Django + a migrated in-memory test DB via
 pytest-django (DB access auto-enabled for every test). Model: **gpt-4o-mini** (ChatUniTest's model class).
-A **shuffle** regime was added: random test order + random `PYTHONHASHSEED` each run.
+The earlier combined `shuffle` regime was **split into two one-variable regimes** so flakiness can be
+typed: **order** (random test order) and **hashseed** (random `PYTHONHASHSEED`, fixed order).
 
-Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10x in five regimes
-(baseline, cpu, io, memory, shuffle). (An interrupt-stress regime was dropped — it segfaults on WSL.)
+Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10x in six regimes
+(baseline, cpu, io, memory, hashseed, order). (An interrupt-stress regime was dropped — it segfaults on WSL.)
 
-**Result: 75 flaky functions / 895 (~8.4%); 30 flaky files / 273 (~11%).**
+**Result: 75 flaky functions / 895 (~8.4%); 30 flaky files / 273 (~11%).** By regime (overlapping):
+**order 69 / hashseed 2 / baseline 8 / cpu 2 / io 2 / memory 0** functions.
 
-- **All flakiness is in the `shuffle` regime.** baseline/cpu/io/memory verdicts are stable; tests flip
-  only when order + hash seed are randomized. So Django flakiness here is **order-dependence /
-  nondeterminism, not resource stress** — consistent with sympy (cpu/io/mem = 0 flaky everywhere).
+- **Flakiness is order-dependent.** 69/75 flip when test *order* is randomized; `hashseed` moves only
+  2 functions (both of which also flip under `order`). So splitting `shuffle` shows its signal was
+  almost entirely **order-dependence, not hash-ordering**.
 - **Mechanism (verified in the test source):** the generated tests are **not isolated** — they reuse
   fixture identities (`User.objects.create(username='testuser')`, `'testuser1'`, … across independent
   samples) and omit `@pytest.mark.django_db`. Run together, duplicate rows collide (`UNIQUE constraint`)
@@ -78,13 +80,15 @@ Sample: **20 Django instances, 273 test files, 895 test functions**, each run 10
 - **Confirmed by isolation:** running a flaky file alone, 5x with shuffled order, gives the *same*
   verdicts every time (stable). It is only flaky *in a suite* → the flakiness is order-dependent, not
   intrinsic.
+- **Small baseline tail.** Some baseline flaky functions are the `django-11141 test_load_disk` cases
+  that only toggle ERROR↔FAILED — a broken test whose *failure type* varies, not a real pass↔fail flake.
 
 ## Takeaways / next steps
 
-- **Resource stress (cpu/io/memory) causes ~0 flakiness** in generated unit tests, across both sympy
-  (1,200 fns) and Django (895 fns). Deterministic code does not flake under load.
-- **Order/hash randomization (`shuffle`) is the lever that finds flakiness** — ~8.4% of Django generated
-  tests flake, almost entirely **order-dependent** (shared-state / test-isolation failures).
-- Next: run all 211 Django instances for the dataset-wide rate; add an **isolation mode** to separate
-  intrinsic vs order-dependent flakiness as two numbers; scale generation to full gpt-5 once the funded
-  key is available.
+- **Resource stress (cpu/io/memory) is not a major driver** — near-zero on Django and 0 on sympy
+  (1,200 fns). Deterministic code does not flake under load.
+- **Random test order is the lever that finds flakiness** — ~8.4% of Django generated tests flake,
+  almost entirely **order-dependent** (shared-state / test-isolation failures). Splitting `shuffle`
+  into `order` and `hashseed` shows hash-ordering contributes essentially nothing (2 functions).
+- Next: run all 211 Django instances for the dataset-wide rate; scale generation to full gpt-5 once the
+  funded key is available.
