@@ -26,9 +26,15 @@ that did NOT match a known-flaky entry. Also prints a short report to stderr
 listing exactly which known-flaky tests were found/excluded, and which known-flaky
 entries did NOT match anything in --all-tests (worth a manual look -- could mean a
 rename, or the flaky test isn't run by plain `mvn test`).
+
+With --csv-out (plus --sha / --module) it ALSO appends formatted rows
+"proj_name,url,sha,module,non_flaky_test,focal_method" to that file. Append-mode, so a
+loop over many subjects accumulates one combined CSV. focal_method is left blank here --
+it's filled by stage 2 (resolve_focal.sh). The --out bare list is still always written.
 """
 import argparse
 import csv
+import os
 import sys
 
 
@@ -103,6 +109,12 @@ def main():
     ap.add_argument("--idoft-csv")
     ap.add_argument("--matched-csv")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--csv-out",
+                    help="ALSO append formatted rows "
+                         "(proj_name,url,sha,module,non_flaky_test,focal_method) to this file; "
+                         "append-mode so a loop over many subjects builds one combined CSV")
+    ap.add_argument("--sha", default="", help="commit sha to tag --csv-out rows with")
+    ap.add_argument("--module", default=".", help="module to tag --csv-out rows with")
     args = ap.parse_args()
 
     with open(args.all_tests, encoding="utf-8") as f:
@@ -120,6 +132,16 @@ def main():
 
     with open(args.out, "w", encoding="utf-8") as f:
         f.write("\n".join(non_flaky) + ("\n" if non_flaky else ""))
+
+    if args.csv_out:
+        proj = args.repo_url.strip().rstrip("/").split("/")[-1]
+        header_needed = not os.path.exists(args.csv_out) or os.path.getsize(args.csv_out) == 0
+        with open(args.csv_out, "a", newline="", encoding="utf-8") as cf:
+            w = csv.writer(cf)
+            if header_needed:
+                w.writerow(["proj_name", "url", "sha", "module", "non_flaky_test", "focal_method"])
+            for t in non_flaky:
+                w.writerow([proj, args.repo_url, args.sha, args.module, t, ""])  # focal filled in stage 2
 
     print(f"repo: {args.repo_url}", file=sys.stderr)
     print(f"all tests collected:      {len(all_tests)}", file=sys.stderr)
