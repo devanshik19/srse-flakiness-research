@@ -1,6 +1,6 @@
 # Extracting non-flaky tests from a Java project
 
-A two-step pipeline:
+two-step pipeline:
 
 1. **`01_collect_tests.sh`** — list every test that actually runs in a project module at a
    given commit.
@@ -12,11 +12,9 @@ Run them in order; step 2 consumes step 1's output.
 ## Requirements
 
 - `bash`, `git`, Maven, a JDK, `python3`
-- At least one flaky-test source CSV to exclude against (any combination):
-  - `result_matched.csv` — AgentFlake dataset sheet (cols: `project`, `flaky_commit`,
+- one flaky-test source CSV to exclude against:
+  - `result_matched.csv` —  (cols: `project`, `flaky_commit`,
     `module`, `flaky_test`, …)
-  - `164_AgentFlake_Flaky_Tests.csv` (cols: `Slug`, `Flaky Test Name`, …)
-  - IDoFT `pr-data.csv` (cols: `Project URL`, `Fully-Qualified Test Name …`)
 
 ## Step 1 — collect all tests that run
 
@@ -49,8 +47,7 @@ python3 02_exclude_flaky.py \
 - `--out` always writes the plain non-flaky list.
 - `--csv-out` additionally **appends** rows
   `proj_name,url,sha,module,non_flaky_test,focal_method`. Append mode means looping over many
-  subjects builds a single combined CSV. `focal_method` is left blank — it's resolved in a
-  separate step, not by this script.
+  subjects builds a single combined CSV. 
 - Prints a report to stderr: how many flaky matched, how many were excluded, and any flaky
   entries that did NOT appear in `all_tests.txt` (renamed, or not exercised by `mvn test`).
 
@@ -73,13 +70,12 @@ done
 # -> one nonflaky_all.csv across all subjects
 ```
 
-## Notes / caveats
+## Notes
 
 - **Flaky matching is by repo URL** (across any commit/module) — a test flaky for the
   project is excluded wherever it appears. This matches the dataset's own convention.
 - **"Non-flaky" = "not in the flaky list(s) you provide."** The scripts do not re-run
   flakiness detection on the survivors.
-- **`focal_method` is blank** in the CSV — it's filled by a separate focal-resolution step.
 - **Multi-module repos:** `mvn -pl <module> test` can fail to resolve sibling-module
   dependencies. If a module build can't find its deps, add `-am` to the `mvn` line in
   `01_collect_tests.sh`.
