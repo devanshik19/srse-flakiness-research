@@ -1,41 +1,16 @@
 # Non-flaky test extraction
 
-These scripts take a Java project at a given commit and give you the tests that are *not*
-flaky, as a CSV.
+Gets the non-flaky tests and their focal method for each Java project in `result_matched.csv`,
+as a CSV.
 
-Two steps:
-- `01_collect_tests.sh` builds the project and lists every test that runs.
-- `02_exclude_flaky.py` drops the known-flaky ones and writes the CSV.
+Needs: git, Maven, a JDK, python3, `result_matched.csv`. Step 3 also needs `OPENAI_API_KEY`.
 
-## Requirements
-
-git, Maven, a JDK, and python3. You also need the flaky-test sheet (`result_matched.csv`).
-
-## How to run
-
-Put `result_matched.csv` in this folder first.
+## Run
 
 ```bash
-chmod +x 01_collect_tests.sh
 CSV="result_matched.csv"
-```
 
-Try one project first to make sure it works:
-
-```bash
-./01_collect_tests.sh https://github.com/bpsm/edn-java 4cf29ffe2d063269cb09c9bf4f6fd5c1a3cb4e1b work/edn .
-python3 02_exclude_flaky.py --repo-url https://github.com/bpsm/edn-java \
-  --all-tests work/edn/all_tests.txt --matched-csv "$CSV" \
-  --out nonflaky_edn.txt --csv-out nonflaky_all.csv \
-  --sha 4cf29ffe2d063269cb09c9bf4f6fd5c1a3cb4e1b --module .
-```
-
-Open `nonflaky_all.csv`. It should have columns: proj_name, url, sha, module,
-non_flaky_test, focal_method.
-
-To run every project in the sheet into one CSV:
-
-```bash
+# steps 1 + 2: list tests, drop the flaky ones -> nonflaky_all.csv
 rm -f nonflaky_all.csv
 tail -n +2 "$CSV" | awk -F, '{print $2"|"$3"|"$7}' | sort -u |
 while IFS='|' read -r url sha module; do
@@ -45,17 +20,16 @@ while IFS='|' read -r url sha module; do
     --all-tests "work/$slug/all_tests.txt" --matched-csv "$CSV" \
     --out "nonflaky_$slug.txt" --csv-out nonflaky_all.csv --sha "$sha" --module "$module"
 done
+
+# step 3: fill in focal_method -> nonflaky_all_focal.csv
+python3 03_resolve_focal.py --in nonflaky_all.csv --out nonflaky_all_focal.csv \
+  --workroot work --helpers ~/agentflake-work/nonflaky
 ```
 
-It clones and builds each project, so it takes a while.
-
-## Output
-
-`nonflaky_all.csv` is the file you want. `focal_method` is left empty for now; that gets
-filled in a later step.
+Output: **`nonflaky_all_focal.csv`** — proj_name, url, sha, module, non_flaky_test, focal_method.
 
 ## Notes
 
-- `module` is `.` when the project has no sub-modules (tests sit at the repo root).
-- A few big multi-module projects (hadoop, dubbo) may need `-am` added to the mvn line in
-  `01_collect_tests.sh`, or their test list comes out empty.
+- `module` is `.` for single-module repos.
+- Multi-module repos (hadoop, dubbo) may need `-am` added to the mvn line in `01_collect_tests.sh`.
+- Add `--jaccard-only` to step 3 to skip the LLM (no API key, less accurate).
