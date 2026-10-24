@@ -1,0 +1,9 @@
+row,project,sha,module,test,focal_method,status,tests_generated,generated_test_files
+80,https://github.com/apache/shardingsphere-elasticjob,b022898ef1b8c984e17efb2a422ee45f6b13e46e,elastic-job-lite-core,io.elasticjob.lite.event.JobExecutionEventTest#assertExecutionFailure,io.elasticjob.lite.event.type.JobExecutionEvent#executionFailure,no_tests,0,
+98,https://github.com/j256/ormlite-core,632b87c2a455b8eab4a6c09324e1f166273588d8,.,com.j256.ormlite.dao.BaseDaoImplTest#testStatementBuilderNoInit,com.j256.ormlite.dao.BaseDaoImpl#queryBuilder,no_tests,0,
+103,https://github.com/j256/ormlite-core,632b87c2a455b8eab4a6c09324e1f166273588d8,.,com.j256.ormlite.field.FieldTypeTest#testEquals,com.j256.ormlite.field.FieldType#equals,no_tests,0,
+120,https://github.com/karatelabs/karate,14807dbf8d7c45f709299574222dd498b1fa5e67,karate-core,com.intuit.karate.core.ScenarioEngineTest#testTypeConversion,com.intuit.karate.core.ScenarioEngine#assign,no_tests,0,
+122,https://github.com/karatelabs/karate,14807dbf8d7c45f709299574222dd498b1fa5e67,karate-core,com.intuit.karate.core.ScenarioEngineTest#testSetViaTable,com.intuit.karate.core.ScenarioEngine#setViaTable,no_tests,0,
+129,https://github.com/ktuukkan/marine-api,af0003847db9ba822f67d4f1dceb8de3fe63250a,.,net.sf.marineapi.ais.parser.AISMessage21ParserTest#getAidType,net.sf.marineapi.ais.parser.AISMessage21Parser#getAidType,no_tests,0,
+143,https://github.com/opengoofy/crane4j,b65f7324544381646119be48393f0aa2b3417f2e,crane4j-core,cn.crane4j.core.container.lifecycle.ContainerInstanceLifecycleProcessorTest#test,cn.crane4j.core.container.lifecycle.ContainerInstanceLifecycleProcessor#whenCreated,no_tests,0,
+144,https://github.com/opengoofy/crane4j,b65f7324544381646119be48393f0aa2b3417f2e,crane4j-core,cn.crane4j.core.executor.handler.SimpleAssembleExecutionTest#getHandler,cn.crane4j.core.executor.AssembleExecution#getHandler,no_tests,0,
