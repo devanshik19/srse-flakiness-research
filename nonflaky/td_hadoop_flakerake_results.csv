@@ -1,0 +1,3 @@
+row,zip,java,junit,test,td,detail,minutes
+td_hadoop_row_036,YARN-9405,8,4,org.apache.hadoop.yarn.service.UpgradeComponentsFinder_findTargetComponentSpecs_0_0_Test#testFindTargetComponentSpecs,true,"1 failing thread analysis row(s); first: java.lang.AssertionError: expected:<[Mock for Component, hashCode: 1336777650]> but was:<[]>",0.7
+td_hadoop_row_037,YARN-9405,8,4,org.apache.hadoop.yarn.service.client.ServiceClient_actionCancelUpgrade_12_3_Test#testActionCancelUpgradeServiceNotUpgrading,false,"69 interception point(s) in 1 thread(s); in the sleeping runs 675 nap(s), 2720 s of sleep inserted",46.7
