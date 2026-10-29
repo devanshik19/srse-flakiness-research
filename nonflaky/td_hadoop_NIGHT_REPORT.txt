@@ -1,4 +1,4 @@
-NIGHT REPORT, written 2026-10-29 16:55
+NIGHT REPORT, written 2026-10-29 19:49
 
 Controls (tiny tests with a known race; they show whether FlakeRake can find a failure on this machine):
   junit4: AS EXPECTED
@@ -7,7 +7,7 @@ Controls (tiny tests with a known race; they show whether FlakeRake can find a f
 Rows (JDK 8 and JDK 11 are supported; JDK 11 rows use the ASM 9 agent; other JDKs are not run):
   td_hadoop_row_036    JDK 8   JUnit 4  done            true=1
   td_hadoop_row_037    JDK 8   JUnit 4  done            false=1
-  td_hadoop_row_039    JDK 8   JUnit 4  pending         -
+  td_hadoop_row_039    JDK 8   JUnit 4  done            false=4
   td_hadoop_row_042    JDK 8   JUnit 4  pending         -
   td_hadoop_row_043    JDK 8   JUnit 4  pending         -
   td_hadoop_row_044    JDK 8   JUnit 4  pending         -
@@ -18,10 +18,10 @@ Rows (JDK 8 and JDK 11 are supported; JDK 11 rows use the ASM 9 agent; other JDK
   td_hadoop_row_049    JDK 8   JUnit 4  pending         -
 
 td per JDK and JUnit version (supported rows):
-  JDK 8  JUnit 4: false=1, true=1
+  JDK 8  JUnit 4: false=5, true=1
   JDK 8  JUnit 5: no results yet
   JDK 11 JUnit 4: no results yet
   JDK 11 JUnit 5: no results yet
 
-Still without a result: td_hadoop_row_039, td_hadoop_row_042, td_hadoop_row_043, td_hadoop_row_044, td_hadoop_row_045, td_hadoop_row_046, td_hadoop_row_047, td_hadoop_row_048, td_hadoop_row_049
+Still without a result: td_hadoop_row_042, td_hadoop_row_043, td_hadoop_row_044, td_hadoop_row_045, td_hadoop_row_046, td_hadoop_row_047, td_hadoop_row_048, td_hadoop_row_049
 All results in one file: /home/dev4nshi/flakecheck/flaky_check_package/flaky_check_out/flakerake_results.csv
