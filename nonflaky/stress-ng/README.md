@@ -31,17 +31,17 @@ stress so far**, the phase-2 baseline pass has been a no-op (nothing to control-
 | Variant: agent_F_11 | 11 | **38** | `input/agent_F_11.csv` | `stress_agent_F_11.csv` | **0** |
 | Variant: prompt_default_8 | 8 | **23** | `input/prompt_default_8.csv` | `stress_prompt_default_8.csv` | **0** |
 | Variant: prompt_cleanup_12 | 12 | **25** | `input/prompt_cleanup_12.csv` | `stress_prompt_cleanup_12.csv` | **0** |
-| **TOTAL (done)** | | **369** | | | **0** |
+| Variant: agent_FC_12 | 12 | **32** | `input/agent_FC_12.csv` | `stress_agent_FC_12.csv` | **0** |
+| Variant: agent_FCV_9 | 9 | **26** | `input/agent_FCV_9.csv` | `stress_agent_FCV_9.csv` | **0** |
+| **TOTAL (done)** | | **427** | | | **0** |
 
-**Headline result: 0 / 369 methods are flaky under CPU or memory stress.**
+**Headline result: 0 / 427 methods are flaky under CPU or memory stress.**
 
 The **main non-flaky set (94 files / 175 methods)** is identical to `main_nonflaky_side_94`; hadoop
 (10 files / 23 methods) is separate. 94 + 10 = 104 files; 175 + 23 = 198 methods. The **flaky 48-method set**
 is byte-identical (sha256) to `main_flaky_side_23`.
 
-### Pending / excluded
-- **FC_FCV** (agent_FC_12 + agent_FCV_9 = **58 methods**, from `more_flaky_check_tests.zip`): ready to run
-  (full `tests.csv`, same schema as the variants above), stressed with the same cpu+memory harness. Not yet run.
+### Excluded
 - **new10** (6 folders, ~128 methods, `flaky_checked_tests_new10/`): **excluded.** Per the mentor these tests
   "don't pass by themselves," and technically the folders ship only a thin `tests_info.csv` (no `file_here` /
   placement path / `mockito_fix`), so the harness cannot place them without reconstruction. The batch also
@@ -67,7 +67,7 @@ is byte-identical (sha256) to `main_flaky_side_23`.
   at the path the harness expects (via each folder's `tests.csv`), and runs all four **cpu+memory only**,
   one split CSV per folder.
 - **`scripts/run_fcfcv_stress.sh`** — same driver for the FC_FCV folders (agent_FC_12 + agent_FCV_9) from
-  `more_flaky_check_tests.zip`. cpu+memory only, split CSV per folder. (Run pending.)
+  `more_flaky_check_tests.zip`. cpu+memory only, split CSV per folder. (Done — 58 methods, 0 flaky.)
 
 ## Reproduce
 ```bash
@@ -94,7 +94,7 @@ Phase-2 baseline (only the stressed failures): re-run `stress_check.py` with `--
 To date no method has failed or flaked under stress, so this pass has been a no-op.
 
 ## Result and interpretation
-- **0 / 369 methods stress-flaky** across baseline (where run), cpu, and memory. CPU and memory pressure do
+- **0 / 427 methods stress-flaky** across baseline (where run), cpu, and memory. CPU and memory pressure do
   **not** induce flakiness in these tests.
 - This is the expected outcome: the tests are **single-threaded, mocked, and deterministic**, so resource
   pressure only makes them *slower*, not *non-deterministic*. There is no race, real clock, or real I/O for
