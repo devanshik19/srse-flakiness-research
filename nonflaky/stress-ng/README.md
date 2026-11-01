@@ -1,15 +1,14 @@
 # Resource-stress flakiness check — LLM-generated tests (Java/Maven/JUnit)
 
 Stress-testing LLM-generated unit tests to see whether **CPU / memory pressure** induces flakiness.
-This is the **resource-stress** dimension of the flakiness study: separate from, and complementary to,
-the order-dependence / pollution analysis. The question here is narrow and specific: *when the machine is
+The question here is narrow and specific: *when the machine is
 under heavy CPU and memory load, do any of these generated tests start passing-and-failing non-deterministically?*
 
 ## What was run
 Each test method is run on its own, in a fresh JVM, **10× per regime**, and flagged **flaky** for a
 regime if it both **passes and fails** in that regime (`passed > 0 AND failed > 0`).
 
-Regimes (**I/O excluded** per the mentor):
+Regimes:
 | Regime | Load applied | stress-ng command |
 |---|---|---|
 | `cpu` | all logical cores busy | `stress-ng --cpu <N_CPUS>` |
@@ -19,8 +18,7 @@ Regimes (**I/O excluded** per the mentor):
 **Two-phase design (to save time):** `cpu` + `memory` are run first; **`baseline` is run only for the
 methods that fail or flake under stress** (a method that passes cleanly under stress needs no control).
 Exception: the non-flaky 198-method set was run with full `baseline,cpu,memory` before this optimization
-was adopted, so it already has baseline for every method. Because **no method has failed or flaked under
-stress so far**, the phase-2 baseline pass has been a no-op (nothing to control-check).
+was adopted, so it already has baseline for every method. 
 
 ## Test sets and results
 | Set | Files | Methods | Input CSV | Result CSV | Stress-flaky |
@@ -42,7 +40,7 @@ The **main non-flaky set (94 files / 175 methods)** is identical to `main_nonfla
 is byte-identical (sha256) to `main_flaky_side_23`.
 
 ### Excluded
-- **new10** (6 folders, ~128 methods, `flaky_checked_tests_new10/`): **excluded.** Per the mentor these tests
+- **new10** (6 folders, ~128 methods, `flaky_checked_tests_new10/`): **excluded.** These tests
   "don't pass by themselves," and technically the folders ship only a thin `tests_info.csv` (no `file_here` /
   placement path / `mockito_fix`), so the harness cannot place them without reconstruction. The batch also
   contains every row in `BROKEN_DO_NOT_RUN.csv` (compile errors / NPE / wrong-length). Not run.
@@ -99,9 +97,5 @@ To date no method has failed or flaked under stress, so this pass has been a no-
 - This is the expected outcome: the tests are **single-threaded, mocked, and deterministic**, so resource
   pressure only makes them *slower*, not *non-deterministic*. There is no race, real clock, or real I/O for
   stress to perturb.
-- Consistent with the mentor's finding that generated tests are **not flaky in isolation** — the flakiness in
-  this corpus is **order-dependent pollution** (unrestored static state via reflection, missing `@After`),
-  an entirely different axis from resource stress. Resource stress being a clean negative is the contrast
-  against which the order-dependence / cleanup-prompt result is reported.
 - Runs = 10 per regime. More runs would tighten confidence in the zero but are not expected to surface flaky
   tests, since these tests have no low-probability non-determinism for extra runs to catch.
