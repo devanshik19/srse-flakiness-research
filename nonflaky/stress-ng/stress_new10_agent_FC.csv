@@ -1,0 +1,16 @@
+id,test,cpu_pass,cpu_fail,cpu_runs,cpu_flaky,memory_pass,memory_fail,memory_runs,memory_flaky,any_stress_flaky
+out_FC_row_016,io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdown,10,0,10,False,10,0,10,False,False
+out_FC_row_017,io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdown,10,0,10,False,10,0,10,False,False
+out_FC_row_018,io.elasticjob.lite.internal.schedule.JobRegistry_shutdown_0_0_Test#testShutdown,10,0,10,False,10,0,10,False,False
+out_FC_row_019,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCount,10,0,10,False,10,0,10,False,False
+out_FC_row_019,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCountWhenNull,10,0,10,False,10,0,10,False,False
+out_FC_row_020,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCountWhenNotNull,10,0,10,False,10,0,10,False,False
+out_FC_row_020,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCountWhenNull,10,0,10,False,10,0,10,False,False
+out_FC_row_021,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCountWhenJobNameDoesNotExist,10,0,10,False,10,0,10,False,False
+out_FC_row_021,io.elasticjob.lite.internal.schedule.JobRegistry_getCurrentShardingTotalCount_0_0_Test#testGetCurrentShardingTotalCountWhenJobNameExists,10,0,10,False,10,0,10,False,False
+out_FC_row_023,com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testCreateSchema,10,0,10,False,10,0,10,False,False
+out_FC_row_023,com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testCreateSchemaWithRuntimeException,10,0,10,False,10,0,10,False,False
+out_FC_row_025,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_0_0_Test#testIsLocalInstancePathFalse,10,0,10,False,10,0,10,False,False
+out_FC_row_025,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_0_0_Test#testIsLocalInstancePathTrue,10,0,10,False,10,0,10,False,False
+out_FC_row_026,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_0_0_Test#testIsLocalInstancePath,10,0,10,False,10,0,10,False,False
+out_FC_row_027,io.elasticjob.lite.internal.instance.InstanceNode_isLocalInstancePath_0_0_Test#testIsLocalInstancePath,10,0,10,False,10,0,10,False,False
