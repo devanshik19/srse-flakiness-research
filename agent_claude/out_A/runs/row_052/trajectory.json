@@ -1,0 +1,624 @@
+{
+  "info": {
+    "model_stats": {
+      "instance_cost": 0.188744,
+      "api_calls": 5
+    },
+    "config": {
+      "agent": {
+        "system_template": "{{chatunitest_system}}\n{%- if condition in (\"FC\", \"FCV\") %}\n{%- set before, after = (\"@Before\", \"@After\") if junit == \"JUnit 4\" else (\"@BeforeEach\", \"@AfterEach\") %}\nThe tests may run in any order together with the project's other tests in the same JVM, so they must not change state that other tests see: if a test changes a static field, a singleton (e.g. an object returned by getInstance()), a system property, or any field set by reflection, save the original value before changing it (in {{before}}) and restore it in an {{after}} method.\n{%- endif %}\n{%- if condition == \"FCV\" %}\nEach test must pass no matter which tests ran before it: do not assume that shared state (static fields, singletons, system properties) is in its default state; set up the state your test needs in {{before}}.\n{%- endif %}\n\nYou can run bash commands with the bash tool, in the project's repository.\n",
+        "instance_template": "{{chatunitest_user}}\n\n## How to work\n\nYou are in the project's repository: {{project_root}} (JDK {{java}}, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n{%- if condition == \"T\" %}\n\nBefore writing your test, read the project's existing tests for this class:\n{{existing_test}}\nYour test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- set n = 1 if condition in (\"F\", \"N\", \"FC\", \"FCV\") else 0 %}\n{% if condition in (\"F\", \"N\", \"FC\", \"FCV\") %}\n1. Read the project's existing tests first. They are in {{test_dir}}; read the ones you need.\n{%- if condition in (\"F\", \"FC\", \"FCV\") %}\n   Your test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- endif %}\n{{1 + n}}. Write the {{junit}} test class `{{test_class}}` (package `{{package}}`) to\n   {{test_path}}\n   Do not change any other file of the project.\n{%- if condition != \"A\" %}\n   Text in your reply is not saved: write the test file with a bash command (e.g. `cat > {{test_path}} << 'EOF'`).\n{%- endif %}\n{{2 + n}}. Compile and run it with:\n   {{test_cmd}}\n{%- if condition in (\"A\", \"T\", \"F\", \"N\", \"FC\", \"FCV\") %}\n   Run only your own test class.\n{%- else %}\n   You can also run the module's whole test suite with:\n   {{suite_cmd}}\n{%- endif %}\n{{3 + n}}. Fix it until it compiles and its tests pass.\n{%- if condition in (\"FC\", \"FCV\") %}\n   If the test changes a static field, a singleton or a field set by reflection, save the original value and restore it in an {{\"@After\" if junit == \"JUnit 4\" else \"@AfterEach\"}} method.\n{%- endif %}\n{{4 + n}}. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command.\n",
+        "step_limit": 40,
+        "cost_limit": 3.0,
+        "wall_time_limit_seconds": 3600,
+        "max_consecutive_format_errors": 3,
+        "output_path": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/out_A/runs/row_052/trajectory.json"
+      },
+      "agent_type": "minisweagent.agents.default.DefaultAgent",
+      "model": {
+        "model_name": "anthropic/claude-opus-5-5",
+        "model_kwargs": {
+          "drop_params": true
+        },
+        "litellm_model_registry": null,
+        "set_cache_control": null,
+        "cost_tracking": "default",
+        "format_error_template": "{{ error }}",
+        "observation_template": "{% if output.exception_info -%}\n<exception>{{output.exception_info}}</exception>\n{% endif -%}\n<returncode>{{output.returncode}}</returncode>\n{% if output.output | length < 10000 -%}\n<output>\n{{ output.output -}}\n</output>\n{%- else -%}\n<warning>The output was too long; showing the first and last 5000 characters.</warning>\n<output_head>\n{{ output.output[:5000] }}\n</output_head>\n<output_tail>\n{{ output.output[-5000:] }}\n</output_tail>\n{%- endif -%}\n",
+        "multimodal_regex": ""
+      },
+      "model_type": "minisweagent.models.litellm_model.LitellmModel",
+      "environment": {
+        "cwd": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky",
+        "env": {
+          "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
+          "PATH": "/usr/lib/jvm/java-8-openjdk-amd64/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.nvm/versions/node/v22.23.4/bin:/home/dev4nshi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.7.11.0_x64__8wekyb3d8bbwe:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Amita/.local/bin:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/Amita/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Amita/AppData/Roaming/npm:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin",
+          "PAGER": "cat",
+          "MANPAGER": "cat",
+          "LESS": "-R"
+        },
+        "timeout": 1800
+      },
+      "environment_type": "minisweagent.environments.local.LocalEnvironment"
+    },
+    "mini_version": "2.4.6",
+    "exit_status": "Submitted",
+    "submission": ""
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Please help me generate a whole JUnit test for a focal method in a focal class.\nI will provide the following information of the focal method:\n1. Required dependencies to import.\n2. The focal class signature.\n3. Source code of the focal method.\n4. Signatures of r methods and fields in the class.\nI will provide followotheing brief information if the focal method has dependencies:\n1. Signatures of dependent classes.\n2. Signatures of dependent methods and fields in the dependent classes.\nI need you to create a whole unit test using JUnit 4, ensuring optimal branch and line coverage. Compile without errors, and use reflection to invoke private methods. No additional explanations required.\n\nYou can run bash commands with the bash tool, in the project's repository."
+    },
+    {
+      "role": "user",
+      "content": "The focal method is `getLocalFailoverItems()` in the focal class `FailoverService`, and their information is\n```io.elasticjob.lite.internal.failover\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\nimport io.elasticjob.lite.internal.sharding.ShardingNode;\nimport io.elasticjob.lite.internal.sharding.ShardingService;\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\nimport io.elasticjob.lite.internal.storage.LeaderExecutionCallback;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport lombok.extern.slf4j.Slf4j;\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.Collections;\nimport java.util.List;\n@Slf4j\npublic final class FailoverService {\nprivate final String jobName;\nprivate final JobNodeStorage jobNodeStorage;\nprivate final ShardingService shardingService;\npublic List<Integer> getLocalFailoverItems() {\n        if (JobRegistry.getInstance().isShutdown(jobName)) {\n            return Collections.emptyList();\n        }\n        return getFailoverItems(JobRegistry.getInstance().getJobInstance(jobName).getJobInstanceId());\n    }\n}```.\n    Signatures of Other methods in the focal class are `public FailoverService(final CoordinatorRegistryCenter regCenter, final String jobName){}\npublic void setCrashedFailoverFlag(final int item){}\npublic List<Integer> getLocalFailoverItems(){}\npublic List<Integer> getLocalTakeOffItems(){}\n\n`.\n    The brief information of dependent class `io.elasticjob.lite.reg.base.CoordinatorRegistryCenter` is\n    ```io.elasticjob.lite.reg.base\nimport java.util.List;\npublic interface CoordinatorRegistryCenter {\n\n\n}```.\n    The brief information of dependent class `io.elasticjob.lite.internal.failover.FailoverService` is\n    ```io.elasticjob.lite.internal.failover\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\nimport io.elasticjob.lite.internal.sharding.ShardingNode;\nimport io.elasticjob.lite.internal.sharding.ShardingService;\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\nimport io.elasticjob.lite.internal.storage.LeaderExecutionCallback;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport lombok.extern.slf4j.Slf4j;\nimport java.util.ArrayList;\nimport java.util.Collection;\nimport java.util.Collections;\nimport java.util.List;\n@Slf4j\npublic final class FailoverService {\nprivate final String jobName;\nprivate final JobNodeStorage jobNodeStorage;\nprivate final ShardingService shardingService;\npublic FailoverService(final CoordinatorRegistryCenter regCenter, final String jobName) {\n        this.jobName = jobName;\n        jobNodeStorage = new JobNodeStorage(regCenter, jobName);\n        shardingService = new ShardingService(regCenter, jobName);\n    }\n\npublic void setCrashedFailoverFlag(final int item){}\npublic List<Integer> getLocalFailoverItems(){}\npublic List<Integer> getLocalTakeOffItems(){}\npublic List<Integer> getFailoverItems(final String jobInstanceId) {\n        List<String> items = jobNodeStorage.getJobNodeChildrenKeys(ShardingNode.ROOT);\n        List<Integer> result = new ArrayList<>(items.size());\n        for (String each : items) {\n            int item = Integer.parseInt(each);\n            String node = FailoverNode.getExecutionFailoverNode(item);\n            if (jobNodeStorage.isJobNodeExisted(node) && jobInstanceId.equals(jobNodeStorage.getJobNodeDataDirectly(node))) {\n                result.add(item);\n            }\n        }\n        Collections.sort(result);\n        return result;\n    }\n}```.\n    The brief information of dependent class `io.elasticjob.lite.api.strategy.JobInstance` is\n    ```io.elasticjob.lite.api.strategy\nimport io.elasticjob.lite.util.env.IpUtils;\nimport lombok.EqualsAndHashCode;\nimport lombok.Getter;\nimport lombok.RequiredArgsConstructor;\nimport java.lang.management.ManagementFactory;\n@RequiredArgsConstructor\n@Getter\n@EqualsAndHashCode(of = \"jobInstanceId\")\npublic final class JobInstance {\nprivate static final String DELIMITER = \"@-@\";\nprivate final String jobInstanceId;\npublic JobInstance() {\n        jobInstanceId = IpUtils.getIp() + DELIMITER + ManagementFactory.getRuntimeMXBean().getName().split(\"@\")[0];\n    }\n\npublic String getIp(){}\n}```.\n    The brief information of dependent class `io.elasticjob.lite.internal.schedule.JobRegistry` is\n    ```io.elasticjob.lite.internal.schedule\nimport io.elasticjob.lite.api.strategy.JobInstance;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport lombok.AccessLevel;\nimport lombok.NoArgsConstructor;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\n@NoArgsConstructor(access = AccessLevel.PRIVATE)\npublic final class JobRegistry {\nprivate static volatile JobRegistry instance;\nprivate Map<String, JobScheduleController> schedulerMap = new ConcurrentHashMap<>();\nprivate Map<String, CoordinatorRegistryCenter> regCenterMap = new ConcurrentHashMap<>();\nprivate Map<String, JobInstance> jobInstanceMap = new ConcurrentHashMap<>();\nprivate Map<String, Boolean> jobRunningMap = new ConcurrentHashMap<>();\nprivate Map<String, Integer> currentShardingTotalCountMap = new ConcurrentHashMap<>();\npublic static JobRegistry getInstance(){}\npublic void setJobRunning(final String jobName, final boolean isRunning){}\npublic void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount){}\npublic JobInstance getJobInstance(final String jobName) {\n        return jobInstanceMap.get(jobName);\n    }\npublic boolean isShutdown(final String jobName) {\n        return !schedulerMap.containsKey(jobName) || !jobInstanceMap.containsKey(jobName);\n    }\npublic static JobRegistry getInstance() {\n        if (null == instance) {\n            synchronized (JobRegistry.class) {\n                if (null == instance) {\n                    instance = new JobRegistry();\n                }\n            }\n        }\n        return instance;\n    }\n}```.\n\n\n## How to work\n\nYou are in the project's repository: /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky (JDK 8, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n\n1. Write the JUnit 4 test class `FailoverService_getLocalFailoverItems_0_0_Test` (package `io.elasticjob.lite.internal.failover`) to\n   /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky/elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover/FailoverService_getLocalFailoverItems_0_0_Test.java\n   Do not change any other file of the project.\n2. Compile and run it with:\n   cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky && mvn -B -o test -pl elastic-job-lite-core -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=FailoverService_getLocalFailoverItems_0_0_Test 2>&1 | tail -n 80\n   Run only your own test class.\n3. Fix it until it compiles and its tests pass.\n4. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command."
+    },
+    {
+      "content": "Let me look at the existing test for FailoverService.",
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover; ls; sed -n 1,80p FailoverServiceTest.java; grep -rn \\\"class ReflectionUtils\\\" -A30 ../../ | head -40\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01MxFjCjvk2cWxyxPimGQqMF",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover; ls; sed -n 1,80p FailoverServiceTest.java; grep -rn \"class ReflectionUtils\" -A30 ../../ | head -40",
+            "tool_call_id": "toolu_01MxFjCjvk2cWxyxPimGQqMF"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-fd2ade60-91ff-4d26-9a7f-1baa5b778623",
+          "created": 1794494143,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": "Let me look at the existing test for FailoverService.",
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover; ls; sed -n 1,80p FailoverServiceTest.java; grep -rn \\\"class ReflectionUtils\\\" -A30 ../../ | head -40\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01MxFjCjvk2cWxyxPimGQqMF",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 150,
+            "prompt_tokens": 3854,
+            "total_tokens": 4004,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 150
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 3854,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.018416,
+        "timestamp": 1794494143.5683074
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\nFailoverListenerManagerTest.java\nFailoverNodeTest.java\nFailoverServiceTest.java\n/*\n * Copyright 1999-2015 dangdang.com.\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n * </p>\n */\n\npackage io.elasticjob.lite.internal.failover;\n\nimport io.elasticjob.lite.api.strategy.JobInstance;\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\nimport io.elasticjob.lite.internal.sharding.ShardingService;\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.mockito.ArgumentMatchers;\nimport org.mockito.Mock;\nimport org.mockito.MockitoAnnotations;\nimport org.unitils.util.ReflectionUtils;\n\nimport java.util.Arrays;\nimport java.util.Collections;\n\nimport static org.hamcrest.CoreMatchers.is;\nimport static org.junit.Assert.assertThat;\nimport static org.mockito.ArgumentMatchers.eq;\nimport static org.mockito.Mockito.times;\nimport static org.mockito.Mockito.verify;\nimport static org.mockito.Mockito.when;\n\npublic final class FailoverServiceTest {\n    \n    @Mock\n    private CoordinatorRegistryCenter regCenter;\n    \n    @Mock\n    private JobScheduleController jobScheduleController;\n    \n    @Mock\n    private JobNodeStorage jobNodeStorage;\n    \n    @Mock\n    private ShardingService shardingService;\n    \n    private final FailoverService failoverService = new FailoverService(null, \"test_job\");\n    \n    @Before\n    public void setUp() throws NoSuchFieldException {\n        MockitoAnnotations.initMocks(this);\n        ReflectionUtils.setFieldValue(failoverService, \"jobNodeStorage\", jobNodeStorage);\n        ReflectionUtils.setFieldValue(failoverService, \"shardingService\", shardingService);\n        ReflectionUtils.setFieldValue(failoverService, \"jobName\", \"test_job\");\n        JobRegistry.getInstance().addJobInstance(\"test_job\", new JobInstance(\"127.0.0.1@-@0\"));\n    }\n    \n    @Test\n    public void assertSetCrashedFailoverFlagWhenItemIsNotAssigned() {\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/0/failover\")).thenReturn(true);\n        failoverService.setCrashedFailoverFlag(0);\n        verify(jobNodeStorage).isJobNodeExisted(\"sharding/0/failover\");\n        verify(jobNodeStorage, times(0)).createJobNodeIfNeeded(\"leader/failover/items/0\");\n    }\n    \n    @Test\n    public void assertSetCrashedFailoverFlagWhenItemIsAssigned() {\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/0/failover\")).thenReturn(false);\n        failoverService.setCrashedFailoverFlag(0);\n        verify(jobNodeStorage).isJobNodeExisted(\"sharding/0/failover\");\n</output>",
+      "extra": {
+        "raw_output": "FailoverListenerManagerTest.java\nFailoverNodeTest.java\nFailoverServiceTest.java\n/*\n * Copyright 1999-2015 dangdang.com.\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n * </p>\n */\n\npackage io.elasticjob.lite.internal.failover;\n\nimport io.elasticjob.lite.api.strategy.JobInstance;\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\nimport io.elasticjob.lite.internal.sharding.ShardingService;\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.mockito.ArgumentMatchers;\nimport org.mockito.Mock;\nimport org.mockito.MockitoAnnotations;\nimport org.unitils.util.ReflectionUtils;\n\nimport java.util.Arrays;\nimport java.util.Collections;\n\nimport static org.hamcrest.CoreMatchers.is;\nimport static org.junit.Assert.assertThat;\nimport static org.mockito.ArgumentMatchers.eq;\nimport static org.mockito.Mockito.times;\nimport static org.mockito.Mockito.verify;\nimport static org.mockito.Mockito.when;\n\npublic final class FailoverServiceTest {\n    \n    @Mock\n    private CoordinatorRegistryCenter regCenter;\n    \n    @Mock\n    private JobScheduleController jobScheduleController;\n    \n    @Mock\n    private JobNodeStorage jobNodeStorage;\n    \n    @Mock\n    private ShardingService shardingService;\n    \n    private final FailoverService failoverService = new FailoverService(null, \"test_job\");\n    \n    @Before\n    public void setUp() throws NoSuchFieldException {\n        MockitoAnnotations.initMocks(this);\n        ReflectionUtils.setFieldValue(failoverService, \"jobNodeStorage\", jobNodeStorage);\n        ReflectionUtils.setFieldValue(failoverService, \"shardingService\", shardingService);\n        ReflectionUtils.setFieldValue(failoverService, \"jobName\", \"test_job\");\n        JobRegistry.getInstance().addJobInstance(\"test_job\", new JobInstance(\"127.0.0.1@-@0\"));\n    }\n    \n    @Test\n    public void assertSetCrashedFailoverFlagWhenItemIsNotAssigned() {\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/0/failover\")).thenReturn(true);\n        failoverService.setCrashedFailoverFlag(0);\n        verify(jobNodeStorage).isJobNodeExisted(\"sharding/0/failover\");\n        verify(jobNodeStorage, times(0)).createJobNodeIfNeeded(\"leader/failover/items/0\");\n    }\n    \n    @Test\n    public void assertSetCrashedFailoverFlagWhenItemIsAssigned() {\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/0/failover\")).thenReturn(false);\n        failoverService.setCrashedFailoverFlag(0);\n        verify(jobNodeStorage).isJobNodeExisted(\"sharding/0/failover\");\n",
+        "returncode": 0,
+        "timestamp": 1794494143.7293563,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01MxFjCjvk2cWxyxPimGQqMF",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; grep -n \\\"public\\\" JobRegistry.java\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01DT5ttG6hJZPdaMRemVa6Jc",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; grep -n \"public\" JobRegistry.java",
+            "tool_call_id": "toolu_01DT5ttG6hJZPdaMRemVa6Jc"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-6b31720b-393e-43ce-afc0-70bf69f9b2e6",
+          "created": 1794494145,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; grep -n \\\"public\\\" JobRegistry.java\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01DT5ttG6hJZPdaMRemVa6Jc",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 97,
+            "prompt_tokens": 5382,
+            "total_tokens": 5479,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 97
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 5382,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.023468,
+        "timestamp": 1794494145.6308117
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n35:public final class JobRegistry {\n54:    public static JobRegistry getInstance() {\n72:    public void registerJob(final String jobName, final JobScheduleController jobScheduleController, final CoordinatorRegistryCenter regCenter) {\n84:    public JobScheduleController getJobScheduleController(final String jobName) {\n94:    public CoordinatorRegistryCenter getRegCenter(final String jobName) {\n104:    public void addJobInstance(final String jobName, final JobInstance jobInstance) {\n114:    public JobInstance getJobInstance(final String jobName) {\n124:    public boolean isJobRunning(final String jobName) {\n135:    public void setJobRunning(final String jobName, final boolean isRunning) {\n145:    public int getCurrentShardingTotalCount(final String jobName) {\n156:    public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount) {\n165:    public void shutdown(final String jobName) {\n185:    public boolean isShutdown(final String jobName) {\n</output>",
+      "extra": {
+        "raw_output": "35:public final class JobRegistry {\n54:    public static JobRegistry getInstance() {\n72:    public void registerJob(final String jobName, final JobScheduleController jobScheduleController, final CoordinatorRegistryCenter regCenter) {\n84:    public JobScheduleController getJobScheduleController(final String jobName) {\n94:    public CoordinatorRegistryCenter getRegCenter(final String jobName) {\n104:    public void addJobInstance(final String jobName, final JobInstance jobInstance) {\n114:    public JobInstance getJobInstance(final String jobName) {\n124:    public boolean isJobRunning(final String jobName) {\n135:    public void setJobRunning(final String jobName, final boolean isRunning) {\n145:    public int getCurrentShardingTotalCount(final String jobName) {\n156:    public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount) {\n165:    public void shutdown(final String jobName) {\n185:    public boolean isShutdown(final String jobName) {\n",
+        "returncode": 0,
+        "timestamp": 1794494145.6431973,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01DT5ttG6hJZPdaMRemVa6Jc",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; sed -n 70,190p JobRegistry.java\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01KShcyuNLvKagJxvo1ocSZs",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "reasoning_content": "",
+      "thinking_blocks": [
+        {
+          "type": "thinking",
+          "thinking": "",
+          "signature": "CAQS0wUKEAgTGAI4AUIIdGhpbmtpbmcSDJUNuabM5PH4qhsfGBoMHkd34xq2qyu+KlM7IjDbV0zXGVenLC3IeyfEAonyrX/NYajFMyKUp2WZedYQnDuVbSlrHCfLGeXWdbv0Qmwq8AScIDO6SfIOcdCJFNu0plHgcSUAGGn+bMtDWuW1BekDw492ZylX1gr2BnrZwVDV8TBGhQm0adVqy9aiBJtkbq0QvIiL1dSmI3TIu+xaFg6nKd3zWkH9EgVZoowbJB3sU6X1hMONhuxhsm8UV8bwVbpaFv3NgGsMhUjxr4V+mJ9Na/S1RSaKCVuFCczU49+MNa1FeBNzpfWX91k4OzZqNcW8w7fRzDjpiRCtIyO7WAJ9VGf7y7D8Saflg2hT9pftA3rHQJkjGrygFhEzXqv+xYfBrcZdbVJvuwcr81e1ODULPJ9KrH0WyusZduMvacwdKtX/7iJwYfkf3QVdN4hdS5YhVuaI+IWN623xy+N7WrxL2PEtbJNXHryzg5XZ1UacCkhtBrPYROTT29KixWpV7UH7uEa6BkefvRx6PTtm0EgcFvQEPkw+Q876UqC/7YtVaeJghb3qhySyaNf3rD9uDFzalQ3I/J0yUZg5qEKPMSdYlXCfvAOi+uQClq+bslNEPnsw33YtLAQSotHAgFUSUjxhuoL8CIO/xLYdp7vw23h0snSSFdkyegPb8Pwl8zip3DyxXF/136Kz+W/von6e6lTxHLJ5nKbtvMtC9EnB8PjGoGi2PAU9Ys/YM3P8PdgBBad8V9TPCCYGYYFeLW6RyiUZQ8bjCJeJHD3hgBCgLRDH89rOyex0kHIUzDzvOcjmHZWfSYPm5snA2ez0tTGqQyybRyirYPEPeUEZ/irduJZzK5oRHjhqWmRFfHREO9UbpMjzm5BFwb0k7tARXhJzZLxh5lCqm6tyFLhDDN+BqsATb1bS4QOSpdH+bFgCGIo7mGkYAQ=="
+        }
+      ],
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": [
+          {
+            "type": "thinking",
+            "thinking": "",
+            "signature": "CAQS0wUKEAgTGAI4AUIIdGhpbmtpbmcSDJUNuabM5PH4qhsfGBoMHkd34xq2qyu+KlM7IjDbV0zXGVenLC3IeyfEAonyrX/NYajFMyKUp2WZedYQnDuVbSlrHCfLGeXWdbv0Qmwq8AScIDO6SfIOcdCJFNu0plHgcSUAGGn+bMtDWuW1BekDw492ZylX1gr2BnrZwVDV8TBGhQm0adVqy9aiBJtkbq0QvIiL1dSmI3TIu+xaFg6nKd3zWkH9EgVZoowbJB3sU6X1hMONhuxhsm8UV8bwVbpaFv3NgGsMhUjxr4V+mJ9Na/S1RSaKCVuFCczU49+MNa1FeBNzpfWX91k4OzZqNcW8w7fRzDjpiRCtIyO7WAJ9VGf7y7D8Saflg2hT9pftA3rHQJkjGrygFhEzXqv+xYfBrcZdbVJvuwcr81e1ODULPJ9KrH0WyusZduMvacwdKtX/7iJwYfkf3QVdN4hdS5YhVuaI+IWN623xy+N7WrxL2PEtbJNXHryzg5XZ1UacCkhtBrPYROTT29KixWpV7UH7uEa6BkefvRx6PTtm0EgcFvQEPkw+Q876UqC/7YtVaeJghb3qhySyaNf3rD9uDFzalQ3I/J0yUZg5qEKPMSdYlXCfvAOi+uQClq+bslNEPnsw33YtLAQSotHAgFUSUjxhuoL8CIO/xLYdp7vw23h0snSSFdkyegPb8Pwl8zip3DyxXF/136Kz+W/von6e6lTxHLJ5nKbtvMtC9EnB8PjGoGi2PAU9Ys/YM3P8PdgBBad8V9TPCCYGYYFeLW6RyiUZQ8bjCJeJHD3hgBCgLRDH89rOyex0kHIUzDzvOcjmHZWfSYPm5snA2ez0tTGqQyybRyirYPEPeUEZ/irduJZzK5oRHjhqWmRFfHREO9UbpMjzm5BFwb0k7tARXhJzZLxh5lCqm6tyFLhDDN+BqsATb1bS4QOSpdH+bFgCGIo7mGkYAQ=="
+          }
+        ]
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; sed -n 70,190p JobRegistry.java",
+            "tool_call_id": "toolu_01KShcyuNLvKagJxvo1ocSZs"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-17f58989-bddb-4d90-b29e-6e8c23f45a39",
+          "created": 1794494148,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd elastic-job-lite-core/src/main/java/io/elasticjob/lite/internal/schedule; sed -n 70,190p JobRegistry.java\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01KShcyuNLvKagJxvo1ocSZs",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "reasoning_content": "",
+                "thinking_blocks": [
+                  {
+                    "type": "thinking",
+                    "thinking": "",
+                    "signature": "CAQS0wUKEAgTGAI4AUIIdGhpbmtpbmcSDJUNuabM5PH4qhsfGBoMHkd34xq2qyu+KlM7IjDbV0zXGVenLC3IeyfEAonyrX/NYajFMyKUp2WZedYQnDuVbSlrHCfLGeXWdbv0Qmwq8AScIDO6SfIOcdCJFNu0plHgcSUAGGn+bMtDWuW1BekDw492ZylX1gr2BnrZwVDV8TBGhQm0adVqy9aiBJtkbq0QvIiL1dSmI3TIu+xaFg6nKd3zWkH9EgVZoowbJB3sU6X1hMONhuxhsm8UV8bwVbpaFv3NgGsMhUjxr4V+mJ9Na/S1RSaKCVuFCczU49+MNa1FeBNzpfWX91k4OzZqNcW8w7fRzDjpiRCtIyO7WAJ9VGf7y7D8Saflg2hT9pftA3rHQJkjGrygFhEzXqv+xYfBrcZdbVJvuwcr81e1ODULPJ9KrH0WyusZduMvacwdKtX/7iJwYfkf3QVdN4hdS5YhVuaI+IWN623xy+N7WrxL2PEtbJNXHryzg5XZ1UacCkhtBrPYROTT29KixWpV7UH7uEa6BkefvRx6PTtm0EgcFvQEPkw+Q876UqC/7YtVaeJghb3qhySyaNf3rD9uDFzalQ3I/J0yUZg5qEKPMSdYlXCfvAOi+uQClq+bslNEPnsw33YtLAQSotHAgFUSUjxhuoL8CIO/xLYdp7vw23h0snSSFdkyegPb8Pwl8zip3DyxXF/136Kz+W/von6e6lTxHLJ5nKbtvMtC9EnB8PjGoGi2PAU9Ys/YM3P8PdgBBad8V9TPCCYGYYFeLW6RyiUZQ8bjCJeJHD3hgBCgLRDH89rOyex0kHIUzDzvOcjmHZWfSYPm5snA2ez0tTGqQyybRyirYPEPeUEZ/irduJZzK5oRHjhqWmRFfHREO9UbpMjzm5BFwb0k7tARXhJzZLxh5lCqm6tyFLhDDN+BqsATb1bS4QOSpdH+bFgCGIo7mGkYAQ=="
+                  }
+                ],
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": [
+                    {
+                      "type": "thinking",
+                      "thinking": "",
+                      "signature": "CAQS0wUKEAgTGAI4AUIIdGhpbmtpbmcSDJUNuabM5PH4qhsfGBoMHkd34xq2qyu+KlM7IjDbV0zXGVenLC3IeyfEAonyrX/NYajFMyKUp2WZedYQnDuVbSlrHCfLGeXWdbv0Qmwq8AScIDO6SfIOcdCJFNu0plHgcSUAGGn+bMtDWuW1BekDw492ZylX1gr2BnrZwVDV8TBGhQm0adVqy9aiBJtkbq0QvIiL1dSmI3TIu+xaFg6nKd3zWkH9EgVZoowbJB3sU6X1hMONhuxhsm8UV8bwVbpaFv3NgGsMhUjxr4V+mJ9Na/S1RSaKCVuFCczU49+MNa1FeBNzpfWX91k4OzZqNcW8w7fRzDjpiRCtIyO7WAJ9VGf7y7D8Saflg2hT9pftA3rHQJkjGrygFhEzXqv+xYfBrcZdbVJvuwcr81e1ODULPJ9KrH0WyusZduMvacwdKtX/7iJwYfkf3QVdN4hdS5YhVuaI+IWN623xy+N7WrxL2PEtbJNXHryzg5XZ1UacCkhtBrPYROTT29KixWpV7UH7uEa6BkefvRx6PTtm0EgcFvQEPkw+Q876UqC/7YtVaeJghb3qhySyaNf3rD9uDFzalQ3I/J0yUZg5qEKPMSdYlXCfvAOi+uQClq+bslNEPnsw33YtLAQSotHAgFUSUjxhuoL8CIO/xLYdp7vw23h0snSSFdkyegPb8Pwl8zip3DyxXF/136Kz+W/von6e6lTxHLJ5nKbtvMtC9EnB8PjGoGi2PAU9Ys/YM3P8PdgBBad8V9TPCCYGYYFeLW6RyiUZQ8bjCJeJHD3hgBCgLRDH89rOyex0kHIUzDzvOcjmHZWfSYPm5snA2ez0tTGqQyybRyirYPEPeUEZ/irduJZzK5oRHjhqWmRFfHREO9UbpMjzm5BFwb0k7tARXhJzZLxh5lCqm6tyFLhDDN+BqsATb1bS4QOSpdH+bFgCGIo7mGkYAQ=="
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 146,
+            "prompt_tokens": 5860,
+            "total_tokens": 6006,
+            "completion_tokens_details": {
+              "reasoning_tokens": 46,
+              "text_tokens": 100
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 5860,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.026359999999999998,
+        "timestamp": 1794494148.0946293
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n     * @param regCenter \u6ce8\u518c\u4e2d\u5fc3\n     */\n    public void registerJob(final String jobName, final JobScheduleController jobScheduleController, final CoordinatorRegistryCenter regCenter) {\n        schedulerMap.put(jobName, jobScheduleController);\n        regCenterMap.put(jobName, regCenter);\n        regCenter.addCacheData(\"/\" + jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u8c03\u5ea6\u63a7\u5236\u5668.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u8c03\u5ea6\u63a7\u5236\u5668\n     */\n    public JobScheduleController getJobScheduleController(final String jobName) {\n        return schedulerMap.get(jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u6ce8\u518c\u4e2d\u5fc3.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u6ce8\u518c\u4e2d\u5fc3\n     */\n    public CoordinatorRegistryCenter getRegCenter(final String jobName) {\n        return regCenterMap.get(jobName);\n    }\n    \n    /**\n     * \u6dfb\u52a0\u4f5c\u4e1a\u5b9e\u4f8b.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param jobInstance \u4f5c\u4e1a\u5b9e\u4f8b\n     */\n    public void addJobInstance(final String jobName, final JobInstance jobInstance) {\n        jobInstanceMap.put(jobName, jobInstance);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u8fd0\u884c\u5b9e\u4f8b.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u8fd0\u884c\u5b9e\u4f8b\n     */\n    public JobInstance getJobInstance(final String jobName) {\n        return jobInstanceMap.get(jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c\n     */\n    public boolean isJobRunning(final String jobName) {\n        Boolean result = jobRunningMap.get(jobName);\n        return null == result ? false : result;\n    }\n    \n    /**\n     * \u8bbe\u7f6e\u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param isRunning \u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c\n     */\n    public void setJobRunning(final String jobName, final boolean isRunning) {\n        jobRunningMap.put(jobName, isRunning);\n    }\n    \n    /**\n     * \u83b7\u53d6\u5f53\u524d\u5206\u7247\u603b\u6570.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u5f53\u524d\u5206\u7247\u603b\u6570\n     */\n    public int getCurrentShardingTotalCount(final String jobName) {\n        Integer result = currentShardingTotalCountMap.get(jobName);\n        return null == result ? 0 : result;\n    }\n    \n    /**\n     * \u8bbe\u7f6e\u5f53\u524d\u5206\u7247\u603b\u6570.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param currentShardingTotalCount \u5f53\u524d\u5206\u7247\u603b\u6570\n     */\n    public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount) {\n        currentShardingTotalCountMap.put(jobName, currentShardingTotalCount);\n    }\n    \n    /**\n     * \u7ec8\u6b62\u4efb\u52a1\u8c03\u5ea6.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     */\n    public void shutdown(final String jobName) {\n        JobScheduleController scheduleController = schedulerMap.remove(jobName);\n        if (null != scheduleController) {\n            scheduleController.shutdown();\n        }\n        CoordinatorRegistryCenter regCenter = regCenterMap.remove(jobName);\n        if (null != regCenter) {\n            regCenter.evictCacheData(\"/\" + jobName);\n        }\n        jobInstanceMap.remove(jobName);\n        jobRunningMap.remove(jobName);\n        currentShardingTotalCountMap.remove(jobName);\n    }\n    \n    /**\n     * \u5224\u65ad\u4efb\u52a1\u8c03\u5ea6\u662f\u5426\u5df2\u7ec8\u6b62.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4efb\u52a1\u8c03\u5ea6\u662f\u5426\u5df2\u7ec8\u6b62\n     */\n    public boolean isShutdown(final String jobName) {\n        return !schedulerMap.containsKey(jobName) || !jobInstanceMap.containsKey(jobName);\n    }\n}\n</output>",
+      "extra": {
+        "raw_output": "     * @param regCenter \u6ce8\u518c\u4e2d\u5fc3\n     */\n    public void registerJob(final String jobName, final JobScheduleController jobScheduleController, final CoordinatorRegistryCenter regCenter) {\n        schedulerMap.put(jobName, jobScheduleController);\n        regCenterMap.put(jobName, regCenter);\n        regCenter.addCacheData(\"/\" + jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u8c03\u5ea6\u63a7\u5236\u5668.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u8c03\u5ea6\u63a7\u5236\u5668\n     */\n    public JobScheduleController getJobScheduleController(final String jobName) {\n        return schedulerMap.get(jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u6ce8\u518c\u4e2d\u5fc3.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u6ce8\u518c\u4e2d\u5fc3\n     */\n    public CoordinatorRegistryCenter getRegCenter(final String jobName) {\n        return regCenterMap.get(jobName);\n    }\n    \n    /**\n     * \u6dfb\u52a0\u4f5c\u4e1a\u5b9e\u4f8b.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param jobInstance \u4f5c\u4e1a\u5b9e\u4f8b\n     */\n    public void addJobInstance(final String jobName, final JobInstance jobInstance) {\n        jobInstanceMap.put(jobName, jobInstance);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u8fd0\u884c\u5b9e\u4f8b.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u8fd0\u884c\u5b9e\u4f8b\n     */\n    public JobInstance getJobInstance(final String jobName) {\n        return jobInstanceMap.get(jobName);\n    }\n    \n    /**\n     * \u83b7\u53d6\u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c\n     */\n    public boolean isJobRunning(final String jobName) {\n        Boolean result = jobRunningMap.get(jobName);\n        return null == result ? false : result;\n    }\n    \n    /**\n     * \u8bbe\u7f6e\u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param isRunning \u4f5c\u4e1a\u662f\u5426\u5728\u8fd0\u884c\n     */\n    public void setJobRunning(final String jobName, final boolean isRunning) {\n        jobRunningMap.put(jobName, isRunning);\n    }\n    \n    /**\n     * \u83b7\u53d6\u5f53\u524d\u5206\u7247\u603b\u6570.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u5f53\u524d\u5206\u7247\u603b\u6570\n     */\n    public int getCurrentShardingTotalCount(final String jobName) {\n        Integer result = currentShardingTotalCountMap.get(jobName);\n        return null == result ? 0 : result;\n    }\n    \n    /**\n     * \u8bbe\u7f6e\u5f53\u524d\u5206\u7247\u603b\u6570.\n     *\n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @param currentShardingTotalCount \u5f53\u524d\u5206\u7247\u603b\u6570\n     */\n    public void setCurrentShardingTotalCount(final String jobName, final int currentShardingTotalCount) {\n        currentShardingTotalCountMap.put(jobName, currentShardingTotalCount);\n    }\n    \n    /**\n     * \u7ec8\u6b62\u4efb\u52a1\u8c03\u5ea6.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     */\n    public void shutdown(final String jobName) {\n        JobScheduleController scheduleController = schedulerMap.remove(jobName);\n        if (null != scheduleController) {\n            scheduleController.shutdown();\n        }\n        CoordinatorRegistryCenter regCenter = regCenterMap.remove(jobName);\n        if (null != regCenter) {\n            regCenter.evictCacheData(\"/\" + jobName);\n        }\n        jobInstanceMap.remove(jobName);\n        jobRunningMap.remove(jobName);\n        currentShardingTotalCountMap.remove(jobName);\n    }\n    \n    /**\n     * \u5224\u65ad\u4efb\u52a1\u8c03\u5ea6\u662f\u5426\u5df2\u7ec8\u6b62.\n     * \n     * @param jobName \u4f5c\u4e1a\u540d\u79f0\n     * @return \u4efb\u52a1\u8c03\u5ea6\u662f\u5426\u5df2\u7ec8\u6b62\n     */\n    public boolean isShutdown(final String jobName) {\n        return !schedulerMap.containsKey(jobName) || !jobInstanceMap.containsKey(jobName);\n    }\n}\n",
+        "returncode": 0,
+        "timestamp": 1794494148.1061604,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01KShcyuNLvKagJxvo1ocSZs",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cat > elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover/FailoverService_getLocalFailoverItems_0_0_Test.java <<'EOF'\\npackage io.elasticjob.lite.internal.failover;\\n\\nimport io.elasticjob.lite.api.strategy.JobInstance;\\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\\nimport io.elasticjob.lite.internal.sharding.ShardingService;\\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\\nimport org.junit.After;\\nimport org.junit.Before;\\nimport org.junit.Test;\\nimport org.mockito.Mock;\\nimport org.mockito.MockitoAnnotations;\\n\\nimport java.lang.reflect.Field;\\nimport java.util.Arrays;\\nimport java.util.Collections;\\nimport java.util.List;\\n\\nimport static org.junit.Assert.assertEquals;\\nimport static org.junit.Assert.assertTrue;\\nimport static org.mockito.Mockito.never;\\nimport static org.mockito.Mockito.verify;\\nimport static org.mockito.Mockito.when;\\n\\npublic final class FailoverService_getLocalFailoverItems_0_0_Test {\\n    \\n    private static final String JOB_NAME = \\\"failover_local_items_test_job\\\";\\n    \\n    @Mock\\n    private CoordinatorRegistryCenter regCenter;\\n    \\n    @Mock\\n    private JobScheduleController jobScheduleController;\\n    \\n    @Mock\\n    private JobNodeStorage jobNodeStorage;\\n    \\n    @Mock\\n    private ShardingService shardingService;\\n    \\n    private FailoverService failoverService;\\n    \\n    @Before\\n    public void setUp() throws Exception {\\n        MockitoAnnotations.initMocks(this);\\n        failoverService = new FailoverService(regCenter, JOB_NAME);\\n        setField(\\\"jobNodeStorage\\\", jobNodeStorage);\\n        setField(\\\"shardingService\\\", shardingService);\\n        JobRegistry.getInstance().shutdown(JOB_NAME);\\n    }\\n    \\n    @After\\n    public void tearDown() {\\n        JobRegistry.getInstance().shutdown(JOB_NAME);\\n    }\\n    \\n    private void setField(final String name, final Object value) throws Exception {\\n        Field field = FailoverService.class.getDeclaredField(name);\\n        field.setAccessible(true);\\n        field.set(failoverService, value);\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenNotRegistered() {\\n        List<Integer> result = failoverService.getLocalFailoverItems();\\n        assertTrue(result.isEmpty());\\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\\\"sharding\\\");\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenOnlySchedulerRegistered() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\\\"sharding\\\");\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenOnlyInstanceRegistered() {\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n    }\\n    \\n    @Test\\n    public void assertGetLocalFailoverItems() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        when(jobNodeStorage.getJobNodeChildrenKeys(\\\"sharding\\\")).thenReturn(Arrays.asList(\\\"2\\\", \\\"0\\\", \\\"1\\\", \\\"3\\\"));\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/0/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/1/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/2/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/3/failover\\\")).thenReturn(false);\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/0/failover\\\")).thenReturn(\\\"127.0.0.1@-@0\\\");\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/1/failover\\\")).thenReturn(\\\"127.0.0.1@-@1\\\");\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/2/failover\\\")).thenReturn(\\\"127.0.0.1@-@0\\\");\\n        assertEquals(Arrays.asList(0, 2), failoverService.getLocalFailoverItems());\\n    }\\n    \\n    @Test\\n    public void assertGetLocalFailoverItemsWhenNoChildren() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        when(jobNodeStorage.getJobNodeChildrenKeys(\\\"sharding\\\")).thenReturn(Collections.<String>emptyList());\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n    }\\n}\\nEOF\\ncd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky && mvn -B -o test -pl elastic-job-lite-core -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=FailoverService_getLocalFailoverItems_0_0_Test 2>&1 | tail -n 30\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01CpLNQrEk8UBbvydZki1v5M",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cat > elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover/FailoverService_getLocalFailoverItems_0_0_Test.java <<'EOF'\npackage io.elasticjob.lite.internal.failover;\n\nimport io.elasticjob.lite.api.strategy.JobInstance;\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\nimport io.elasticjob.lite.internal.sharding.ShardingService;\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\nimport org.junit.After;\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.mockito.Mock;\nimport org.mockito.MockitoAnnotations;\n\nimport java.lang.reflect.Field;\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.List;\n\nimport static org.junit.Assert.assertEquals;\nimport static org.junit.Assert.assertTrue;\nimport static org.mockito.Mockito.never;\nimport static org.mockito.Mockito.verify;\nimport static org.mockito.Mockito.when;\n\npublic final class FailoverService_getLocalFailoverItems_0_0_Test {\n    \n    private static final String JOB_NAME = \"failover_local_items_test_job\";\n    \n    @Mock\n    private CoordinatorRegistryCenter regCenter;\n    \n    @Mock\n    private JobScheduleController jobScheduleController;\n    \n    @Mock\n    private JobNodeStorage jobNodeStorage;\n    \n    @Mock\n    private ShardingService shardingService;\n    \n    private FailoverService failoverService;\n    \n    @Before\n    public void setUp() throws Exception {\n        MockitoAnnotations.initMocks(this);\n        failoverService = new FailoverService(regCenter, JOB_NAME);\n        setField(\"jobNodeStorage\", jobNodeStorage);\n        setField(\"shardingService\", shardingService);\n        JobRegistry.getInstance().shutdown(JOB_NAME);\n    }\n    \n    @After\n    public void tearDown() {\n        JobRegistry.getInstance().shutdown(JOB_NAME);\n    }\n    \n    private void setField(final String name, final Object value) throws Exception {\n        Field field = FailoverService.class.getDeclaredField(name);\n        field.setAccessible(true);\n        field.set(failoverService, value);\n    }\n    \n    @Test\n    public void assertEmptyWhenNotRegistered() {\n        List<Integer> result = failoverService.getLocalFailoverItems();\n        assertTrue(result.isEmpty());\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\"sharding\");\n    }\n    \n    @Test\n    public void assertEmptyWhenOnlySchedulerRegistered() {\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\"sharding\");\n    }\n    \n    @Test\n    public void assertEmptyWhenOnlyInstanceRegistered() {\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\"127.0.0.1@-@0\"));\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\n    }\n    \n    @Test\n    public void assertGetLocalFailoverItems() {\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\"127.0.0.1@-@0\"));\n        when(jobNodeStorage.getJobNodeChildrenKeys(\"sharding\")).thenReturn(Arrays.asList(\"2\", \"0\", \"1\", \"3\"));\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/0/failover\")).thenReturn(true);\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/1/failover\")).thenReturn(true);\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/2/failover\")).thenReturn(true);\n        when(jobNodeStorage.isJobNodeExisted(\"sharding/3/failover\")).thenReturn(false);\n        when(jobNodeStorage.getJobNodeDataDirectly(\"sharding/0/failover\")).thenReturn(\"127.0.0.1@-@0\");\n        when(jobNodeStorage.getJobNodeDataDirectly(\"sharding/1/failover\")).thenReturn(\"127.0.0.1@-@1\");\n        when(jobNodeStorage.getJobNodeDataDirectly(\"sharding/2/failover\")).thenReturn(\"127.0.0.1@-@0\");\n        assertEquals(Arrays.asList(0, 2), failoverService.getLocalFailoverItems());\n    }\n    \n    @Test\n    public void assertGetLocalFailoverItemsWhenNoChildren() {\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\"127.0.0.1@-@0\"));\n        when(jobNodeStorage.getJobNodeChildrenKeys(\"sharding\")).thenReturn(Collections.<String>emptyList());\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\n    }\n}\nEOF\ncd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky && mvn -B -o test -pl elastic-job-lite-core -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=FailoverService_getLocalFailoverItems_0_0_Test 2>&1 | tail -n 30",
+            "tool_call_id": "toolu_01CpLNQrEk8UBbvydZki1v5M"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-0e430678-8221-45f0-9ba4-056d2a271914",
+          "created": 1794494164,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cat > elastic-job-lite-core/src/test/java/io/elasticjob/lite/internal/failover/FailoverService_getLocalFailoverItems_0_0_Test.java <<'EOF'\\npackage io.elasticjob.lite.internal.failover;\\n\\nimport io.elasticjob.lite.api.strategy.JobInstance;\\nimport io.elasticjob.lite.internal.schedule.JobRegistry;\\nimport io.elasticjob.lite.internal.schedule.JobScheduleController;\\nimport io.elasticjob.lite.internal.sharding.ShardingService;\\nimport io.elasticjob.lite.internal.storage.JobNodeStorage;\\nimport io.elasticjob.lite.reg.base.CoordinatorRegistryCenter;\\nimport org.junit.After;\\nimport org.junit.Before;\\nimport org.junit.Test;\\nimport org.mockito.Mock;\\nimport org.mockito.MockitoAnnotations;\\n\\nimport java.lang.reflect.Field;\\nimport java.util.Arrays;\\nimport java.util.Collections;\\nimport java.util.List;\\n\\nimport static org.junit.Assert.assertEquals;\\nimport static org.junit.Assert.assertTrue;\\nimport static org.mockito.Mockito.never;\\nimport static org.mockito.Mockito.verify;\\nimport static org.mockito.Mockito.when;\\n\\npublic final class FailoverService_getLocalFailoverItems_0_0_Test {\\n    \\n    private static final String JOB_NAME = \\\"failover_local_items_test_job\\\";\\n    \\n    @Mock\\n    private CoordinatorRegistryCenter regCenter;\\n    \\n    @Mock\\n    private JobScheduleController jobScheduleController;\\n    \\n    @Mock\\n    private JobNodeStorage jobNodeStorage;\\n    \\n    @Mock\\n    private ShardingService shardingService;\\n    \\n    private FailoverService failoverService;\\n    \\n    @Before\\n    public void setUp() throws Exception {\\n        MockitoAnnotations.initMocks(this);\\n        failoverService = new FailoverService(regCenter, JOB_NAME);\\n        setField(\\\"jobNodeStorage\\\", jobNodeStorage);\\n        setField(\\\"shardingService\\\", shardingService);\\n        JobRegistry.getInstance().shutdown(JOB_NAME);\\n    }\\n    \\n    @After\\n    public void tearDown() {\\n        JobRegistry.getInstance().shutdown(JOB_NAME);\\n    }\\n    \\n    private void setField(final String name, final Object value) throws Exception {\\n        Field field = FailoverService.class.getDeclaredField(name);\\n        field.setAccessible(true);\\n        field.set(failoverService, value);\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenNotRegistered() {\\n        List<Integer> result = failoverService.getLocalFailoverItems();\\n        assertTrue(result.isEmpty());\\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\\\"sharding\\\");\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenOnlySchedulerRegistered() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n        verify(jobNodeStorage, never()).getJobNodeChildrenKeys(\\\"sharding\\\");\\n    }\\n    \\n    @Test\\n    public void assertEmptyWhenOnlyInstanceRegistered() {\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n    }\\n    \\n    @Test\\n    public void assertGetLocalFailoverItems() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        when(jobNodeStorage.getJobNodeChildrenKeys(\\\"sharding\\\")).thenReturn(Arrays.asList(\\\"2\\\", \\\"0\\\", \\\"1\\\", \\\"3\\\"));\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/0/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/1/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/2/failover\\\")).thenReturn(true);\\n        when(jobNodeStorage.isJobNodeExisted(\\\"sharding/3/failover\\\")).thenReturn(false);\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/0/failover\\\")).thenReturn(\\\"127.0.0.1@-@0\\\");\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/1/failover\\\")).thenReturn(\\\"127.0.0.1@-@1\\\");\\n        when(jobNodeStorage.getJobNodeDataDirectly(\\\"sharding/2/failover\\\")).thenReturn(\\\"127.0.0.1@-@0\\\");\\n        assertEquals(Arrays.asList(0, 2), failoverService.getLocalFailoverItems());\\n    }\\n    \\n    @Test\\n    public void assertGetLocalFailoverItemsWhenNoChildren() {\\n        JobRegistry.getInstance().registerJob(JOB_NAME, jobScheduleController, regCenter);\\n        JobRegistry.getInstance().addJobInstance(JOB_NAME, new JobInstance(\\\"127.0.0.1@-@0\\\"));\\n        when(jobNodeStorage.getJobNodeChildrenKeys(\\\"sharding\\\")).thenReturn(Collections.<String>emptyList());\\n        assertTrue(failoverService.getLocalFailoverItems().isEmpty());\\n    }\\n}\\nEOF\\ncd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky && mvn -B -o test -pl elastic-job-lite-core -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=FailoverService_getLocalFailoverItems_0_0_Test 2>&1 | tail -n 30\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01CpLNQrEk8UBbvydZki1v5M",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 2368,
+            "prompt_tokens": 7392,
+            "total_tokens": 9760,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 2368
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 7392,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.076928,
+        "timestamp": 1794494164.5101764
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n[INFO] --- compiler:3.3:compile (default-compile) @ elastic-job-lite-core ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:2.7:testResources (default-testResources) @ elastic-job-lite-core ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 5 resources\n[INFO] \n[INFO] --- compiler:3.3:testCompile (default-testCompile) @ elastic-job-lite-core ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 154 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky/elastic-job-lite-core/target/test-classes\n[INFO] \n[INFO] --- surefire:2.19.1:test (default-test) @ elastic-job-lite-core ---\n\n-------------------------------------------------------\n T E S T S\n-------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: ignoring option UseSplitVerifier; support was removed in 8.0\nRunning io.elasticjob.lite.internal.failover.FailoverService_getLocalFailoverItems_0_0_Test\nTests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.369 sec - in io.elasticjob.lite.internal.failover.FailoverService_getLocalFailoverItems_0_0_Test\n\nResults :\n\nTests run: 5, Failures: 0, Errors: 0, Skipped: 0\n\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  11.941 s\n[INFO] Finished at: 2026-11-12T14:36:19Z\n[INFO] ------------------------------------------------------------------------\n</output>",
+      "extra": {
+        "raw_output": "[INFO] --- compiler:3.3:compile (default-compile) @ elastic-job-lite-core ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:2.7:testResources (default-testResources) @ elastic-job-lite-core ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 5 resources\n[INFO] \n[INFO] --- compiler:3.3:testCompile (default-testCompile) @ elastic-job-lite-core ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 154 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_052/shardingsphereelasticjobelasticjoblitecore23a2ab5/Flaky/elastic-job-lite-core/target/test-classes\n[INFO] \n[INFO] --- surefire:2.19.1:test (default-test) @ elastic-job-lite-core ---\n\n-------------------------------------------------------\n T E S T S\n-------------------------------------------------------\nOpenJDK 64-Bit Server VM warning: ignoring option UseSplitVerifier; support was removed in 8.0\nRunning io.elasticjob.lite.internal.failover.FailoverService_getLocalFailoverItems_0_0_Test\nTests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.369 sec - in io.elasticjob.lite.internal.failover.FailoverService_getLocalFailoverItems_0_0_Test\n\nResults :\n\nTests run: 5, Failures: 0, Errors: 0, Skipped: 0\n\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  11.941 s\n[INFO] Finished at: 2026-11-12T14:36:19Z\n[INFO] ------------------------------------------------------------------------\n",
+        "returncode": 0,
+        "timestamp": 1794494179.9565406,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01CpLNQrEk8UBbvydZki1v5M",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+            "name": "bash"
+          },
+          "id": "toolu_015oE32YTdDdEKdtt3P2AT8d",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT",
+            "tool_call_id": "toolu_015oE32YTdDdEKdtt3P2AT8d"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-12a3ee48-1cdf-4640-9a19-91a02fd15046",
+          "created": 1794494182,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_015oE32YTdDdEKdtt3P2AT8d",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 79,
+            "prompt_tokens": 10498,
+            "total_tokens": 10577,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 79
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 10498,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.043572,
+        "timestamp": 1794494182.3529308
+      }
+    },
+    {
+      "role": "exit",
+      "content": "",
+      "extra": {
+        "exit_status": "Submitted",
+        "submission": ""
+      }
+    }
+  ],
+  "trajectory_format": "mini-swe-agent-1.1"
+}

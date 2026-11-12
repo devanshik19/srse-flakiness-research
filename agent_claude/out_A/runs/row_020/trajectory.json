@@ -1,0 +1,935 @@
+{
+  "info": {
+    "model_stats": {
+      "instance_cost": 0.415784,
+      "api_calls": 7
+    },
+    "config": {
+      "agent": {
+        "system_template": "{{chatunitest_system}}\n{%- if condition in (\"FC\", \"FCV\") %}\n{%- set before, after = (\"@Before\", \"@After\") if junit == \"JUnit 4\" else (\"@BeforeEach\", \"@AfterEach\") %}\nThe tests may run in any order together with the project's other tests in the same JVM, so they must not change state that other tests see: if a test changes a static field, a singleton (e.g. an object returned by getInstance()), a system property, or any field set by reflection, save the original value before changing it (in {{before}}) and restore it in an {{after}} method.\n{%- endif %}\n{%- if condition == \"FCV\" %}\nEach test must pass no matter which tests ran before it: do not assume that shared state (static fields, singletons, system properties) is in its default state; set up the state your test needs in {{before}}.\n{%- endif %}\n\nYou can run bash commands with the bash tool, in the project's repository.\n",
+        "instance_template": "{{chatunitest_user}}\n\n## How to work\n\nYou are in the project's repository: {{project_root}} (JDK {{java}}, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n{%- if condition == \"T\" %}\n\nBefore writing your test, read the project's existing tests for this class:\n{{existing_test}}\nYour test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- set n = 1 if condition in (\"F\", \"N\", \"FC\", \"FCV\") else 0 %}\n{% if condition in (\"F\", \"N\", \"FC\", \"FCV\") %}\n1. Read the project's existing tests first. They are in {{test_dir}}; read the ones you need.\n{%- if condition in (\"F\", \"FC\", \"FCV\") %}\n   Your test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- endif %}\n{{1 + n}}. Write the {{junit}} test class `{{test_class}}` (package `{{package}}`) to\n   {{test_path}}\n   Do not change any other file of the project.\n{%- if condition != \"A\" %}\n   Text in your reply is not saved: write the test file with a bash command (e.g. `cat > {{test_path}} << 'EOF'`).\n{%- endif %}\n{{2 + n}}. Compile and run it with:\n   {{test_cmd}}\n{%- if condition in (\"A\", \"T\", \"F\", \"N\", \"FC\", \"FCV\") %}\n   Run only your own test class.\n{%- else %}\n   You can also run the module's whole test suite with:\n   {{suite_cmd}}\n{%- endif %}\n{{3 + n}}. Fix it until it compiles and its tests pass.\n{%- if condition in (\"FC\", \"FCV\") %}\n   If the test changes a static field, a singleton or a field set by reflection, save the original value and restore it in an {{\"@After\" if junit == \"JUnit 4\" else \"@AfterEach\"}} method.\n{%- endif %}\n{{4 + n}}. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command.\n",
+        "step_limit": 40,
+        "cost_limit": 3.0,
+        "wall_time_limit_seconds": 3600,
+        "max_consecutive_format_errors": 3,
+        "output_path": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/out_A/runs/row_020/trajectory.json"
+      },
+      "agent_type": "minisweagent.agents.default.DefaultAgent",
+      "model": {
+        "model_name": "anthropic/claude-opus-5-5",
+        "model_kwargs": {
+          "drop_params": true
+        },
+        "litellm_model_registry": null,
+        "set_cache_control": null,
+        "cost_tracking": "default",
+        "format_error_template": "{{ error }}",
+        "observation_template": "{% if output.exception_info -%}\n<exception>{{output.exception_info}}</exception>\n{% endif -%}\n<returncode>{{output.returncode}}</returncode>\n{% if output.output | length < 10000 -%}\n<output>\n{{ output.output -}}\n</output>\n{%- else -%}\n<warning>The output was too long; showing the first and last 5000 characters.</warning>\n<output_head>\n{{ output.output[:5000] }}\n</output_head>\n<output_tail>\n{{ output.output[-5000:] }}\n</output_tail>\n{%- endif -%}\n",
+        "multimodal_regex": ""
+      },
+      "model_type": "minisweagent.models.litellm_model.LitellmModel",
+      "environment": {
+        "cwd": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky",
+        "env": {
+          "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
+          "PATH": "/usr/lib/jvm/java-8-openjdk-amd64/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.nvm/versions/node/v22.23.4/bin:/home/dev4nshi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.7.11.0_x64__8wekyb3d8bbwe:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Amita/.local/bin:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/Amita/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Amita/AppData/Roaming/npm:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin",
+          "PAGER": "cat",
+          "MANPAGER": "cat",
+          "LESS": "-R"
+        },
+        "timeout": 1800
+      },
+      "environment_type": "minisweagent.environments.local.LocalEnvironment"
+    },
+    "mini_version": "2.4.6",
+    "exit_status": "Submitted",
+    "submission": ""
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Please help me generate a whole JUnit test for a focal method in a focal class.\nI will provide the following information of the focal method:\n1. Required dependencies to import.\n2. The focal class signature.\n3. Source code of the focal method.\n4. Signatures of r methods and fields in the class.\nI will provide followotheing brief information if the focal method has dependencies:\n1. Signatures of dependent classes.\n2. Signatures of dependent methods and fields in the dependent classes.\nI need you to create a whole unit test using JUnit 5, ensuring optimal branch and line coverage. Compile without errors, and use reflection to invoke private methods. No additional explanations required.\n\nYou can run bash commands with the bash tool, in the project's repository."
+    },
+    {
+      "role": "user",
+      "content": "The focal method is `buildHandle(List, SelectorDO)` in the focal class `ShenyuClientRegisterDivideServiceImpl`, and their information is\n```org.apache.shenyu.admin.service.register\nimport org.apache.commons.collections4.CollectionUtils;\nimport org.apache.shenyu.admin.model.entity.MetaDataDO;\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\nimport org.apache.shenyu.admin.service.MetaDataService;\nimport org.apache.shenyu.admin.service.converter.DivideSelectorHandleConverter;\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\nimport org.apache.shenyu.common.dto.convert.rule.impl.DivideRuleHandle;\nimport org.apache.shenyu.common.dto.convert.selector.DivideUpstream;\nimport org.apache.shenyu.common.enums.RpcTypeEnum;\nimport org.apache.shenyu.common.utils.GsonUtils;\nimport org.apache.shenyu.register.common.dto.MetaDataRegisterDTO;\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\nimport org.apache.shenyu.register.common.enums.EventType;\nimport org.springframework.stereotype.Service;\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.stream.Collectors;\n@Service\npublic class ShenyuClientRegisterDivideServiceImpl {\n@Resource\n    private DivideSelectorHandleConverter divideSelectorHandleConverter;\n@Override\n    protected String buildHandle(final List<URIRegisterDTO> uriList, final SelectorDO selectorDO) {\n        List<DivideUpstream> addList = buildDivideUpstreamList(uriList);\n        List<DivideUpstream> canAddList = new CopyOnWriteArrayList<>();\n        boolean isEventDeleted = uriList.size() == 1 && EventType.DELETED.equals(uriList.get(0).getEventType());\n        if (isEventDeleted) {\n            addList.get(0).setStatus(false);\n        }\n        List<DivideUpstream> existList = GsonUtils.getInstance().fromCurrentList(selectorDO.getHandle(), DivideUpstream.class);\n        if (CollectionUtils.isEmpty(existList)) {\n            canAddList = addList;\n        } else {\n            List<DivideUpstream> diffList = addList.stream().filter(upstream -> !existList.contains(upstream)).collect(Collectors.toList());\n            if (CollectionUtils.isNotEmpty(diffList)) {\n                canAddList.addAll(diffList);\n                existList.addAll(diffList);\n            }\n            List<DivideUpstream> diffStatusList = addList.stream().filter(upstream -> !upstream.isStatus()\n                    || existList.stream().anyMatch(e -> e.equals(upstream) && e.isStatus() != upstream.isStatus())).collect(Collectors.toList());\n            if (CollectionUtils.isNotEmpty(diffStatusList)) {\n                canAddList.addAll(diffStatusList);\n            }\n        }\n\n        if (doSubmit(selectorDO.getId(), canAddList)) {\n            return null;\n        }\n\n        List<DivideUpstream> handleList;\n        if (CollectionUtils.isEmpty(existList)) {\n            handleList = addList;\n        } else {\n            List<DivideUpstream> aliveList;\n            if (isEventDeleted) {\n                aliveList = existList.stream().filter(e -> e.isStatus() && !e.equals(addList.get(0))).collect(Collectors.toList());\n            } else {\n                aliveList = addList;\n            }\n            handleList = divideSelectorHandleConverter.updateStatusAndFilter(existList, aliveList);\n        }\n        return GsonUtils.getInstance().toJson(handleList);\n    }\n}```.\n    The brief information of dependent class `org.apache.shenyu.admin.service.register.ShenyuClientRegisterDivideServiceImpl` is\n    ```org.apache.shenyu.admin.service.register\nimport org.apache.commons.collections4.CollectionUtils;\nimport org.apache.shenyu.admin.model.entity.MetaDataDO;\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\nimport org.apache.shenyu.admin.service.MetaDataService;\nimport org.apache.shenyu.admin.service.converter.DivideSelectorHandleConverter;\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\nimport org.apache.shenyu.common.dto.convert.rule.impl.DivideRuleHandle;\nimport org.apache.shenyu.common.dto.convert.selector.DivideUpstream;\nimport org.apache.shenyu.common.enums.RpcTypeEnum;\nimport org.apache.shenyu.common.utils.GsonUtils;\nimport org.apache.shenyu.register.common.dto.MetaDataRegisterDTO;\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\nimport org.apache.shenyu.register.common.enums.EventType;\nimport org.springframework.stereotype.Service;\nimport javax.annotation.Resource;\nimport java.util.List;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.stream.Collectors;\n@Service\npublic class ShenyuClientRegisterDivideServiceImpl {\n@Resource\n    private DivideSelectorHandleConverter divideSelectorHandleConverter;\n\n}```.\n    The brief information of dependent class `org.apache.shenyu.admin.model.entity.BaseDO` is\n    ```org.apache.shenyu.admin.model.entity\nimport java.io.Serializable;\nimport java.sql.Timestamp;\nimport java.util.Objects;\npublic class BaseDO {\nprivate static final long serialVersionUID = 2174741380632669212L;\nprivate String id;\nprivate Timestamp dateCreated;\nprivate Timestamp dateUpdated;\npublic BaseDO() {\n    }\npublic BaseDO(final String id, final Timestamp dateCreated, final Timestamp dateUpdated) {\n        this.id = id;\n        this.dateCreated = dateCreated;\n        this.dateUpdated = dateUpdated;\n    }\n\npublic String getId(){}\npublic void setId(final String id){}\npublic Timestamp getDateCreated(){}\npublic void setDateCreated(final Timestamp dateCreated){}\npublic Timestamp getDateUpdated(){}\npublic void setDateUpdated(final Timestamp dateUpdated){}\npublic String getId() {\n        return id;\n    }\n}```.\n    The brief information of dependent class `org.apache.shenyu.admin.model.entity.SelectorDO` is\n    ```org.apache.shenyu.admin.model.entity\nimport org.apache.commons.lang3.StringUtils;\nimport org.apache.shenyu.admin.model.dto.SelectorDTO;\nimport org.apache.shenyu.common.dto.ConditionData;\nimport org.apache.shenyu.common.dto.SelectorData;\nimport org.apache.shenyu.common.enums.MatchModeEnum;\nimport org.apache.shenyu.common.enums.SelectorTypeEnum;\nimport org.apache.shenyu.common.utils.UUIDUtils;\nimport java.sql.Timestamp;\nimport java.util.List;\nimport java.util.Objects;\nimport java.util.Optional;\npublic final class SelectorDO {\nprivate static final long serialVersionUID = -1627940797162331235L;\nprivate String pluginId;\nprivate String name;\nprivate Integer matchMode;\nprivate Integer type;\nprivate Integer sort;\nprivate Boolean enabled;\nprivate Boolean loged;\nprivate Boolean continued;\nprivate String handle;\npublic SelectorDO() {\n    }\npublic SelectorDO(final String pluginId,\n                      final String name,\n                      final Integer matchMode,\n                      final Integer type,\n                      final Integer sort,\n                      final Boolean enabled,\n                      final Boolean loged,\n                      final Boolean continued,\n                      final String handle) {\n        this.pluginId = pluginId;\n        this.name = name;\n        this.matchMode = matchMode;\n        this.type = type;\n        this.sort = sort;\n        this.enabled = enabled;\n        this.loged = loged;\n        this.continued = continued;\n        this.handle = handle;\n    }\n\npublic String getPluginId(){}\npublic void setPluginId(final String pluginId){}\npublic String getName(){}\npublic void setName(final String name){}\npublic Integer getMatchMode(){}\npublic void setMatchMode(final Integer matchMode){}\npublic Integer getType(){}\npublic void setType(final Integer type){}\npublic Integer getSort(){}\npublic void setSort(final Integer sort){}\npublic Boolean getEnabled(){}\npublic void setEnabled(final Boolean enabled){}\npublic Boolean getLoged(){}\npublic void setLoged(final Boolean loged){}\npublic Boolean getContinued(){}\npublic void setContinued(final Boolean continued){}\npublic String getHandle(){}\npublic void setHandle(final String handle){}\npublic String getHandle() {\n        return handle;\n    }\n}```.\n    The brief information of dependent class `org.apache.shenyu.admin.service.converter.AbstractSelectorHandleConverter` is\n    ```org.apache.shenyu.admin.service.converter\nimport com.google.common.collect.Lists;\nimport org.apache.commons.collections4.CollectionUtils;\nimport org.apache.commons.lang3.StringUtils;\nimport org.apache.shenyu.admin.service.impl.UpstreamCheckService;\nimport org.apache.shenyu.common.dto.convert.selector.CommonUpstream;\nimport org.apache.shenyu.common.utils.GsonUtils;\nimport java.util.List;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.concurrent.TimeUnit;\nimport java.util.stream.Collectors;\npublic abstract class AbstractSelectorHandleConverter {\npublic static final String EMPTY_LIST_JSON = \"[]\";\n\n}```.\n    The brief information of dependent class `org.apache.shenyu.admin.service.register.AbstractShenyuClientRegisterServiceImpl` is\n    ```org.apache.shenyu.admin.service.register\nimport org.apache.commons.collections4.CollectionUtils;\nimport org.apache.commons.lang3.StringUtils;\nimport org.apache.shenyu.admin.listener.DataChangedEvent;\nimport org.apache.shenyu.admin.model.dto.RuleConditionDTO;\nimport org.apache.shenyu.admin.model.dto.RuleDTO;\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\nimport org.apache.shenyu.admin.service.MetaDataService;\nimport org.apache.shenyu.admin.service.RuleService;\nimport org.apache.shenyu.admin.service.SelectorService;\nimport org.apache.shenyu.admin.service.impl.UpstreamCheckService;\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\nimport org.apache.shenyu.admin.utils.ShenyuResultMessage;\nimport org.apache.shenyu.common.constant.AdminConstants;\nimport org.apache.shenyu.common.dto.SelectorData;\nimport org.apache.shenyu.common.dto.convert.selector.CommonUpstream;\nimport org.apache.shenyu.common.enums.ConfigGroupEnum;\nimport org.apache.shenyu.common.enums.DataEventTypeEnum;\nimport org.apache.shenyu.common.enums.MatchModeEnum;\nimport org.apache.shenyu.common.enums.OperatorEnum;\nimport org.apache.shenyu.common.enums.ParamTypeEnum;\nimport org.apache.shenyu.common.exception.ShenyuException;\nimport org.apache.shenyu.common.utils.PathUtils;\nimport org.apache.shenyu.common.utils.PluginNameAdapter;\nimport org.apache.shenyu.register.common.dto.MetaDataRegisterDTO;\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\nimport org.springframework.context.ApplicationEventPublisher;\nimport javax.annotation.Resource;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Objects;\nimport java.util.stream.Collectors;\npublic abstract class AbstractShenyuClientRegisterServiceImpl {\n@Resource\n    private ApplicationEventPublisher eventPublisher;\n@Resource\n    private SelectorService selectorService;\n@Resource\n    private MetaDataService metaDataService;\n@Resource\n    private RuleService ruleService;\n@Resource\n    private UpstreamCheckService upstreamCheckService;\npublic MetaDataService getMetaDataService(){}\npublic SelectorService getSelectorService(){}\npublic RuleService getRuleService(){}\n}```.\n\n\n## How to work\n\nYou are in the project's repository: /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky (JDK 8, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n\n1. Write the JUnit 5 test class `ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test` (package `org.apache.shenyu.admin.service.register`) to\n   /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test.java\n   Do not change any other file of the project.\n2. Compile and run it with:\n   cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky && mvn -B -o test -pl shenyu-admin -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test 2>&1 | tail -n 80\n   Run only your own test class.\n3. Fix it until it compiles and its tests pass.\n4. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command."
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd shenyu-admin/src/main/java/org/apache/shenyu/admin/service; cat register/ShenyuClientRegisterDivideServiceImpl.java | sed -n 1,200p | grep -n \\\"buildDivideUpstreamList\\\\|doSubmit\\\" ; grep -n \\\"doSubmit\\\" -A15 register/AbstractShenyuClientRegisterServiceImpl.java; grep -n \\\"updateStatusAndFilter\\\" -A30 converter/AbstractSelectorHandleConverter.java; ls ../../../../../../../test/java/org/apache/shenyu/admin/service/register/\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01SwyVDbAZr2rPAHKKUMjHJo",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd shenyu-admin/src/main/java/org/apache/shenyu/admin/service; cat register/ShenyuClientRegisterDivideServiceImpl.java | sed -n 1,200p | grep -n \"buildDivideUpstreamList\\|doSubmit\" ; grep -n \"doSubmit\" -A15 register/AbstractShenyuClientRegisterServiceImpl.java; grep -n \"updateStatusAndFilter\" -A30 converter/AbstractSelectorHandleConverter.java; ls ../../../../../../../test/java/org/apache/shenyu/admin/service/register/",
+            "tool_call_id": "toolu_01SwyVDbAZr2rPAHKKUMjHJo"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-3e6723fa-778c-4aa6-a495-0f2d97c7e0c0",
+          "created": 1794490897,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd shenyu-admin/src/main/java/org/apache/shenyu/admin/service; cat register/ShenyuClientRegisterDivideServiceImpl.java | sed -n 1,200p | grep -n \\\"buildDivideUpstreamList\\\\|doSubmit\\\" ; grep -n \\\"doSubmit\\\" -A15 register/AbstractShenyuClientRegisterServiceImpl.java; grep -n \\\"updateStatusAndFilter\\\" -A30 converter/AbstractSelectorHandleConverter.java; ls ../../../../../../../test/java/org/apache/shenyu/admin/service/register/\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01SwyVDbAZr2rPAHKKUMjHJo",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 250,
+            "prompt_tokens": 5894,
+            "total_tokens": 6144,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 250
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 5894,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.028576,
+        "timestamp": 1794490897.8202362
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n75:        List<DivideUpstream> addList = buildDivideUpstreamList(uriList);\n97:        if (doSubmit(selectorDO.getId(), canAddList)) {\n116:    private List<DivideUpstream> buildDivideUpstreamList(final List<URIRegisterDTO> uriList) {\n205:    protected boolean doSubmit(final String selectorId, final List<? extends CommonUpstream> upstreamList) {\n206-        List<CommonUpstream> commonUpstreamList = CommonUpstreamUtils.convertCommonUpstreamList(upstreamList);\n207-        return commonUpstreamList.stream().map(upstream -> upstreamCheckService.checkAndSubmit(selectorId, upstream))\n208-                .collect(Collectors.toList()).stream().findAny().orElse(false);\n209-    }\n210-    \n211-    /**\n212-     * Build context path default rule dto rule dto.\n213-     *\n214-     * @param selectorId  the selector id\n215-     * @param metaDataDTO the meta data dto\n216-     * @param ruleHandler the rule handler\n217-     * @return the rule dto\n218-     */\n219-    protected RuleDTO buildContextPathDefaultRuleDTO(final String selectorId, final MetaDataRegisterDTO metaDataDTO, final String ruleHandler) {\n220-        String contextPath = metaDataDTO.getContextPath();\n70:    public <T extends CommonUpstream> List<T> updateStatusAndFilter(final List<T> existList, final List<? extends CommonUpstream> aliveList) {\n71-        if (CollectionUtils.isEmpty(aliveList) || CollectionUtils.isEmpty(existList)) {\n72-            return Lists.newArrayList();\n73-        }\n74-        long currentTimeMillis = System.currentTimeMillis();\n75-        List<T> validExistList = existList.stream()\n76-                .filter(e -> e.isStatus() || e.getTimestamp() > currentTimeMillis - TimeUnit.SECONDS.toMillis(UpstreamCheckService.getZombieRemovalTimes())\n77-                        || aliveList.stream().anyMatch(alive -> alive.getUpstreamUrl().equals(e.getUpstreamUrl())))\n78-                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));\n79-        validExistList.stream()\n80-                .filter(upstream -> !upstream.isStatus() && aliveList.stream().anyMatch(alive -> alive.getUpstreamUrl().equals(upstream.getUpstreamUrl())))\n81-                .forEach(upstream -> {\n82-                    upstream.setStatus(true);\n83-                    upstream.setTimestamp(currentTimeMillis);\n84-                });\n85-        validExistList.stream()\n86-                .filter(upstream -> aliveList.stream().noneMatch(alive -> alive.getUpstreamUrl().equals(upstream.getUpstreamUrl())))\n87-                .forEach(upstream -> {\n88-                    upstream.setStatus(false);\n89-                    upstream.setTimestamp(currentTimeMillis);\n90-                });\n91-        return validExistList;\n92-    }\n93-}\nShenyuClientRegisterDivideServiceImplTest.java\nShenyuClientRegisterDubboServiceImplTest.java\nShenyuClientRegisterGrpcServiceImplTest.java\nShenyuClientRegisterMotanServiceImplTest.java\nShenyuClientRegisterSofaServiceImplTest.java\nShenyuClientRegisterSpringCloudServiceImplTest.java\nShenyuClientRegisterTarsServiceImplTest.java\n</output>",
+      "extra": {
+        "raw_output": "75:        List<DivideUpstream> addList = buildDivideUpstreamList(uriList);\n97:        if (doSubmit(selectorDO.getId(), canAddList)) {\n116:    private List<DivideUpstream> buildDivideUpstreamList(final List<URIRegisterDTO> uriList) {\n205:    protected boolean doSubmit(final String selectorId, final List<? extends CommonUpstream> upstreamList) {\n206-        List<CommonUpstream> commonUpstreamList = CommonUpstreamUtils.convertCommonUpstreamList(upstreamList);\n207-        return commonUpstreamList.stream().map(upstream -> upstreamCheckService.checkAndSubmit(selectorId, upstream))\n208-                .collect(Collectors.toList()).stream().findAny().orElse(false);\n209-    }\n210-    \n211-    /**\n212-     * Build context path default rule dto rule dto.\n213-     *\n214-     * @param selectorId  the selector id\n215-     * @param metaDataDTO the meta data dto\n216-     * @param ruleHandler the rule handler\n217-     * @return the rule dto\n218-     */\n219-    protected RuleDTO buildContextPathDefaultRuleDTO(final String selectorId, final MetaDataRegisterDTO metaDataDTO, final String ruleHandler) {\n220-        String contextPath = metaDataDTO.getContextPath();\n70:    public <T extends CommonUpstream> List<T> updateStatusAndFilter(final List<T> existList, final List<? extends CommonUpstream> aliveList) {\n71-        if (CollectionUtils.isEmpty(aliveList) || CollectionUtils.isEmpty(existList)) {\n72-            return Lists.newArrayList();\n73-        }\n74-        long currentTimeMillis = System.currentTimeMillis();\n75-        List<T> validExistList = existList.stream()\n76-                .filter(e -> e.isStatus() || e.getTimestamp() > currentTimeMillis - TimeUnit.SECONDS.toMillis(UpstreamCheckService.getZombieRemovalTimes())\n77-                        || aliveList.stream().anyMatch(alive -> alive.getUpstreamUrl().equals(e.getUpstreamUrl())))\n78-                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));\n79-        validExistList.stream()\n80-                .filter(upstream -> !upstream.isStatus() && aliveList.stream().anyMatch(alive -> alive.getUpstreamUrl().equals(upstream.getUpstreamUrl())))\n81-                .forEach(upstream -> {\n82-                    upstream.setStatus(true);\n83-                    upstream.setTimestamp(currentTimeMillis);\n84-                });\n85-        validExistList.stream()\n86-                .filter(upstream -> aliveList.stream().noneMatch(alive -> alive.getUpstreamUrl().equals(upstream.getUpstreamUrl())))\n87-                .forEach(upstream -> {\n88-                    upstream.setStatus(false);\n89-                    upstream.setTimestamp(currentTimeMillis);\n90-                });\n91-        return validExistList;\n92-    }\n93-}\nShenyuClientRegisterDivideServiceImplTest.java\nShenyuClientRegisterDubboServiceImplTest.java\nShenyuClientRegisterGrpcServiceImplTest.java\nShenyuClientRegisterMotanServiceImplTest.java\nShenyuClientRegisterSofaServiceImplTest.java\nShenyuClientRegisterSpringCloudServiceImplTest.java\nShenyuClientRegisterTarsServiceImplTest.java\n",
+        "returncode": 0,
+        "timestamp": 1794490897.92725,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01SwyVDbAZr2rPAHKKUMjHJo",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd shenyu-admin/src; sed -n 110,140p main/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl.java; sed -n 1,200p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java | grep -n \\\"Mock\\\\|buildHandle\\\\|Before\\\\|URIRegisterDTO\\\\|class\\\" ; grep -n \\\"equals\\\" -A12 ../../shenyu-common/src/main/java/org/apache/shenyu/common/dto/convert/selector/DivideUpstream.java | head -30\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01JoefJAFexo4JQLNioKfcPw",
+          "type": "function"
+        },
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd shenyu-admin/src; grep -n \\\"public .*(\\\" main/java/org/apache/shenyu/admin/service/impl/UpstreamCheckService.java | head; grep -n \\\"builder\\\\|public static\\\\|public .*(\\\" ../../shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/dto/URIRegisterDTO.java | head -40\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01Ex478CsNf7LDMHDBN43r1x",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd shenyu-admin/src; sed -n 110,140p main/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl.java; sed -n 1,200p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java | grep -n \"Mock\\|buildHandle\\|Before\\|URIRegisterDTO\\|class\" ; grep -n \"equals\" -A12 ../../shenyu-common/src/main/java/org/apache/shenyu/common/dto/convert/selector/DivideUpstream.java | head -30",
+            "tool_call_id": "toolu_01JoefJAFexo4JQLNioKfcPw"
+          },
+          {
+            "command": "cd shenyu-admin/src; grep -n \"public .*(\" main/java/org/apache/shenyu/admin/service/impl/UpstreamCheckService.java | head; grep -n \"builder\\|public static\\|public .*(\" ../../shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/dto/URIRegisterDTO.java | head -40",
+            "tool_call_id": "toolu_01Ex478CsNf7LDMHDBN43r1x"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-dcbc54a1-39f0-4f54-ba1e-e2d429ba9861",
+          "created": 1794490902,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd shenyu-admin/src; sed -n 110,140p main/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl.java; sed -n 1,200p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java | grep -n \\\"Mock\\\\|buildHandle\\\\|Before\\\\|URIRegisterDTO\\\\|class\\\" ; grep -n \\\"equals\\\" -A12 ../../shenyu-common/src/main/java/org/apache/shenyu/common/dto/convert/selector/DivideUpstream.java | head -30\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01JoefJAFexo4JQLNioKfcPw",
+                    "type": "function"
+                  },
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd shenyu-admin/src; grep -n \\\"public .*(\\\" main/java/org/apache/shenyu/admin/service/impl/UpstreamCheckService.java | head; grep -n \\\"builder\\\\|public static\\\\|public .*(\\\" ../../shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/dto/URIRegisterDTO.java | head -40\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01Ex478CsNf7LDMHDBN43r1x",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 439,
+            "prompt_tokens": 7458,
+            "total_tokens": 7897,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 439
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 7458,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.038612,
+        "timestamp": 1794490902.6463153
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n            }\n            handleList = divideSelectorHandleConverter.updateStatusAndFilter(existList, aliveList);\n        }\n        return GsonUtils.getInstance().toJson(handleList);\n    }\n\n    private List<DivideUpstream> buildDivideUpstreamList(final List<URIRegisterDTO> uriList) {\n        return uriList.stream()\n                .map(dto -> CommonUpstreamUtils.buildDivideUpstream(dto.getProtocol(), dto.getHost(), dto.getPort()))\n                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));\n    }\n}\n32:import org.apache.shenyu.register.common.dto.URIRegisterDTO;\n34:import org.junit.jupiter.api.BeforeEach;\n37:import org.mockito.InjectMocks;\n38:import org.mockito.Mock;\n39:import org.mockito.junit.jupiter.MockitoExtension;\n40:import org.mockito.junit.jupiter.MockitoSettings;\n50:import static org.mockito.Mockito.doReturn;\n51:import static org.mockito.Mockito.mock;\n52:import static org.mockito.Mockito.spy;\n53:import static org.mockito.Mockito.verify;\n54:import static org.mockito.Mockito.when;\n59:@ExtendWith(MockitoExtension.class)\n60:@MockitoSettings(strictness = Strictness.LENIENT)\n61:public final class ShenyuClientRegisterDivideServiceImplTest {\n65:    @InjectMocks\n68:    @Mock\n71:    @BeforeEach\n112:        List<URIRegisterDTO> list = new ArrayList<>();\n113:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).build());\n114:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091).build());\n115:        SelectorDO selectorDO = mock(SelectorDO.class);\n118:        String actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n120:        List<DivideUpstream> resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n128:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8093).build());\n129:        selectorDO = mock(SelectorDO.class);\n132:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n133:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n142:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091)/*.eventType(EventType.DELETED)*/.build());\n144:        selectorDO = mock(SelectorDO.class);\n146:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n147:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n152:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).eventType(EventType.DELETED).build());\n154:        selectorDO = mock(SelectorDO.class);\n156:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n157:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n163:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n168:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n169:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n175:        List<URIRegisterDTO> list = new ArrayList<>();\n176:        list.add(URIRegisterDTO.builder().appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).build());\n177:        list.add(URIRegisterDTO.builder().appName(\"test2\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091).build());\n179:            Method testMethod = shenyuClientRegisterDivideService.getClass().getDeclaredMethod(\"buildDivideUpstreamList\", List.class);\n108:    public boolean equals(final Object o) {\n109-        if (this == o) {\n110-            return true;\n111-        }\n112-        if (o == null || getClass() != o.getClass()) {\n113-            return false;\n114-        }\n115-        DivideUpstream that = (DivideUpstream) o;\n116:        return Objects.equals(getUpstreamHost(), that.getUpstreamHost()) && Objects.equals(getProtocol(), that.getProtocol()) && Objects.equals(getUpstreamUrl(), that.getUpstreamUrl());\n117-    }\n118-\n119-    @Override\n120-    public int hashCode() {\n121-        return Objects.hash(getUpstreamHost(), getProtocol(), getUpstreamUrl());\n122-    }\n123-\n124-    @Override\n125-    public String toString() {\n126-        return \"DivideUpstream{\"\n127-                + \"upstreamHost='\"\n128-                + getUpstreamHost()\n</output>",
+      "extra": {
+        "raw_output": "            }\n            handleList = divideSelectorHandleConverter.updateStatusAndFilter(existList, aliveList);\n        }\n        return GsonUtils.getInstance().toJson(handleList);\n    }\n\n    private List<DivideUpstream> buildDivideUpstreamList(final List<URIRegisterDTO> uriList) {\n        return uriList.stream()\n                .map(dto -> CommonUpstreamUtils.buildDivideUpstream(dto.getProtocol(), dto.getHost(), dto.getPort()))\n                .collect(Collectors.toCollection(CopyOnWriteArrayList::new));\n    }\n}\n32:import org.apache.shenyu.register.common.dto.URIRegisterDTO;\n34:import org.junit.jupiter.api.BeforeEach;\n37:import org.mockito.InjectMocks;\n38:import org.mockito.Mock;\n39:import org.mockito.junit.jupiter.MockitoExtension;\n40:import org.mockito.junit.jupiter.MockitoSettings;\n50:import static org.mockito.Mockito.doReturn;\n51:import static org.mockito.Mockito.mock;\n52:import static org.mockito.Mockito.spy;\n53:import static org.mockito.Mockito.verify;\n54:import static org.mockito.Mockito.when;\n59:@ExtendWith(MockitoExtension.class)\n60:@MockitoSettings(strictness = Strictness.LENIENT)\n61:public final class ShenyuClientRegisterDivideServiceImplTest {\n65:    @InjectMocks\n68:    @Mock\n71:    @BeforeEach\n112:        List<URIRegisterDTO> list = new ArrayList<>();\n113:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).build());\n114:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091).build());\n115:        SelectorDO selectorDO = mock(SelectorDO.class);\n118:        String actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n120:        List<DivideUpstream> resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n128:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8093).build());\n129:        selectorDO = mock(SelectorDO.class);\n132:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n133:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n142:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091)/*.eventType(EventType.DELETED)*/.build());\n144:        selectorDO = mock(SelectorDO.class);\n146:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n147:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n152:        list.add(URIRegisterDTO.builder().protocol(\"http://\").appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).eventType(EventType.DELETED).build());\n154:        selectorDO = mock(SelectorDO.class);\n156:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n157:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n163:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n168:        actual = shenyuClientRegisterDivideService.buildHandle(list, selectorDO);\n169:        resultList = GsonUtils.getInstance().fromCurrentList(actual, DivideUpstream.class);\n175:        List<URIRegisterDTO> list = new ArrayList<>();\n176:        list.add(URIRegisterDTO.builder().appName(\"test1\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8090).build());\n177:        list.add(URIRegisterDTO.builder().appName(\"test2\").rpcType(RpcTypeEnum.HTTP.getName()).host(LOCALHOST).port(8091).build());\n179:            Method testMethod = shenyuClientRegisterDivideService.getClass().getDeclaredMethod(\"buildDivideUpstreamList\", List.class);\n108:    public boolean equals(final Object o) {\n109-        if (this == o) {\n110-            return true;\n111-        }\n112-        if (o == null || getClass() != o.getClass()) {\n113-            return false;\n114-        }\n115-        DivideUpstream that = (DivideUpstream) o;\n116:        return Objects.equals(getUpstreamHost(), that.getUpstreamHost()) && Objects.equals(getProtocol(), that.getProtocol()) && Objects.equals(getUpstreamUrl(), that.getUpstreamUrl());\n117-    }\n118-\n119-    @Override\n120-    public int hashCode() {\n121-        return Objects.hash(getUpstreamHost(), getProtocol(), getUpstreamUrl());\n122-    }\n123-\n124-    @Override\n125-    public String toString() {\n126-        return \"DivideUpstream{\"\n127-                + \"upstreamHost='\"\n128-                + getUpstreamHost()\n",
+        "returncode": 0,
+        "timestamp": 1794490902.6933537,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01JoefJAFexo4JQLNioKfcPw",
+      "role": "tool"
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n123:    public UpstreamCheckService(final SelectorMapper selectorMapper,\n148:    public void setup() {\n160:    public void close() {\n172:    public static void removeByKey(final String selectorId) {\n183:    public boolean submit(final String selectorId, final CommonUpstream commonUpstream) {\n221:    public boolean checkAndSubmit(final String selectorId, final CommonUpstream commonUpstream) {\n237:    public void replace(final String selectorId, final List<CommonUpstream> commonUpstreams) {\n342:    public void fetchUpstreamData() {\n371:    public void onSelectorCreated(final SelectorCreatedEvent event) {\n385:    public void onSelectorUpdated(final SelectorUpdatedEvent event) {\n57:    public URIRegisterDTO(final String protocol, final String appName, final String contextPath,\n72:    public URIRegisterDTO() {\n75:    private URIRegisterDTO(final Builder builder) {\n76:        protocol = builder.protocol;\n77:        appName = builder.appName;\n78:        contextPath = builder.contextPath;\n79:        rpcType = builder.rpcType;\n80:        host = builder.host;\n81:        port = builder.port;\n82:        eventType = builder.eventType;\n91:    public static URIRegisterDTO transForm(final MetaDataRegisterDTO metaDataRegisterDTO) {\n92:        return URIRegisterDTO.builder()\n101:     * return builder.\n103:     * @return Builder builder\n105:    public static Builder builder() {\n115:    public DataType getType() {\n124:    public String getProtocol() {\n133:    public void setProtocol(final String protocol) {\n142:    public String getAppName() {\n151:    public void setAppName(final String appName) {\n160:    public String getContextPath() {\n169:    public void setContextPath(final String contextPath) {\n178:    public String getRpcType() {\n187:    public void setRpcType(final String rpcType) {\n196:    public String getHost() {\n205:    public void setHost(final String host) {\n214:    public Integer getPort() {\n223:    public void setPort(final Integer port) {\n232:    public EventType getEventType() {\n241:    public void setEventType(final EventType eventType) {\n246:    public boolean equals(final Object o) {\n266:    public int hashCode() {\n271:    public String toString() {\n298:    public static final class Builder {\n321:         * @return Builder builder\n323:        public Builder protocol(final String protocol) {\n332:         * @return Builder builder\n334:        public Builder appName(final String appName) {\n343:         * @return Builder builder\n345:        public Builder contextPath(final String contextPath) {\n</output>",
+      "extra": {
+        "raw_output": "123:    public UpstreamCheckService(final SelectorMapper selectorMapper,\n148:    public void setup() {\n160:    public void close() {\n172:    public static void removeByKey(final String selectorId) {\n183:    public boolean submit(final String selectorId, final CommonUpstream commonUpstream) {\n221:    public boolean checkAndSubmit(final String selectorId, final CommonUpstream commonUpstream) {\n237:    public void replace(final String selectorId, final List<CommonUpstream> commonUpstreams) {\n342:    public void fetchUpstreamData() {\n371:    public void onSelectorCreated(final SelectorCreatedEvent event) {\n385:    public void onSelectorUpdated(final SelectorUpdatedEvent event) {\n57:    public URIRegisterDTO(final String protocol, final String appName, final String contextPath,\n72:    public URIRegisterDTO() {\n75:    private URIRegisterDTO(final Builder builder) {\n76:        protocol = builder.protocol;\n77:        appName = builder.appName;\n78:        contextPath = builder.contextPath;\n79:        rpcType = builder.rpcType;\n80:        host = builder.host;\n81:        port = builder.port;\n82:        eventType = builder.eventType;\n91:    public static URIRegisterDTO transForm(final MetaDataRegisterDTO metaDataRegisterDTO) {\n92:        return URIRegisterDTO.builder()\n101:     * return builder.\n103:     * @return Builder builder\n105:    public static Builder builder() {\n115:    public DataType getType() {\n124:    public String getProtocol() {\n133:    public void setProtocol(final String protocol) {\n142:    public String getAppName() {\n151:    public void setAppName(final String appName) {\n160:    public String getContextPath() {\n169:    public void setContextPath(final String contextPath) {\n178:    public String getRpcType() {\n187:    public void setRpcType(final String rpcType) {\n196:    public String getHost() {\n205:    public void setHost(final String host) {\n214:    public Integer getPort() {\n223:    public void setPort(final Integer port) {\n232:    public EventType getEventType() {\n241:    public void setEventType(final EventType eventType) {\n246:    public boolean equals(final Object o) {\n266:    public int hashCode() {\n271:    public String toString() {\n298:    public static final class Builder {\n321:         * @return Builder builder\n323:        public Builder protocol(final String protocol) {\n332:         * @return Builder builder\n334:        public Builder appName(final String appName) {\n343:         * @return Builder builder\n345:        public Builder contextPath(final String contextPath) {\n",
+        "returncode": 0,
+        "timestamp": 1794490902.696377,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01Ex478CsNf7LDMHDBN43r1x",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd shenyu-admin/src; sed -n 60,80p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java; grep -n \\\"class\\\\|public\\\" main/java/org/apache/shenyu/admin/service/converter/DivideSelectorHandleConverter.java\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01Vdmak5nV2tQ2BcCsdTmqCc",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "reasoning_content": "",
+      "thinking_blocks": [
+        {
+          "type": "thinking",
+          "thinking": "",
+          "signature": "CAQS2gYKEAgTGAI4AUIIdGhpbmtpbmcSDI3/KkfI8KajIaPcLBoMZujU0FRcGc21sE51IjCf+mxg7C5WLb2cxbDpo2HjORJ7+QnJX+0Kw4ILvrnaWxW3r+0c/S+kWgUSMVQen5Uq9wWWvWadGBb9ul7dxn6HYQnVwPr1wrYcZkcZNvLwVAlVtMkdZGNPbOBbpoQTE+KmJcnrQbRIXrld/tJGAKc8u+qmQmXzp/jGVe4YjN19tElBPpZAHRPGo3+eoDDhdI4E5ClHcOVgDCIWuo8clxE8NIbRL6tALWME7s7hAEyFR6wnB5uwoiP7t530L6XANTzGh2KipXSxOt4c1Ix2B1FSs3B8ltFiWQT9sVtARMN0VQeyaQcsl4xYEOMJkXyqWqDphIsRB7tm3PwSsh4qXvJh79nji4Q+saAWUD1CJsbALQ822C9vq0VqkbJGIgfffvh86iI/AH5D2I5L5UF7H7rDZXqxD59qz/q26aTjunfXXpIp52fdjgOduWiIc61zMBvzce9U6R5i/5xCaYjpoRboxIj2kBupd7gQKqP9Av00LR5d76dkfu+NZPqXx43zn/yNfQgbEl9I4nrHgbsLukTi39VS1gHOvTmY6Nlkpi0W24qov3RSPLMo6qYCHLWyO9MrgcEkDwc/d3LqNyn+YVtp4s1ZAb/7oTsHO9bNYJrQN86lExv9ptbK8QkulSAMY9lwM6CZwdJGYl0xZrtX3nndvnVITZ8KSusCZhBkYHjpZF6iEaaojuoPN16oTyfTn46WzQxWyPB4gFoNvEIBHYIBmnstEg2FI1IODW1P8NHsuy5F4w22poeKzBg7m5sA2wBt7jz+qvTPOck1MzexsZ2M+UEKpiuJGCaAbUE52popEucuCz+8jteiNA7+ReEnqQKDIUtvX0WfSkXIhDwb6c3Au6qgwe0bgpLvF9nfz1RGda3LMVOAZ/5erxc/CDi72KbzQqGWPh+leTAsgNRxfE7hTAZz+hpGjJh8AGkQvuzQNsVDllEr+2CyzJ8tHJiNEOe4RFOKEtsyY02g+DFdnjSHUKky6tUzzGhoei7yae1j7iIVxAQfe1IxBwR8M4XLG9HZzS3cv2/U3/crtCVGuPX1m4CoBq89JwU2mLJgKgttYHoUqu9h3mcLxG4YAQ=="
+        }
+      ],
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": [
+          {
+            "type": "thinking",
+            "thinking": "",
+            "signature": "CAQS2gYKEAgTGAI4AUIIdGhpbmtpbmcSDI3/KkfI8KajIaPcLBoMZujU0FRcGc21sE51IjCf+mxg7C5WLb2cxbDpo2HjORJ7+QnJX+0Kw4ILvrnaWxW3r+0c/S+kWgUSMVQen5Uq9wWWvWadGBb9ul7dxn6HYQnVwPr1wrYcZkcZNvLwVAlVtMkdZGNPbOBbpoQTE+KmJcnrQbRIXrld/tJGAKc8u+qmQmXzp/jGVe4YjN19tElBPpZAHRPGo3+eoDDhdI4E5ClHcOVgDCIWuo8clxE8NIbRL6tALWME7s7hAEyFR6wnB5uwoiP7t530L6XANTzGh2KipXSxOt4c1Ix2B1FSs3B8ltFiWQT9sVtARMN0VQeyaQcsl4xYEOMJkXyqWqDphIsRB7tm3PwSsh4qXvJh79nji4Q+saAWUD1CJsbALQ822C9vq0VqkbJGIgfffvh86iI/AH5D2I5L5UF7H7rDZXqxD59qz/q26aTjunfXXpIp52fdjgOduWiIc61zMBvzce9U6R5i/5xCaYjpoRboxIj2kBupd7gQKqP9Av00LR5d76dkfu+NZPqXx43zn/yNfQgbEl9I4nrHgbsLukTi39VS1gHOvTmY6Nlkpi0W24qov3RSPLMo6qYCHLWyO9MrgcEkDwc/d3LqNyn+YVtp4s1ZAb/7oTsHO9bNYJrQN86lExv9ptbK8QkulSAMY9lwM6CZwdJGYl0xZrtX3nndvnVITZ8KSusCZhBkYHjpZF6iEaaojuoPN16oTyfTn46WzQxWyPB4gFoNvEIBHYIBmnstEg2FI1IODW1P8NHsuy5F4w22poeKzBg7m5sA2wBt7jz+qvTPOck1MzexsZ2M+UEKpiuJGCaAbUE52popEucuCz+8jteiNA7+ReEnqQKDIUtvX0WfSkXIhDwb6c3Au6qgwe0bgpLvF9nfz1RGda3LMVOAZ/5erxc/CDi72KbzQqGWPh+leTAsgNRxfE7hTAZz+hpGjJh8AGkQvuzQNsVDllEr+2CyzJ8tHJiNEOe4RFOKEtsyY02g+DFdnjSHUKky6tUzzGhoei7yae1j7iIVxAQfe1IxBwR8M4XLG9HZzS3cv2/U3/crtCVGuPX1m4CoBq89JwU2mLJgKgttYHoUqu9h3mcLxG4YAQ=="
+          }
+        ]
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd shenyu-admin/src; sed -n 60,80p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java; grep -n \"class\\|public\" main/java/org/apache/shenyu/admin/service/converter/DivideSelectorHandleConverter.java",
+            "tool_call_id": "toolu_01Vdmak5nV2tQ2BcCsdTmqCc"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-5b120819-fd44-4c25-8a51-6f611471ef03",
+          "created": 1794490905,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd shenyu-admin/src; sed -n 60,80p test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java; grep -n \\\"class\\\\|public\\\" main/java/org/apache/shenyu/admin/service/converter/DivideSelectorHandleConverter.java\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01Vdmak5nV2tQ2BcCsdTmqCc",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "reasoning_content": "",
+                "thinking_blocks": [
+                  {
+                    "type": "thinking",
+                    "thinking": "",
+                    "signature": "CAQS2gYKEAgTGAI4AUIIdGhpbmtpbmcSDI3/KkfI8KajIaPcLBoMZujU0FRcGc21sE51IjCf+mxg7C5WLb2cxbDpo2HjORJ7+QnJX+0Kw4ILvrnaWxW3r+0c/S+kWgUSMVQen5Uq9wWWvWadGBb9ul7dxn6HYQnVwPr1wrYcZkcZNvLwVAlVtMkdZGNPbOBbpoQTE+KmJcnrQbRIXrld/tJGAKc8u+qmQmXzp/jGVe4YjN19tElBPpZAHRPGo3+eoDDhdI4E5ClHcOVgDCIWuo8clxE8NIbRL6tALWME7s7hAEyFR6wnB5uwoiP7t530L6XANTzGh2KipXSxOt4c1Ix2B1FSs3B8ltFiWQT9sVtARMN0VQeyaQcsl4xYEOMJkXyqWqDphIsRB7tm3PwSsh4qXvJh79nji4Q+saAWUD1CJsbALQ822C9vq0VqkbJGIgfffvh86iI/AH5D2I5L5UF7H7rDZXqxD59qz/q26aTjunfXXpIp52fdjgOduWiIc61zMBvzce9U6R5i/5xCaYjpoRboxIj2kBupd7gQKqP9Av00LR5d76dkfu+NZPqXx43zn/yNfQgbEl9I4nrHgbsLukTi39VS1gHOvTmY6Nlkpi0W24qov3RSPLMo6qYCHLWyO9MrgcEkDwc/d3LqNyn+YVtp4s1ZAb/7oTsHO9bNYJrQN86lExv9ptbK8QkulSAMY9lwM6CZwdJGYl0xZrtX3nndvnVITZ8KSusCZhBkYHjpZF6iEaaojuoPN16oTyfTn46WzQxWyPB4gFoNvEIBHYIBmnstEg2FI1IODW1P8NHsuy5F4w22poeKzBg7m5sA2wBt7jz+qvTPOck1MzexsZ2M+UEKpiuJGCaAbUE52popEucuCz+8jteiNA7+ReEnqQKDIUtvX0WfSkXIhDwb6c3Au6qgwe0bgpLvF9nfz1RGda3LMVOAZ/5erxc/CDi72KbzQqGWPh+leTAsgNRxfE7hTAZz+hpGjJh8AGkQvuzQNsVDllEr+2CyzJ8tHJiNEOe4RFOKEtsyY02g+DFdnjSHUKky6tUzzGhoei7yae1j7iIVxAQfe1IxBwR8M4XLG9HZzS3cv2/U3/crtCVGuPX1m4CoBq89JwU2mLJgKgttYHoUqu9h3mcLxG4YAQ=="
+                  }
+                ],
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": [
+                    {
+                      "type": "thinking",
+                      "thinking": "",
+                      "signature": "CAQS2gYKEAgTGAI4AUIIdGhpbmtpbmcSDI3/KkfI8KajIaPcLBoMZujU0FRcGc21sE51IjCf+mxg7C5WLb2cxbDpo2HjORJ7+QnJX+0Kw4ILvrnaWxW3r+0c/S+kWgUSMVQen5Uq9wWWvWadGBb9ul7dxn6HYQnVwPr1wrYcZkcZNvLwVAlVtMkdZGNPbOBbpoQTE+KmJcnrQbRIXrld/tJGAKc8u+qmQmXzp/jGVe4YjN19tElBPpZAHRPGo3+eoDDhdI4E5ClHcOVgDCIWuo8clxE8NIbRL6tALWME7s7hAEyFR6wnB5uwoiP7t530L6XANTzGh2KipXSxOt4c1Ix2B1FSs3B8ltFiWQT9sVtARMN0VQeyaQcsl4xYEOMJkXyqWqDphIsRB7tm3PwSsh4qXvJh79nji4Q+saAWUD1CJsbALQ822C9vq0VqkbJGIgfffvh86iI/AH5D2I5L5UF7H7rDZXqxD59qz/q26aTjunfXXpIp52fdjgOduWiIc61zMBvzce9U6R5i/5xCaYjpoRboxIj2kBupd7gQKqP9Av00LR5d76dkfu+NZPqXx43zn/yNfQgbEl9I4nrHgbsLukTi39VS1gHOvTmY6Nlkpi0W24qov3RSPLMo6qYCHLWyO9MrgcEkDwc/d3LqNyn+YVtp4s1ZAb/7oTsHO9bNYJrQN86lExv9ptbK8QkulSAMY9lwM6CZwdJGYl0xZrtX3nndvnVITZ8KSusCZhBkYHjpZF6iEaaojuoPN16oTyfTn46WzQxWyPB4gFoNvEIBHYIBmnstEg2FI1IODW1P8NHsuy5F4w22poeKzBg7m5sA2wBt7jz+qvTPOck1MzexsZ2M+UEKpiuJGCaAbUE52popEucuCz+8jteiNA7+ReEnqQKDIUtvX0WfSkXIhDwb6c3Au6qgwe0bgpLvF9nfz1RGda3LMVOAZ/5erxc/CDi72KbzQqGWPh+leTAsgNRxfE7hTAZz+hpGjJh8AGkQvuzQNsVDllEr+2CyzJ8tHJiNEOe4RFOKEtsyY02g+DFdnjSHUKky6tUzzGhoei7yae1j7iIVxAQfe1IxBwR8M4XLG9HZzS3cv2/U3/crtCVGuPX1m4CoBq89JwU2mLJgKgttYHoUqu9h3mcLxG4YAQ=="
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 245,
+            "prompt_tokens": 10941,
+            "total_tokens": 11186,
+            "completion_tokens_details": {
+              "reasoning_tokens": 86,
+              "text_tokens": 159
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 10941,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.048664,
+        "timestamp": 1794490905.9879746
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n@MockitoSettings(strictness = Strictness.LENIENT)\npublic final class ShenyuClientRegisterDivideServiceImplTest {\n    \n    public static final String LOCALHOST = \"localhost\";\n    \n    @InjectMocks\n    private ShenyuClientRegisterDivideServiceImpl shenyuClientRegisterDivideService;\n    \n    @Mock\n    private MetaDataServiceImpl metaDataService;\n\n    @BeforeEach\n    public void setUp() {\n        DivideSelectorHandleConverter divideSelectorHandleConverter = new DivideSelectorHandleConverter();\n        ReflectionTestUtils.setField(shenyuClientRegisterDivideService, \"divideSelectorHandleConverter\", divideSelectorHandleConverter);\n    }\n\n    @Test\n    public void testRpcType() {\n        assertEquals(RpcTypeEnum.HTTP.getName(), shenyuClientRegisterDivideService.rpcType());\n    }\n33:public class DivideSelectorHandleConverter extends AbstractSelectorHandleConverter implements SelectorHandleConverter {\n36:    public List<CommonUpstream> convertUpstream(final String handle) {\n41:    public String pluginName() {\n61:        return GsonUtils.getInstance().fromList(handle, DivideUpstream.class);\n</output>",
+      "extra": {
+        "raw_output": "@MockitoSettings(strictness = Strictness.LENIENT)\npublic final class ShenyuClientRegisterDivideServiceImplTest {\n    \n    public static final String LOCALHOST = \"localhost\";\n    \n    @InjectMocks\n    private ShenyuClientRegisterDivideServiceImpl shenyuClientRegisterDivideService;\n    \n    @Mock\n    private MetaDataServiceImpl metaDataService;\n\n    @BeforeEach\n    public void setUp() {\n        DivideSelectorHandleConverter divideSelectorHandleConverter = new DivideSelectorHandleConverter();\n        ReflectionTestUtils.setField(shenyuClientRegisterDivideService, \"divideSelectorHandleConverter\", divideSelectorHandleConverter);\n    }\n\n    @Test\n    public void testRpcType() {\n        assertEquals(RpcTypeEnum.HTTP.getName(), shenyuClientRegisterDivideService.rpcType());\n    }\n33:public class DivideSelectorHandleConverter extends AbstractSelectorHandleConverter implements SelectorHandleConverter {\n36:    public List<CommonUpstream> convertUpstream(final String handle) {\n41:    public String pluginName() {\n61:        return GsonUtils.getInstance().fromList(handle, DivideUpstream.class);\n",
+        "returncode": 0,
+        "timestamp": 1794490906.010904,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01Vdmak5nV2tQ2BcCsdTmqCc",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"grep -n \\\"fromCurrentList\\\" -A12 shenyu-common/src/main/java/org/apache/shenyu/common/utils/GsonUtils.java; grep -n \\\"buildDivideUpstream\\\" -A12 shenyu-admin/src/main/java/org/apache/shenyu/admin/utils/CommonUpstreamUtils.java | head -30\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01GMMG9Kmao1ynYsBwg1qQ6F",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "reasoning_content": "",
+      "thinking_blocks": [
+        {
+          "type": "thinking",
+          "thinking": "",
+          "signature": "CAQS4woKEAgTGAI4AUIIdGhpbmtpbmcSDKhFfJeVMA1+l5eVRBoMQ9Xerb13KO+RKl+SIjDZiW5mOqrYaYcr6lUbQwHXVODGyTjMDQE+2eo4GrbrCtI8hIDWuV3tZutLUSkMPbsqgArXvFDZYgomzbh1H427aNaRyQhlOpFBphIxobxLDJ55uugBYrXYef4qpt2gkcpPjioqp1Z3P7BYfTRgssZvPwEpC/6nxVZF+1jyQwUVsANuSs2F+8Rkpoy84JaeRPEcNO5SqxlZHgy4w77D/FSePyLoyfka9iJVaP7HBiUbpb5eBjjIqzmU78NgbfwXunOoxActchf8holACFjHwrQ0v7kX6uvGFizRUbudyTfDm1Oth2JSt5TrJOETNoF46pBpSwHXnhkelSxKI+3JsPY1zdLqllkCne1ljx41skHCRbicivWePONRcP/Zc+6p+xrbPMaUdRvAUJVkEHKL6yipMmWkdIcncNhpUPMIRpOuUOmTazi8A030a50/D3CIPBxWxxsp/pnXqn+YwyJWJf1cwP2Z0imixDTR/JDqCsi4CLhv+oXne/wFcEScSsvh75m7YskSYqTYsSNJgZV3Iji0GtTUOj2MqQto0l5WxUZ598+gVWTPVYcKwzVMdPZt0r813UFCB6KGvt1dDde8IhbR2uPWl09w7bA+tblkPmF6mZpySWH+fQE+nzCVvr792xZ8sYrEJr2Sb+tpj9xvwcErqQTTj7lZO2wEC1WC8FFvze30cHEbIhqRVKC+6mXYwsdBgNCh7s3opaA7RzZbNC7EpRBmZ8N60CjujTuDTLl1nSCfP9zawOHSbsjMxKqUfNNoN5bQDDFojBVqKiVUOx3UjVRWjPMdbWYoKDcNfoC19Kc4akJSygdsSnb7v99AYRpY3y7FpKPK+6QcPGQMWm5GOwvXh2pOVquLpLI9wNnuq+YhdpBIZmV8fqsJBAD/zd98YWA2PuYwiXO+1779pMPMeAj9lKGQ+WTezA7BS9APDnEck0FumxOL8sRUsQlFXFlGGsDFPUCorXgVceAP4l/MiiHZd2ZtU2m+Xf1ESITmqXQuuySYaywQJsUFskv4CB/dd95CgZ/2Tm4RYNReEhAL2PR6aEEBMWsOiOR06HFiesaJdugpkRYfkTS3vohoMnfYaLJ6PpIDdqMI3kAF6q0Wn4AFoQl8yjS18BnDXaoDjPqOw+g0iVVJBp3vUKwwYk0BOpCZvFejf+H77O7y2WDGfXEOfydZ7mQl38r9dQOXUOBI53LX6auMzsNzZDBaa6m/5AHRtR5rxHrvGX2qAr995HrGG1oxpma4hdx0OvrbULUjrtyOeerHAWAWboN2SS0w744Eo/cq9akynyAVDIOtL7zLAw5U/TxKKrYcBIFSCU8a3JrQuaX1wOw+uEdCNNoObZiH8UXEoBxVUOFZ6e2l0IZxysWCUKdoHP78casqvw2jb9CEYXAoJ3s0r+wtIEX/JRJnwzmzHs9xwGLL/XbsVSW5q/37HkkMCaItOsS7n5J0LoM1S6t6BNxjYDxCIOl00ZUNLaM5dEstKamwaxtZ78hN0nw0JeFs9gSskny3eiz1FCLKF+1NsQTQ47pIiOsPLhm1O+PknoAzeDkGpDNiJFcq89MPDRCtTfDxIuivYNVJ9v+VB5Ewvm7VHcBgq6kNVQXrYW67wKe4pAW+eZ1LJK8GCPsNdudg5UnsKBgvUdfj5C4CB0N3YSB8nfCr8FN+owID7f6ZHyJc6NRDy0CdLp5LU2qhzR5JnP3XWBNfMcBpPDpPtKuacXqFDwfcTswaIFsYafD1gW1CvX6WrDuyuPhXhnp/f4+Z1r87wtVSSDG8WBgB"
+        }
+      ],
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": [
+          {
+            "type": "thinking",
+            "thinking": "",
+            "signature": "CAQS4woKEAgTGAI4AUIIdGhpbmtpbmcSDKhFfJeVMA1+l5eVRBoMQ9Xerb13KO+RKl+SIjDZiW5mOqrYaYcr6lUbQwHXVODGyTjMDQE+2eo4GrbrCtI8hIDWuV3tZutLUSkMPbsqgArXvFDZYgomzbh1H427aNaRyQhlOpFBphIxobxLDJ55uugBYrXYef4qpt2gkcpPjioqp1Z3P7BYfTRgssZvPwEpC/6nxVZF+1jyQwUVsANuSs2F+8Rkpoy84JaeRPEcNO5SqxlZHgy4w77D/FSePyLoyfka9iJVaP7HBiUbpb5eBjjIqzmU78NgbfwXunOoxActchf8holACFjHwrQ0v7kX6uvGFizRUbudyTfDm1Oth2JSt5TrJOETNoF46pBpSwHXnhkelSxKI+3JsPY1zdLqllkCne1ljx41skHCRbicivWePONRcP/Zc+6p+xrbPMaUdRvAUJVkEHKL6yipMmWkdIcncNhpUPMIRpOuUOmTazi8A030a50/D3CIPBxWxxsp/pnXqn+YwyJWJf1cwP2Z0imixDTR/JDqCsi4CLhv+oXne/wFcEScSsvh75m7YskSYqTYsSNJgZV3Iji0GtTUOj2MqQto0l5WxUZ598+gVWTPVYcKwzVMdPZt0r813UFCB6KGvt1dDde8IhbR2uPWl09w7bA+tblkPmF6mZpySWH+fQE+nzCVvr792xZ8sYrEJr2Sb+tpj9xvwcErqQTTj7lZO2wEC1WC8FFvze30cHEbIhqRVKC+6mXYwsdBgNCh7s3opaA7RzZbNC7EpRBmZ8N60CjujTuDTLl1nSCfP9zawOHSbsjMxKqUfNNoN5bQDDFojBVqKiVUOx3UjVRWjPMdbWYoKDcNfoC19Kc4akJSygdsSnb7v99AYRpY3y7FpKPK+6QcPGQMWm5GOwvXh2pOVquLpLI9wNnuq+YhdpBIZmV8fqsJBAD/zd98YWA2PuYwiXO+1779pMPMeAj9lKGQ+WTezA7BS9APDnEck0FumxOL8sRUsQlFXFlGGsDFPUCorXgVceAP4l/MiiHZd2ZtU2m+Xf1ESITmqXQuuySYaywQJsUFskv4CB/dd95CgZ/2Tm4RYNReEhAL2PR6aEEBMWsOiOR06HFiesaJdugpkRYfkTS3vohoMnfYaLJ6PpIDdqMI3kAF6q0Wn4AFoQl8yjS18BnDXaoDjPqOw+g0iVVJBp3vUKwwYk0BOpCZvFejf+H77O7y2WDGfXEOfydZ7mQl38r9dQOXUOBI53LX6auMzsNzZDBaa6m/5AHRtR5rxHrvGX2qAr995HrGG1oxpma4hdx0OvrbULUjrtyOeerHAWAWboN2SS0w744Eo/cq9akynyAVDIOtL7zLAw5U/TxKKrYcBIFSCU8a3JrQuaX1wOw+uEdCNNoObZiH8UXEoBxVUOFZ6e2l0IZxysWCUKdoHP78casqvw2jb9CEYXAoJ3s0r+wtIEX/JRJnwzmzHs9xwGLL/XbsVSW5q/37HkkMCaItOsS7n5J0LoM1S6t6BNxjYDxCIOl00ZUNLaM5dEstKamwaxtZ78hN0nw0JeFs9gSskny3eiz1FCLKF+1NsQTQ47pIiOsPLhm1O+PknoAzeDkGpDNiJFcq89MPDRCtTfDxIuivYNVJ9v+VB5Ewvm7VHcBgq6kNVQXrYW67wKe4pAW+eZ1LJK8GCPsNdudg5UnsKBgvUdfj5C4CB0N3YSB8nfCr8FN+owID7f6ZHyJc6NRDy0CdLp5LU2qhzR5JnP3XWBNfMcBpPDpPtKuacXqFDwfcTswaIFsYafD1gW1CvX6WrDuyuPhXhnp/f4+Z1r87wtVSSDG8WBgB"
+          }
+        ]
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "grep -n \"fromCurrentList\" -A12 shenyu-common/src/main/java/org/apache/shenyu/common/utils/GsonUtils.java; grep -n \"buildDivideUpstream\" -A12 shenyu-admin/src/main/java/org/apache/shenyu/admin/utils/CommonUpstreamUtils.java | head -30",
+            "tool_call_id": "toolu_01GMMG9Kmao1ynYsBwg1qQ6F"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-176bd671-1e28-4e0a-9048-d3f02c74c38c",
+          "created": 1794490911,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"grep -n \\\"fromCurrentList\\\" -A12 shenyu-common/src/main/java/org/apache/shenyu/common/utils/GsonUtils.java; grep -n \\\"buildDivideUpstream\\\" -A12 shenyu-admin/src/main/java/org/apache/shenyu/admin/utils/CommonUpstreamUtils.java | head -30\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01GMMG9Kmao1ynYsBwg1qQ6F",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "reasoning_content": "",
+                "thinking_blocks": [
+                  {
+                    "type": "thinking",
+                    "thinking": "",
+                    "signature": "CAQS4woKEAgTGAI4AUIIdGhpbmtpbmcSDKhFfJeVMA1+l5eVRBoMQ9Xerb13KO+RKl+SIjDZiW5mOqrYaYcr6lUbQwHXVODGyTjMDQE+2eo4GrbrCtI8hIDWuV3tZutLUSkMPbsqgArXvFDZYgomzbh1H427aNaRyQhlOpFBphIxobxLDJ55uugBYrXYef4qpt2gkcpPjioqp1Z3P7BYfTRgssZvPwEpC/6nxVZF+1jyQwUVsANuSs2F+8Rkpoy84JaeRPEcNO5SqxlZHgy4w77D/FSePyLoyfka9iJVaP7HBiUbpb5eBjjIqzmU78NgbfwXunOoxActchf8holACFjHwrQ0v7kX6uvGFizRUbudyTfDm1Oth2JSt5TrJOETNoF46pBpSwHXnhkelSxKI+3JsPY1zdLqllkCne1ljx41skHCRbicivWePONRcP/Zc+6p+xrbPMaUdRvAUJVkEHKL6yipMmWkdIcncNhpUPMIRpOuUOmTazi8A030a50/D3CIPBxWxxsp/pnXqn+YwyJWJf1cwP2Z0imixDTR/JDqCsi4CLhv+oXne/wFcEScSsvh75m7YskSYqTYsSNJgZV3Iji0GtTUOj2MqQto0l5WxUZ598+gVWTPVYcKwzVMdPZt0r813UFCB6KGvt1dDde8IhbR2uPWl09w7bA+tblkPmF6mZpySWH+fQE+nzCVvr792xZ8sYrEJr2Sb+tpj9xvwcErqQTTj7lZO2wEC1WC8FFvze30cHEbIhqRVKC+6mXYwsdBgNCh7s3opaA7RzZbNC7EpRBmZ8N60CjujTuDTLl1nSCfP9zawOHSbsjMxKqUfNNoN5bQDDFojBVqKiVUOx3UjVRWjPMdbWYoKDcNfoC19Kc4akJSygdsSnb7v99AYRpY3y7FpKPK+6QcPGQMWm5GOwvXh2pOVquLpLI9wNnuq+YhdpBIZmV8fqsJBAD/zd98YWA2PuYwiXO+1779pMPMeAj9lKGQ+WTezA7BS9APDnEck0FumxOL8sRUsQlFXFlGGsDFPUCorXgVceAP4l/MiiHZd2ZtU2m+Xf1ESITmqXQuuySYaywQJsUFskv4CB/dd95CgZ/2Tm4RYNReEhAL2PR6aEEBMWsOiOR06HFiesaJdugpkRYfkTS3vohoMnfYaLJ6PpIDdqMI3kAF6q0Wn4AFoQl8yjS18BnDXaoDjPqOw+g0iVVJBp3vUKwwYk0BOpCZvFejf+H77O7y2WDGfXEOfydZ7mQl38r9dQOXUOBI53LX6auMzsNzZDBaa6m/5AHRtR5rxHrvGX2qAr995HrGG1oxpma4hdx0OvrbULUjrtyOeerHAWAWboN2SS0w744Eo/cq9akynyAVDIOtL7zLAw5U/TxKKrYcBIFSCU8a3JrQuaX1wOw+uEdCNNoObZiH8UXEoBxVUOFZ6e2l0IZxysWCUKdoHP78casqvw2jb9CEYXAoJ3s0r+wtIEX/JRJnwzmzHs9xwGLL/XbsVSW5q/37HkkMCaItOsS7n5J0LoM1S6t6BNxjYDxCIOl00ZUNLaM5dEstKamwaxtZ78hN0nw0JeFs9gSskny3eiz1FCLKF+1NsQTQ47pIiOsPLhm1O+PknoAzeDkGpDNiJFcq89MPDRCtTfDxIuivYNVJ9v+VB5Ewvm7VHcBgq6kNVQXrYW67wKe4pAW+eZ1LJK8GCPsNdudg5UnsKBgvUdfj5C4CB0N3YSB8nfCr8FN+owID7f6ZHyJc6NRDy0CdLp5LU2qhzR5JnP3XWBNfMcBpPDpPtKuacXqFDwfcTswaIFsYafD1gW1CvX6WrDuyuPhXhnp/f4+Z1r87wtVSSDG8WBgB"
+                  }
+                ],
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": [
+                    {
+                      "type": "thinking",
+                      "thinking": "",
+                      "signature": "CAQS4woKEAgTGAI4AUIIdGhpbmtpbmcSDKhFfJeVMA1+l5eVRBoMQ9Xerb13KO+RKl+SIjDZiW5mOqrYaYcr6lUbQwHXVODGyTjMDQE+2eo4GrbrCtI8hIDWuV3tZutLUSkMPbsqgArXvFDZYgomzbh1H427aNaRyQhlOpFBphIxobxLDJ55uugBYrXYef4qpt2gkcpPjioqp1Z3P7BYfTRgssZvPwEpC/6nxVZF+1jyQwUVsANuSs2F+8Rkpoy84JaeRPEcNO5SqxlZHgy4w77D/FSePyLoyfka9iJVaP7HBiUbpb5eBjjIqzmU78NgbfwXunOoxActchf8holACFjHwrQ0v7kX6uvGFizRUbudyTfDm1Oth2JSt5TrJOETNoF46pBpSwHXnhkelSxKI+3JsPY1zdLqllkCne1ljx41skHCRbicivWePONRcP/Zc+6p+xrbPMaUdRvAUJVkEHKL6yipMmWkdIcncNhpUPMIRpOuUOmTazi8A030a50/D3CIPBxWxxsp/pnXqn+YwyJWJf1cwP2Z0imixDTR/JDqCsi4CLhv+oXne/wFcEScSsvh75m7YskSYqTYsSNJgZV3Iji0GtTUOj2MqQto0l5WxUZ598+gVWTPVYcKwzVMdPZt0r813UFCB6KGvt1dDde8IhbR2uPWl09w7bA+tblkPmF6mZpySWH+fQE+nzCVvr792xZ8sYrEJr2Sb+tpj9xvwcErqQTTj7lZO2wEC1WC8FFvze30cHEbIhqRVKC+6mXYwsdBgNCh7s3opaA7RzZbNC7EpRBmZ8N60CjujTuDTLl1nSCfP9zawOHSbsjMxKqUfNNoN5bQDDFojBVqKiVUOx3UjVRWjPMdbWYoKDcNfoC19Kc4akJSygdsSnb7v99AYRpY3y7FpKPK+6QcPGQMWm5GOwvXh2pOVquLpLI9wNnuq+YhdpBIZmV8fqsJBAD/zd98YWA2PuYwiXO+1779pMPMeAj9lKGQ+WTezA7BS9APDnEck0FumxOL8sRUsQlFXFlGGsDFPUCorXgVceAP4l/MiiHZd2ZtU2m+Xf1ESITmqXQuuySYaywQJsUFskv4CB/dd95CgZ/2Tm4RYNReEhAL2PR6aEEBMWsOiOR06HFiesaJdugpkRYfkTS3vohoMnfYaLJ6PpIDdqMI3kAF6q0Wn4AFoQl8yjS18BnDXaoDjPqOw+g0iVVJBp3vUKwwYk0BOpCZvFejf+H77O7y2WDGfXEOfydZ7mQl38r9dQOXUOBI53LX6auMzsNzZDBaa6m/5AHRtR5rxHrvGX2qAr995HrGG1oxpma4hdx0OvrbULUjrtyOeerHAWAWboN2SS0w744Eo/cq9akynyAVDIOtL7zLAw5U/TxKKrYcBIFSCU8a3JrQuaX1wOw+uEdCNNoObZiH8UXEoBxVUOFZ6e2l0IZxysWCUKdoHP78casqvw2jb9CEYXAoJ3s0r+wtIEX/JRJnwzmzHs9xwGLL/XbsVSW5q/37HkkMCaItOsS7n5J0LoM1S6t6BNxjYDxCIOl00ZUNLaM5dEstKamwaxtZ78hN0nw0JeFs9gSskny3eiz1FCLKF+1NsQTQ47pIiOsPLhm1O+PknoAzeDkGpDNiJFcq89MPDRCtTfDxIuivYNVJ9v+VB5Ewvm7VHcBgq6kNVQXrYW67wKe4pAW+eZ1LJK8GCPsNdudg5UnsKBgvUdfj5C4CB0N3YSB8nfCr8FN+owID7f6ZHyJc6NRDy0CdLp5LU2qhzR5JnP3XWBNfMcBpPDpPtKuacXqFDwfcTswaIFsYafD1gW1CvX6WrDuyuPhXhnp/f4+Z1r87wtVSSDG8WBgB"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 437,
+            "prompt_tokens": 11668,
+            "total_tokens": 12105,
+            "completion_tokens_details": {
+              "reasoning_tokens": 271,
+              "text_tokens": 166
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 11668,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.055412,
+        "timestamp": 1794490911.209616
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n170:    public <T> List<T> fromCurrentList(final String json, final Class<T> clazz) {\n171-        return GSON.fromJson(json, TypeToken.getParameterized(CopyOnWriteArrayList.class, clazz).getType());\n172-    }\n173-\n174-    /**\n175-     * to Get Param.\n176-     *\n177-     * @param json json\n178-     * @return java.lang.String string\n179-     */\n180-    public String toGetParam(final String json) {\n181-        if (StringUtils.isBlank(json)) {\n182-            return EMPTY;\n69:    public static DivideUpstream buildDivideUpstream(final String protocol, final String host, final Integer port) {\n70-        return DivideUpstream.builder().upstreamHost(\"localhost\").protocol(protocol).upstreamUrl(buildUrl(host, port)).weight(50).warmup(10).timestamp(System.currentTimeMillis())\n71-                .status(Objects.nonNull(port) && StringUtils.isNotBlank(host)).build();\n72-    }\n73-\n74-    /**\n75-     * Build alive divide upstream.\n76-     *\n77-     * @param protocol the protocol\n78-     * @param upstreamUrl the upstreamUrl\n79-     * @return the divide upstream\n80-     */\n81-    public static DivideUpstream buildAliveDivideUpstream(final String protocol, final String upstreamUrl) {\n</output>",
+      "extra": {
+        "raw_output": "170:    public <T> List<T> fromCurrentList(final String json, final Class<T> clazz) {\n171-        return GSON.fromJson(json, TypeToken.getParameterized(CopyOnWriteArrayList.class, clazz).getType());\n172-    }\n173-\n174-    /**\n175-     * to Get Param.\n176-     *\n177-     * @param json json\n178-     * @return java.lang.String string\n179-     */\n180-    public String toGetParam(final String json) {\n181-        if (StringUtils.isBlank(json)) {\n182-            return EMPTY;\n69:    public static DivideUpstream buildDivideUpstream(final String protocol, final String host, final Integer port) {\n70-        return DivideUpstream.builder().upstreamHost(\"localhost\").protocol(protocol).upstreamUrl(buildUrl(host, port)).weight(50).warmup(10).timestamp(System.currentTimeMillis())\n71-                .status(Objects.nonNull(port) && StringUtils.isNotBlank(host)).build();\n72-    }\n73-\n74-    /**\n75-     * Build alive divide upstream.\n76-     *\n77-     * @param protocol the protocol\n78-     * @param upstreamUrl the upstreamUrl\n79-     * @return the divide upstream\n80-     */\n81-    public static DivideUpstream buildAliveDivideUpstream(final String protocol, final String upstreamUrl) {\n",
+        "returncode": 0,
+        "timestamp": 1794490911.2354167,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01GMMG9Kmao1ynYsBwg1qQ6F",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 1,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cat > shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test.java <<'EOF'\\npackage org.apache.shenyu.admin.service.register;\\n\\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\\nimport org.apache.shenyu.admin.service.converter.DivideSelectorHandleConverter;\\nimport org.apache.shenyu.admin.service.impl.UpstreamCheckService;\\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\\nimport org.apache.shenyu.common.dto.convert.selector.CommonUpstream;\\nimport org.apache.shenyu.common.dto.convert.selector.DivideUpstream;\\nimport org.apache.shenyu.common.utils.GsonUtils;\\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\\nimport org.apache.shenyu.register.common.enums.EventType;\\nimport org.junit.jupiter.api.BeforeEach;\\nimport org.junit.jupiter.api.Test;\\nimport org.springframework.test.util.ReflectionTestUtils;\\n\\nimport java.util.ArrayList;\\nimport java.util.Collections;\\nimport java.util.List;\\n\\nimport static org.junit.jupiter.api.Assertions.assertEquals;\\nimport static org.junit.jupiter.api.Assertions.assertFalse;\\nimport static org.junit.jupiter.api.Assertions.assertNotNull;\\nimport static org.junit.jupiter.api.Assertions.assertNull;\\nimport static org.junit.jupiter.api.Assertions.assertTrue;\\nimport static org.mockito.ArgumentMatchers.any;\\nimport static org.mockito.ArgumentMatchers.anyString;\\nimport static org.mockito.Mockito.mock;\\nimport static org.mockito.Mockito.when;\\n\\npublic class ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test {\\n\\n    private ShenyuClientRegisterDivideServiceImpl service;\\n\\n    private UpstreamCheckService upstreamCheckService;\\n\\n    @BeforeEach\\n    public void setUp() {\\n        service = new ShenyuClientRegisterDivideServiceImpl();\\n        upstreamCheckService = mock(UpstreamCheckService.class);\\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(false);\\n        ReflectionTestUtils.setField(service, \\\"divideSelectorHandleConverter\\\", new DivideSelectorHandleConverter());\\n        ReflectionTestUtils.setField(service, AbstractShenyuClientRegisterServiceImpl.class, \\\"upstreamCheckService\\\", upstreamCheckService, UpstreamCheckService.class);\\n    }\\n\\n    private URIRegisterDTO uri(final int port, final EventType type) {\\n        return URIRegisterDTO.builder().protocol(\\\"http://\\\").appName(\\\"app\\\").host(\\\"localhost\\\").port(port).eventType(type).build();\\n    }\\n\\n    private SelectorDO selector(final String handle) {\\n        SelectorDO selectorDO = new SelectorDO();\\n        selectorDO.setId(\\\"1\\\");\\n        selectorDO.setHandle(handle);\\n        return selectorDO;\\n    }\\n\\n    private String existHandle(final boolean status, final int... ports) {\\n        List<DivideUpstream> list = new ArrayList<>();\\n        for (int p : ports) {\\n            DivideUpstream u = CommonUpstreamUtils.buildDivideUpstream(\\\"http://\\\", \\\"localhost\\\", p);\\n            u.setStatus(status);\\n            list.add(u);\\n        }\\n        return GsonUtils.getInstance().toJson(list);\\n    }\\n\\n    @Test\\n    public void testEmptyExistNullHandle() {\\n        List<URIRegisterDTO> list = new ArrayList<>();\\n        list.add(uri(8080, null));\\n        list.add(uri(8081, null));\\n        String result = service.buildHandle(list, selector(null));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n    }\\n\\n    @Test\\n    public void testEmptyExistEmptyArrayDeleted() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(\\\"[]\\\"));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertFalse(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testDoSubmitTrue() {\\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(true);\\n        assertNull(service.buildHandle(Collections.singletonList(uri(8080, null)), selector(null)));\\n    }\\n\\n    @Test\\n    public void testExistWithDiff() {\\n        List<URIRegisterDTO> list = new ArrayList<>();\\n        list.add(uri(8080, null));\\n        list.add(uri(8081, null));\\n        String result = service.buildHandle(list, selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n        assertTrue(res.stream().allMatch(DivideUpstream::isStatus));\\n    }\\n\\n    @Test\\n    public void testExistNoDiffSameStatus() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, null)), selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertTrue(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testExistDiffStatus() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.REGISTER)), selector(existHandle(false, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertTrue(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testExistDeleted() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080, 8081)));\\n        assertNotNull(result);\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n        for (DivideUpstream u : res) {\\n            if (u.getUpstreamUrl().endsWith(\\\"8080\\\")) {\\n                assertFalse(u.isStatus());\\n            } else {\\n                assertTrue(u.isStatus());\\n            }\\n        }\\n    }\\n\\n    @Test\\n    public void testExistDeletedOnlyOne() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertTrue(res.isEmpty());\\n    }\\n}\\nEOF\\ngrep -n \\\"REGISTER\\\\|DELETED\\\" shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/enums/EventType.java\"}",
+            "name": "bash"
+          },
+          "id": "toolu_0176XTCScmCub8yGBzpye7vs",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "reasoning_content": "",
+      "thinking_blocks": [
+        {
+          "type": "thinking",
+          "thinking": "",
+          "signature": "CAQSiAYKEAgTGAI4AUIIdGhpbmtpbmcSDGpJV9i4LWEYWzWstBoMoqDTEDwbgdbVRAQmIjDYankXd5PZkqPqKMG9sc4aHVWqhHpxBMoeksLFMARaBNVVH73oJU0UJBvxfPfqcdkqpQWp4Fz10NSOP9soziXa4m39vWDh05zKhaCEtvc/s+4RIIaA3MEHLSi5NePYzp49K48z75iBwy7XIDVornukodxWKz7fDLnUMncp/t4DuX4W4xSLhBD2KnJXdx/RZYDuU1w72V3Y5NFTOHPVvLJFzT4cmHTLtZdEJwGUS6vth+z7qeX2d8Wa19ij4w8TPIBukaX+AXYj2IKRiKmP5BxjO/scqCx82vwcHO3D5jGjy7OoNlm+pZKF1aCMw79yzI+VrXSHspafQq5NWh9yrGX0y8HK4Z+ZrQOlycjgWsYOLD+J9zJMyQH4BOY6wfc+5Yo6NDHes2BG3lnwc2Pxz7x/MKoIUlSn/7ysOAhzCSRMhZM74yAwEOmbqeGdbi+763FmbPbk7LWnJTFMx+nMqHLq63L1FfUg2uG3AK9PyF/FSxlrvnJqFV8G4KEXfI+J09FWuj/RRcXRI+AGgH+aP8mgSPCzqwg8dtw2cm2zDTwn2KFTL7oKJ5RdxhGhWN9CxN7753Mn3mpFrjZhC07jLhIcazrnyszTV38q/3Gpj+SYn4+a31QFacpo3/OmMWgjVhHG6Zdi7XdAr1FEy8hTnpVT6WqyacNdMh9YUktOGVVn7HbY9C3ubiEvK6ANVjjVcFCJZ3XPIy/s37nzjxk7F6U2lJo7sjQsFvWDlB+s58J7ksxkTvOPFIxCOZXytGFQxTld4CNcoAy/eSiBoLz5gnl/OBZ+1elUnIrS7TfJ75JPE2BPlwwQBQYqPskQvolFzWel8sMlRX9MNC/vGUs+jEd4UI9aFEkYX9hHfcPylX7RdCI9gNFQqHHchU/1Gfo8A2NeKum8NA6wRnmD9K03McGGZkQM1bOFHo0B50oiaglLdij7p6iN4TY2JftCZbGdcWZQ4JCbtnhE7RgB"
+        }
+      ],
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": [
+          {
+            "type": "thinking",
+            "thinking": "",
+            "signature": "CAQSiAYKEAgTGAI4AUIIdGhpbmtpbmcSDGpJV9i4LWEYWzWstBoMoqDTEDwbgdbVRAQmIjDYankXd5PZkqPqKMG9sc4aHVWqhHpxBMoeksLFMARaBNVVH73oJU0UJBvxfPfqcdkqpQWp4Fz10NSOP9soziXa4m39vWDh05zKhaCEtvc/s+4RIIaA3MEHLSi5NePYzp49K48z75iBwy7XIDVornukodxWKz7fDLnUMncp/t4DuX4W4xSLhBD2KnJXdx/RZYDuU1w72V3Y5NFTOHPVvLJFzT4cmHTLtZdEJwGUS6vth+z7qeX2d8Wa19ij4w8TPIBukaX+AXYj2IKRiKmP5BxjO/scqCx82vwcHO3D5jGjy7OoNlm+pZKF1aCMw79yzI+VrXSHspafQq5NWh9yrGX0y8HK4Z+ZrQOlycjgWsYOLD+J9zJMyQH4BOY6wfc+5Yo6NDHes2BG3lnwc2Pxz7x/MKoIUlSn/7ysOAhzCSRMhZM74yAwEOmbqeGdbi+763FmbPbk7LWnJTFMx+nMqHLq63L1FfUg2uG3AK9PyF/FSxlrvnJqFV8G4KEXfI+J09FWuj/RRcXRI+AGgH+aP8mgSPCzqwg8dtw2cm2zDTwn2KFTL7oKJ5RdxhGhWN9CxN7753Mn3mpFrjZhC07jLhIcazrnyszTV38q/3Gpj+SYn4+a31QFacpo3/OmMWgjVhHG6Zdi7XdAr1FEy8hTnpVT6WqyacNdMh9YUktOGVVn7HbY9C3ubiEvK6ANVjjVcFCJZ3XPIy/s37nzjxk7F6U2lJo7sjQsFvWDlB+s58J7ksxkTvOPFIxCOZXytGFQxTld4CNcoAy/eSiBoLz5gnl/OBZ+1elUnIrS7TfJ75JPE2BPlwwQBQYqPskQvolFzWel8sMlRX9MNC/vGUs+jEd4UI9aFEkYX9hHfcPylX7RdCI9gNFQqHHchU/1Gfo8A2NeKum8NA6wRnmD9K03McGGZkQM1bOFHo0B50oiaglLdij7p6iN4TY2JftCZbGdcWZQ4JCbtnhE7RgB"
+          }
+        ]
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cat > shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test.java <<'EOF'\npackage org.apache.shenyu.admin.service.register;\n\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\nimport org.apache.shenyu.admin.service.converter.DivideSelectorHandleConverter;\nimport org.apache.shenyu.admin.service.impl.UpstreamCheckService;\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\nimport org.apache.shenyu.common.dto.convert.selector.CommonUpstream;\nimport org.apache.shenyu.common.dto.convert.selector.DivideUpstream;\nimport org.apache.shenyu.common.utils.GsonUtils;\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\nimport org.apache.shenyu.register.common.enums.EventType;\nimport org.junit.jupiter.api.BeforeEach;\nimport org.junit.jupiter.api.Test;\nimport org.springframework.test.util.ReflectionTestUtils;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertFalse;\nimport static org.junit.jupiter.api.Assertions.assertNotNull;\nimport static org.junit.jupiter.api.Assertions.assertNull;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.anyString;\nimport static org.mockito.Mockito.mock;\nimport static org.mockito.Mockito.when;\n\npublic class ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test {\n\n    private ShenyuClientRegisterDivideServiceImpl service;\n\n    private UpstreamCheckService upstreamCheckService;\n\n    @BeforeEach\n    public void setUp() {\n        service = new ShenyuClientRegisterDivideServiceImpl();\n        upstreamCheckService = mock(UpstreamCheckService.class);\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(false);\n        ReflectionTestUtils.setField(service, \"divideSelectorHandleConverter\", new DivideSelectorHandleConverter());\n        ReflectionTestUtils.setField(service, AbstractShenyuClientRegisterServiceImpl.class, \"upstreamCheckService\", upstreamCheckService, UpstreamCheckService.class);\n    }\n\n    private URIRegisterDTO uri(final int port, final EventType type) {\n        return URIRegisterDTO.builder().protocol(\"http://\").appName(\"app\").host(\"localhost\").port(port).eventType(type).build();\n    }\n\n    private SelectorDO selector(final String handle) {\n        SelectorDO selectorDO = new SelectorDO();\n        selectorDO.setId(\"1\");\n        selectorDO.setHandle(handle);\n        return selectorDO;\n    }\n\n    private String existHandle(final boolean status, final int... ports) {\n        List<DivideUpstream> list = new ArrayList<>();\n        for (int p : ports) {\n            DivideUpstream u = CommonUpstreamUtils.buildDivideUpstream(\"http://\", \"localhost\", p);\n            u.setStatus(status);\n            list.add(u);\n        }\n        return GsonUtils.getInstance().toJson(list);\n    }\n\n    @Test\n    public void testEmptyExistNullHandle() {\n        List<URIRegisterDTO> list = new ArrayList<>();\n        list.add(uri(8080, null));\n        list.add(uri(8081, null));\n        String result = service.buildHandle(list, selector(null));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(2, res.size());\n    }\n\n    @Test\n    public void testEmptyExistEmptyArrayDeleted() {\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(\"[]\"));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(1, res.size());\n        assertFalse(res.get(0).isStatus());\n    }\n\n    @Test\n    public void testDoSubmitTrue() {\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(true);\n        assertNull(service.buildHandle(Collections.singletonList(uri(8080, null)), selector(null)));\n    }\n\n    @Test\n    public void testExistWithDiff() {\n        List<URIRegisterDTO> list = new ArrayList<>();\n        list.add(uri(8080, null));\n        list.add(uri(8081, null));\n        String result = service.buildHandle(list, selector(existHandle(true, 8080)));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(2, res.size());\n        assertTrue(res.stream().allMatch(DivideUpstream::isStatus));\n    }\n\n    @Test\n    public void testExistNoDiffSameStatus() {\n        String result = service.buildHandle(Collections.singletonList(uri(8080, null)), selector(existHandle(true, 8080)));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(1, res.size());\n        assertTrue(res.get(0).isStatus());\n    }\n\n    @Test\n    public void testExistDiffStatus() {\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.REGISTER)), selector(existHandle(false, 8080)));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(1, res.size());\n        assertTrue(res.get(0).isStatus());\n    }\n\n    @Test\n    public void testExistDeleted() {\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080, 8081)));\n        assertNotNull(result);\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertEquals(2, res.size());\n        for (DivideUpstream u : res) {\n            if (u.getUpstreamUrl().endsWith(\"8080\")) {\n                assertFalse(u.isStatus());\n            } else {\n                assertTrue(u.isStatus());\n            }\n        }\n    }\n\n    @Test\n    public void testExistDeletedOnlyOne() {\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080)));\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\n        assertTrue(res.isEmpty());\n    }\n}\nEOF\ngrep -n \"REGISTER\\|DELETED\" shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/enums/EventType.java",
+            "tool_call_id": "toolu_0176XTCScmCub8yGBzpye7vs"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-8e37c7e5-2677-43f2-b4de-f0a31a1ba38c",
+          "created": 1794490931,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 1,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cat > shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test.java <<'EOF'\\npackage org.apache.shenyu.admin.service.register;\\n\\nimport org.apache.shenyu.admin.model.entity.SelectorDO;\\nimport org.apache.shenyu.admin.service.converter.DivideSelectorHandleConverter;\\nimport org.apache.shenyu.admin.service.impl.UpstreamCheckService;\\nimport org.apache.shenyu.admin.utils.CommonUpstreamUtils;\\nimport org.apache.shenyu.common.dto.convert.selector.CommonUpstream;\\nimport org.apache.shenyu.common.dto.convert.selector.DivideUpstream;\\nimport org.apache.shenyu.common.utils.GsonUtils;\\nimport org.apache.shenyu.register.common.dto.URIRegisterDTO;\\nimport org.apache.shenyu.register.common.enums.EventType;\\nimport org.junit.jupiter.api.BeforeEach;\\nimport org.junit.jupiter.api.Test;\\nimport org.springframework.test.util.ReflectionTestUtils;\\n\\nimport java.util.ArrayList;\\nimport java.util.Collections;\\nimport java.util.List;\\n\\nimport static org.junit.jupiter.api.Assertions.assertEquals;\\nimport static org.junit.jupiter.api.Assertions.assertFalse;\\nimport static org.junit.jupiter.api.Assertions.assertNotNull;\\nimport static org.junit.jupiter.api.Assertions.assertNull;\\nimport static org.junit.jupiter.api.Assertions.assertTrue;\\nimport static org.mockito.ArgumentMatchers.any;\\nimport static org.mockito.ArgumentMatchers.anyString;\\nimport static org.mockito.Mockito.mock;\\nimport static org.mockito.Mockito.when;\\n\\npublic class ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test {\\n\\n    private ShenyuClientRegisterDivideServiceImpl service;\\n\\n    private UpstreamCheckService upstreamCheckService;\\n\\n    @BeforeEach\\n    public void setUp() {\\n        service = new ShenyuClientRegisterDivideServiceImpl();\\n        upstreamCheckService = mock(UpstreamCheckService.class);\\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(false);\\n        ReflectionTestUtils.setField(service, \\\"divideSelectorHandleConverter\\\", new DivideSelectorHandleConverter());\\n        ReflectionTestUtils.setField(service, AbstractShenyuClientRegisterServiceImpl.class, \\\"upstreamCheckService\\\", upstreamCheckService, UpstreamCheckService.class);\\n    }\\n\\n    private URIRegisterDTO uri(final int port, final EventType type) {\\n        return URIRegisterDTO.builder().protocol(\\\"http://\\\").appName(\\\"app\\\").host(\\\"localhost\\\").port(port).eventType(type).build();\\n    }\\n\\n    private SelectorDO selector(final String handle) {\\n        SelectorDO selectorDO = new SelectorDO();\\n        selectorDO.setId(\\\"1\\\");\\n        selectorDO.setHandle(handle);\\n        return selectorDO;\\n    }\\n\\n    private String existHandle(final boolean status, final int... ports) {\\n        List<DivideUpstream> list = new ArrayList<>();\\n        for (int p : ports) {\\n            DivideUpstream u = CommonUpstreamUtils.buildDivideUpstream(\\\"http://\\\", \\\"localhost\\\", p);\\n            u.setStatus(status);\\n            list.add(u);\\n        }\\n        return GsonUtils.getInstance().toJson(list);\\n    }\\n\\n    @Test\\n    public void testEmptyExistNullHandle() {\\n        List<URIRegisterDTO> list = new ArrayList<>();\\n        list.add(uri(8080, null));\\n        list.add(uri(8081, null));\\n        String result = service.buildHandle(list, selector(null));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n    }\\n\\n    @Test\\n    public void testEmptyExistEmptyArrayDeleted() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(\\\"[]\\\"));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertFalse(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testDoSubmitTrue() {\\n        when(upstreamCheckService.checkAndSubmit(anyString(), any(CommonUpstream.class))).thenReturn(true);\\n        assertNull(service.buildHandle(Collections.singletonList(uri(8080, null)), selector(null)));\\n    }\\n\\n    @Test\\n    public void testExistWithDiff() {\\n        List<URIRegisterDTO> list = new ArrayList<>();\\n        list.add(uri(8080, null));\\n        list.add(uri(8081, null));\\n        String result = service.buildHandle(list, selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n        assertTrue(res.stream().allMatch(DivideUpstream::isStatus));\\n    }\\n\\n    @Test\\n    public void testExistNoDiffSameStatus() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, null)), selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertTrue(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testExistDiffStatus() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.REGISTER)), selector(existHandle(false, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(1, res.size());\\n        assertTrue(res.get(0).isStatus());\\n    }\\n\\n    @Test\\n    public void testExistDeleted() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080, 8081)));\\n        assertNotNull(result);\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertEquals(2, res.size());\\n        for (DivideUpstream u : res) {\\n            if (u.getUpstreamUrl().endsWith(\\\"8080\\\")) {\\n                assertFalse(u.isStatus());\\n            } else {\\n                assertTrue(u.isStatus());\\n            }\\n        }\\n    }\\n\\n    @Test\\n    public void testExistDeletedOnlyOne() {\\n        String result = service.buildHandle(Collections.singletonList(uri(8080, EventType.DELETED)), selector(existHandle(true, 8080)));\\n        List<DivideUpstream> res = GsonUtils.getInstance().fromCurrentList(result, DivideUpstream.class);\\n        assertTrue(res.isEmpty());\\n    }\\n}\\nEOF\\ngrep -n \\\"REGISTER\\\\|DELETED\\\" shenyu-register-center/shenyu-register-common/src/main/java/org/apache/shenyu/register/common/enums/EventType.java\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_0176XTCScmCub8yGBzpye7vs",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "reasoning_content": "",
+                "thinking_blocks": [
+                  {
+                    "type": "thinking",
+                    "thinking": "",
+                    "signature": "CAQSiAYKEAgTGAI4AUIIdGhpbmtpbmcSDGpJV9i4LWEYWzWstBoMoqDTEDwbgdbVRAQmIjDYankXd5PZkqPqKMG9sc4aHVWqhHpxBMoeksLFMARaBNVVH73oJU0UJBvxfPfqcdkqpQWp4Fz10NSOP9soziXa4m39vWDh05zKhaCEtvc/s+4RIIaA3MEHLSi5NePYzp49K48z75iBwy7XIDVornukodxWKz7fDLnUMncp/t4DuX4W4xSLhBD2KnJXdx/RZYDuU1w72V3Y5NFTOHPVvLJFzT4cmHTLtZdEJwGUS6vth+z7qeX2d8Wa19ij4w8TPIBukaX+AXYj2IKRiKmP5BxjO/scqCx82vwcHO3D5jGjy7OoNlm+pZKF1aCMw79yzI+VrXSHspafQq5NWh9yrGX0y8HK4Z+ZrQOlycjgWsYOLD+J9zJMyQH4BOY6wfc+5Yo6NDHes2BG3lnwc2Pxz7x/MKoIUlSn/7ysOAhzCSRMhZM74yAwEOmbqeGdbi+763FmbPbk7LWnJTFMx+nMqHLq63L1FfUg2uG3AK9PyF/FSxlrvnJqFV8G4KEXfI+J09FWuj/RRcXRI+AGgH+aP8mgSPCzqwg8dtw2cm2zDTwn2KFTL7oKJ5RdxhGhWN9CxN7753Mn3mpFrjZhC07jLhIcazrnyszTV38q/3Gpj+SYn4+a31QFacpo3/OmMWgjVhHG6Zdi7XdAr1FEy8hTnpVT6WqyacNdMh9YUktOGVVn7HbY9C3ubiEvK6ANVjjVcFCJZ3XPIy/s37nzjxk7F6U2lJo7sjQsFvWDlB+s58J7ksxkTvOPFIxCOZXytGFQxTld4CNcoAy/eSiBoLz5gnl/OBZ+1elUnIrS7TfJ75JPE2BPlwwQBQYqPskQvolFzWel8sMlRX9MNC/vGUs+jEd4UI9aFEkYX9hHfcPylX7RdCI9gNFQqHHchU/1Gfo8A2NeKum8NA6wRnmD9K03McGGZkQM1bOFHo0B50oiaglLdij7p6iN4TY2JftCZbGdcWZQ4JCbtnhE7RgB"
+                  }
+                ],
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": [
+                    {
+                      "type": "thinking",
+                      "thinking": "",
+                      "signature": "CAQSiAYKEAgTGAI4AUIIdGhpbmtpbmcSDGpJV9i4LWEYWzWstBoMoqDTEDwbgdbVRAQmIjDYankXd5PZkqPqKMG9sc4aHVWqhHpxBMoeksLFMARaBNVVH73oJU0UJBvxfPfqcdkqpQWp4Fz10NSOP9soziXa4m39vWDh05zKhaCEtvc/s+4RIIaA3MEHLSi5NePYzp49K48z75iBwy7XIDVornukodxWKz7fDLnUMncp/t4DuX4W4xSLhBD2KnJXdx/RZYDuU1w72V3Y5NFTOHPVvLJFzT4cmHTLtZdEJwGUS6vth+z7qeX2d8Wa19ij4w8TPIBukaX+AXYj2IKRiKmP5BxjO/scqCx82vwcHO3D5jGjy7OoNlm+pZKF1aCMw79yzI+VrXSHspafQq5NWh9yrGX0y8HK4Z+ZrQOlycjgWsYOLD+J9zJMyQH4BOY6wfc+5Yo6NDHes2BG3lnwc2Pxz7x/MKoIUlSn/7ysOAhzCSRMhZM74yAwEOmbqeGdbi+763FmbPbk7LWnJTFMx+nMqHLq63L1FfUg2uG3AK9PyF/FSxlrvnJqFV8G4KEXfI+J09FWuj/RRcXRI+AGgH+aP8mgSPCzqwg8dtw2cm2zDTwn2KFTL7oKJ5RdxhGhWN9CxN7753Mn3mpFrjZhC07jLhIcazrnyszTV38q/3Gpj+SYn4+a31QFacpo3/OmMWgjVhHG6Zdi7XdAr1FEy8hTnpVT6WqyacNdMh9YUktOGVVn7HbY9C3ubiEvK6ANVjjVcFCJZ3XPIy/s37nzjxk7F6U2lJo7sjQsFvWDlB+s58J7ksxkTvOPFIxCOZXytGFQxTld4CNcoAy/eSiBoLz5gnl/OBZ+1elUnIrS7TfJ75JPE2BPlwwQBQYqPskQvolFzWel8sMlRX9MNC/vGUs+jEd4UI9aFEkYX9hHfcPylX7RdCI9gNFQqHHchU/1Gfo8A2NeKum8NA6wRnmD9K03McGGZkQM1bOFHo0B50oiaglLdij7p6iN4TY2JftCZbGdcWZQ4JCbtnhE7RgB"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 2730,
+            "prompt_tokens": 12610,
+            "total_tokens": 15340,
+            "completion_tokens_details": {
+              "reasoning_tokens": 34,
+              "text_tokens": 2696
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 12610,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.10504,
+        "timestamp": 1794490931.459197
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n28:    REGISTER,\n38:    DELETED,\n</output>",
+      "extra": {
+        "raw_output": "28:    REGISTER,\n38:    DELETED,\n",
+        "returncode": 0,
+        "timestamp": 1794490931.4818811,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_0176XTCScmCub8yGBzpye7vs",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky && mvn -B -o test -pl shenyu-admin -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test 2>&1 | tail -n 40\"}",
+            "name": "bash"
+          },
+          "id": "toolu_011t3r7RMwK7HLAM4wkLoCNv",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky && mvn -B -o test -pl shenyu-admin -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test 2>&1 | tail -n 40",
+            "tool_call_id": "toolu_011t3r7RMwK7HLAM4wkLoCNv"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-757e32da-2499-4de2-8530-8f8778b6e906",
+          "created": 1794490936,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky && mvn -B -o test -pl shenyu-admin -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test 2>&1 | tail -n 40\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_011t3r7RMwK7HLAM4wkLoCNv",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 376,
+            "prompt_tokens": 15383,
+            "total_tokens": 15759,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 376
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 15383,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.069052,
+        "timestamp": 1794490936.3341572
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.7.0:compile (default-compile) @ shenyu-admin ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:3.2.0:testResources (default-testResources) @ shenyu-admin ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Using 'UTF-8' encoding to copy filtered properties files.\n[INFO] Copying 2 resources\n[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ shenyu-admin ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 154 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/target/test-classes\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/listener/zookeeper/HttpServiceDiscoveryTest.java: Some input files use or override a deprecated API.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/listener/zookeeper/HttpServiceDiscoveryTest.java: Recompile with -Xlint:deprecation for details.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java: Some input files use unchecked or unsafe operations.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java: Recompile with -Xlint:unchecked for details.\n[INFO] \n[INFO] --- surefire:3.0.0-M4:test (default-test) @ shenyu-admin ---\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running org.apache.shenyu.admin.service.register.ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test\n[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.47 s - in org.apache.shenyu.admin.service.register.ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jacoco:0.8.7:report (report) @ shenyu-admin ---\n[INFO] Skipping JaCoCo execution because property jacoco.skip is set.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  27.296 s\n[INFO] Finished at: 2026-11-12T13:42:48Z\n[INFO] ------------------------------------------------------------------------\n</output>",
+      "extra": {
+        "raw_output": "[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.7.0:compile (default-compile) @ shenyu-admin ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:3.2.0:testResources (default-testResources) @ shenyu-admin ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Using 'UTF-8' encoding to copy filtered properties files.\n[INFO] Copying 2 resources\n[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.7.0:testCompile (default-testCompile) @ shenyu-admin ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 154 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/target/test-classes\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/listener/zookeeper/HttpServiceDiscoveryTest.java: Some input files use or override a deprecated API.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/listener/zookeeper/HttpServiceDiscoveryTest.java: Recompile with -Xlint:deprecation for details.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java: Some input files use unchecked or unsafe operations.\n[INFO] /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_020/shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/src/test/java/org/apache/shenyu/admin/service/register/ShenyuClientRegisterDivideServiceImplTest.java: Recompile with -Xlint:unchecked for details.\n[INFO] \n[INFO] --- surefire:3.0.0-M4:test (default-test) @ shenyu-admin ---\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running org.apache.shenyu.admin.service.register.ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test\n[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.47 s - in org.apache.shenyu.admin.service.register.ShenyuClientRegisterDivideServiceImpl_buildHandle_0_0_Test\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jacoco:0.8.7:report (report) @ shenyu-admin ---\n[INFO] Skipping JaCoCo execution because property jacoco.skip is set.\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  27.296 s\n[INFO] Finished at: 2026-11-12T13:42:48Z\n[INFO] ------------------------------------------------------------------------\n",
+        "returncode": 0,
+        "timestamp": 1794490968.4808857,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_011t3r7RMwK7HLAM4wkLoCNv",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+            "name": "bash"
+          },
+          "id": "toolu_013BUUDMqvJe8mZ1i5qVwCRn",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT",
+            "tool_call_id": "toolu_013BUUDMqvJe8mZ1i5qVwCRn"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-7540929b-6c2b-4e64-9da6-4c3ca0882b7b",
+          "created": 1794490971,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_013BUUDMqvJe8mZ1i5qVwCRn",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 79,
+            "prompt_tokens": 17212,
+            "total_tokens": 17291,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 79
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 17212,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.07042799999999999,
+        "timestamp": 1794490971.1260495
+      }
+    },
+    {
+      "role": "exit",
+      "content": "",
+      "extra": {
+        "exit_status": "Submitted",
+        "submission": ""
+      }
+    }
+  ],
+  "trajectory_format": "mini-swe-agent-1.1"
+}

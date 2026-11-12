@@ -1,0 +1,488 @@
+{
+  "info": {
+    "model_stats": {
+      "instance_cost": 0.149776,
+      "api_calls": 4
+    },
+    "config": {
+      "agent": {
+        "system_template": "{{chatunitest_system}}\n{%- if condition in (\"FC\", \"FCV\") %}\n{%- set before, after = (\"@Before\", \"@After\") if junit == \"JUnit 4\" else (\"@BeforeEach\", \"@AfterEach\") %}\nThe tests may run in any order together with the project's other tests in the same JVM, so they must not change state that other tests see: if a test changes a static field, a singleton (e.g. an object returned by getInstance()), a system property, or any field set by reflection, save the original value before changing it (in {{before}}) and restore it in an {{after}} method.\n{%- endif %}\n{%- if condition == \"FCV\" %}\nEach test must pass no matter which tests ran before it: do not assume that shared state (static fields, singletons, system properties) is in its default state; set up the state your test needs in {{before}}.\n{%- endif %}\n\nYou can run bash commands with the bash tool, in the project's repository.\n",
+        "instance_template": "{{chatunitest_user}}\n\n## How to work\n\nYou are in the project's repository: {{project_root}} (JDK {{java}}, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n{%- if condition == \"T\" %}\n\nBefore writing your test, read the project's existing tests for this class:\n{{existing_test}}\nYour test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- set n = 1 if condition in (\"F\", \"N\", \"FC\", \"FCV\") else 0 %}\n{% if condition in (\"F\", \"N\", \"FC\", \"FCV\") %}\n1. Read the project's existing tests first. They are in {{test_dir}}; read the ones you need.\n{%- if condition in (\"F\", \"FC\", \"FCV\") %}\n   Your test class will be added to the project's test suite next to them.\n{%- endif %}\n{%- endif %}\n{{1 + n}}. Write the {{junit}} test class `{{test_class}}` (package `{{package}}`) to\n   {{test_path}}\n   Do not change any other file of the project.\n{%- if condition != \"A\" %}\n   Text in your reply is not saved: write the test file with a bash command (e.g. `cat > {{test_path}} << 'EOF'`).\n{%- endif %}\n{{2 + n}}. Compile and run it with:\n   {{test_cmd}}\n{%- if condition in (\"A\", \"T\", \"F\", \"N\", \"FC\", \"FCV\") %}\n   Run only your own test class.\n{%- else %}\n   You can also run the module's whole test suite with:\n   {{suite_cmd}}\n{%- endif %}\n{{3 + n}}. Fix it until it compiles and its tests pass.\n{%- if condition in (\"FC\", \"FCV\") %}\n   If the test changes a static field, a singleton or a field set by reflection, save the original value and restore it in an {{\"@After\" if junit == \"JUnit 4\" else \"@AfterEach\"}} method.\n{%- endif %}\n{{4 + n}}. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command.\n",
+        "step_limit": 40,
+        "cost_limit": 3.0,
+        "wall_time_limit_seconds": 3600,
+        "max_consecutive_format_errors": 3,
+        "output_path": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/out_A/runs/row_119/trajectory.json"
+      },
+      "agent_type": "minisweagent.agents.default.DefaultAgent",
+      "model": {
+        "model_name": "anthropic/claude-opus-5-5",
+        "model_kwargs": {
+          "drop_params": true
+        },
+        "litellm_model_registry": null,
+        "set_cache_control": null,
+        "cost_tracking": "default",
+        "format_error_template": "{{ error }}",
+        "observation_template": "{% if output.exception_info -%}\n<exception>{{output.exception_info}}</exception>\n{% endif -%}\n<returncode>{{output.returncode}}</returncode>\n{% if output.output | length < 10000 -%}\n<output>\n{{ output.output -}}\n</output>\n{%- else -%}\n<warning>The output was too long; showing the first and last 5000 characters.</warning>\n<output_head>\n{{ output.output[:5000] }}\n</output_head>\n<output_tail>\n{{ output.output[-5000:] }}\n</output_tail>\n{%- endif -%}\n",
+        "multimodal_regex": ""
+      },
+      "model_type": "minisweagent.models.litellm_model.LitellmModel",
+      "environment": {
+        "cwd": "/home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky",
+        "env": {
+          "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
+          "PATH": "/usr/lib/jvm/java-8-openjdk-amd64/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.local/bin:/home/dev4nshi/.nvm/versions/node/v22.23.4/bin:/home/dev4nshi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/MicrosoftCorporationII.WindowsSubsystemForLinux_2.7.11.0_x64__8wekyb3d8bbwe:/mnt/c/Python314/Scripts/:/mnt/c/Python314/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/Amita/.local/bin:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/Amita/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/Amita/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Amita/AppData/Roaming/npm:/mnt/c/Users/Amita/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin",
+          "PAGER": "cat",
+          "MANPAGER": "cat",
+          "LESS": "-R"
+        },
+        "timeout": 1800
+      },
+      "environment_type": "minisweagent.environments.local.LocalEnvironment"
+    },
+    "mini_version": "2.4.6",
+    "exit_status": "Submitted",
+    "submission": ""
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Please help me generate a whole JUnit test for a focal method in a focal class.\nI will provide the following information of the focal method:\n1. Required dependencies to import.\n2. The focal class signature.\n3. Source code of the focal method.\n4. Signatures of r methods and fields in the class.\nI will provide followotheing brief information if the focal method has dependencies:\n1. Signatures of dependent classes.\n2. Signatures of dependent methods and fields in the dependent classes.\nI need you to create a whole unit test using JUnit 4, ensuring optimal branch and line coverage. Compile without errors, and use reflection to invoke private methods. No additional explanations required.\n\nYou can run bash commands with the bash tool, in the project's repository."
+    },
+    {
+      "role": "user",
+      "content": "The focal method is `fromStream(String, Class)` in the focal class `ReactorStreamsService`, and their information is\n```org.apache.camel.component.reactor.engine\nimport java.util.concurrent.ConcurrentHashMap;\nimport java.util.concurrent.ConcurrentMap;\nimport java.util.function.Function;\nimport java.util.function.Supplier;\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.Exchange;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsCamelSubscriber;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConsumer;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsHelper;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsProducer;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.component.reactive.streams.util.BodyConverter;\nimport org.apache.camel.component.reactive.streams.util.ConvertingPublisher;\nimport org.apache.camel.component.reactive.streams.util.ConvertingSubscriber;\nimport org.apache.camel.component.reactive.streams.util.UnwrapStreamProcessor;\nimport org.apache.camel.spi.Synchronization;\nimport org.apache.camel.support.ServiceSupport;\nimport org.apache.camel.util.function.Suppliers;\nimport org.reactivestreams.Publisher;\nimport org.reactivestreams.Subscriber;\nimport reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\nfinal class ReactorStreamsService {\nprivate final CamelContext context;\nprivate final Supplier<UnwrapStreamProcessor> unwrapStreamProcessorSupplier;\nprivate final ConcurrentMap<String, ReactorCamelProcessor> publishers;\nprivate final ConcurrentMap<String, ReactiveStreamsCamelSubscriber> subscribers;\nprivate final ConcurrentMap<String, String> publishedUriToStream;\nprivate final ConcurrentMap<String, String> requestedUriToStream;\n@Override\n    public <T> Publisher<T> fromStream(String name, Class<T> type) {\n        final Publisher<Exchange> publisher = fromStream(name);\n\n        if (Exchange.class.isAssignableFrom(type)) {\n            return Publisher.class.cast(publisher);\n        }\n\n        return Flux.from(publisher).map(BodyConverter.forType(type));\n    }\n}```.\n    Signatures of Other methods in the focal class are `ReactorStreamsService(CamelContext context){}\n@Override\n    public String getId(){}\n\n`.\n    The brief information of dependent class `org.apache.camel.component.reactor.engine.ReactorStreamsService` is\n    ```org.apache.camel.component.reactor.engine\nimport java.util.concurrent.ConcurrentHashMap;\nimport java.util.concurrent.ConcurrentMap;\nimport java.util.function.Function;\nimport java.util.function.Supplier;\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.Exchange;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsCamelSubscriber;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConsumer;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsHelper;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsProducer;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.component.reactive.streams.util.BodyConverter;\nimport org.apache.camel.component.reactive.streams.util.ConvertingPublisher;\nimport org.apache.camel.component.reactive.streams.util.ConvertingSubscriber;\nimport org.apache.camel.component.reactive.streams.util.UnwrapStreamProcessor;\nimport org.apache.camel.spi.Synchronization;\nimport org.apache.camel.support.ServiceSupport;\nimport org.apache.camel.util.function.Suppliers;\nimport org.reactivestreams.Publisher;\nimport org.reactivestreams.Subscriber;\nimport reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\nfinal class ReactorStreamsService {\nprivate final CamelContext context;\nprivate final Supplier<UnwrapStreamProcessor> unwrapStreamProcessorSupplier;\nprivate final ConcurrentMap<String, ReactorCamelProcessor> publishers;\nprivate final ConcurrentMap<String, ReactiveStreamsCamelSubscriber> subscribers;\nprivate final ConcurrentMap<String, String> publishedUriToStream;\nprivate final ConcurrentMap<String, String> requestedUriToStream;\nReactorStreamsService(CamelContext context) {\n        this.context = context;\n        this.publishers = new ConcurrentHashMap<>();\n        this.subscribers = new ConcurrentHashMap<>();\n        this.publishedUriToStream = new ConcurrentHashMap<>();\n        this.requestedUriToStream = new ConcurrentHashMap<>();\n        this.unwrapStreamProcessorSupplier = Suppliers.memorize(UnwrapStreamProcessor::new);\n    }\n\n@Override\n    public String getId(){}\n@Override\n    public Publisher<Exchange> fromStream(String name) {\n        return getCamelProcessor(name).getPublisher();\n    }\n}```.\n\n\n## How to work\n\nYou are in the project's repository: /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky (JDK 8, Maven offline).\nEvery bash command runs in a new shell starting in that directory. You can read any file of the\nproject (e.g. with cat, sed -n, grep) to find what you need.\n\n1. Write the JUnit 4 test class `ReactorStreamsService_fromStream_0_0_Test` (package `org.apache.camel.component.reactor.engine`) to\n   /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsService_fromStream_0_0_Test.java\n   Do not change any other file of the project.\n2. Compile and run it with:\n   cd /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky && mvn -B -o test -pl components/camel-reactor -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ReactorStreamsService_fromStream_0_0_Test 2>&1 | tail -n 80\n   Run only your own test class.\n3. Fix it until it compiles and its tests pass.\n4. Then finish by running `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as its own command."
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd components/camel-reactor; cat src/main/java/org/apache/camel/component/reactor/engine/ReactorStreamsService.java | head -150; ls src/test/java/org/apache/camel/component/reactor/engine/\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01PzyrYw6CGKz4rsQL6QnfEW",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd components/camel-reactor; cat src/main/java/org/apache/camel/component/reactor/engine/ReactorStreamsService.java | head -150; ls src/test/java/org/apache/camel/component/reactor/engine/",
+            "tool_call_id": "toolu_01PzyrYw6CGKz4rsQL6QnfEW"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-a63cbc96-a4d1-41b8-a305-52c38b920dfd",
+          "created": 1794497742,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd components/camel-reactor; cat src/main/java/org/apache/camel/component/reactor/engine/ReactorStreamsService.java | head -150; ls src/test/java/org/apache/camel/component/reactor/engine/\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01PzyrYw6CGKz4rsQL6QnfEW",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 122,
+            "prompt_tokens": 3290,
+            "total_tokens": 3412,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 122
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 3290,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.0156,
+        "timestamp": 1794497743.029732
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n/**\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage org.apache.camel.component.reactor.engine;\n\nimport java.util.concurrent.ConcurrentHashMap;\nimport java.util.concurrent.ConcurrentMap;\nimport java.util.function.Function;\nimport java.util.function.Supplier;\n\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.Exchange;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsCamelSubscriber;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConsumer;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsHelper;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsProducer;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.component.reactive.streams.util.BodyConverter;\nimport org.apache.camel.component.reactive.streams.util.ConvertingPublisher;\nimport org.apache.camel.component.reactive.streams.util.ConvertingSubscriber;\nimport org.apache.camel.component.reactive.streams.util.UnwrapStreamProcessor;\nimport org.apache.camel.spi.Synchronization;\nimport org.apache.camel.support.ServiceSupport;\nimport org.apache.camel.util.function.Suppliers;\nimport org.reactivestreams.Publisher;\nimport org.reactivestreams.Subscriber;\n\nimport reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\nfinal class ReactorStreamsService extends ServiceSupport implements CamelReactiveStreamsService {\n    private final CamelContext context;\n    private final Supplier<UnwrapStreamProcessor> unwrapStreamProcessorSupplier;\n    private final ConcurrentMap<String, ReactorCamelProcessor> publishers;\n    private final ConcurrentMap<String, ReactiveStreamsCamelSubscriber> subscribers;\n    private final ConcurrentMap<String, String> publishedUriToStream;\n    private final ConcurrentMap<String, String> requestedUriToStream;\n\n    ReactorStreamsService(CamelContext context) {\n        this.context = context;\n        this.publishers = new ConcurrentHashMap<>();\n        this.subscribers = new ConcurrentHashMap<>();\n        this.publishedUriToStream = new ConcurrentHashMap<>();\n        this.requestedUriToStream = new ConcurrentHashMap<>();\n        this.unwrapStreamProcessorSupplier = Suppliers.memorize(UnwrapStreamProcessor::new);\n    }\n\n    @Override\n    public String getId() {\n        return ReactorStreamsConstants.SERVICE_NAME;\n    }\n\n    // ******************************************\n    // Lifecycle\n    // ******************************************\n\n    @Override\n    public void doStart() throws Exception {\n    }\n\n    @Override\n    public void doStop() throws Exception {\n        for (ReactorCamelProcessor processor : publishers.values()) {\n            processor.close();\n        }\n        for (ReactiveStreamsCamelSubscriber subscriber : subscribers.values()) {\n            subscriber.close();\n        }\n    }\n\n    // ******************************************\n    //\n    // ******************************************\n\n    @Override\n    public Publisher<Exchange> fromStream(String name) {\n        return getCamelProcessor(name).getPublisher();\n    }\n\n    @Override\n    public <T> Publisher<T> fromStream(String name, Class<T> type) {\n        final Publisher<Exchange> publisher = fromStream(name);\n\n        if (Exchange.class.isAssignableFrom(type)) {\n            return Publisher.class.cast(publisher);\n        }\n\n        return Flux.from(publisher).map(BodyConverter.forType(type));\n    }\n\n    @Override\n    public ReactiveStreamsCamelSubscriber streamSubscriber(String name) {\n        return subscribers.computeIfAbsent(name, n -> new ReactiveStreamsCamelSubscriber(name));\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    public <T> Subscriber<T> streamSubscriber(String name, Class<T> type) {\n        final Subscriber<Exchange> subscriber = streamSubscriber(name);\n\n        if (Exchange.class.equals(type)) {\n            return Subscriber.class.cast(subscriber);\n        }\n\n        return new ConvertingSubscriber<>(subscriber, context);\n    }\n\n    @Override\n    public Publisher<Exchange> toStream(String name, Object data) {\n        return doRequest(\n            name,\n            ReactiveStreamsHelper.convertToExchange(context, data)\n        );\n    }\n\n    @Override\n    public Function<?, ? extends Publisher<Exchange>> toStream(String name) {\n        return data -> toStream(name, data);\n    }\n\n    @Override\n    public <T> Publisher<T> toStream(String name, Object data, Class<T> type) {\n        return new ConvertingPublisher<>(toStream(name, data), type);\n    }\n\n    @Override\n    public <T> Function<Object, Publisher<T>> toStream(String name, Class<T> type) {\n        return data -> toStream(name, data, type);\n    }\n\n    @Override\n    public Publisher<Exchange> from(String uri) {\n        final String name = publishedUriToStream.computeIfAbsent(uri, camelUri -> {\n            try {\n                String uuid = context.getUuidGenerator().generateUuid();\n\n                context.addRoutes(new RouteBuilder() {\nReactorStreamsServiceBackpressureTest.java\nReactorStreamsServiceEventTypeTest.java\nReactorStreamsServiceSubscriberTest.java\nReactorStreamsServiceTest.java\nReactorStreamsServiceTestSupport.java\nsuport\n</output>",
+      "extra": {
+        "raw_output": "/**\n * Licensed to the Apache Software Foundation (ASF) under one or more\n * contributor license agreements.  See the NOTICE file distributed with\n * this work for additional information regarding copyright ownership.\n * The ASF licenses this file to You under the Apache License, Version 2.0\n * (the \"License\"); you may not use this file except in compliance with\n * the License.  You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage org.apache.camel.component.reactor.engine;\n\nimport java.util.concurrent.ConcurrentHashMap;\nimport java.util.concurrent.ConcurrentMap;\nimport java.util.function.Function;\nimport java.util.function.Supplier;\n\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.Exchange;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsCamelSubscriber;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConsumer;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsHelper;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsProducer;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.component.reactive.streams.util.BodyConverter;\nimport org.apache.camel.component.reactive.streams.util.ConvertingPublisher;\nimport org.apache.camel.component.reactive.streams.util.ConvertingSubscriber;\nimport org.apache.camel.component.reactive.streams.util.UnwrapStreamProcessor;\nimport org.apache.camel.spi.Synchronization;\nimport org.apache.camel.support.ServiceSupport;\nimport org.apache.camel.util.function.Suppliers;\nimport org.reactivestreams.Publisher;\nimport org.reactivestreams.Subscriber;\n\nimport reactor.core.publisher.Flux;\nimport reactor.core.publisher.Mono;\n\nfinal class ReactorStreamsService extends ServiceSupport implements CamelReactiveStreamsService {\n    private final CamelContext context;\n    private final Supplier<UnwrapStreamProcessor> unwrapStreamProcessorSupplier;\n    private final ConcurrentMap<String, ReactorCamelProcessor> publishers;\n    private final ConcurrentMap<String, ReactiveStreamsCamelSubscriber> subscribers;\n    private final ConcurrentMap<String, String> publishedUriToStream;\n    private final ConcurrentMap<String, String> requestedUriToStream;\n\n    ReactorStreamsService(CamelContext context) {\n        this.context = context;\n        this.publishers = new ConcurrentHashMap<>();\n        this.subscribers = new ConcurrentHashMap<>();\n        this.publishedUriToStream = new ConcurrentHashMap<>();\n        this.requestedUriToStream = new ConcurrentHashMap<>();\n        this.unwrapStreamProcessorSupplier = Suppliers.memorize(UnwrapStreamProcessor::new);\n    }\n\n    @Override\n    public String getId() {\n        return ReactorStreamsConstants.SERVICE_NAME;\n    }\n\n    // ******************************************\n    // Lifecycle\n    // ******************************************\n\n    @Override\n    public void doStart() throws Exception {\n    }\n\n    @Override\n    public void doStop() throws Exception {\n        for (ReactorCamelProcessor processor : publishers.values()) {\n            processor.close();\n        }\n        for (ReactiveStreamsCamelSubscriber subscriber : subscribers.values()) {\n            subscriber.close();\n        }\n    }\n\n    // ******************************************\n    //\n    // ******************************************\n\n    @Override\n    public Publisher<Exchange> fromStream(String name) {\n        return getCamelProcessor(name).getPublisher();\n    }\n\n    @Override\n    public <T> Publisher<T> fromStream(String name, Class<T> type) {\n        final Publisher<Exchange> publisher = fromStream(name);\n\n        if (Exchange.class.isAssignableFrom(type)) {\n            return Publisher.class.cast(publisher);\n        }\n\n        return Flux.from(publisher).map(BodyConverter.forType(type));\n    }\n\n    @Override\n    public ReactiveStreamsCamelSubscriber streamSubscriber(String name) {\n        return subscribers.computeIfAbsent(name, n -> new ReactiveStreamsCamelSubscriber(name));\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    public <T> Subscriber<T> streamSubscriber(String name, Class<T> type) {\n        final Subscriber<Exchange> subscriber = streamSubscriber(name);\n\n        if (Exchange.class.equals(type)) {\n            return Subscriber.class.cast(subscriber);\n        }\n\n        return new ConvertingSubscriber<>(subscriber, context);\n    }\n\n    @Override\n    public Publisher<Exchange> toStream(String name, Object data) {\n        return doRequest(\n            name,\n            ReactiveStreamsHelper.convertToExchange(context, data)\n        );\n    }\n\n    @Override\n    public Function<?, ? extends Publisher<Exchange>> toStream(String name) {\n        return data -> toStream(name, data);\n    }\n\n    @Override\n    public <T> Publisher<T> toStream(String name, Object data, Class<T> type) {\n        return new ConvertingPublisher<>(toStream(name, data), type);\n    }\n\n    @Override\n    public <T> Function<Object, Publisher<T>> toStream(String name, Class<T> type) {\n        return data -> toStream(name, data, type);\n    }\n\n    @Override\n    public Publisher<Exchange> from(String uri) {\n        final String name = publishedUriToStream.computeIfAbsent(uri, camelUri -> {\n            try {\n                String uuid = context.getUuidGenerator().generateUuid();\n\n                context.addRoutes(new RouteBuilder() {\nReactorStreamsServiceBackpressureTest.java\nReactorStreamsServiceEventTypeTest.java\nReactorStreamsServiceSubscriberTest.java\nReactorStreamsServiceTest.java\nReactorStreamsServiceTestSupport.java\nsuport\n",
+        "returncode": 0,
+        "timestamp": 1794497743.1373634,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_01PzyrYw6CGKz4rsQL6QnfEW",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd components/camel-reactor; cat src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTestSupport.java | sed -n 17,200p; sed -n 17,120p src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTest.java\"}",
+            "name": "bash"
+          },
+          "id": "toolu_0192t9bg9QkZh4qm9s3XBE2g",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd components/camel-reactor; cat src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTestSupport.java | sed -n 17,200p; sed -n 17,120p src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTest.java",
+            "tool_call_id": "toolu_0192t9bg9QkZh4qm9s3XBE2g"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-d487424e-8de9-4ec4-9180-30a2aefb75a2",
+          "created": 1794497745,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd components/camel-reactor; cat src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTestSupport.java | sed -n 17,200p; sed -n 17,120p src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsServiceTest.java\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_0192t9bg9QkZh4qm9s3XBE2g",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 157,
+            "prompt_tokens": 5744,
+            "total_tokens": 5901,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 157
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 5744,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.026116,
+        "timestamp": 1794497745.6874673
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\npackage org.apache.camel.component.reactor.engine;\n\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsComponent;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConstants;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreams;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.test.junit4.CamelTestSupport;\nimport org.apache.camel.util.ObjectHelper;\n\nclass ReactorStreamsServiceTestSupport extends CamelTestSupport {\n    protected CamelReactiveStreamsService crs;\n\n    @Override\n    protected CamelContext createCamelContext() throws Exception {\n        CamelContext context = super.createCamelContext();\n\n        context.addComponent(\n            ReactiveStreamsConstants.SCHEME,\n            ReactiveStreamsComponent.withServiceType(ReactorStreamsConstants.SERVICE_NAME)\n        );\n\n        return context;\n    }\n\n    @Override\n    protected void doPostSetup() throws Exception {\n        this.crs = CamelReactiveStreams.get(context);\n    }\n\n    @Override\n    public boolean isUseRouteBuilder() {\n        // You need to start the context if \"use route builder\" is set to false\n        return false;\n    }\n\n    protected ReactiveStreamsComponent getReactiveStreamsComponent() {\n        return ObjectHelper.notNull(\n            context.getComponent(ReactiveStreamsConstants.SCHEME, ReactiveStreamsComponent.class),\n            ReactiveStreamsConstants.SCHEME\n        );\n    }\n}\npackage org.apache.camel.component.reactor.engine;\n\nimport java.util.concurrent.CountDownLatch;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.function.Function;\n\nimport org.apache.camel.Exchange;\nimport org.apache.camel.ProducerTemplate;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.mock.MockEndpoint;\nimport org.apache.camel.impl.DefaultExchange;\nimport org.apache.camel.impl.JndiRegistry;\nimport org.apache.camel.util.ExchangeHelper;\nimport org.junit.Assert;\nimport org.junit.Test;\nimport org.reactivestreams.Publisher;\nimport reactor.core.Disposable;\nimport reactor.core.publisher.Flux;\n\npublic class ReactorStreamsServiceTest extends ReactorStreamsServiceTestSupport {\n    \n    // ************************************************\n    // Setup\n    // ************************************************\n\n    @Override\n    protected JndiRegistry createRegistry() throws Exception {\n        JndiRegistry registry = super.createRegistry();\n        registry.bind(\"hello\", new SampleBean());\n\n        return registry;\n    }\n\n    public static class SampleBean {\n        public String hello(String name) {\n            return \"Hello \" + name;\n        }\n    }\n\n    // ************************************************\n    // fromStream/from\n    // ************************************************\n\n    @Test\n    public void testFromStreamDirect() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            public void configure() {\n                from(\"direct:reactive\")\n                    .to(\"reactive-streams:numbers\");\n            }\n        });\n\n        context.start();\n        ProducerTemplate template = context.createProducerTemplate();\n\n        AtomicInteger value = new AtomicInteger(0);\n\n        Flux.from(crs.fromStream(\"numbers\", Integer.class))\n            .doOnNext(res -> Assert.assertEquals(value.incrementAndGet(), res.intValue()))\n            .subscribe();\n\n        template.sendBody(\"direct:reactive\", 1);\n        template.sendBody(\"direct:reactive\", 2);\n        template.sendBody(\"direct:reactive\", 3);\n    }\n\n    @Test\n    public void testFromStreamTimer() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            @Override\n            public void configure() throws Exception {\n                from(\"timer:tick?period=5&repeatCount=30\")\n                    .setBody()\n                        .header(Exchange.TIMER_COUNTER)\n                    .to(\"reactive-streams:tick\");\n            }\n        });\n\n        final int num = 30;\n        final CountDownLatch latch = new CountDownLatch(num);\n        final AtomicInteger value = new AtomicInteger(0);\n\n        Flux.from(crs.fromStream(\"tick\", Integer.class))\n            .doOnNext(res -> Assert.assertEquals(value.incrementAndGet(), res.intValue()))\n            .doOnNext(n -> latch.countDown())\n            .subscribe();\n\n        context.start();\n\n        latch.await(5, TimeUnit.SECONDS);\n\n        Assert.assertEquals(num, value.get());\n    }\n\n    @Test\n    public void testFromStreamMultipleSubscriptionsWithDirect() throws Exception {\n        context.start();\n        context.addRoutes(new RouteBuilder() {\n            @Override\n            public void configure() throws Exception {\n                from(\"direct:reactive\")\n                    .to(\"reactive-streams:direct\");\n            }\n</output>",
+      "extra": {
+        "raw_output": "package org.apache.camel.component.reactor.engine;\n\nimport org.apache.camel.CamelContext;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsComponent;\nimport org.apache.camel.component.reactive.streams.ReactiveStreamsConstants;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreams;\nimport org.apache.camel.component.reactive.streams.api.CamelReactiveStreamsService;\nimport org.apache.camel.test.junit4.CamelTestSupport;\nimport org.apache.camel.util.ObjectHelper;\n\nclass ReactorStreamsServiceTestSupport extends CamelTestSupport {\n    protected CamelReactiveStreamsService crs;\n\n    @Override\n    protected CamelContext createCamelContext() throws Exception {\n        CamelContext context = super.createCamelContext();\n\n        context.addComponent(\n            ReactiveStreamsConstants.SCHEME,\n            ReactiveStreamsComponent.withServiceType(ReactorStreamsConstants.SERVICE_NAME)\n        );\n\n        return context;\n    }\n\n    @Override\n    protected void doPostSetup() throws Exception {\n        this.crs = CamelReactiveStreams.get(context);\n    }\n\n    @Override\n    public boolean isUseRouteBuilder() {\n        // You need to start the context if \"use route builder\" is set to false\n        return false;\n    }\n\n    protected ReactiveStreamsComponent getReactiveStreamsComponent() {\n        return ObjectHelper.notNull(\n            context.getComponent(ReactiveStreamsConstants.SCHEME, ReactiveStreamsComponent.class),\n            ReactiveStreamsConstants.SCHEME\n        );\n    }\n}\npackage org.apache.camel.component.reactor.engine;\n\nimport java.util.concurrent.CountDownLatch;\nimport java.util.concurrent.TimeUnit;\nimport java.util.concurrent.atomic.AtomicInteger;\nimport java.util.function.Function;\n\nimport org.apache.camel.Exchange;\nimport org.apache.camel.ProducerTemplate;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.apache.camel.component.mock.MockEndpoint;\nimport org.apache.camel.impl.DefaultExchange;\nimport org.apache.camel.impl.JndiRegistry;\nimport org.apache.camel.util.ExchangeHelper;\nimport org.junit.Assert;\nimport org.junit.Test;\nimport org.reactivestreams.Publisher;\nimport reactor.core.Disposable;\nimport reactor.core.publisher.Flux;\n\npublic class ReactorStreamsServiceTest extends ReactorStreamsServiceTestSupport {\n    \n    // ************************************************\n    // Setup\n    // ************************************************\n\n    @Override\n    protected JndiRegistry createRegistry() throws Exception {\n        JndiRegistry registry = super.createRegistry();\n        registry.bind(\"hello\", new SampleBean());\n\n        return registry;\n    }\n\n    public static class SampleBean {\n        public String hello(String name) {\n            return \"Hello \" + name;\n        }\n    }\n\n    // ************************************************\n    // fromStream/from\n    // ************************************************\n\n    @Test\n    public void testFromStreamDirect() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            public void configure() {\n                from(\"direct:reactive\")\n                    .to(\"reactive-streams:numbers\");\n            }\n        });\n\n        context.start();\n        ProducerTemplate template = context.createProducerTemplate();\n\n        AtomicInteger value = new AtomicInteger(0);\n\n        Flux.from(crs.fromStream(\"numbers\", Integer.class))\n            .doOnNext(res -> Assert.assertEquals(value.incrementAndGet(), res.intValue()))\n            .subscribe();\n\n        template.sendBody(\"direct:reactive\", 1);\n        template.sendBody(\"direct:reactive\", 2);\n        template.sendBody(\"direct:reactive\", 3);\n    }\n\n    @Test\n    public void testFromStreamTimer() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            @Override\n            public void configure() throws Exception {\n                from(\"timer:tick?period=5&repeatCount=30\")\n                    .setBody()\n                        .header(Exchange.TIMER_COUNTER)\n                    .to(\"reactive-streams:tick\");\n            }\n        });\n\n        final int num = 30;\n        final CountDownLatch latch = new CountDownLatch(num);\n        final AtomicInteger value = new AtomicInteger(0);\n\n        Flux.from(crs.fromStream(\"tick\", Integer.class))\n            .doOnNext(res -> Assert.assertEquals(value.incrementAndGet(), res.intValue()))\n            .doOnNext(n -> latch.countDown())\n            .subscribe();\n\n        context.start();\n\n        latch.await(5, TimeUnit.SECONDS);\n\n        Assert.assertEquals(num, value.get());\n    }\n\n    @Test\n    public void testFromStreamMultipleSubscriptionsWithDirect() throws Exception {\n        context.start();\n        context.addRoutes(new RouteBuilder() {\n            @Override\n            public void configure() throws Exception {\n                from(\"direct:reactive\")\n                    .to(\"reactive-streams:direct\");\n            }\n",
+        "returncode": 0,
+        "timestamp": 1794497745.7078671,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_0192t9bg9QkZh4qm9s3XBE2g",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"cd components/camel-reactor; cat > src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsService_fromStream_0_0_Test.java <<'EOF'\\npackage org.apache.camel.component.reactor.engine;\\n\\nimport java.util.List;\\nimport java.util.concurrent.CopyOnWriteArrayList;\\nimport java.util.concurrent.CountDownLatch;\\nimport java.util.concurrent.TimeUnit;\\n\\nimport org.apache.camel.Exchange;\\nimport org.apache.camel.ProducerTemplate;\\nimport org.apache.camel.builder.RouteBuilder;\\nimport org.junit.Assert;\\nimport org.junit.Test;\\nimport org.reactivestreams.Publisher;\\nimport reactor.core.publisher.Flux;\\n\\npublic class ReactorStreamsService_fromStream_0_0_Test extends ReactorStreamsServiceTestSupport {\\n\\n    @Test\\n    public void testExchangeTypeReturnsSamePublisher() throws Exception {\\n        context.start();\\n        Publisher<Exchange> raw = crs.fromStream(\\\"ex\\\");\\n        Publisher<Exchange> typed = crs.fromStream(\\\"ex\\\", Exchange.class);\\n        Assert.assertSame(raw, typed);\\n    }\\n\\n    @Test\\n    public void testExchangeTypeReceivesExchanges() throws Exception {\\n        context.addRoutes(new RouteBuilder() {\\n            public void configure() {\\n                from(\\\"direct:ex\\\").to(\\\"reactive-streams:ex2\\\");\\n            }\\n        });\\n        context.start();\\n        CountDownLatch latch = new CountDownLatch(2);\\n        List<Object> bodies = new CopyOnWriteArrayList<>();\\n        Flux.from(crs.fromStream(\\\"ex2\\\", Exchange.class))\\n            .doOnNext(e -> bodies.add(e.getIn().getBody()))\\n            .doOnNext(e -> latch.countDown())\\n            .subscribe();\\n        ProducerTemplate template = context.createProducerTemplate();\\n        template.sendBody(\\\"direct:ex\\\", \\\"a\\\");\\n        template.sendBody(\\\"direct:ex\\\", \\\"b\\\");\\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\\n        Assert.assertEquals(2, bodies.size());\\n        Assert.assertEquals(\\\"a\\\", bodies.get(0));\\n    }\\n\\n    @Test\\n    public void testConvertedType() throws Exception {\\n        context.addRoutes(new RouteBuilder() {\\n            public void configure() {\\n                from(\\\"direct:num\\\").to(\\\"reactive-streams:nums\\\");\\n            }\\n        });\\n        context.start();\\n        Publisher<Integer> pub = crs.fromStream(\\\"nums\\\", Integer.class);\\n        Assert.assertNotNull(pub);\\n        Assert.assertNotSame(crs.fromStream(\\\"nums\\\"), pub);\\n        CountDownLatch latch = new CountDownLatch(2);\\n        List<Integer> values = new CopyOnWriteArrayList<>();\\n        Flux.from(pub).doOnNext(values::add).doOnNext(v -> latch.countDown()).subscribe();\\n        ProducerTemplate template = context.createProducerTemplate();\\n        template.sendBody(\\\"direct:num\\\", \\\"1\\\");\\n        template.sendBody(\\\"direct:num\\\", 2);\\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\\n        Assert.assertEquals(Integer.valueOf(1), values.get(0));\\n        Assert.assertEquals(Integer.valueOf(2), values.get(1));\\n    }\\n\\n    @Test\\n    public void testDirectInstantiation() throws Exception {\\n        ReactorStreamsService service = new ReactorStreamsService(context);\\n        Publisher<String> p = service.fromStream(\\\"s\\\", String.class);\\n        Assert.assertNotNull(p);\\n        Assert.assertTrue(p instanceof Flux);\\n        Publisher<Exchange> e = service.fromStream(\\\"s\\\", Exchange.class);\\n        Assert.assertSame(service.fromStream(\\\"s\\\"), e);\\n    }\\n}\\nEOF\\ncd ../..; mvn -B -o test -pl components/camel-reactor -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ReactorStreamsService_fromStream_0_0_Test 2>&1 | tail -n 40\"}",
+            "name": "bash"
+          },
+          "id": "toolu_017wurt733cthV5GmqLvapCG",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "cd components/camel-reactor; cat > src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsService_fromStream_0_0_Test.java <<'EOF'\npackage org.apache.camel.component.reactor.engine;\n\nimport java.util.List;\nimport java.util.concurrent.CopyOnWriteArrayList;\nimport java.util.concurrent.CountDownLatch;\nimport java.util.concurrent.TimeUnit;\n\nimport org.apache.camel.Exchange;\nimport org.apache.camel.ProducerTemplate;\nimport org.apache.camel.builder.RouteBuilder;\nimport org.junit.Assert;\nimport org.junit.Test;\nimport org.reactivestreams.Publisher;\nimport reactor.core.publisher.Flux;\n\npublic class ReactorStreamsService_fromStream_0_0_Test extends ReactorStreamsServiceTestSupport {\n\n    @Test\n    public void testExchangeTypeReturnsSamePublisher() throws Exception {\n        context.start();\n        Publisher<Exchange> raw = crs.fromStream(\"ex\");\n        Publisher<Exchange> typed = crs.fromStream(\"ex\", Exchange.class);\n        Assert.assertSame(raw, typed);\n    }\n\n    @Test\n    public void testExchangeTypeReceivesExchanges() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            public void configure() {\n                from(\"direct:ex\").to(\"reactive-streams:ex2\");\n            }\n        });\n        context.start();\n        CountDownLatch latch = new CountDownLatch(2);\n        List<Object> bodies = new CopyOnWriteArrayList<>();\n        Flux.from(crs.fromStream(\"ex2\", Exchange.class))\n            .doOnNext(e -> bodies.add(e.getIn().getBody()))\n            .doOnNext(e -> latch.countDown())\n            .subscribe();\n        ProducerTemplate template = context.createProducerTemplate();\n        template.sendBody(\"direct:ex\", \"a\");\n        template.sendBody(\"direct:ex\", \"b\");\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\n        Assert.assertEquals(2, bodies.size());\n        Assert.assertEquals(\"a\", bodies.get(0));\n    }\n\n    @Test\n    public void testConvertedType() throws Exception {\n        context.addRoutes(new RouteBuilder() {\n            public void configure() {\n                from(\"direct:num\").to(\"reactive-streams:nums\");\n            }\n        });\n        context.start();\n        Publisher<Integer> pub = crs.fromStream(\"nums\", Integer.class);\n        Assert.assertNotNull(pub);\n        Assert.assertNotSame(crs.fromStream(\"nums\"), pub);\n        CountDownLatch latch = new CountDownLatch(2);\n        List<Integer> values = new CopyOnWriteArrayList<>();\n        Flux.from(pub).doOnNext(values::add).doOnNext(v -> latch.countDown()).subscribe();\n        ProducerTemplate template = context.createProducerTemplate();\n        template.sendBody(\"direct:num\", \"1\");\n        template.sendBody(\"direct:num\", 2);\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\n        Assert.assertEquals(Integer.valueOf(1), values.get(0));\n        Assert.assertEquals(Integer.valueOf(2), values.get(1));\n    }\n\n    @Test\n    public void testDirectInstantiation() throws Exception {\n        ReactorStreamsService service = new ReactorStreamsService(context);\n        Publisher<String> p = service.fromStream(\"s\", String.class);\n        Assert.assertNotNull(p);\n        Assert.assertTrue(p instanceof Flux);\n        Publisher<Exchange> e = service.fromStream(\"s\", Exchange.class);\n        Assert.assertSame(service.fromStream(\"s\"), e);\n    }\n}\nEOF\ncd ../..; mvn -B -o test -pl components/camel-reactor -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ReactorStreamsService_fromStream_0_0_Test 2>&1 | tail -n 40",
+            "tool_call_id": "toolu_017wurt733cthV5GmqLvapCG"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-20ba833d-dbaf-4630-9e0a-65ad3411f676",
+          "created": 1794497757,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"cd components/camel-reactor; cat > src/test/java/org/apache/camel/component/reactor/engine/ReactorStreamsService_fromStream_0_0_Test.java <<'EOF'\\npackage org.apache.camel.component.reactor.engine;\\n\\nimport java.util.List;\\nimport java.util.concurrent.CopyOnWriteArrayList;\\nimport java.util.concurrent.CountDownLatch;\\nimport java.util.concurrent.TimeUnit;\\n\\nimport org.apache.camel.Exchange;\\nimport org.apache.camel.ProducerTemplate;\\nimport org.apache.camel.builder.RouteBuilder;\\nimport org.junit.Assert;\\nimport org.junit.Test;\\nimport org.reactivestreams.Publisher;\\nimport reactor.core.publisher.Flux;\\n\\npublic class ReactorStreamsService_fromStream_0_0_Test extends ReactorStreamsServiceTestSupport {\\n\\n    @Test\\n    public void testExchangeTypeReturnsSamePublisher() throws Exception {\\n        context.start();\\n        Publisher<Exchange> raw = crs.fromStream(\\\"ex\\\");\\n        Publisher<Exchange> typed = crs.fromStream(\\\"ex\\\", Exchange.class);\\n        Assert.assertSame(raw, typed);\\n    }\\n\\n    @Test\\n    public void testExchangeTypeReceivesExchanges() throws Exception {\\n        context.addRoutes(new RouteBuilder() {\\n            public void configure() {\\n                from(\\\"direct:ex\\\").to(\\\"reactive-streams:ex2\\\");\\n            }\\n        });\\n        context.start();\\n        CountDownLatch latch = new CountDownLatch(2);\\n        List<Object> bodies = new CopyOnWriteArrayList<>();\\n        Flux.from(crs.fromStream(\\\"ex2\\\", Exchange.class))\\n            .doOnNext(e -> bodies.add(e.getIn().getBody()))\\n            .doOnNext(e -> latch.countDown())\\n            .subscribe();\\n        ProducerTemplate template = context.createProducerTemplate();\\n        template.sendBody(\\\"direct:ex\\\", \\\"a\\\");\\n        template.sendBody(\\\"direct:ex\\\", \\\"b\\\");\\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\\n        Assert.assertEquals(2, bodies.size());\\n        Assert.assertEquals(\\\"a\\\", bodies.get(0));\\n    }\\n\\n    @Test\\n    public void testConvertedType() throws Exception {\\n        context.addRoutes(new RouteBuilder() {\\n            public void configure() {\\n                from(\\\"direct:num\\\").to(\\\"reactive-streams:nums\\\");\\n            }\\n        });\\n        context.start();\\n        Publisher<Integer> pub = crs.fromStream(\\\"nums\\\", Integer.class);\\n        Assert.assertNotNull(pub);\\n        Assert.assertNotSame(crs.fromStream(\\\"nums\\\"), pub);\\n        CountDownLatch latch = new CountDownLatch(2);\\n        List<Integer> values = new CopyOnWriteArrayList<>();\\n        Flux.from(pub).doOnNext(values::add).doOnNext(v -> latch.countDown()).subscribe();\\n        ProducerTemplate template = context.createProducerTemplate();\\n        template.sendBody(\\\"direct:num\\\", \\\"1\\\");\\n        template.sendBody(\\\"direct:num\\\", 2);\\n        Assert.assertTrue(latch.await(5, TimeUnit.SECONDS));\\n        Assert.assertEquals(Integer.valueOf(1), values.get(0));\\n        Assert.assertEquals(Integer.valueOf(2), values.get(1));\\n    }\\n\\n    @Test\\n    public void testDirectInstantiation() throws Exception {\\n        ReactorStreamsService service = new ReactorStreamsService(context);\\n        Publisher<String> p = service.fromStream(\\\"s\\\", String.class);\\n        Assert.assertNotNull(p);\\n        Assert.assertTrue(p instanceof Flux);\\n        Publisher<Exchange> e = service.fromStream(\\\"s\\\", Exchange.class);\\n        Assert.assertSame(service.fromStream(\\\"s\\\"), e);\\n    }\\n}\\nEOF\\ncd ../..; mvn -B -o test -pl components/camel-reactor -Drat.skip -Dcheckstyle.skip -Denforcer.skip -Djacoco.skip -Dmaven.javadoc.skip -Danimal.sniffer.skip -Dspotbugs.skip -Dpmd.skip -Dlicense.skip -Dgpg.skip -Djapicmp.skip -Dspotless.check.skip -Dmaven.source.skip -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Dmaven.repo.local=/home/dev4nshi/.m2/repository -Dtest=ReactorStreamsService_fromStream_0_0_Test 2>&1 | tail -n 40\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_017wurt733cthV5GmqLvapCG",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 1670,
+            "prompt_tokens": 7740,
+            "total_tokens": 9410,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 1670
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 7740,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.06436,
+        "timestamp": 1794497757.9326062
+      }
+    },
+    {
+      "content": "<returncode>0</returncode>\n<output>\n[INFO] \n[INFO] --- resources:3.0.2:resources (default-resources) @ camel-reactor ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 3 resources\n[INFO] Copying 3 resources\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/components\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/dataformats\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/languages\n[INFO] Copying 1 resource\n[INFO] \n[INFO] --- compiler:3.6.1:compile (default-compile) @ camel-reactor ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:3.0.2:testResources (default-testResources) @ camel-reactor ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 1 resource\n[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ camel-reactor ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 7 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/test-classes\n[INFO] \n[INFO] --- surefire:2.20.1:test (default-test) @ camel-reactor ---\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running org.apache.camel.component.reactor.engine.ReactorStreamsService_fromStream_0_0_Test\n[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.158 s - in org.apache.camel.component.reactor.engine.ReactorStreamsService_fromStream_0_0_Test\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  18.572 s\n[INFO] Finished at: 2026-11-12T15:36:19Z\n[INFO] ------------------------------------------------------------------------\n</output>",
+      "extra": {
+        "raw_output": "[INFO] \n[INFO] --- resources:3.0.2:resources (default-resources) @ camel-reactor ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 3 resources\n[INFO] Copying 3 resources\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/components\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/dataformats\n[INFO] skip non existing resourceDirectory /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/generated/camel/languages\n[INFO] Copying 1 resource\n[INFO] \n[INFO] --- compiler:3.6.1:compile (default-compile) @ camel-reactor ---\n[INFO] Nothing to compile - all classes are up to date\n[INFO] \n[INFO] --- resources:3.0.2:testResources (default-testResources) @ camel-reactor ---\n[INFO] Using 'UTF-8' encoding to copy filtered resources.\n[INFO] Copying 1 resource\n[INFO] Copying 3 resources\n[INFO] \n[INFO] --- compiler:3.6.1:testCompile (default-testCompile) @ camel-reactor ---\n[INFO] Changes detected - recompiling the module!\n[INFO] Compiling 7 source files to /home/dev4nshi/agentgen/agent_main_package/agent_experiment/work/A_row_119/CAMEL-12025/Flaky/components/camel-reactor/target/test-classes\n[INFO] \n[INFO] --- surefire:2.20.1:test (default-test) @ camel-reactor ---\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running org.apache.camel.component.reactor.engine.ReactorStreamsService_fromStream_0_0_Test\n[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.158 s - in org.apache.camel.component.reactor.engine.ReactorStreamsService_fromStream_0_0_Test\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  18.572 s\n[INFO] Finished at: 2026-11-12T15:36:19Z\n[INFO] ------------------------------------------------------------------------\n",
+        "returncode": 0,
+        "timestamp": 1794497779.4303043,
+        "exception_info": ""
+      },
+      "tool_call_id": "toolu_017wurt733cthV5GmqLvapCG",
+      "role": "tool"
+    },
+    {
+      "content": null,
+      "role": "assistant",
+      "tool_calls": [
+        {
+          "index": 0,
+          "caller": {
+            "type": "direct"
+          },
+          "function": {
+            "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+            "name": "bash"
+          },
+          "id": "toolu_01MgasxPFXvv3J9BkRrWevLK",
+          "type": "function"
+        }
+      ],
+      "function_call": null,
+      "provider_specific_fields": {
+        "citations": null,
+        "thinking_blocks": null
+      },
+      "extra": {
+        "actions": [
+          {
+            "command": "echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT",
+            "tool_call_id": "toolu_01MgasxPFXvv3J9BkRrWevLK"
+          }
+        ],
+        "response": {
+          "id": "chatcmpl-286aa2d5-f812-4cbf-b00c-227c84bf760f",
+          "created": 1794497781,
+          "model": "claude-opus-5-5",
+          "object": "chat.completion",
+          "system_fingerprint": null,
+          "choices": [
+            {
+              "finish_reason": "tool_calls",
+              "index": 0,
+              "message": {
+                "content": null,
+                "role": "assistant",
+                "tool_calls": [
+                  {
+                    "index": 0,
+                    "caller": {
+                      "type": "direct"
+                    },
+                    "function": {
+                      "arguments": "{\"command\": \"echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT\"}",
+                      "name": "bash"
+                    },
+                    "id": "toolu_01MgasxPFXvv3J9BkRrWevLK",
+                    "type": "function"
+                  }
+                ],
+                "function_call": null,
+                "provider_specific_fields": {
+                  "citations": null,
+                  "thinking_blocks": null
+                }
+              }
+            }
+          ],
+          "usage": {
+            "completion_tokens": 79,
+            "prompt_tokens": 10530,
+            "total_tokens": 10609,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "text_tokens": 79
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "text_tokens": 10530,
+              "image_tokens": null,
+              "video_tokens": null,
+              "cache_creation_tokens": 0,
+              "cache_creation_token_details": {
+                "ephemeral_5m_input_tokens": 0,
+                "ephemeral_1h_input_tokens": 0
+              }
+            },
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 0,
+            "iterations": null,
+            "inference_geo": "global",
+            "speed": "standard",
+            "service_tier": "standard"
+          }
+        },
+        "cost": 0.043699999999999996,
+        "timestamp": 1794497781.4969826
+      }
+    },
+    {
+      "role": "exit",
+      "content": "",
+      "extra": {
+        "exit_status": "Submitted",
+        "submission": ""
+      }
+    }
+  ],
+  "trajectory_format": "mini-swe-agent-1.1"
+}

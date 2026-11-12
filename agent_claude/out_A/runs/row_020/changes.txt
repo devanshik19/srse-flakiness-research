@@ -1,0 +1,2 @@
+new shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/logs/shenyu-admin-error.log
+new shenyu=shenyu-admin=6bfb86b/Flaky/shenyu-admin/logs/shenyu-admin.log
