@@ -1,0 +1,6 @@
+test,nio_method,iterations,pass,failure,error,not_twice,nio,example
+org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testNoExcludes,own_junit5_runner,200,200,0,0,0,false,
+org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testNullObjectThrows,own_junit5_runner,200,200,0,0,0,false,
+org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testPlainObject,own_junit5_runner,200,200,0,0,0,false,
+org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testSelfReference,own_junit5_runner,200,200,0,0,0,false,
+org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testWithExcludes,own_junit5_runner,200,200,0,0,0,false,

@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.333 s <<< FAILURE! - in org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
+testSelfReference  Time elapsed: 0.028 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <-1960091508> but was: <1920410624>
+	at org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test.testSelfReference(HashCodeBuilder_reflectionHashCode_0_0_Test.java:59)
+
+testWithExcludes  Time elapsed: 0.012 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <872389> but was: <1025569>
+	at org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test.testWithExcludes(HashCodeBuilder_reflectionHashCode_0_0_Test.java:46)
+

@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 0.778 sec <<< FAILURE! - in com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
+testRemoveOverrideRestoresParentInheritance(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.113 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<{doc: b, attributes: {}, updatedAt: null, updatedBy: null}> but was:<null>
+	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveOverrideRestoresParentInheritance(InheritingMetadataContainer_remove_0_0_Test.java:105)
+
+testRemoveTwice(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.019 sec  <<< FAILURE!
+java.lang.AssertionError
+	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveTwice(InheritingMetadataContainer_remove_0_0_Test.java:119)
+
+testRemoveOnlyKeyRemovesVersion(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<{doc: a, attributes: {}, updatedAt: null, updatedBy: null}> but was:<null>
+	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveOnlyKeyRemovesVersion(InheritingMetadataContainer_remove_0_0_Test.java:57)
+
+testRemoveKeepsVersionWithOtherOwnKeys(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.005 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<{doc: a, attributes: {}, updatedAt: null, updatedBy: null}> but was:<null>
+	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveKeepsVersionWithOtherOwnKeys(InheritingMetadataContainer_remove_0_0_Test.java:68)
+
+testRemoveTakesBackInheritance(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.04 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<{doc: a, attributes: {}, updatedAt: null, updatedBy: null}> but was:<null>
+	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveTakesBackInheritance(InheritingMetadataContainer_remove_0_0_Test.java:82)
+

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.592 s <<< FAILURE! - in org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
+testWithExcludes  Time elapsed: 0.05 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <872389> but was: <1025569>
+	at org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test.testWithExcludes(HashCodeBuilder_reflectionHashCode_0_0_Test.java:46)
+

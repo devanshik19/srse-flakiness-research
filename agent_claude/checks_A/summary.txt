@@ -1,0 +1,9 @@
+330 generated test methods in 43 files
+  flagged by any check: 95
+  rerun flaky: 0, always failed: 0
+  NonDex flaky: 15
+  NIO: {'inconclusive': 57, 'false': 153, '-': 119, 'true': 1}
+  iDFlakies: {'not_run': 52, '-': 246, 'OD': 17, 'timeout': 9, 'incomplete': 6}
+  od_confirm categories: {'not_by_generated': 659, 'victim': 14, 'brittle': 2, 'inconclusive': 22, 'not_reproduced': 3}
+  od_recheck categories: {'not_by_generated': 233}
+-> /home/dev4nshi/agentgen/agent_checks_package/out_checks_A/summary_all.csv, od_confirm_all.csv, od_recheck_all.csv
