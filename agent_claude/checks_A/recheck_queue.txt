@@ -1,0 +1,127 @@
+### QUEUE: cases to recheck (not passed / not conclusive) ###
+
+=== A) iDFlakies not_run / timeout / incomplete  -> re-run OD ===
+incomplete	https://github.com/apache/dubbo	org.apache.dubbo.common.utils.AnnotationUtils_getAllDeclaredAnnotations_0_0_Test#testClassElement
+incomplete	https://github.com/apache/dubbo	org.apache.dubbo.common.utils.AnnotationUtils_getAllDeclaredAnnotations_0_0_Test#testMethodElement
+incomplete	https://github.com/apache/dubbo	org.apache.dubbo.common.utils.AnnotationUtils_getAllDeclaredAnnotations_0_0_Test#testNull
+incomplete	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_countOf_0_0_Test#testCountOfSuccess
+incomplete	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_countOf_0_0_Test#testCountOfThrows
+incomplete	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_countOf_0_0_Test#testCountOfZero
+not_run	https://github.com/apache/commons-lang	org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testNoExcludes
+not_run	https://github.com/apache/commons-lang	org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testNullObjectThrows
+not_run	https://github.com/apache/commons-lang	org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testPlainObject
+not_run	https://github.com/apache/commons-lang	org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testSelfReference
+not_run	https://github.com/apache/commons-lang	org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test#testWithExcludes
+not_run	https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testFullTraverse
+not_run	https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testLeaf
+not_run	https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testListExpression
+not_run	https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testNullExpr
+not_run	https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testStopTraverse
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testAutoFinalize
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testErrorResponse
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testExpressUpgrading
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testPlainUpgrading
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testSameVersion
+not_run	https://github.com/apache/hadoop	org.apache.hadoop.yarn.service.client.ServiceClient_actionUpgradeExpress_0_0_Test#testUpgradeDisabled
+not_run	https://github.com/apache/servicecomb-java-chassis	org.apache.servicecomb.foundation.vertx.http.AbstractHttpServletRequest_setAttribute_0_0_Test#testMultiple
+not_run	https://github.com/apache/servicecomb-java-chassis	org.apache.servicecomb.foundation.vertx.http.AbstractHttpServletRequest_setAttribute_0_0_Test#testNullValueAndNullKey
+not_run	https://github.com/apache/servicecomb-java-chassis	org.apache.servicecomb.foundation.vertx.http.AbstractHttpServletRequest_setAttribute_0_0_Test#testOverwrite
+not_run	https://github.com/apache/servicecomb-java-chassis	org.apache.servicecomb.foundation.vertx.http.AbstractHttpServletRequest_setAttribute_0_0_Test#testSetAttribute
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testDefaultClusterAndNamespaceWhenEmpty
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testDefaultClusterAndNamespaceWhenNull
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testEmptyAppId
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testEmptyEnv
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testErrorStatus
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testIOException
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNegativePage
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNullAppId
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNullEnv
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testSuccess
+not_run	https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testZeroSize
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_updateRaw_0_0_Test#testUpdateRawSuccess
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_updateRaw_0_0_Test#testUpdateRawThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_update_0_0_Test#testUpdateNull
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_update_0_0_Test#testUpdateSuccess
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.dao.RuntimeExceptionDao_update_0_0_Test#testUpdateThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testCloseThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testCompileThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testExecuteThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testNegativeRowsAllowed
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testNegativeRowsNotAllowed
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testPositiveRowsExpectingZero
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testPositiveRowsNotExpectingZero
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_createSchema_0_0_Test#testSuccess
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_dropSchema_0_0_Test#testDropExistingSchema
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_dropSchema_0_0_Test#testDropMissingSchemaIgnoreErrors
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_dropSchema_0_0_Test#testDropMissingSchemaThrows
+not_run	https://github.com/j256/ormlite-core	com.j256.ormlite.table.SchemaUtils_dropSchema_0_0_Test#testPrivateConstructor
+timeout	https://github.com/apache/hadoop	org.apache.hadoop.metrics2.impl.MetricsSystemImpl_publishMetricsNow_0_0_Test#testNoSinks
+timeout	https://github.com/apache/hadoop	org.apache.hadoop.metrics2.impl.MetricsSystemImpl_publishMetricsNow_0_0_Test#testWithSinks
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testCyclicMapFallsBackToSafe
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testList
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testMap
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testNull
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testNumberAndBoolean
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testString
+timeout	https://github.com/karatelabs/karate	com.intuit.karate.JsonUtils_toJson_0_0_Test#testThrowingMapFallsBackToSafe
+
+=== B) NIO inconclusive  -> re-run NIO (clear dtfixingtools) ===
+https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testFullTraverse
+https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testLeaf
+https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testListExpression
+https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testNullExpr
+https://github.com/apache/fury	org.apache.fury.codegen.ExpressionVisitor_traverseExpression_0_0_Test#testStopTraverse
+https://github.com/apache/hadoop	org.apache.hadoop.metrics2.impl.MetricsSystemImpl_publishMetricsNow_0_0_Test#testNoSinks
+https://github.com/apache/hadoop	org.apache.hadoop.metrics2.impl.MetricsSystemImpl_publishMetricsNow_0_0_Test#testWithSinks
+https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNegativePage
+https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNullAppId
+https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testNullEnv
+https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testSuccess
+https://github.com/apolloconfig/apollo-java	com.ctrip.framework.apollo.openapi.client.service.ItemOpenApiService_findItemsByNamespace_0_0_Test#testZeroSize
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testMissingKeyInExistingVersion
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testMissingVersion
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testNullKey
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveInheritedKeyReturnsNull
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveKeepsVersionWithOtherOwnKeys
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveOnlyKeyRemovesVersion
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveOverrideRestoresParentInheritance
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveTakesBackInheritance
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveTwice
+https://github.com/epam/eco-schema-catalog	com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testWrongSubject
+https://github.com/lets-blade/blade	com.hellokaton.blade.options.StaticOptions_addStatic_0_0_Test#testAddStaticDuplicate
+https://github.com/lets-blade/blade	com.hellokaton.blade.options.StaticOptions_addStatic_0_0_Test#testAddStaticImmutableSet
+https://github.com/lets-blade/blade	com.hellokaton.blade.options.StaticOptions_addStatic_0_0_Test#testAddStaticNull
+https://github.com/lets-blade/blade	com.hellokaton.blade.options.StaticOptions_addStatic_0_0_Test#testAddStaticOnDefaultPaths
+https://github.com/lets-blade/blade	com.hellokaton.blade.options.StaticOptions_addStatic_0_0_Test#testAddStaticReturnsSameInstanceAndAdds
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testArray
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testIterable
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testIterator
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testList
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testMap
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testNull
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testOther
+https://github.com/opengoofy/crane4j	cn.crane4j.core.util.ObjectUtils_get_0_0_Test#testPrimitiveArray
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testAbstractClass
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testConstructorThrowsIOException
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testConstructorThrowsRuntimeException
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testCustomClassReceivesArgs
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testDefaultImplReadOnly
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testDefaultImplReadOnlyNonExisting
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testDefaultImplWritableCreatesDirectory
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testNoConstructor
+https://github.com/wikidata/wikidata-toolkit	org.wikidata.wdtk.util.DirectoryManagerFactory_createDirectoryManager_0_0_Test#testNullDirectory
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindDuplicateFails
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindMissingOwnerReferencesFails
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindNoOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindOwnerWithoutReferencesServiceFails
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindServiceNameOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindServiceTargetOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindWithServiceNameOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_bind_0_0_Test#testBindWithServiceTargetOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_rebind_0_0_Test#testRebindNewFailsWhenNoReferencesService
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_rebind_0_0_Test#testRebindNewWithServiceNameOwner
+https://github.com/wildfly/wildfly	org.jboss.as.naming.WritableServiceBasedNamingStore_rebind_0_0_Test#testRebindNoOwner
+
+=== C) od_confirm inconclusive  -> manual OD confirm (dubbo-style) ===
+lane3	dubbo-common
+lane3	dubbo-rpc/dubbo-rpc-dubbo

@@ -7,3 +7,11 @@
   od_confirm categories: {'not_by_generated': 659, 'victim': 14, 'brittle': 2, 'inconclusive': 22, 'not_reproduced': 3}
   od_recheck categories: {'not_by_generated': 233}
 -> /home/dev4nshi/agentgen/agent_checks_package/out_checks_A/summary_all.csv, od_confirm_all.csv, od_recheck_all.csv
+
+===== MANUAL RECHECK (human-verified, 2026-11-20) =====
+NonDex (ID): 15 CONFIRMED (re-ran 200 seeds, all reproduce).
+NIO: 1 (GsonFactory, original measurement). NOD/rerun: 0 of completed; rest 'ongoing' (not run).
+OD polluters: 0 CONFIRMED. dubbo row_043 did NOT confirm (victim passes alone & after, one JVM;
+  Claude uses real singleton + @After, no reflection INSTANCE swap).
+OD victims: 3 files CONFIRMED (marine-api row_045/047, wildfly row_067).
+Queue (to recheck): 67 iDFlakies not_run/timeout/incomplete, 57 NIO inconclusive, 22 od_confirm inconclusive.
