@@ -28,7 +28,9 @@ Flakiness checks on the **53 flaky-side focal methods** of the main study, with 
 iDFlakies flagged Claude's `ChangeTelnetHandler_telnet` test as a suspected polluter of `PortTelnetHandlerTest` / `DubboProtocolTest`. Manual confirmation (`dubbo_confirm.log`) shows it is **NOT a polluter**: the victim passes alone AND after all 9 ChangeTelnetHandler methods in one JVM (forkCount=1, runOrder=testorder). Claude's test uses the real `DubboProtocol.getDubboProtocol()` and has an `@After`; it never replaces `DubboProtocol.INSTANCE` by reflection.
 
 ### Coverage gaps (rechecking)
-`recheck_queue.txt`: 67 iDFlakies `not_run`/`timeout`/`incomplete` (mostly ormlite + apollo), 57 NIO `inconclusive`, 22 od_confirm `inconclusive`. Uncheckable in this pass; being re-run separately. Report denominators net of these.
+`recheck_queue.txt`: 67 iDFlakies `not_run`/`timeout`/`incomplete` (mostly ormlite + apollo), 57 NIO `inconclusive` — being re-run separately. Report denominators net of these.
+
+The 22 od_confirm `inconclusive` rows (all dubbo) have been rechecked and are now **non-flaky** — 21 not-a-polluter, 1 a test that errors alone (not pollution); **0 polluters** (`od_recheck_results.csv`).
 
 ## Reproduce / recheck
 - OD inconclusive manual confirm: build the module with the generated test placed, run the victim alone, then the generated class + victim in one JVM (`-DforkCount=1 -DreuseForks=true -Dsurefire.runOrder=testorder`). Passes alone + fails after → polluter; passes both → not.

@@ -15,3 +15,6 @@ OD polluters: 0 CONFIRMED. dubbo row_043 did NOT confirm (victim passes alone & 
   Claude uses real singleton + @After, no reflection INSTANCE swap).
 OD victims: 3 files CONFIRMED (marine-api row_045/047, wildfly row_067).
 Queue (to recheck): 67 iDFlakies not_run/timeout/incomplete, 57 NIO inconclusive, 22 od_confirm inconclusive.
+
+22 od_confirm inconclusive (all dubbo) rechecked -> now non-flaky: 21 not-a-polluter,
+1 errors alone (not pollution). 0 OD polluters confirmed.
