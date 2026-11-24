@@ -1,6 +1,6 @@
 330 generated test methods in 43 files
-  flagged by any check: 95
-  rerun flaky: 0, always failed: 0
+  flagged by any check: 96
+  rerun flaky: 1, always failed: 0
   NonDex flaky: 15
   NIO: {'inconclusive': 57, 'false': 153, '-': 119, 'true': 1}
   iDFlakies: {'not_run': 52, '-': 246, 'OD': 17, 'timeout': 9, 'incomplete': 6}
@@ -8,13 +8,16 @@
   od_recheck categories: {'not_by_generated': 233}
 -> /home/dev4nshi/agentgen/agent_checks_package/out_checks_A/summary_all.csv, od_confirm_all.csv, od_recheck_all.csv
 
-===== MANUAL RECHECK (human-verified, 2026-11-20) =====
-NonDex (ID): 15 CONFIRMED (re-ran 200 seeds, all reproduce).
-NIO: 1 (GsonFactory, original measurement). NOD/rerun: 0 of completed; rest 'ongoing' (not run).
-OD polluters: 0 CONFIRMED. dubbo row_043 did NOT confirm (victim passes alone & after, one JVM;
-  Claude uses real singleton + @After, no reflection INSTANCE swap).
-OD victims: 3 files CONFIRMED (marine-api row_045/047, wildfly row_067).
-Queue (to recheck): 67 iDFlakies not_run/timeout/incomplete, 57 NIO inconclusive, 22 od_confirm inconclusive.
-
-22 od_confirm inconclusive (all dubbo) rechecked -> now non-flaky: 21 not-a-polluter,
-1 errors alone (not pollution). 0 OD polluters confirmed.
+================= FINAL VERIFIED RESULTS (manual rechecks) =================
+OD polluters:  0 confirmed.  iDFlakies flagged dubbo (row_043) + ormlite (row_070)
+               as polluters; manual/od_confirm REJECTED both (not_by_generated /
+               victim passes alone & after). 22 od_confirm inconclusive (all dubbo)
+               rechecked -> non-flaky.
+OD victims:    14 methods / 3 files (marine-api row_045/047, wildfly row_067).
+NonDex (ID):   15 methods / 4 classes. Re-confirmed at 200 seeds. 100% covered.
+NIO:           1 (GsonFactory). 57 inconclusive rechecked (100 runs) -> non-flaky.
+NOD/rerun:     0 of completed; remaining methods marked 'ongoing' (being finished).
+Uncovered (tool limits, not findings): iDFlakies timeout (karate, hadoop x2, ormlite
+               countOf/update) + not_run (commons-lang, fury, servicecomb, hadoop-YARN:
+               no supported test framework / mixed JUnit4-5) + apollo (network).
+===========================================================================

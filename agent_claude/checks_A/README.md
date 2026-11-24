@@ -27,12 +27,10 @@ Flakiness checks on the **53 flaky-side focal methods** of the main study, with 
 ### Dubbo polluter
 iDFlakies flagged Claude's `ChangeTelnetHandler_telnet` test as a suspected polluter of `PortTelnetHandlerTest` / `DubboProtocolTest`. Manual confirmation (`dubbo_confirm.log`) shows it is **NOT a polluter**: the victim passes alone AND after all 9 ChangeTelnetHandler methods in one JVM (forkCount=1, runOrder=testorder). Claude's test uses the real `DubboProtocol.getDubboProtocol()` and has an `@After`; it never replaces `DubboProtocol.INSTANCE` by reflection.
 
-### Coverage gaps
-`recheck_queue.txt`: 67 iDFlakies `not_run`/`timeout`/`incomplete` (mostly ormlite + apollo) — being re-run separately. Report denominators net of these.
-
-Rechecked and resolved:
+### Coverage gaps — rechecked and resolved
 - **22 od_confirm `inconclusive`** (all dubbo) → **non-flaky**: 21 not-a-polluter, 1 a test that errors alone (not pollution); **0 polluters** (`od_recheck_results.csv`).
 - **57 NIO `inconclusive`** (9 files) → rechecked at 100 runs → **non-flaky**, 0 hits (`recheck/nio_gaps/`). NIO stays at 1 (GsonFactory).
+- **67 iDFlakies `not_run`/`timeout`/`incomplete`** (13 files) → re-run (`recheck/idf_gaps/`). ormlite recovered OD coverage and iDFlakies flagged 1 polluter + 3 flaky suspects; **od_confirm rejected all of them** (row_070 polluter → not_by_generated; row_068/069/071 flaky → not_reproduced). The rest stay `timeout` (karate, hadoop) or `not_run` (commons-lang/fury/servicecomb: no supported test framework / mixed JUnit 4-5; hadoop YARN). **0 confirmed polluters stands.**
 
 ## Reproduce / recheck
 - OD inconclusive manual confirm: build the module with the generated test placed, run the victim alone, then the generated class + victim in one JVM (`-DforkCount=1 -DreuseForks=true -Dsurefire.runOrder=testorder`). Passes alone + fails after → polluter; passes both → not.
