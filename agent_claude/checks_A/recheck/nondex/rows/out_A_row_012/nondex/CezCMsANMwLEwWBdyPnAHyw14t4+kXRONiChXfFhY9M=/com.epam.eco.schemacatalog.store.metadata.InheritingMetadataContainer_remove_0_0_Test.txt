@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
--------------------------------------------------------------------------------
-Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.301 sec <<< FAILURE! - in com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
-testRemoveOverrideRestoresParentInheritance(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.044 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<{doc: a, attributes: {}, updatedAt: null, updatedBy: null}> but was:<null>
-	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveOverrideRestoresParentInheritance(InheritingMetadataContainer_remove_0_0_Test.java:110)
-

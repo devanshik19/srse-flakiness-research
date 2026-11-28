@@ -1,3 +1,0 @@
-com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveOverrideRestoresParentInheritance
-com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveTwice
-com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test#testRemoveOnlyKeyRemovesVersion

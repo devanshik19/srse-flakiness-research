@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.436 s <<< FAILURE! - in org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test
-testSelfReference  Time elapsed: 0.067 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <783882473> but was: <1414171097>
-	at org.apache.commons.lang3.builder.HashCodeBuilder_reflectionHashCode_0_0_Test.testSelfReference(HashCodeBuilder_reflectionHashCode_0_0_Test.java:59)
-

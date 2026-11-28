@@ -1,1 +1,0 @@
-org/apache/shardingsphere/elasticjob/infra/json|GsonFactory_registerTypeAdapter_0_0_Test

@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
--------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.371 sec <<< FAILURE! - in com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test
-testRemoveOverrideRestoresParentInheritance(com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test)  Time elapsed: 0.054 sec  <<< ERROR!
-java.lang.IllegalStateException: Duplicate key {doc: a, attributes: {}, updatedAt: null, updatedBy: null}
-	at com.epam.eco.schemacatalog.store.metadata.InheritingMetadataContainer_remove_0_0_Test.testRemoveOverrideRestoresParentInheritance(InheritingMetadataContainer_remove_0_0_Test.java:109)
-

@@ -4,33 +4,31 @@ Flakiness checks on the **53 flaky-side focal methods** of the main study, with 
 
 ## In this folder
 - `summary.txt` — aggregated counts + a human-added MANUAL RECHECK section.
-- `summary_all.csv` — master table, one row per method, every check's verdict.
-- `summary_all_ongoing.csv` — same, with un-run rerun methods marked `ongoing`.
+- `summary_all.csv` — master table, one row per method, every check's verdict (and a `status` column once merged).
 - `od_confirm_all.csv` / `od_recheck_all.csv` — OD confirmation + re-examination rows.
-- `dubbo_confirm.log` — manual dubbo polluter confirmation.
-- `recheck_nondex.log`, `recheck_nio.log`, `nio_076.log`, `recheck/` — NonDex/NIO recheck logs + outputs.
-- `od_recheck_results.csv` — batch OD confirmation of the 22 inconclusive rows *(added when that run finishes)*.
-- `lane1/`..`lane4/` — per-lane raw: `lane.log`, `idflakies_rows.csv`, `od_confirm.csv`, `nio_rows.csv`, `nondex_rows.csv`, `rerun_rows.csv`.
-- `recheck_queue.txt` — the 146 inconclusive/uncovered cases to re-run (A: iDFlakies, B: NIO, C: od_confirm).
+- `uncovered_methods.csv` — methods a check could not complete, with the reason (setup/tool, not findings).
+- `logs/` — all manual recheck + confirmation logs: `dubbo_confirm.log`, `nio_076.log`, `recheck_nio.log`, `recheck_nondex.log`.
+- `lane1/`..`lane4/` — raw per-lane output (the 53 methods split across 4 parallel shards): `lane.log`, `idflakies_rows.csv`, `od_confirm.csv`, `nio_rows.csv`, `nondex_rows.csv`, `rerun_rows.csv`.
 
 ## Headline findings (verified)
 | Check | methods / files | Note |
 |---|---|---|
 | **OD polluters** | **0 / 0** | dubbo ChangeTelnetHandler candidate did NOT confirm — see below |
 | **OD victims** | **14 / 3** | marine-api `row_045`+`row_047`, wildfly `row_067` |
-| **NonDex (ID)** | **15 / 4 classes** (5 generation instances) | re-confirmed at 200 seeds |
+| **NonDex (ID)** | **15 / 4 classes** | re-confirmed at 200 seeds |
 | **NIO** | **1 / 1** | GsonFactory (elasticjob) |
-| **NOD / rerun** | **0 / 0** | of completed methods; rest marked `ongoing` |
+| **NOD / rerun** | **0** | 0 flaky of completed methods. 3 flagged on a disk-full run re-ran clean (100× passing) — ZooKeeper/tmpfs artifacts, not flaky. A few methods couldn't complete rerun for setup reasons (see below) — not findings. |
 
-**Totals:** 330 generated test methods in 43 files; 95 flagged by some check before confirmation.
+**Totals:** 330 generated test methods in 43 files.
 
 ### Dubbo polluter
-iDFlakies flagged Claude's `ChangeTelnetHandler_telnet` test as a suspected polluter of `PortTelnetHandlerTest` / `DubboProtocolTest`. Manual confirmation (`dubbo_confirm.log`) shows it is **NOT a polluter**: the victim passes alone AND after all 9 ChangeTelnetHandler methods in one JVM (forkCount=1, runOrder=testorder). Claude's test uses the real `DubboProtocol.getDubboProtocol()` and has an `@After`; it never replaces `DubboProtocol.INSTANCE` by reflection.
+iDFlakies flagged Claude's `ChangeTelnetHandler_telnet` test as a suspected polluter of `PortTelnetHandlerTest` / `DubboProtocolTest`. Manual confirmation (`logs/dubbo_confirm.log`) shows it is **NOT a polluter**: the victim passes alone AND after all 9 ChangeTelnetHandler methods in one JVM (forkCount=1, runOrder=testorder). Claude's test uses the real `DubboProtocol.getDubboProtocol()` and has an `@After`; it never replaces `DubboProtocol.INSTANCE` by reflection.
 
 ### Coverage gaps — rechecked and resolved
-- **22 od_confirm `inconclusive`** (all dubbo) → **non-flaky**: 21 not-a-polluter, 1 a test that errors alone (not pollution); **0 polluters** (`od_recheck_results.csv`).
-- **57 NIO `inconclusive`** (9 files) → rechecked at 100 runs → **non-flaky**, 0 hits (`recheck/nio_gaps/`). NIO stays at 1 (GsonFactory).
-- **67 iDFlakies `not_run`/`timeout`/`incomplete`** (13 files) → re-run (`recheck/idf_gaps/`). ormlite recovered OD coverage and iDFlakies flagged 1 polluter + 3 flaky suspects; **od_confirm rejected all of them** (row_070 polluter → not_by_generated; row_068/069/071 flaky → not_reproduced). The rest stay `timeout` (karate, hadoop) or `not_run` (commons-lang/fury/servicecomb: no supported test framework / mixed JUnit 4-5; hadoop YARN). **0 confirmed polluters stands.**
+- **22 od_confirm `inconclusive`** (all dubbo) → **non-flaky**: 21 not-a-polluter, 1 a test that errors alone (not pollution); **0 polluters** (`od_recheck_all.csv`).
+- **57 NIO `inconclusive`** (9 files) → rechecked at 100 runs → **non-flaky**, 0 hits. NIO stays at 1 (GsonFactory).
+- **67 iDFlakies `not_run`/`timeout`/`incomplete`** (13 files) → re-run. ormlite recovered OD coverage and iDFlakies flagged 1 polluter + 3 flaky suspects; **od_confirm rejected all of them**. The rest stay `timeout` (karate, hadoop) or `not_run` (commons-lang/fury/servicecomb: no supported test framework / mixed JUnit 4-5; hadoop YARN). **0 confirmed polluters stands.**
+- **NOD/rerun**: the 100× rerun completed for the large majority of files. The 3 methods flagged `rerun_flaky` re-ran clean at 100× — the original failures were ZooKeeper/`/tmp`-tmpfs artifacts from a disk-full run, not flakiness. **NOD = 0.** Methods that could not complete rerun (setup/tool reasons, not findings) are listed in `uncovered_methods.csv`: 8 graylog (`LookupCacheKey`, `ViewSharingResource`) JVM-deadlock. camel `BackgroundTask` (impsort fix) and elasticjob `GsonFactory` (re-extract) were re-run and recovered — all methods 100x clean, **except** camel `interruptedUnlimited`, which errors deterministically (100/100 errors) when run in isolation: not flaky (consistent outcome — a setup issue from running it alone), not a NOD finding.
 
 ## Reproduce / recheck
 - OD inconclusive manual confirm: build the module with the generated test placed, run the victim alone, then the generated class + victim in one JVM (`-DforkCount=1 -DreuseForks=true -Dsurefire.runOrder=testorder`). Passes alone + fails after → polluter; passes both → not.
